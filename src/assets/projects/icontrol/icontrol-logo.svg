@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="181px" height="62px" viewBox="0 0 181 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Artboard</title>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iControl_logo">
+            <g id="Group-2">
+                <ellipse id="base" fill="#6342B1" cx="30.8720691" cy="31" rx="30.8720691" ry="31"></ellipse>
+                <path d="M16.548288,27.2352941 C16.548288,19.2764706 23.1676032,13.3809934 31.2578773,13.3809934 C39.3481514,13.3809934 45.9674666,19.2764706 45.9674666,27.2352941 C45.9674666,41.4647059 31.2578773,49.8550092 31.2578773,49.8550092 C31.2578773,49.8550092 16.548288,41.4647059 16.548288,27.2352941 Z M31.2578773,24.8235294 C28.5611193,24.8235294 26.3546809,26.9941176 26.3546809,29.6470588 C26.3546809,32.3 28.5611193,34.4705882 31.2578773,34.4705882 C33.9546353,34.4705882 36.1610737,32.3 36.1610737,29.6470588 C36.1610737,26.9941176 33.9546353,24.8235294 31.2578773,24.8235294 L31.2578773,24.8235294 Z" id="Shape" fill="#FFFFFF"></path>
+            </g>
+            <text id="iControl" fill-rule="nonzero" font-family="Lato-Black, Lato" font-size="24.7469838" font-weight="800" letter-spacing="2.32002974" fill="#000000">
+                <tspan x="72.8128079" y="40.5290765">iControl</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
