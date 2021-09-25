@@ -1,22 +1,21 @@
 <template>
 	<div class="">
 		<!-- Header -->
-		<div 
+		<!-- <div 
 			class="overlay-inner flex justify-center relative z-1"
 		>
 			<div class="w-full m-auto py-28" style="max-width: 1080px;">
-				<!-- Title -->
 				<page-title />
-				<!-- available -->
 				<hire-btn />
 			</div>
 			<div class="bg-top-planet"></div>
 			<div class="bg-middle-planet"></div>
 
-		</div>
+		</div> -->
 		<div class="w-full p-20">
 			<div class="" style="width: 100%; max-width: 1080px; margin: 0 auto">
-
+					<div class="bg-top-planet"></div>
+					<div class="bg-middle-planet"></div>
 					<!-- Moi -->
 					<about-me />
 					<!-- Main Projects -->
