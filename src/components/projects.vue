@@ -2,10 +2,10 @@
   <div class="">
       
       <!-- component -->
-      <div class="min-w-screen min-h-screen flex items-center p-5 lg:p-10 overflow-hidden relative">
+      <div class="min-w-screen min-h-screen flex items-center lg:p-10 relative">
 
               <div class="md:flex items-center -mx-10">
-                  <div class="w-full md:w-1/2 px-10">
+                  <div class="w-full md:w-1/2 pr-10">
                       <img src="../assets/projects/ispect/ispect-logo.svg" style="max-width: 160px;" alt="" class="mb-5">
                       <div class="mb-10 brief">
                           <p>
@@ -33,16 +33,16 @@
 
       </div>
       <!-- component -->
-      <div class="min-w-screen min-h-screen flex items-center p-5 lg:p-10 overflow-hidden relative">
+      <div class="min-w-screen min-h-screen flex items-center lg:p-10 relative">
 
               <div class="md:flex items-center -mx-10">
-                  <div class="w-full md:w-1/2 px-10">
+                  <div class="w-full md:w-1/2 pr-10">
                       <div class="mb-10">
                           <img src="../assets/projects/icontrol/icontrol-logo.svg" style="max-width: 160px;" alt="" class="mb-5">
                           <p class="brief">
-                            iControl replaces paper with an iPad at construction projects
+                            Never write another report again.
                             <br>
-                            A platform for all the construction documentation.
+                            A platform for all your construction documentation.
                           </p>
                           <span class="brief-responsibility">
                             founding member, branding, ui/ux and front-end development

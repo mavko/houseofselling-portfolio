@@ -1,10 +1,10 @@
 <template>
   <div>
      <!-- component -->
-      <div class="min-w-screen min-h-screen flex items-center p-5 lg:p-10relative">
+      <div class="min-w-screen min-h-screen flex items-center lg:p-10 relative">
 
               <div class="md:flex items-center -mx-10">
-                  <div class="w-full md:w-1/2 px-10">
+                  <div class="w-full md:w-1/2 pr-10">
                       <div class="mb-10 brief">
                           <p>
                             <br />

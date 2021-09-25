@@ -1,6 +1,6 @@
 <template>
   <div id="availability">
-    <button class="overlay__btn px-5">
+    <button class="link-animate outline-black text-black font-bold text-center rounded-2xl shadow px-10 py-4 flex items-center">
       <a
         href="mailto:hello@sebastianselling.com"
       >
