@@ -98,7 +98,7 @@ strong {
 	line-height: 156%;
 }
 .project-link {
-	height: 80vh;
+	max-height: 150vh;
 	width: auto;
 	text-align: left;
 	display: inline-block;
