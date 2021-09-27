@@ -4,8 +4,8 @@
 		position: absolute;
 		z-index: -1;
 		width: 100%;
-		height: 550px;
-		overflow: hidden;
+		top: -160px;
+		right: 0px;
   "
   >
 		<!-- orb animation -->
@@ -237,16 +237,16 @@ export default {
 			})
 		}
 
-		document
-			.querySelector('.theme-switcher')
-			.addEventListener('click', () => {
-				colorPalette.setColors()
-				colorPalette.setCustomProperties()
+		// document
+		// 	.querySelector('.theme-switcher')
+		// 	.addEventListener('click', () => {
+		// 		colorPalette.setColors()
+		// 		colorPalette.setCustomProperties()
 
-				orbs.forEach((orb) => {
-					orb.fill = colorPalette.randomColor()
-				})
-			})
+		// 		orbs.forEach((orb) => {
+		// 			orb.fill = colorPalette.randomColor()
+		// 		})
+		// 	})
 	},
 }
 </script>

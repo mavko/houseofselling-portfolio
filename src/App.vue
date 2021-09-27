@@ -1,38 +1,23 @@
 <template>
-	<div class="">
+	<div>
 		<!-- Header -->
-		<!-- <div 
-			class="overlay-inner flex justify-center relative z-1"
-		>
-			<div class="w-full m-auto py-28" style="max-width: 1080px;">
-				<page-title />
-				<hire-btn />
-			</div>
-			<div class="bg-top-planet"></div>
-			<div class="bg-middle-planet"></div>
-
-		</div> -->
-		<div class="w-full p-20">
-			<div class="" style="width: 100%; max-width: 1080px; margin: 0 auto">
-					<div class="bg-top-planet"></div>
-					<div class="bg-middle-planet"></div>
-					<!-- Moi -->
+			<div style="border-bottom: 1px solid rgb(39, 55, 76);" class="hp-banner overflow-hidden ">
+				<div class="large-container">
 					<about-me />
+				</div>
+			</div>
+			<div class="hp-banner">
 					<!-- Main Projects -->
-					<h2 class="text-5xl ">My projects</h2>
 					<projects />
 					<!-- General design work -->
 					<general-work />
 
 			</div>
-		</div>
-		<page-footer />
+			<page-footer />
 	</div>
 </template>
 
 <script>
-import gradientOrbs from './components/gradient-orbs.vue'
-import hireBtn from './components/hire-btn.vue'
 import pageTitle from './components/page-title.vue'
 import aboutMe from './components/about-me.vue'
 import projects from './components/projects.vue'
@@ -40,18 +25,43 @@ import themeSwitch from './components/theme-switch.vue'
 import pageFooter from './components/page-footer.vue'
 import generalWork from './components/work.vue'
 
+// import jQuery from "jquery";
+// const $ = jQuery;
+// window.$ = $;
+
+// jQuery(document).ready(function ($) {
+
+// 	//mouseover
+// 	var mouseX = 0, mouseY = 0;
+// 	var xp = 0, yp = 0;
+	
+// 	$('.hp-banner').mousemove(function(e){
+// 		mouseX = e.pageX;
+// 		mouseY = e.pageY; 
+// 	});
+		
+// 	setInterval(function(){
+// 		xp += ((mouseX - xp)/6);
+// 		yp += ((mouseY - yp)/6);
+// 		$("#circle-hover").css({left: xp +'px', top: yp +'px'});
+// 	}, 20);
+
+
+// });
+
 export default {
 	name: 'landing',
 	components: {
-		hireBtn,
 		pageTitle,
 		aboutMe,
 		projects,
 		themeSwitch,
-		gradientOrbs,
 		pageFooter,
 		generalWork
 	},
+	mounted() {
+
+	}
 }
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <div id="availability">
-    <button class="link-animate outline-black text-base text-black font-bold text-center rounded-2xl shadow px-3 py-3 my-5 flex items-center">
+    <button class="link-animate outline-white text-base text-white font-bold text-center rounded-2xl shadow px-3 py-3 my-5 flex items-center">
       <a
         href="mailto:hello@sebastianselling.com"
       >

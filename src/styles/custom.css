@@ -2,10 +2,40 @@
 	font-family: nunito;
 	src: url(./assets/Nunito-Regular.ttf);
 }
+body {
+	cursor: url('../assets/vector_cursor.svg'),pointer !important;
+	background-color: rgb(17, 18, 19);
+}
+:root {
+  --dark-color: hsl(var(--hue), 100%, 9%);
+  --light-color: hsl(var(--hue), 95%, 98%);
+  --base: hsl(var(--hue), 95%, 50%);
+  --complimentary1: hsl(var(--hue-complimentary1), 95%, 50%);
+  --complimentary2: hsl(var(--hue-complimentary2), 95%, 50%);
+
+  --font-family: "Poppins", system-ui;
+
+  --bg-gradient: linear-gradient(
+    to bottom,
+    hsl(var(--hue), 95%, 99%),
+    hsl(var(--hue), 95%, 84%)
+  );
+}
 /* General page layout 
 --------------------------*/
+.text-gradient {
+  background-image: linear-gradient(
+    45deg,
+    var(--base) 25%,
+    var(--complimentary2)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
 .bg-top-planet {
-	position: absolute;
+
 	width: 460.4px;
 	height: 460.4px;
 
@@ -13,8 +43,8 @@
 	filter: blur(100px);
 
 	z-index: -1;
-	top:0;
-	right:0;
+
+
 }
 .bg-middle-planet {
 	position: absolute;
@@ -26,6 +56,29 @@
 	bottom: 0;
 	right: 200px;
 	top: 200px;
+}
+.large-container {
+	max-width: 1440px;
+	width: 90%;
+	margin: auto;
+}
+.hp-banner {
+	padding-top: 120px;
+	padding-bottom: 120px;
+	position: relative;
+	overflow: hidden;
+	background-image: none;
+	color: rgb(214, 227, 238);
+}
+.subtitle-light {
+	color: rgb(214, 227, 238);
+}
+.circle-hover{
+	width: 378px;
+	height: 378px;
+	background: #174AFF;
+	filter: blur(400px);
+	position: absolute;
 }
 /* General text
 --------------------------*/
@@ -63,9 +116,7 @@ strong {
 }
 .project-link {
 	height: 80vh;
-	width: 55vh;
-	max-width: 57vh;
-	max-height: 74.81vw;
+	width: auto;
 	text-align: left;
 	display: inline-block;
 	transform: translateY(0);
@@ -73,7 +124,6 @@ strong {
 }
 .project-link:hover,
 .project-link:focus {
-	box-shadow: 0 0 0 8px rgb(255 255 255 / 12%);
 	transform: translateY(-4px);
 }
 .link-animate {
@@ -82,7 +132,6 @@ strong {
 }
 .link-animate:hover,
 .link-animate:focus {
-	box-shadow: 0 0 0 8px rgb(255 255 255 / 12%);
 	transform: translateY(-4px);
 }
 /* Specific page layout 
