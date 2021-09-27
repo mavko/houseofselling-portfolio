@@ -2,7 +2,7 @@
 	<div>
 		<!-- Header -->
 			<div style="border-bottom: 1px solid rgb(39, 55, 76);" class="hp-banner overflow-hidden ">
-				<div class="large-container">
+				<div class="">
 					<about-me />
 				</div>
 			</div>
@@ -25,9 +25,11 @@ import themeSwitch from './components/theme-switch.vue'
 import pageFooter from './components/page-footer.vue'
 import generalWork from './components/work.vue'
 
-// import jQuery from "jquery";
-// const $ = jQuery;
-// window.$ = $;
+
+import jQuery from "jquery";
+const $ = jQuery;
+window.$ = $;
+
 
 // jQuery(document).ready(function ($) {
 
@@ -48,6 +50,7 @@ import generalWork from './components/work.vue'
 
 
 // });
+ 
 
 export default {
 	name: 'landing',
@@ -59,6 +62,7 @@ export default {
 		pageFooter,
 		generalWork
 	},
+
 	mounted() {
 
 	}

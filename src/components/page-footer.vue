@@ -2,8 +2,8 @@
   <div>
 <div class="w-full min-h-screen flex items-center justify-center bg-black">
         <div class="md:w-2/3 w-full px-4 text-white flex flex-col">
-            <div class="w-full text-7xl font-bold">
-                <h1 class="w-full md:w-2/3">
+            <div class="w-full text-7xl sm:text-4xl font-bold">
+                <h1 class="w-full md:w-2/3 sm:pt-20">
                     Got a project? <br> Tell me about it
                 </h1>
             </div>
@@ -17,11 +17,11 @@
                 </div>
             </div>
             <div class="flex flex-col">
-                <div class="flex mt-24 mb-12 flex-row justify-between">
-                    <div class="text-4xl">
+                <div class="flex mt-24 mb-12 md:flex-row sm:flex-inline justify-between  sm:text-2xl md:text-2xl lg:text-4xl">
+                    <div>
                         House of Selling  
                     </div>
-                    <div class="flex flex-row space-x-8 items-center justify-between text-4xl">
+                    <div class="flex flex-row space-x-8 items-center justify-between">
                         <a href="https://www.dribbble.com/sebastianselling" target="_blank">
                             Dribbble    
                         </a>

@@ -85,24 +85,8 @@ body {
 strong {
 	font-weight: 600;
 }
-.header-title {
-	font-size: 3rem;
-	line-height: 2.75rem;
-	font-weight: 700;
-	letter-spacing: -0.025em;
-	margin-bottom: 2rem;
-}
-.header-subtitle {
-	font-size: 2rem;
-	line-height: 2.75rem;
-	font-weight: 700;
-	letter-spacing: -0.025em;
-	margin-bottom: 2rem;
-}
-
 .brief {
 	max-width: 92%;
-	font-size: 28px;
 	line-height: 150%;
 	min-width: 410px;
 }
@@ -110,7 +94,6 @@ strong {
 	display: block;
 	margin: 30px 0 0 0;
 	color: #6f6f6f;
-	font-size: 1.16667vw;
 	letter-spacing: 0.04375em;
 	line-height: 156%;
 }
@@ -153,40 +136,13 @@ a {
 }
 
 @media only screen and (max-width: 840px) {
-	.grid-2 {
-		max-width: 620px;
-	}
-	.overlay {
-		width: 100%;
-	}
-
-	.overlay__title {
-		font-size: 1.25rem;
-		line-height: 2rem;
-		margin-bottom: 1.5rem;
-	}
-
-	.overlay__description {
-		font-size: 0.875rem;
-		line-height: 1.5rem;
-		margin-bottom: 2.5rem;
+	.project-link {
+		height: 50vh;
 	}
 }
 
 @media only screen and (max-width: 600px) {
-	.overlay {
-		padding: 0px;
-	}
-	.overlay-inner {
-		padding: 10px;
-	}
-	.overlay__btn {
-		width: 100%;
-		font-size: 0.75rem;
-		margin-right: 0;
-	}
-
-	.overlay__btn:first-child {
-		margin-bottom: 1rem;
+	.brief {
+		min-width: auto;
 	}
 }
