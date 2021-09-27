@@ -1,5 +1,5 @@
 <template>
-<div class="large-container">
+<div class="large-container py-10">
       <!-- component -->
       <div class="min-w-screen flex lg:p-10 relative my-20">
 

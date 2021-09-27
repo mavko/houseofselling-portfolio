@@ -1,8 +1,8 @@
 <template>
-  <div style="max-height: 550px;">
+  <div>
      <!-- component -->
       <div class=" relative">
-          <div class="large-container">
+          <div class="large-container py-10">
               <div class="w-full">
                   <div class="lg:text-8xl md:text-6xl text-5xl pl-0 md:pl-10 lg:pl-10 font-bold brief text-gradient" style="line-height: 1.3;">
                     Hey, <br> I'm Sebastian Selling

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="large-container">
+    <div class="large-container py-10">
       <h2 class="text-5xl lg:text-7xl pl-0 md:pl-10 lg:pl-10">My projects</h2>
       <!-- component -->
       <div class="min-w-screen flex lg:p-10 relative my-20">
@@ -34,7 +34,7 @@
 
       </div>
     </div>
-    <div class="large-container"> 
+    <div class="large-container py-10"> 
         <!-- component -->
         <div class="min-w-screen flex lg:p-10 relative my-20">
 
