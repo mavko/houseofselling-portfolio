@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="large-container py-10">
-      <h2 class="text-5xl lg:text-7xl pl-0 md:pl-10 lg:pl-10">My projects</h2>
+      <h2 class="text-4xl lg:text-6xl pl-0 md:pl-10 lg:pl-10">My projects</h2>
       <!-- component -->
       <div class="min-w-screen flex lg:p-10 relative my-20">
 
@@ -18,13 +18,13 @@
                           </span>
                       </div>
                   </div>
-                  <div class="w-full md:w-1/2 px-10 mb-10 md:mb-0">
+                  <div class="w-full md:w-1/2 px-10 mb-10 md:mb-0" data-magnetic data-cursor="-opaque">
                       <div class="relative">
                           <a
                             href="https://www.ispect.se"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="project-link"
+                            class="project-link "
                           >
                               <img src="../assets/projects/ispect/platform.png" alt="">
                           </a>

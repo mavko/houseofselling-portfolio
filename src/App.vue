@@ -6,7 +6,7 @@
 					<about-me />
 				</div>
 			</div>
-			<div class="hp-banner">
+			<div class="hp-banner" style="border-bottom: 1px solid rgb(39, 55, 76);" >
 					<!-- Main Projects -->
 					<projects />
 					<!-- General design work -->
@@ -25,10 +25,9 @@ import themeSwitch from './components/theme-switch.vue'
 import pageFooter from './components/page-footer.vue'
 import generalWork from './components/work.vue'
 
-
-import jQuery from "jquery";
-const $ = jQuery;
-window.$ = $;
+import jQuery from "jquery"
+const $ = jQuery
+window.$ = $
 
 
 // jQuery(document).ready(function ($) {
@@ -50,8 +49,7 @@ window.$ = $;
 
 
 // });
- 
-
+		
 export default {
 	name: 'landing',
 	components: {
@@ -64,7 +62,6 @@ export default {
 	},
 
 	mounted() {
-
 	}
 }
 </script>
