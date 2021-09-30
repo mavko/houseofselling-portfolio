@@ -14,7 +14,7 @@
                       </span>
                   </div>
               </div>
-              <div class="w-full md:w-1/2 px-10 mb-10 md:mb-0">
+              <div class="w-full md:w-1/2 px-10 mb-10 md:mb-0" data-magnetic data-cursor="-opaque">
                   <div class="relative">
                       <a
                         href="https://dribbble.com/sebastianselling"
