@@ -1,10 +1,10 @@
 <template>
 	<div id="app">
 		<!-- Header -->
-			<div style="border-bottom: 1px solid rgb(39, 55, 76);" class="hp-banner overflow-hidden ">
+			<div class="overflow-hidden hp-banner" style="border-bottom: 1px solid rgb(39, 55, 76);">
 					<about-me />
 			</div>
-			<div class="hp-banner" style="border-bottom: 1px solid rgb(39, 55, 76);" >
+			<div class="" style="border-bottom: 1px solid rgb(39, 55, 76);" >
 					<!-- Main Projects -->
 					<projects />
 					<!-- General design work -->

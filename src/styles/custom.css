@@ -13,9 +13,9 @@ body {
 	overflow-x: hidden;
 	margin: 0;
 	padding: 0;
-	background: #000;
+	background: #111213;
 	color: #fff;
-	font-family: "Averta CY", sans-serif;
+	font-family: "Averta CY", sans-serif !important;
 	font-size: 14px;
 	letter-spacing: normal;
 	line-height: normal;
@@ -29,9 +29,6 @@ body {
 	--base: hsl(var(--hue), 95%, 50%);
 	--complimentary1: hsl(var(--hue-complimentary1), 95%, 50%);
 	--complimentary2: hsl(var(--hue-complimentary2), 95%, 50%);
-
-	--font-family: 'Averta CY', system-ui;
-
 	--bg-gradient: linear-gradient(
 		to bottom,
 		hsl(var(--hue), 95%, 99%),
@@ -128,27 +125,24 @@ strong {
 
 .brief {
 	max-width: 92%;
-	font-size: 28px;
-	line-height: 150%;
+	line-height: 133%;
+	letter-spacing: -.03em;
 	min-width: 410px;
 }
 .brief-responsibility {
-	display: block;
-	margin: 30px 0 0 0;
-	color: #6f6f6f;
-	font-size: 1.16667vw;
-	letter-spacing: 0.04375em;
-	line-height: 156%;
+    display: block;
+    margin: 30px 0 0 0;
+    color: #6f6f6f;
+    letter-spacing: .04375em;
+    line-height: 156%;
 }
 .project-link {
-	height: 80vh;
-	width: 55vh;
-	max-width: 57vh;
-	max-height: 74.81vw;
-	text-align: left;
-	display: inline-block;
-	transform: translateY(0);
-	transition: all 0.2s cubic-bezier(0.33, 0.66, 0.66, 1);
+max-height: 150vh;
+width: auto;
+text-align: left;
+display: inline-block;
+transform: translateY(0);
+transition: all .2s cubic-bezier(.33,.66,.66,1);
 }
 .project-link:hover,
 .project-link:focus {
@@ -172,53 +166,24 @@ a {
 	text-decoration: underline;
 }
 
-/* Not too many browser support this yet but it's good to add! */
-@media (prefers-contrast: high) {
-	.orb-canvas {
-		display: none;
-	}
-}
-
 @media only screen and (max-width: 1140px) {
 }
 
-@media only screen and (max-width: 840px) {
-	.grid-2 {
-		max-width: 620px;
-	}
-	.overlay {
-		width: 100%;
-	}
-
-	.overlay__title {
-		font-size: 1.25rem;
-		line-height: 2rem;
-		margin-bottom: 1.5rem;
-	}
-
-	.overlay__description {
-		font-size: 0.875rem;
-		line-height: 1.5rem;
-		margin-bottom: 2.5rem;
-	}
+@media (prefers-contrast:high) {
+ /* Not too many browser support this yet but it's good to add! */
+	.orb-canvas {
+  display:none
+ }
 }
-
-@media only screen and (max-width: 600px) {
-	.overlay {
-		padding: 0px;
-	}
-	.overlay-inner {
-		padding: 10px;
-	}
-	.overlay__btn {
-		width: 100%;
-		font-size: 0.75rem;
-		margin-right: 0;
-	}
-
-	.overlay__btn:first-child {
-		margin-bottom: 1rem;
-	}
+@media only screen and (max-width:840px) {
+ .project-link {
+  height:50vh
+ }
+}
+@media only screen and (max-width:600px) {
+ .brief {
+  min-width:auto
+ }
 }
 /**********************
 custom cursor

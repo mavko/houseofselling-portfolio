@@ -1,14 +1,14 @@
 <template>
   <div>
-<div class="w-full min-h-screen flex items-center justify-center bg-black">
+    <div class="w-full min-h-screen flex items-center justify-center py-40">
         <div class="md:w-2/3 w-full px-4 text-white flex flex-col">
-            <div class="w-full text-7xl font-bold">
-                <h1 class="w-full md:w-2/3">
+            <div class="w-full text-4xl lg:text-7xl font-bold">
+                <h1 class="w-full md:w-2/3 sm:pt-20">
                     Got a project? <br> Tell me about it
                 </h1>
             </div>
             <div class="flex mt-8 flex-col md:flex-row md:justify-between">
-                <div class="w-55 pt-6 md:pt-0">
+                <div class="w-55 pt-6 md:pt-0" data-magnetic data-cursor="-opaque">
                     <a 
                     href="mailto:sebastian.selling@outlook.com" 
                     class="bg-green-400 text-black font-bold text-center rounded-2xl shadow px-10 py-4 flex items-center">
@@ -17,29 +17,20 @@
                 </div>
             </div>
             <div class="flex flex-col">
-                <div class="flex mt-24 mb-12 flex-row justify-between">
-                    <div class="text-4xl">
+                <div class="flex mt-24 mb-12 md:flex-row sm:flex-inline justify-between  sm:text-2xl md:text-2xl lg:text-4xl">
+                    <div>
                         House of Selling  
                     </div>
-                    <div class="flex flex-row space-x-8 items-center justify-between">
-                        <div data-magnetic data-cursor="-opaque">
-                            <a href="https://www.dribbble.com/sebastianselling" target="_blank">
-                                Dribbble    
-                            </a>
-
-                        </div>
-                        <div data-magnetic data-cursor="-opaque">
-                            <a href="https://www.linkedin.com/in/sebastianselling/" target="_blank">
-                                Linkedin    
-                            </a>
-
-                        </div>
-                        <div data-magnetic data-cursor="-opaque">
-                            <a href="https://www.instagram.com/sebastian.selling" target="_blank">
-                                Instagram    
-                            </a>
-
-                        </div>
+                    <div class="flex flex-row space-x-8 items-center justify-between pt-10 md-and-up:pt-0" data-magnetic data-cursor="-opaque">
+                        <a href="https://www.dribbble.com/sebastianselling" target="_blank">
+                            Dribbble    
+                        </a>
+                        <a href="https://www.linkedin.com/in/sebastianselling/" target="_blank">
+                            Linkedin    
+                        </a>
+                        <a href="https://www.instagram.com/sebastian.selling" target="_blank">
+                            Instagram    
+                        </a>
                     </div>
                 </div>
                 <hr class="border-gray-600"/>

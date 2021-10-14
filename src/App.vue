@@ -1,5 +1,5 @@
 <template>
-	<div id="app">
+	<div id="app" class="overflow-x-hidden">
 			<navbar />
 			<router-view />
 			<page-footer />

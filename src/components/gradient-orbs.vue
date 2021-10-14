@@ -1,10 +1,10 @@
 <template>
 	<div 
   style="
-		position: absolute;
+position: absolute;
 		z-index: -1;
 		width: 100%;
-		top: -100px;
+		top: -160px;
 		right: 0px;
   "
   >
