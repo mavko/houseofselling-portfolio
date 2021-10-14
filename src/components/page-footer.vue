@@ -8,10 +8,12 @@
                 </h1>
             </div>
             <div class="flex mt-8 flex-col md:flex-row md:justify-between">
-                <div class="w-55 pt-6 md:pt-0" data-magnetic data-cursor="-opaque">
+                <div class="w-55 pt-6 md:pt-0">
                     <a 
                     href="mailto:sebastian.selling@outlook.com" 
-                    class="bg-green-400 text-black font-bold text-center rounded-2xl shadow px-10 py-4 flex items-center">
+                    class="border font-bold text-center rounded-2xl shadow px-10 py-4 flex items-center"
+                     data-magnetic data-cursor="-opaque"
+                    >
                         Send me a message
                     </a>
                 </div>
@@ -21,7 +23,7 @@
                     <div>
                         House of Selling  
                     </div>
-                    <div class="flex flex-row space-x-8 items-center justify-between pt-10 md-and-up:pt-0" data-magnetic data-cursor="-opaque">
+                    <div class="flex flex-row space-x-8 items-center justify-between pt-10 md:pt-0 lg:pt-0" data-magnetic data-cursor="-opaque">
                         <a href="https://www.dribbble.com/sebastianselling" target="_blank">
                             Dribbble    
                         </a>
