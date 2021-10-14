@@ -1,5 +1,6 @@
 <template>
 <div>
+
   <div class="large-container py-20 lg:py-40 md:py-30">
       <h2 class="text-4xl md:text-5xl lg:text-6xl">My projects</h2>
       <!-- component -->
@@ -73,6 +74,7 @@
 </div>
 </template>
 <script>
+
 export default {
   name: 'projects',
 }
