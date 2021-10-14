@@ -21,16 +21,25 @@
                     <div class="text-4xl">
                         House of Selling  
                     </div>
-                    <div class="flex flex-row space-x-8 items-center justify-between text-4xl">
-                        <a href="https://www.dribbble.com/sebastianselling" target="_blank">
-                            Dribbble    
-                        </a>
-                        <a href="https://www.linkedin.com/in/sebastianselling/" target="_blank">
-                            Linkedin    
-                        </a>
-                        <a href="https://www.instagram.com/sebastian.selling" target="_blank">
-                            Instagram    
-                        </a>
+                    <div class="flex flex-row space-x-8 items-center justify-between">
+                        <div data-magnetic data-cursor="-opaque">
+                            <a href="https://www.dribbble.com/sebastianselling" target="_blank">
+                                Dribbble    
+                            </a>
+
+                        </div>
+                        <div data-magnetic data-cursor="-opaque">
+                            <a href="https://www.linkedin.com/in/sebastianselling/" target="_blank">
+                                Linkedin    
+                            </a>
+
+                        </div>
+                        <div data-magnetic data-cursor="-opaque">
+                            <a href="https://www.instagram.com/sebastian.selling" target="_blank">
+                                Instagram    
+                            </a>
+
+                        </div>
                     </div>
                 </div>
                 <hr class="border-gray-600"/>

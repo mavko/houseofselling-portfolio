@@ -1,23 +1,71 @@
 <template>
-  <div
-    class="bg-white p-12 rounded-lg shadow-lg flex flex-col justify-center items-center select-none"
-  >
-    <div class="text-lg text-center">
-      vite.js + vue3 + vuex + router + tailwind.css
-    </div>
-    <Butt @click="go" color="indigo" class="mt-12">global component</Butt>
-  </div>
+	<div id="app">
+		<!-- Header -->
+			<div style="border-bottom: 1px solid rgb(39, 55, 76);" class="hp-banner overflow-hidden ">
+					<about-me />
+			</div>
+			<div class="hp-banner" style="border-bottom: 1px solid rgb(39, 55, 76);" >
+					<!-- Main Projects -->
+					<projects />
+					<!-- General design work -->
+					<general-work />
+			</div>
+			<page-footer />
+	</div>
 </template>
 
 <script>
+import pageTitle from '../components/page-title.vue'
+import aboutMe from '../components/about-me.vue'
+import projects from '../components/projects.vue'
+import themeSwitch from '../components/theme-switch.vue'
+import generalWork from '../components/work.vue'
+
+import jQuery from 'jquery'
+const $ = jQuery
+window.$ = $
+
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+} else {
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    }
+}
+
+
+// jQuery(document).ready(function ($) {
+
+// 	//mouseover
+// 	var mouseX = 0, mouseY = 0;
+// 	var xp = 0, yp = 0;
+	
+// 	$('.hp-banner').mousemove(function(e){
+// 		mouseX = e.pageX;
+// 		mouseY = e.pageY; 
+// 	});
+		
+// 	setInterval(function(){
+// 		xp += ((mouseX - xp)/6);
+// 		yp += ((mouseY - yp)/6);
+// 		$("#circle-hover").css({left: xp +'px', top: yp +'px'});
+// 	}, 20);
+
+
+// });
+		
 export default {
-  methods: {
-    go() {
-      window.open("https://jarraga.com", "_blank");
-    },
-  },
-};
+	name: 'landing',
+	components: {
+		pageTitle,
+		aboutMe,
+		projects,
+		themeSwitch,
+		generalWork
+	},
+
+	mounted() {
+	}
+}
 </script>
 
-<style>
-</style>

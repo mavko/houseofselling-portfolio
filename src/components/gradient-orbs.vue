@@ -4,12 +4,12 @@
 		position: absolute;
 		z-index: -1;
 		width: 100%;
-		height: 550px;
-		overflow: hidden;
+		top: -100px;
+		right: 0px;
   "
   >
 		<!-- orb animation -->
-		<canvas class="orb-canvas bg-gradient"></canvas>
+		<canvas class="orb-canvas"></canvas>
 	</div>
 </template>
 
@@ -237,16 +237,16 @@ export default {
 			})
 		}
 
-		document
-			.querySelector('.theme-switcher')
-			.addEventListener('click', () => {
-				colorPalette.setColors()
-				colorPalette.setCustomProperties()
+		// document
+		// 	.querySelector('.theme-switcher')
+		// 	.addEventListener('click', () => {
+		// 		colorPalette.setColors()
+		// 		colorPalette.setCustomProperties()
 
-				orbs.forEach((orb) => {
-					orb.fill = colorPalette.randomColor()
-				})
-			})
+		// 		orbs.forEach((orb) => {
+		// 			orb.fill = colorPalette.randomColor()
+		// 		})
+		// 	})
 	},
 }
 </script>
