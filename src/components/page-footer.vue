@@ -21,7 +21,7 @@
             <div class="flex flex-col">
                 <div class="flex mt-24 mb-12 md:flex-row sm:flex-inline justify-between  sm:text-2xl md:text-2xl lg:text-4xl">
                     <div>
-                        House of Selling  
+                        <router-link to="/" class="text-3xl font-bold font-heading">Sebastian Selling</router-link> 
                     </div>
                     <div class="flex flex-row space-x-8 items-center justify-between pt-10 md:pt-0 lg:pt-0" data-magnetic data-cursor="-opaque">
                         <a href="https://www.dribbble.com/sebastianselling" target="_blank">
