@@ -52,6 +52,7 @@
 					when negotiating for contracts.
 				</div>
 			</div>
+
 			<div class="flex flex-row flex-wrap -mx-2">
 				<div class="w-100 lg:w-1/2 md:w-1/2 h-94 px-2">
 					<div class="block w-full h-full bg-grey-dark bg-no-repeat bg-center bg-cover">
@@ -71,17 +72,17 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="w-100 lg:w-1/2 md:w-100 h-94 px-2">
 					<div class="flex flex-col sm:flex-row md:flex-row -mx-2">
 						<div class="w-full h-96 mb-4 sm:mb-0 md:mb-4 px-2 mt-12 mb-40">
-							<iframe width="530" height="400" src="https://www.loom.com/embed/799cba8301b048d2b524b7c55505b486?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true&autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+							<div style="position: relative; padding-bottom: 70.80536912751678%; height: 0;"><iframe src="https://www.loom.com/embed/799cba8301b048d2b524b7c55505b486?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true&autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 							<p class="font-medium text-center my-5 brief-responsibility">
 								Deep dive into categories (titles in swedish, sorry about that)
 							</p>
 						</div>
 					</div>
 				</div>
+
 				<div class="w-100 lg:w-1/2 md:w-100 h-94 px-2 mt-24 mb-40">
 					<div class="flex flex-col sm:flex-row md:flex-row -mx-2">
 						<div class="w-full h-96 mb-40 sm:mb-0 md:mb-4 px-2">
