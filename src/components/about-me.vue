@@ -1,13 +1,13 @@
 <template>
   <div>
      <!-- component -->
-      <div class=" relative">
+       <div class=" relative">
           <div class="large-container py-10">
               <div class="w-full">
-                  <div class="lg:text-8xl md:text-6xl text-5xl pl-0 md:pl-10 lg:pl-10 font-bold brief text-gradient" style="line-height: 1.3;">
+                  <div class="lg:text-8xl md:text-6xl text-5xl font-bold brief text-gradient" style="line-height: 1.3;">
                     Hey, <br> I'm Sebastian Selling
                   </div>
-                  <div class="lg:text-6xl md:text-5xl text-3xl pl-0 md:pl-10 lg:pl-10 mt-5 md:mt-0 lg:mt-0 brief subtitle-light">
+                  <div class="lg:text-6xl md:text-5xl text-3xl mt-5 md:mt-0 lg:mt-0 brief subtitle-light">
                       <p>
                         A Swedish visual designer and frontend dev.
                         <!-- <br>
@@ -42,7 +42,6 @@
 import gradientOrbs from './gradient-orbs.vue'
 export default {
   name: 'aboutMe',
-
   components: {
     gradientOrbs
   }

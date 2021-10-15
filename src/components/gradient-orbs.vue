@@ -1,7 +1,7 @@
 <template>
 	<div 
   style="
-		position: absolute;
+position: absolute;
 		z-index: -1;
 		width: 100%;
 		top: -160px;
@@ -9,7 +9,7 @@
   "
   >
 		<!-- orb animation -->
-		<canvas class="orb-canvas bg-gradient"></canvas>
+		<canvas class="orb-canvas"></canvas>
 	</div>
 </template>
 
