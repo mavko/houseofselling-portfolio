@@ -6,12 +6,13 @@
               <div class="md:flex sm:contents items-center -mx-10">
                   <div class="w-full md:w-1/2 pl-10 pr-10">
                   <div class="mb-10 brief">
-                      <p class="lg:text-4xl md:text-3xl text-3xl" >
+                      <p class="text-2xl brief pb-8">Dribbble portfolio</p>
+                      <h3 class="lg:text-4xl md:text-3xl text-3xl" >
                         A selection of my work from over the years
-                      </p>
-                      <span class="brief-responsibility text-2xl">
+                      </h3>
+                      <p class="brief-responsibility text-2xl">
                         illustrations, branding and UIs
-                      </span>
+                      </p>
                   </div>
               </div>
               <div class="w-full md:w-1/2 px-10 mb-10 md:mb-0 ml-10 md-and-up:ml-0" data-magnetic data-cursor="-opaque">
