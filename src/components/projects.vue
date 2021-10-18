@@ -2,7 +2,10 @@
 <div>
 
   <div class="large-container py-20 lg:py-40 md:py-30">
-      <h2 class="text-4xl md:text-5xl lg:text-6xl">My projects</h2>
+      <h2 class="text-4xl md:text-5xl lg:text-6xl">Products</h2>
+      <p class="brief-responsibility brief lg:text-4xl md:text-3xl text-3xl">
+        Soft as a service apps with a focus on <br> the construction industry
+      </p>
       <!-- component -->
       <div class="min-w-screen flex relative my-20">
               
@@ -48,10 +51,11 @@
                           <p class="brief lg:text-4xl md:text-3xl text-3xl">
                             Never write another report again.
                             <br>
+                            <br>
                             A platform for all your construction documentation.
                           </p>
                           <span class="brief-responsibility text-2xl">
-                            founding member, branding, ui/ux and front-end development
+                            Founding member, Branding, UI design and front-end dev
                           </span>
                       </div>
                   </div>
