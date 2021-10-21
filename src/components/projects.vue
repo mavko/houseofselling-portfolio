@@ -4,7 +4,7 @@
   <div class="large-container py-20 lg:py-40 md:py-30">
       <h2 class="text-4xl md:text-5xl lg:text-6xl">Products</h2>
       <p class="brief-responsibility brief lg:text-4xl md:text-3xl text-3xl">
-        Soft as a service apps with a focus on <br> the construction industry
+        Software as a service apps with a focus on <br> the construction industry
       </p>
       <!-- component -->
       <div class="min-w-screen flex relative my-20">
