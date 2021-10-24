@@ -18,7 +18,7 @@
                             high risk constructions <br> and contractors
                           </p>
                           <span class="brief-responsibility text-2xl">
-                            Founding member, Visual Designer and Front-end Dev
+                            Founding member, Front-end Dev, Branding & Visual Designer
                           </span>
                           
                       </div>
@@ -47,13 +47,14 @@
               <div class="md:flex sm:contents items-center -mx-10">
                   <div class="w-full md:w-1/2 pl-10 pr-10">
                       <div class="brief mb-10">
+                          
                           <img src="../assets/projects/icontrol/icontrol-logo.svg" style="max-width: 160px;" alt="" class="mb-5">
+                          <span class="brief text-2xl">500 Startups Batch 19 alumni </span>
+                          <hr class="my-5">
                           <p class="brief lg:text-4xl md:text-3xl text-3xl">
-                            Never write another report again.
-                            <br>
-                            <br>
                             A platform for all your construction documentation.
                           </p>
+                          
                           <span class="brief-responsibility text-2xl">
                             Founding member, Branding, UI design and front-end dev
                           </span>
