@@ -15,7 +15,7 @@
                       </p>
                   </div>
               </div>
-              <div class="w-full md:w-1/2 px-10 mb-10 md:mb-0 ml-10 md-and-up:ml-0" data-magnetic data-cursor="-opaque">
+              <div class="w-full md:w-1/2 px-10 mb-10 md:mb-0 lg:ml-10 md:ml-10 ml-0 md-and-up:ml-0" data-magnetic data-cursor="-opaque">
                   <div class="relative">
                       <a
                         href="https://dribbble.com/sebastianselling"
