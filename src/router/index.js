@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Ispect from '../views/Ispect.vue'
+import Icontrol from '../views/Icontrol.vue'
 
 const routes = [
 	{
@@ -12,6 +13,11 @@ const routes = [
 		path: '/ispect',
 		name: 'ispect',
 		component: Ispect,
+	},
+	{
+		path: '/icontrol',
+		name: 'icontrol',
+		component: Icontrol,
 	},
 ]
 

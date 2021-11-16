@@ -19,7 +19,7 @@ export default class Cursor {
     }, options);
     this.body = $(this.options.container);
     this.el = $('<div class="cb-cursor"></div>');
-    this.text = $('<div class="cb-cursor-text"></div>');
+    this.text = $('<div class="cb-cursor-text">View more</div>');
     this.init();
   }
 

@@ -1,8 +1,8 @@
 <template>
 	<div id="app" class="overflow-x-hidden">
-			<navbar />
-			<router-view />
-			<page-footer />
+		<navbar />
+		<router-view />
+		<page-footer />
 	</div>
 </template>
 
@@ -14,11 +14,11 @@ export default {
 
 	components: {
 		pageFooter,
-		navbar
-	}
+		navbar,
+	},
 }
 </script>
 
 <style>
-  @import './styles/custom.css';
+@import './styles/custom.css';
 </style>
