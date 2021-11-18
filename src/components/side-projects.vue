@@ -4,16 +4,13 @@
 		ENABLE SIDE SCROLL + TOUCH SCROLL LIKE CUBERTO
 		NEED TO MAKE THESE INTO COMPONENTS
 -->
-	<div class="large-container py-20 lg:py-40 md:py-30">
-		<div class="max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-			<h2 class="lg:text-5xl md:text-4xl text-2xl font-light mb-20">
-				Side projects
-			</h2>
-
+	<div class="large-container">
+		<div class="w-100 pb-40">
+			<h2 class="lg:text-5xl md:text-4xl text-2xl font-light">Side projects</h2>
+			<p class="text-lg py-5">These projects are mostly for fun and practice</p>
 			<div
 				class="
 					mt-6
-					p-4
 					grid grid-cols-1
 					gap-y-10 gap-x-6
 					sm:grid-cols-2
@@ -47,6 +44,7 @@
 								h-full
 								object-center object-cover
 								lg:w-full lg:h-full
+								rounded-1xl
 							"
 						/>
 					</div>
@@ -83,13 +81,14 @@
 						"
 					>
 						<img
-							src="../assets/projects/hobby/netflix_clone_cover.png"
+							src="../assets/projects/hobby/igclone.jpg"
 							alt="Netflix Clone"
 							class="
 								w-full
 								h-full
 								object-center object-cover
 								lg:w-full lg:h-full
+								rounded-1xl
 							"
 						/>
 					</div>
