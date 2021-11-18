@@ -391,17 +391,6 @@ export default {
 }
 </script>
 <style scoped>
-.parallax-container section {
-	width: 100%;
-	height: 80vh;
-	flex: 1;
-	display: flex;
-	text-align: center;
-	position: relative;
-	overflow: hidden;
-	background-color: #000;
-}
-
 .parallax-container section .image-1 {
 	background-image: url('../assets/projects/ispect/ispect_web.jpg');
 }
@@ -412,14 +401,5 @@ export default {
 
 .parallax-container section .image-3 {
 	background-image: url('../assets/projects/ispect/ispect_boardroom.jpg');
-}
-
-.parallax-container section #parallax {
-	background-attachment: fixed;
-	background-size: cover;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	z-index: 500;
 }
 </style>

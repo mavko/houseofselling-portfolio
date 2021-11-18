@@ -69,8 +69,20 @@
 							text-lg
 						"
 					>
-						<div class="text-lg">House of Selling</div>
-						<div data-magnetic data-cursor="-opaque">
+						<div class="text-lg">
+							<router-link
+								to="/"
+								class="text-2xl font-bold font-heading flex"
+								data-cursor="-opaque"
+							>
+								<img
+									src="../assets/seb.png"
+									className="w-10 h-10 contain mr-2"
+								/>
+								<span class="pt-1"> Sebastian Selling </span>
+							</router-link>
+						</div>
+						<div data-magnetic data-cursor="-opaque" class="text-2xl pt-1">
 							<a
 								href="https://www.dribbble.com/sebastianselling"
 								target="_blank"
@@ -78,7 +90,7 @@
 								Dribbble
 							</a>
 						</div>
-						<div data-magnetic data-cursor="-opaque">
+						<div data-magnetic data-cursor="-opaque" class="text-2xl pt-1">
 							<a
 								href="https://www.linkedin.com/in/sebastianselling/"
 								target="_blank"
@@ -86,7 +98,7 @@
 								Linkedin
 							</a>
 						</div>
-						<div data-magnetic data-cursor="-opaque">
+						<div data-magnetic data-cursor="-opaque" class="text-2xl pt-1">
 							<a
 								href="https://www.instagram.com/sebastian.selling"
 								target="_blank"
