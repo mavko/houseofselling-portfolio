@@ -18,12 +18,13 @@
 	<div class="large-container py-20 lg:py-40 md:py-30">
 		<div class="max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
 			<h2 class="lg:text-5xl md:text-4xl text-2xl font-light mb-20">
-				Projects for fun
+				Side projects
 			</h2>
 
 			<div
 				class="
 					mt-6
+					p-4
 					grid grid-cols-1
 					gap-y-10 gap-x-6
 					sm:grid-cols-2
@@ -35,7 +36,7 @@
 				<div
 					class="group relative project-link"
 					data-magnetic
-					data-cursor="-opaque"
+					data-cursor="-text"
 				>
 					<div
 						class="

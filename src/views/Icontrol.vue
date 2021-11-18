@@ -149,14 +149,20 @@
 				py-10
 			"
 		>
-			<div class="lg:text-5xl md:text-3xl text-2xl font-light mt-40 mb-10">
-				Setting the foundation with tons of sketching, brand & voice outlining
-				and UI iteration
+			<div class="grid gap-12 lg:grid-flow-col md:grid-flow-col">
+				<div class="font-medium text-2xl">Zero to one</div>
+				<div class="lg:text-4xl md:text-3xl text-2xl font-light mb-10">
+					Setting the foundation with tons of sketching, brand & voice outlining
+					and UI iteration
+				</div>
 			</div>
 			<div class="flex flex-row flex-wrap -mx-2">
 				<div class="w-100 lg:w-1/2 md:w-1/2 h-94 ma-2">
 					<div class="block w-full h-full px-5">
-						<img src="../assets/projects/icontrol/ideation1.jpg" alt="" />
+						<img
+							src="../assets/projects/icontrol//sketches/ideation1.jpg"
+							alt=""
+						/>
 						<p
 							class="
 								font-medium
@@ -172,7 +178,10 @@
 				<div class="w-100 lg:w-1/2 md:w-1/2 h-94 ma-2">
 					<div class="flex flex-col sm:flex-row md:flex-col -mx-2">
 						<div class="block w-full h-full px-5">
-							<img src="../assets/projects/icontrol/ideation2.jpg" alt="" />
+							<img
+								src="../assets/projects/icontrol/sketches/ideation2.jpg"
+								alt=""
+							/>
 							<p
 								class="
 									font-medium
@@ -357,7 +366,7 @@
 		<div class="parallax-container mt-40">
 			<section class="my-20">
 				<div
-					class="image-2"
+					class="image-3"
 					id="parallax"
 					data-type="background"
 					data-speed="3"
@@ -379,14 +388,19 @@
 				py-10
 			"
 		>
-			<p class="lg:text-4xl md:text-3xl text-3xl font-light my-10">
-				With a rather rapid build, deploy and iterate cycle once customers have
-				gotten their hands on the app we went through quite a large number of
-				versions of the app over the years.
-				<br />
-				<br />
-				I'll try and highlight some of the finished screens from the app.
-			</p>
+			<div class="grid gap-12 lg:grid-flow-col md:grid-flow-col">
+				<div class="font-medium text-2xl">Building it</div>
+				<div class="lg:text-4xl md:text-3xl text-2xl font-light mb-10">
+					With a rather rapid build, deploy and iterate cycle once customers
+					have gotten their hands on the app we went through quite a large
+					number of versions of the app over the years. During my time there we
+					built the app on iOS for iPhone and iPad, later adding in a web
+					dashboard to accomodate the ever increasing project sizes.
+					<br />
+					<br />
+					I'll try and highlight some of the finished screens from the app(s).
+				</div>
+			</div>
 			<div class="flex flex-row flex-wrap -mx-2">
 				<div class="w-100 lg:w-1/2 md:w-1/2 h-94 px-2">
 					<div
@@ -397,7 +411,10 @@
 							bg-grey-dark bg-no-repeat bg-center bg-cover
 						"
 					>
-						<img src="../assets/projects/ispect/logotype_800x600.png" alt="" />
+						<img
+							src="../assets/projects/icontrol/screens/icontrol-ipad-blueprint.png"
+							alt=""
+						/>
 						<p
 							class="
 								font-medium
@@ -406,8 +423,7 @@
 								brief-responsibility
 							"
 						>
-							Finalized logotype incorporating the Search icon <br />
-							that's been used from the very start 10 years ago.
+							iControl scaled to accomodate the iPad
 						</p>
 					</div>
 				</div>
@@ -415,7 +431,7 @@
 					<div class="flex flex-col sm:flex-row md:flex-col -mx-2">
 						<div class="w-full h-96 mb-4 sm:mb-0 md:mb-4 px-2">
 							<img
-								src="../assets/projects/icontrol/screens/blueprint-mockup.jpg"
+								src="../assets/projects/icontrol/screens/icontrol_dashboard_modals.png"
 								alt=""
 							/>
 							<p
@@ -426,16 +442,16 @@
 									brief-responsibility
 								"
 							>
-								iSpect for hard hats (usually not allowed to change the color)
+								Onboarding the invite process for iControl
 							</p>
 						</div>
 					</div>
 				</div>
-				<div class="w-100 lg:w-1/2 md:w-1/2 h-94 px-2 pb-0 md:pb-0 lg:pb-20">
+				<div class="w-100 h-94 px-2 pb-0 md:pb-0 lg:pb-20">
 					<div class="flex flex-col sm:flex-row md:flex-col -mx-2">
 						<div class="w-full h-96 mb-4 sm:mb-0 md:mb-4 px-2">
 							<img
-								src="../assets/projects/ispect/ispect_overview_branding.jpg"
+								src="../assets/projects/icontrol/screens/icontrol_dashboard_blueprint.png"
 								alt=""
 							/>
 							<p
@@ -446,64 +462,7 @@
 									brief-responsibility
 								"
 							>
-								Branding office peripherals mockup
-							</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="w-100 lg:w-1/2 md:w-1/2 h-94 px-2 pb-0 md:pb-0 lg:pb-20">
-					<div class="flex flex-col sm:flex-row md:flex-col -mx-2">
-						<div class="w-full h-96 mb-4 sm:mb-0 md:mb-4 px-2">
-							<img src="../assets/projects/ispect/ispect_carprint.jpg" alt="" />
-							<p
-								class="
-									font-medium
-									text-center text-white
-									my-5
-									brief-responsibility
-								"
-							>
-								iSpect branding rendering on a company car
-							</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="w-100 lg:w-1/2 md:w-1/2 h-94 px-2">
-					<div class="flex flex-col sm:flex-row md:flex-col -mx-2">
-						<div class="w-full h-96 mb-4 sm:mb-0 md:mb-4 px-2">
-							<img src="../assets/projects/ispect/ispect_jersey.jpg" alt="" />
-							<p
-								class="
-									font-medium
-									text-center text-white
-									my-5
-									brief-responsibility
-								"
-							>
-								iSpect jersey
-							</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="w-100 lg:w-1/2 md:w-1/2 h-94 px-2">
-					<div class="flex flex-col sm:flex-row md:flex-col -mx-2">
-						<div class="w-full h-96 mb-4 sm:mb-0 md:mb-4 px-2">
-							<img
-								src="../assets/projects/ispect/ispect_plattform_logo.jpg"
-								alt=""
-							/>
-							<p
-								class="
-									font-medium
-									text-center text-white
-									my-5
-									brief-responsibility
-								"
-							>
-								iSpect platform logo
+								Access to their blueprint cross devices
 							</p>
 						</div>
 					</div>
@@ -515,7 +474,7 @@
 		<div class="parallax-container">
 			<section class="my-20">
 				<div
-					class="image-3"
+					class="image-4"
 					id="parallax"
 					data-type="background"
 					data-speed="4"
@@ -537,16 +496,17 @@
 				py-10
 			"
 		>
-			<div class="font-medium text-2xl">Branding</div>
-			<p class="lg:text-4xl md:text-3xl text-3xl font-light my-10">
-				Building out the iControl brand was done in a rather typical startup
-				touch-n-go process.
-				<br />
-				<br />
-				As I got to know the market, its customers and what we as a team valued
-				I worked in iterative phases whenever there was space to do so, as the
-				product development always was our priority.
-			</p>
+			<div class="grid gap-12 lg:grid-flow-col md:grid-flow-col">
+				<div class="font-medium text-2xl">Branding</div>
+				<div class="lg:text-4xl md:text-3xl text-2xl font-light mb-10">
+					Building out the iControl brand was done in a rather typical startup
+					touch-n-go process.
+					<br />
+					<br />
+					As I got to know the market, its customers and what we as a team
+					valued I worked in iterative phases whenever there was space to do so.
+				</div>
+			</div>
 			<div class="flex flex-row flex-wrap -mx-2">
 				<div class="w-100 lg:w-1/2 md:w-1/2 h-94 px-2">
 					<div
@@ -557,7 +517,7 @@
 							bg-grey-dark bg-no-repeat bg-center bg-cover
 						"
 					>
-						<img src="../assets/projects/ispect/logotype_800x600.png" alt="" />
+						<img src="../assets/projects/icontrol/icontrol_logo.png" alt="" />
 						<p
 							class="
 								font-medium
@@ -566,33 +526,17 @@
 								brief-responsibility
 							"
 						>
-							Finalized logotype incorporating the Search icon <br />
-							that's been used from the very start 10 years ago.
+							Finalized logo and icon with the icon <br />
+							symbolizing the marked location on the blueprint
 						</p>
 					</div>
 				</div>
 				<div class="w-100 lg:w-1/2 md:w-1/2 h-94 px-2">
 					<div class="flex flex-col sm:flex-row md:flex-col -mx-2">
 						<div class="w-full h-96 mb-4 sm:mb-0 md:mb-4 px-2">
-							<img src="../assets/projects/ispect/ispect_hard_hat.jpg" alt="" />
-							<p
-								class="
-									font-medium
-									text-center text-white
-									my-5
-									brief-responsibility
-								"
-							>
-								iSpect for hard hats (usually not allowed to change the color)
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="w-100 lg:w-1/2 md:w-1/2 h-94 px-2 pb-0 md:pb-0 lg:pb-20">
-					<div class="flex flex-col sm:flex-row md:flex-col -mx-2">
-						<div class="w-full h-96 mb-4 sm:mb-0 md:mb-4 px-2">
 							<img
-								src="../assets/projects/ispect/ispect_overview_branding.jpg"
+								src="../assets/projects/icontrol/mascot_bobbythebuilder.png"
+								class="rounded-3xl"
 								alt=""
 							/>
 							<p
@@ -603,53 +547,19 @@
 									brief-responsibility
 								"
 							>
-								Branding office peripherals mockup
+								Our very diligent mascot Bobby the builder.
+								<br />
+								Very fond of eating reports.
 							</p>
 						</div>
 					</div>
 				</div>
-
-				<div class="w-100 lg:w-1/2 md:w-1/2 h-94 px-2 pb-0 md:pb-0 lg:pb-20">
-					<div class="flex flex-col sm:flex-row md:flex-col -mx-2">
-						<div class="w-full h-96 mb-4 sm:mb-0 md:mb-4 px-2">
-							<img src="../assets/projects/ispect/ispect_carprint.jpg" alt="" />
-							<p
-								class="
-									font-medium
-									text-center text-white
-									my-5
-									brief-responsibility
-								"
-							>
-								iSpect branding rendering on a company car
-							</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="w-100 lg:w-1/2 md:w-1/2 h-94 px-2">
-					<div class="flex flex-col sm:flex-row md:flex-col -mx-2">
-						<div class="w-full h-96 mb-4 sm:mb-0 md:mb-4 px-2">
-							<img src="../assets/projects/ispect/ispect_jersey.jpg" alt="" />
-							<p
-								class="
-									font-medium
-									text-center text-white
-									my-5
-									brief-responsibility
-								"
-							>
-								iSpect jersey
-							</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="w-100 lg:w-1/2 md:w-1/2 h-94 px-2">
+				<div class="w-100 h-94 px-2 pb-0 md:pb-0 lg:pb-20">
 					<div class="flex flex-col sm:flex-row md:flex-col -mx-2">
 						<div class="w-full h-96 mb-4 sm:mb-0 md:mb-4 px-2">
 							<img
-								src="../assets/projects/ispect/ispect_plattform_logo.jpg"
+								src="../assets/projects/icontrol/Cover.png"
+								class="rounded-3xl"
 								alt=""
 							/>
 							<p
@@ -660,7 +570,7 @@
 									brief-responsibility
 								"
 							>
-								iSpect platform logo
+								General style guide elements mostly for development
 							</p>
 						</div>
 					</div>
@@ -744,19 +654,19 @@ export default {
 }
 
 .parallax-container section .image-1 {
-	background-image: url('../assets/projects/icontrol/angeled_en.jpg');
-}
-
-.parallax-container section .image-2 {
 	background-image: url('../assets/projects/icontrol/rowed_phones_icontrolapp.jpg');
 }
 
+.parallax-container section .image-2 {
+	background-image: url('../assets/projects/icontrol/icontrol_iphone_sketches.jpg');
+}
+
 .parallax-container section .image-3 {
-	background-image: url('../assets/projects/ispect/ispect_boardroom.jpg');
+	background-image: url('../assets/projects/icontrol/icontrol_iphone_photo.jpg');
 }
 
 .parallax-container section .image-4 {
-	background-image: url('../assets/projects/ispect/ispect_boardroom.jpg');
+	background-image: url('../assets/projects/icontrol/icontrol_constructionsite_inspection.jpg');
 }
 .parallax-container section #parallax {
 	background-attachment: fixed;

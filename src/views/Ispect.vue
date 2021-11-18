@@ -19,14 +19,49 @@
 			"
 			id="ispect"
 		>
-			<span class="text-4xl font-medium"
-				><img
-					src="../assets/projects/ispect/ispect-logo.svg"
-					alt="iSpect"
-					style="width: 180px"
-			/></span>
-			<div class="lg:text-7xl md:text-6xl text-5xl font-light brief mt-10">
+			<img
+				src="../assets/projects/ispect/ispect-logo.svg"
+				alt="iSpect"
+				style="width: 240px"
+			/>
+			<div class="lg:text-7xl md:text-6xl text-5xl font-light mt-10">
 				Make informed decisions during procurement with real time data
+			</div>
+			<div class="sm:text-2xl md:text-2xl lg:text-2xl mt-10">
+				<div data-magnetic data-cursor="-opaque">
+					<a
+						href="https://ispect.se/?lang=en"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="
+							btn-underlined
+							sm:text-2xl
+							md:text-2xl
+							lg:text-3xl
+							font-light
+						"
+						>See the iSpect landing page</a
+					>
+				</div>
+				<br />
+				<div data-magnetic data-cursor="-opaque">
+					<a
+						href="https://www.sbuf.se/Om-SBUF/Aretsinnovation/Nyhetsbrev11/"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="
+							btn-underlined
+							sm:text-2xl
+							md:text-2xl
+							lg:text-3xl
+							font-light
+						"
+					>
+						Nominated for Innovation of the year 2013
+						<br />
+						(Article in Swedish)
+					</a>
+				</div>
 			</div>
 		</div>
 		<div class="parallax-container">
@@ -62,17 +97,6 @@
 					in many ways, through data and statistics mainly, but also to provide
 					clear communication routes between contractors, sub-contractors and
 					stakeholders.
-					<div class="sm:text-2xl md:text-2xl lg:text-2xl mt-10">
-						<div data-magnetic data-cursor="-opaque">
-							<a
-								href="https://ispect.se/?lang=en"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="btn-underlined"
-								>See landing page</a
-							>
-						</div>
-					</div>
 				</div>
 			</div>
 			<div class="grid gap-12 lg:grid-flow-col md:grid-flow-col my-40">

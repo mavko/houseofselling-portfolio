@@ -20,6 +20,7 @@ app.component('Icontrol', Icontrol)
 app.mount('#app')
 
 
+
 // Init cursor
 const cursor = new Cursor()
 

@@ -7,18 +7,17 @@
 			items-center
 			justify-center
 			py-20
-			large-container
 			lg:py-40
 			md:py-30
 		"
 	>
-		<div class="w-full px-4 text-white flex flex-col">
+		<div class="w-full px-4 text-white flex flex-col container">
 			<div class="w-full">
-				<h1 class="w-full md:w-2/3 sm:pt-20 text-4xl lg:text-7xl font-bold">
+				<h1 class="w-full md:w-2/3 sm:pt-20 text-4xl lg:text-6xl font-bold">
 					Got a project?
 				</h1>
 				<br />
-				<p class="text-3xl lg:text-5xl font-bold">Tell me about it</p>
+				<p class="text-3xl lg:text-5xl font-light">Tell me about it</p>
 			</div>
 			<div class="flex mt-8 flex-col md:flex-row md:justify-between">
 				<div class="w-55 pt-6 md:pt-0">

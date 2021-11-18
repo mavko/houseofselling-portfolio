@@ -39,10 +39,10 @@
 					<div class="w-full md:w-1/2 px-10 mb-10 md:mb-0 ml-0">
 						<div class="relative">
 							<router-link
-								to="/ispect"
+								to="/icontrol"
 								class="project-link text-black"
 								data-magnetic
-								data-cursor="-text"
+								data-cursor="-opaque"
 							>
 								<img
 									src="../assets/projects/icontrol/icontrol-phone.png"
@@ -88,11 +88,15 @@
 						<div class="relative">
 							<router-link
 								to="/ispect"
-								class="project-link"
+								class="project-link bg-purple-800"
 								data-magnetic
-								data-cursor="-text"
+								data-cursor="-opaque"
 							>
-								<img src="../assets/projects/ispect/platform.png" alt="" />
+								<img
+									src="../assets/projects/ispect/platform.jpg"
+									class="rounded-2xl bg-purple-800"
+									alt=""
+								/>
 							</router-link>
 						</div>
 					</div>
