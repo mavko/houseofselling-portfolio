@@ -1,19 +1,8 @@
 <template>
 	<!--
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
+		TO DO:
+		ENABLE SIDE SCROLL + TOUCH SCROLL LIKE CUBERTO
+		NEED TO MAKE THESE INTO COMPONENTS
 -->
 	<div class="large-container py-20 lg:py-40 md:py-30">
 		<div class="max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -33,6 +22,7 @@
 					overflow-y-hidden overflow-x-scroll
 				"
 			>
+				<!-- first post -->
 				<div
 					class="group relative project-link"
 					data-magnetic
@@ -63,7 +53,7 @@
 					<div class="mt-4 flex justify-between">
 						<div>
 							<h3 class="text-3xl">
-								<a href="https://netflix-clone-d8976.web.app/">
+								<a href="https://netflix-clone-d8976.web.app/" target="_blank">
 									<span aria-hidden="true" class="absolute inset-0"></span>
 									Netflix Clone
 								</a>
@@ -72,6 +62,46 @@
 								Can currently press a title and import trailers (albeit a bit
 								random)
 							</p>
+						</div>
+					</div>
+				</div>
+				<!-- second post -->
+				<div
+					class="group relative project-link"
+					data-magnetic
+					data-cursor="-text"
+				>
+					<div
+						class="
+							w-full
+							min-h-80
+							bg-gray-200
+							aspect-w-1 aspect-h-1
+							rounded-lg
+							overflow-hidden
+							lg:h-80 lg:aspect-none
+						"
+					>
+						<img
+							src="../assets/projects/hobby/netflix_clone_cover.png"
+							alt="Netflix Clone"
+							class="
+								w-full
+								h-full
+								object-center object-cover
+								lg:w-full lg:h-full
+							"
+						/>
+					</div>
+					<div class="mt-4 flex justify-between">
+						<div>
+							<h3 class="text-3xl">
+								<a href="#" target="_blank">
+									<span aria-hidden="true" class="absolute inset-0"></span>
+									IG 2.0 Clone
+								</a>
+							</h3>
+							<p class="mt-1 text-lg">Coming soon! :)</p>
 						</div>
 					</div>
 				</div>
