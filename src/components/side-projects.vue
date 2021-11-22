@@ -5,8 +5,10 @@
 		NEED TO MAKE THESE INTO COMPONENTS
 -->
 	<div class="large-container">
-		<div class="w-100 pb-40">
-			<h2 class="lg:text-5xl md:text-4xl text-2xl font-light">Side projects</h2>
+		<div class="w-100 pb-40 pt-20 md:pt-0 lg:pt-0">
+			<h2 class="brief font-light lg:text-4xl md:text-3xl text-3xl">
+				Side projects
+			</h2>
 			<p class="text-lg py-5">These projects are mostly for fun and practice</p>
 			<div
 				class="
@@ -21,7 +23,7 @@
 			>
 				<!-- first post -->
 				<div
-					class="group relative project-link"
+					class="group relative project-link mb-10 md:mb-0 lg:mb-0"
 					data-magnetic
 					data-cursor="-text"
 				>
