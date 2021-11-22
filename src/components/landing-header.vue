@@ -1,5 +1,5 @@
 <template>
-	<div class="large-container pt-44">
+	<div class="large-container pt-0 md:pt-44 lg:pt-44">
 		<!-- component -->
 		<div class="relative">
 			<div class="w-full h-94">
