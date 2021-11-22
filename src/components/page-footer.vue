@@ -60,13 +60,19 @@
 				>
 					<div
 						class="
-							flex flex-row
-							space-x-8
-							justify-between
+							md:flex
+							lg:flex
+							md:flex-row
+							lg:flex-row
+							md:space-x-8
+							lg:space-x-8
 							pt-10
 							md:pt-0
 							lg:pt-0
 							text-lg
+							space-y-8
+							md:space-y-0
+							lg:space-y-0
 						"
 					>
 						<div class="text-lg">
@@ -79,10 +85,10 @@
 									src="../assets/seb.png"
 									className="w-10 h-10 contain mr-2"
 								/>
-								<span class="pt-1"> Sebastian Selling </span>
+								<span class="pt-2"> Sebastian Selling </span>
 							</router-link>
 						</div>
-						<div data-magnetic data-cursor="-opaque" class="text-2xl pt-1">
+						<div data-magnetic data-cursor="-opaque" class="text-2xl pt-2">
 							<a
 								href="https://www.dribbble.com/sebastianselling"
 								target="_blank"
