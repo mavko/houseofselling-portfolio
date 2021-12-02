@@ -96,7 +96,7 @@
 								Dribbble
 							</a>
 						</div>
-						<div data-magnetic data-cursor="-opaque" class="text-2xl pt-1">
+						<div data-magnetic data-cursor="-opaque" class="text-2xl pt-2">
 							<a
 								href="https://www.linkedin.com/in/sebastianselling/"
 								target="_blank"
@@ -104,7 +104,7 @@
 								Linkedin
 							</a>
 						</div>
-						<div data-magnetic data-cursor="-opaque" class="text-2xl pt-1">
+						<div data-magnetic data-cursor="-opaque" class="text-2xl pt-2">
 							<a
 								href="https://www.instagram.com/sebastian.selling"
 								target="_blank"
