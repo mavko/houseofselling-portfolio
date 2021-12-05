@@ -6,7 +6,7 @@
 				Software as a service apps with a focus on the construction industry
 			</p>
 			<!-- component -->
-			<div class="min-w-screen flex relative mt-20">
+			<div class="min-w-screen flex relative mt-40">
 				<div class="md:flex sm:contents items-center -mx-10">
 					<div class="w-full md:w-1/2 pl-10 pr-10">
 						<div class="brief mb-10">
