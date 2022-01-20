@@ -5,118 +5,46 @@
 		NEED TO MAKE THESE INTO COMPONENTS
 -->
 	<div class="large-container">
-		<div class="w-100 pb-40 pt-20 md:pt-0 lg:pt-0">
+		<div class="py-16 sm:py-24">
 			<h2 class="brief font-light lg:text-5xl md:text-3xl text-3xl">
 				Side projects
 			</h2>
 			<p class="text-lg py-5">Some work for fun or practice</p>
+
 			<div
-				class="
-					mt-6
-					grid grid-cols-1
-					gap-y-10 gap-x-6
-					sm:grid-cols-2
-					lg:grid-cols-4
-					xl:gap-x-8
-					overflow-y-hidden overflow-x-scroll
-				"
+				class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
 			>
-				<!-- first post -->
-				<div
-					class="group relative project-link mb-10 md:mb-0 lg:mb-0"
-					data-magnetic
-					data-cursor="-text"
-				>
+				<!-- post 1 -->
+				<div class="group relative">
 					<div
-						class="
-							w-full
-							min-h-80
-							bg-gray-200
-							aspect-w-1 aspect-h-1
-							rounded-lg
-							overflow-hidden
-							lg:h-80 lg:aspect-none
-						"
+						class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-72 lg:aspect-none"
 					>
 						<img
 							src="../assets/projects/hobby/netflix_clone_cover.png"
 							alt="Netflix Clone"
-							class="
-								w-full
-								h-full
-								object-center object-cover
-								lg:w-full lg:h-full
-								rounded-1xl
-							"
+							class="w-full h-full object-center object-cover lg:w-full lg:h-full rounded-1xl"
 						/>
 					</div>
 					<div class="mt-4 flex justify-between">
 						<div>
-							<h3 class="text-3xl">
+							<h3 class="text-gray-100 font-bold font-2xl">
 								<a href="https://netflix-clone-d8976.web.app/" target="_blank">
-									<span aria-hidden="true" class="absolute inset-0"></span>
-									Netflix Clone
+									<span aria-hidden="true" class="absolute inset-3"
+										>Netflix Clone</span
+									>
 								</a>
 							</h3>
-							<p class="mt-1 text-lg">
+							<p class="mt-1 text-sm text-gray-300 font-medium">
 								Can currently press a title and import trailers (albeit a bit
 								random)
 							</p>
 						</div>
 					</div>
 				</div>
-				<!-- second post -->
-				<div
-					class="group relative project-link"
-					data-magnetic
-					data-cursor="-text"
-				>
+				<!-- post 2 -->
+				<div class="group relative">
 					<div
-						class="
-							w-full
-							min-h-80
-							bg-gray-200
-							aspect-w-1 aspect-h-1
-							rounded-lg
-							overflow-hidden
-							lg:h-80 lg:aspect-none
-						"
-					>
-						<img
-							src="../assets/projects/hobby/igclone.jpg"
-							alt="Netflix Clone"
-							class="
-								w-full
-								h-full
-								object-center object-cover
-								lg:w-full lg:h-full
-								rounded-1xl
-							"
-						/>
-					</div>
-					<div class="mt-4 flex justify-between">
-						<div>
-							<h3 class="text-3xl">
-								<a href="#" target="_blank">
-									<span aria-hidden="true" class="absolute inset-0"></span>
-									IG 2.0 Clone
-								</a>
-							</h3>
-							<p class="mt-1 text-lg">Coming soon! :)</p>
-						</div>
-					</div>
-				</div>
-				<!-- 3rd post -->
-				<div class="group relative project-link">
-					<div
-						class="
-							w-full
-							min-h-80
-							aspect-w-1 aspect-h-1
-							rounded-lg
-							overflow-hidden
-							lg:h-80 lg:aspect-none
-						"
+						class="w-full min-h-80 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none"
 					>
 						<video controls autoplay>
 							<source
@@ -128,22 +56,21 @@
 					</div>
 					<div class="mt-4 flex justify-between">
 						<div>
-							<h3 class="text-3xl">Creative coding - Network</h3>
-							<p class="mt-1 text-lg">Canvas.js</p>
+							<h3 class="text-gray-100 font-bold font-2xl">
+								<a href="#" target="_blank">
+									<span aria-hidden="true" class="absolute inset-3"
+										>Creative coding - Network</span
+									>
+								</a>
+							</h3>
+							<p class="mt-1 text-sm text-gray-300 font-medium">Canvas.js</p>
 						</div>
 					</div>
 				</div>
-				<!-- 4th post -->
-				<div class="group relative project-link">
+				<!-- post 3 -->
+				<div class="group relative">
 					<div
-						class="
-							w-full
-							min-h-80
-							aspect-w-1 aspect-h-1
-							rounded-lg
-							overflow-hidden
-							lg:h-80 lg:aspect-none
-						"
+						class="w-full min-h-80 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none"
 					>
 						<video controls autoplay>
 							<source
@@ -155,22 +82,21 @@
 					</div>
 					<div class="mt-4 flex justify-between">
 						<div>
-							<h3 class="text-3xl">Creative coding - Grid of ghosts</h3>
-							<p class="mt-1 text-lg">Canvas.js</p>
+							<h3 class="text-gray-100 font-bold font-2xl">
+								<a href="#" target="_blank">
+									<span aria-hidden="true" class="absolute inset-3"
+										>Creative coding - Grid of ghosts</span
+									>
+								</a>
+							</h3>
+							<p class="mt-1 text-sm text-gray-300 font-medium">Canvas.js</p>
 						</div>
 					</div>
 				</div>
-				<!-- 4th post -->
-				<div class="group relative project-link">
+				<!-- post 4 -->
+				<div class="group relative">
 					<div
-						class="
-							w-full
-							min-h-80
-							aspect-w-1 aspect-h-1
-							rounded-lg
-							overflow-hidden
-							lg:h-80 lg:aspect-none
-						"
+						class="w-full min-h-80 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none"
 					>
 						<video controls autoplay>
 							<source src="../assets/graphics/spirals.mp4" type="video/mp4" />
@@ -179,22 +105,21 @@
 					</div>
 					<div class="mt-4 flex justify-between">
 						<div>
-							<h3 class="text-3xl">Creative coding - Spirals</h3>
-							<p class="mt-1 text-lg">Canvas.js</p>
+							<h3 class="text-gray-100 font-bold font-2xl">
+								<a href="#" target="_blank">
+									<span aria-hidden="true" class="absolute inset-3"
+										>Creative coding - Spirals</span
+									>
+								</a>
+							</h3>
+							<p class="mt-1 text-sm text-gray-300 font-medium">Canvas.js</p>
 						</div>
 					</div>
 				</div>
-				<!-- 5th post -->
-				<div class="group relative project-link">
+				<!-- post 5 -->
+				<div class="group relative">
 					<div
-						class="
-							w-full
-							min-h-80
-							aspect-w-1 aspect-h-1
-							rounded-lg
-							overflow-hidden
-							lg:h-80 lg:aspect-none
-						"
+						class="w-full aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none"
 					>
 						<img
 							src="../assets/graphics/sebastian_selling_logotype1080.png"
@@ -204,40 +129,45 @@
 					</div>
 					<div class="mt-4 flex justify-between">
 						<div>
-							<h3 class="text-3xl">Personal logo iterations</h3>
-							<p class="mt-1 text-lg">
+							<h3 class="text-gray-100 font-bold font-2xl">
+								<a href="#" target="_blank">
+									<span aria-hidden="true" class="absolute inset-3"
+										>Personal logo iterations</span
+									>
+								</a>
+							</h3>
+							<p class="mt-1 text-sm text-gray-300 font-medium">
 								Tried my best to stay very minimal with my brand and let my
 								content/work take center stage
 							</p>
 						</div>
 					</div>
 				</div>
-				<!-- 6th post -->
-				<div class="group relative project-link">
+				<!-- post 5 -->
+				<div class="group relative">
 					<div
-						class="
-							w-full
-							min-h-80
-							aspect-w-1 aspect-h-1
-							rounded-lg
-							overflow-hidden
-							lg:h-80 lg:aspect-none
-						"
+						class="w-full aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none"
 					>
 						<img src="../assets/graphics/gradiancelogo.png" alt="" srcset="" />
 					</div>
 					<div class="mt-4 flex justify-between">
 						<div>
-							<h3 class="text-3xl">Gradiance</h3>
-							<p class="mt-1 text-lg">
+							<h3 class="text-gray-100 font-bold font-2xl">
+								<a href="#" target="_blank">
+									<span aria-hidden="true" class="absolute inset-3"
+										>Gradiance</span
+									>
+								</a>
+							</h3>
+							<p class="mt-1 text-sm text-gray-300 font-medium">
 								Something that I worked on a friday evening that ended up as my
 								brand base and landing page header √
 							</p>
 						</div>
 					</div>
 				</div>
+				<!-- More products... -->
 			</div>
-			<!-- More products... -->
 		</div>
 	</div>
 </template>

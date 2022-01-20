@@ -5,14 +5,7 @@
 			<div class="w-full h-94">
 				<div class="text-center m-auto">
 					<h1
-						class="
-							lg:text-7xl
-							md:text-5xl
-							text-4xl
-							font-semibold
-							text-center
-							pb-5
-						"
+						class="lg:text-7xl md:text-5xl text-4xl font-semibold text-center pb-5"
 					>
 						Hey, I'm Sebastian Selling
 					</h1>
@@ -22,18 +15,9 @@
 
 					<div class="my-10 text-center m-auto">
 						<a
-							href="mailto:sebastian.selling@outlook.com"
-							class="
-								rounded-full
-								border-2 border-white
-								hover:bg-gray-300 hover:text-black
-								transition
-								duration-300
-								ease-in-out
-								text-lg
-								py-4
-								px-12
-							"
+							href="https://calendly.com/sebastian-selling/30min"
+							class="rounded-full border-2 border-white hover:bg-gray-300 hover:text-black transition duration-300 ease-in-out text-lg py-4 px-12"
+							target="_blank"
 							data-magnetic
 							data-cursor="-opaque"
 						>

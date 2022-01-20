@@ -5,6 +5,8 @@
 			<landing-header />
 		</div>
 		<div class="pt-20 mt-20" style="border-bottom: 1px solid rgb(39, 55, 76)">
+			<!-- About me -->
+			<aboutMe />
 			<!-- Main Projects -->
 			<projects />
 			<!-- General design work -->
@@ -20,6 +22,7 @@ import landingHeader from '../components/landing-header.vue'
 import projects from '../components/projects.vue'
 import drib from '../components/dribbble.vue'
 import sideProjects from '../components/side-projects.vue'
+import aboutMe from '../components/about-me.vue'
 
 import jQuery from 'jquery'
 const $ = jQuery
@@ -40,6 +43,7 @@ export default {
 		projects,
 		drib,
 		sideProjects,
+		aboutMe,
 	},
 
 	mounted() {},

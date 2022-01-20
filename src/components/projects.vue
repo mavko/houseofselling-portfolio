@@ -11,7 +11,7 @@
 					<div class="w-full md:w-1/2 pl-10 pr-10">
 						<div class="brief mb-10">
 							<img
-								src="../assets/projects/icontrol/icontrol-logo.svg"
+								src="../assets/projects/icontrol/icontrol-logo-w.svg"
 								style="max-width: 240px"
 								alt=""
 								class="mb-5"
