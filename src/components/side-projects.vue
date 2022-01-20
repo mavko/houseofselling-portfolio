@@ -14,6 +14,35 @@
 			<div
 				class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
 			>
+				<!-- post 0 -->
+				<div class="group relative">
+					<div
+						class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-72 lg:aspect-none"
+					>
+						<img
+							src="../assets/projects/hobby/globularexpirement.png"
+							alt="Netflix Clone"
+							class="w-full h-full object-center object-cover lg:w-full lg:h-full rounded-1xl"
+						/>
+					</div>
+					<div class="mt-4 flex justify-between">
+						<div>
+							<h3 class="text-gray-100 font-bold font-2xl">
+								<a
+									href="https://vigorous-lumiere-acf9a2.netlify.app/"
+									target="_blank"
+								>
+									<span aria-hidden="true" class="absolute inset-3"
+										>Globe 3D and animated text expirement</span
+									>
+								</a>
+							</h3>
+							<p class="mt-1 text-sm text-gray-300 font-medium">
+								ThreeJS landing page
+							</p>
+						</div>
+					</div>
+				</div>
 				<!-- post 1 -->
 				<div class="group relative">
 					<div
