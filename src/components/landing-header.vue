@@ -10,7 +10,7 @@
 						Hey, I'm Sebastian Selling
 					</h1>
 					<p class="text-2xl lg:text-4xl md:text-3xl font-light text-center">
-						Multidisciplinary designer & frontend dev.
+						Designer, maker & frontend dev
 					</p>
 
 					<div class="my-10 text-center m-auto">
@@ -21,7 +21,7 @@
 							data-magnetic
 							data-cursor="-opaque"
 						>
-							Hire me
+							Let's have a chat
 						</a>
 					</div>
 				</div>
