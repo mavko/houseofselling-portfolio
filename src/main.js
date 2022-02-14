@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import './assets/tw.css'
+import './index.css'
 import Cursor from './js/cursor.js'
 import Magnetic from './js/magnetic.js'
 
@@ -19,12 +19,10 @@ app.component('Icontrol', Icontrol)
 
 app.mount('#app')
 
-
-
 // Init cursor
 const cursor = new Cursor()
 
 // Init magnetic
-$('[data-magnetic]').each(function() {
+$('[data-magnetic]').each(function () {
 	new Magnetic(this)
 })
