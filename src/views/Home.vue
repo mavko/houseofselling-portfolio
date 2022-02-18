@@ -1,28 +1,23 @@
 <template>
 	<div id="app">
 		<!-- Header -->
-		<div class="py-20">
-			<landing-header />
-		</div>
-		<div class="pt-20 mt-20" style="border-bottom: 1px solid rgb(39, 55, 76)">
-			<!-- About me -->
-			<aboutMe />
-			<!-- Main Projects -->
-			<projects />
-			<!-- General design work -->
-			<drib />
-			<!-- gallery of hobby projects -->
+		<section id="intro"><intro /></section>
+
+		<!-- Main Projects -->
+		<section id="career">
+			<career />
+		</section>
+		<!-- gallery of hobby projects -->
+		<section id="sideprojects">
 			<sideProjects />
-		</div>
+		</section>
 	</div>
 </template>
 
 <script>
-import landingHeader from '../components/landing-header.vue'
-import projects from '../components/projects.vue'
-import drib from '../components/dribbble.vue'
+import intro from '../components/intro.vue'
+import career from '../components/career.vue'
 import sideProjects from '../components/side-projects.vue'
-import aboutMe from '../components/about-me.vue'
 
 import jQuery from 'jquery'
 const $ = jQuery
@@ -39,13 +34,20 @@ if (history.scrollRestoration) {
 export default {
 	name: 'landing',
 	components: {
-		landingHeader,
-		projects,
-		drib,
+		intro,
+		career,
 		sideProjects,
-		aboutMe,
 	},
 
-	mounted() {},
+	mounted() {
+		var section = this.$router.currentRoute.value.hash.replace('#', '')
+		if (section)
+			this.$nextTick(() =>
+				window.document.getElementById(section).scrollIntoView()
+			)
+	},
 }
 </script>
+<style>
+@import '../index.css';
+</style>

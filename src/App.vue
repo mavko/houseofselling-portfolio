@@ -1,5 +1,8 @@
 <template>
-	<div id="app" class="overflow-x-hidden">
+	<div
+		id="app"
+		class="antialiased bg-slate-50 dark:text-slate-400 dark:bg-slate-900"
+	>
 		<navbar />
 		<router-view :key="$route.fullPath" />
 		<page-footer />
@@ -19,7 +22,6 @@ export default {
 	},
 }
 </script>
-
 <style>
-@import './styles/custom.css';
+@import './index.css';
 </style>

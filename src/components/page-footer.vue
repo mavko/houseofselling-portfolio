@@ -1,42 +1,22 @@
 <template>
 	<div
-		class="
-			w-full
-			min-h-screen
-			flex
-			items-center
-			justify-center
-			py-20
-			lg:py-40
-			md:py-30
-		"
+		class="flex items-center justify-center w-full min-h-screen py-20 lg:py-40 md:py-30"
 	>
-		<div class="w-full px-4 text-white flex flex-col container">
+		<div
+			class="container flex flex-col w-full px-4 text-slate-900 dark:text-slate-50"
+		>
 			<div class="w-full">
-				<h1 class="w-full md:w-2/3 sm:pt-20 text-4xl lg:text-6xl font-bold">
+				<h1 class="w-full text-4xl font-bold md:w-2/3 sm:pt-20 lg:text-6xl">
 					Got a project?
 				</h1>
 				<br />
-				<p class="text-3xl lg:text-5xl font-light">Tell me about it</p>
+				<p class="text-3xl font-light lg:text-5xl">Tell me about it</p>
 			</div>
-			<div class="flex mt-8 flex-col md:flex-row md:justify-between">
-				<div class="w-55 pt-6 md:pt-0">
+			<div class="flex flex-col mt-8 md:flex-row md:justify-between">
+				<div class="pt-6 w-55 md:pt-0">
 					<a
 						href="mailto:sebastian.selling@outlook.com"
-						class="
-							font-bold
-							text-center
-							rounded-full
-							border-2 border-gray-300
-							hover:bg-gray-300 hover:text-black
-							cursor-pointer
-							hover:scale-125
-							transition-all
-							duration-150
-							ease
-							px-10
-							py-4
-						"
+						class="px-10 py-4 font-bold text-center transition-all duration-150 border-2 border-gray-300 rounded-full cursor-pointer hover:bg-gray-300 hover:text-black hover:scale-125 ease"
 						data-magnetic
 						data-cursor="-opaque"
 					>
@@ -46,39 +26,15 @@
 			</div>
 			<div class="flex flex-col">
 				<div
-					class="
-						flex
-						mt-24
-						mb-12
-						md:flex-row
-						sm:flex-inline
-						justify-between
-						sm:text-2xl
-						md:text-2xl
-						lg:text-4xl
-					"
+					class="flex justify-between mt-24 mb-12 md:flex-row sm:flex-inline sm:text-2xl md:text-2xl lg:text-4xl"
 				>
 					<div
-						class="
-							md:flex
-							lg:flex
-							md:flex-row
-							lg:flex-row
-							md:space-x-8
-							lg:space-x-8
-							pt-10
-							md:pt-0
-							lg:pt-0
-							text-lg
-							space-y-8
-							md:space-y-0
-							lg:space-y-0
-						"
+						class="pt-10 space-y-8 text-lg md:flex lg:flex md:flex-row lg:flex-row md:space-x-8 lg:space-x-8 md:pt-0 lg:pt-0 md:space-y-0 lg:space-y-0"
 					>
 						<div class="text-lg">
 							<router-link
 								to="/"
-								class="text-2xl font-bold font-heading flex"
+								class="flex text-2xl font-bold font-heading"
 								data-cursor="-opaque"
 							>
 								<img
@@ -88,7 +44,7 @@
 								<span class="pt-2"> Sebastian Selling </span>
 							</router-link>
 						</div>
-						<div data-magnetic data-cursor="-opaque" class="text-2xl pt-2">
+						<div data-magnetic data-cursor="-opaque" class="pt-2 text-2xl">
 							<a
 								href="https://www.dribbble.com/sebastianselling"
 								target="_blank"
@@ -96,7 +52,12 @@
 								Dribbble
 							</a>
 						</div>
-						<div data-magnetic data-cursor="-opaque" class="text-2xl pt-2">
+						<div data-magnetic data-cursor="-opaque" class="pt-2 text-2xl">
+							<a href="https://www.github.com/mavko" target="_blank">
+								Github
+							</a>
+						</div>
+						<div data-magnetic data-cursor="-opaque" class="pt-2 text-2xl">
 							<a
 								href="https://www.linkedin.com/in/sebastianselling/"
 								target="_blank"
@@ -104,7 +65,7 @@
 								Linkedin
 							</a>
 						</div>
-						<div data-magnetic data-cursor="-opaque" class="text-2xl pt-2">
+						<div data-magnetic data-cursor="-opaque" class="pt-2 text-2xl">
 							<a
 								href="https://www.instagram.com/sebastian.selling"
 								target="_blank"
@@ -115,7 +76,7 @@
 					</div>
 				</div>
 				<hr class="border-gray-600" />
-				<p class="w-full text-center my-12 text-gray-600">
+				<p class="w-full my-12 text-center text-gray-600">
 					Copyright © 2021 House of Selling
 				</p>
 			</div>
