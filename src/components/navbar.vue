@@ -13,7 +13,9 @@
 					data-cursor="-opaque"
 				>
 					<img src="../assets/seb.png" className="w-10 h-10 contain mr-2" />
-					<span class="pt-2 leading-6 text-slate-700 dark:text-slate-50">
+					<span
+						class="hidden pt-2 leading-6 text-slate-700 dark:text-slate-50 md:block"
+					>
 						Sebastian Selling
 					</span>
 				</router-link>
@@ -46,54 +48,29 @@
 							stroke-linejoin="round"
 						></path></svg
 				></a>
-				<div class="relative items-center hidden ml-auto lg:flex">
+				<div class="relative flex items-center ml-auto">
 					<nav
 						class="text-sm font-semibold leading-6 text-slate-700 dark:text-slate-200"
 					>
-						<ul class="flex space-x-8">
-							<li>
-								<router-link to="/" data-cursor="-opaque"> Home </router-link>
-							</li>
-							<li>
-								<router-link to="/#intro" data-cursor="-opaque">
-									Intro
-								</router-link>
-							</li>
-							<li>
-								<router-link to="/#career" data-cursor="-opaque">
-									Career
-								</router-link>
-							</li>
-							<li>
-								<router-link to="/#sideprojects" data-cursor="-opaque">
-									Side-projects
-								</router-link>
-							</li>
-						</ul>
+						<router-link
+							to="/"
+							:class="open ? '' : 'text-opacity-90'"
+							class="inline-flex items-center px-3 py-2 text-xs font-semibold text-black transition-all duration-150 border-2 border-gray-300 rounded-full cursor-pointer md:space-x-1 hover:bg-gray-300 hover:text-black ease dark:text-white dark:hover:text-black"
+							data-cursor="-opaque"
+							as="div"
+						>
+							<span class="hidden md:block">Home</span>
+							<HomeIcon
+								class="w-4 h-4 transition duration-150 ease-in-out"
+								aria-hidden="true"
+							/>
+						</router-link>
 					</nav>
 					<div
-						class="flex items-center pl-6 ml-6 border-l border-slate-200 dark:border-slate-800"
+						class="flex items-center pl-6 ml-6 border-l border-slate-300 dark:border-slate-800"
 					>
 						<theme-switch />
 					</div>
-				</div>
-
-				<div class="ml-2 -my-1 lg:hidden">
-					<button
-						type="button"
-						class="flex items-center justify-center w-8 h-8 text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300"
-					>
-						<span class="sr-only">Navigation</span
-						><svg width="24" height="24" fill="none" aria-hidden="true">
-							<path
-								d="M12 6v.01M12 12v.01M12 18v.01M12 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"
-								stroke="currentColor"
-								stroke-width="1.5"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							></path>
-						</svg>
-					</button>
 				</div>
 			</div>
 		</div>
@@ -101,9 +78,18 @@
 </template>
 <script>
 import themeSwitch from './minor/theme-switch.vue'
-
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
+import { HomeIcon } from '@heroicons/vue/solid'
 export default {
 	name: 'navbar',
-	components: { themeSwitch },
+	components: {
+		themeSwitch,
+		Popover,
+		PopoverButton,
+		PopoverPanel,
+		HomeIcon,
+	},
 }
 </script>
+
+MobileNav

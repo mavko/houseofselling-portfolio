@@ -9,7 +9,7 @@
 				>
 					<h2 class="mb-5 text-3xl font-">Career</h2>
 					<p class="text-xl font-medium">
-						My startups in Saas, focused on the construction industry
+						Startups in Saas, focused on the construction industry.
 					</p>
 				</header>
 				<ul class="p-4 py-10 space-y-24">

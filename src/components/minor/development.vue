@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div
-			class="relative z-10 col-span-3 -ml-10 shadow-lg bg-slate-100 dark:bg-slate-800 rounded-xl xl:ml-0 dark:shadow-none dark:ring-1 dark:ring-white/10 ring-1 ring-slate-300"
+			class="relative z-10 col-span-3 shadow-lg lg:-ml-10 bg-slate-100 dark:bg-slate-800 rounded-xl xl:ml-0 dark:shadow-none dark:ring-1 dark:ring-white/10 ring-1 ring-slate-300"
 		>
 			<div
 				class="relative flex text-lg font-medium leading-6 text-slate-700 dark:text-slate-100"
@@ -9,7 +9,7 @@
 				<div
 					class="flex items-center flex-none px-4 py-3 mt-2 border-t border-b border-t-transparent border-b-slate-300"
 				>
-					Front-end development
+					Front-end
 				</div>
 				<div class="flex flex-auto pt-4 overflow-hidden rounded-tr-xl">
 					<div
@@ -49,7 +49,7 @@
 						data-cursor="-text"
 					>
 						<dl
-							class="grid items-center grid-cols-2 grid-rows-2 sm:block lg:grid xl:block"
+							class="grid md:grid-cols-2 md:grid-rows-2 sm:block lg:grid xl:block"
 						>
 							<!-- post 0 -->
 							<div class="relative group">
@@ -90,7 +90,7 @@
 						data-cursor="-text"
 					>
 						<dl
-							class="grid items-center grid-cols-2 grid-rows-2 sm:block lg:grid xl:block"
+							class="grid md:grid-cols-2 md:grid-rows-2 sm:block lg:grid xl:block"
 						>
 							<div class="relative group">
 								<div
@@ -130,7 +130,7 @@
 						data-cursor="-text"
 					>
 						<dl
-							class="grid items-center grid-cols-2 grid-rows-2 sm:block lg:grid xl:block"
+							class="grid md:grid-cols-2 md:grid-rows-2 sm:block lg:grid xl:block"
 						>
 							<div class="relative group">
 								<div
@@ -171,7 +171,7 @@
 						data-cursor="-text"
 					>
 						<dl
-							class="grid items-center grid-cols-2 grid-rows-2 sm:block lg:grid xl:block"
+							class="grid md:grid-cols-2 md:grid-rows-2 sm:block lg:grid xl:block"
 						>
 							<div class="relative group">
 								<div
@@ -213,7 +213,7 @@
 						data-cursor="-text"
 					>
 						<dl
-							class="grid items-center grid-cols-2 grid-rows-2 sm:block lg:grid xl:block"
+							class="grid md:grid-cols-2 md:grid-rows-2 sm:block lg:grid xl:block"
 						>
 							<div class="relative group">
 								<div

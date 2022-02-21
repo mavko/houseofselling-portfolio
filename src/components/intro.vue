@@ -2,7 +2,7 @@
 	<div class="container mx-auto" id="intro">
 		<!-- component -->
 		<div class="relative z-10">
-			<div class="w-full py-28">
+			<div class="w-full md:py-12 lg:py-28">
 				<div
 					class="w-full h-full bg-transparent shadow-3xl shadow-slate-900 rounded-3xl"
 				>
@@ -25,43 +25,45 @@
 								<div class="flex flex-auto w-full">
 									<div class="relative flex-auto w-full p-12">
 										<div
-											class="items-center justify-around block align-middle lg:flex xl:flex"
+											class="items-center justify-center block align-middle lg:flex xl:flex"
 										>
-											<div class="justify-start">
+											<div>
 												<img
 													src="../assets/maincharacter.jpg"
 													alt=""
-													class="object-cover object-center w-full h-full max-w-lg mb-5 mr-10 rounded-xl"
+													class="object-cover object-center w-full h-full max-w-sm mb-5 mr-5 lg:max-w-md rounded-xl"
 												/>
 											</div>
 											<div
-												class="justify-end pb-5 pl-10 text-4xl font-semibold dark:text-slate-50"
+												class="justify-end pb-5 space-y-3 text-xl font-semibold md:text-4xl lg:pl-10 dark:text-slate-50"
 											>
 												Hey, I'm Sebastian Selling. <br />
 												Designer and front-end dev from Sweden.
-												<p class="pt-5 text-2xl font-light">
+												<p class="text-lg font-light md:text-2xl">
 													I've spent the last 10 years taking ideas from zero to
 													one, <br />
 													building products in construction mainly.
-													<span class="flex flex-wrap my-5 text-sm">
+													<span
+														class="flex flex-wrap justify-start gap-2 my-5 text-sm"
+													>
 														<span
-															class="flex items-center px-3 py-1 font-medium leading-5 rounded-full text-slate-50 bg-slate-400/30 hover:bg-sky-400/20"
+															class="flex px-3 py-1 font-medium leading-5 rounded-full text-slate-50 bg-slate-400/30 hover:bg-sky-400/20"
 															>business / entrepreneurial</span
 														>
 														<span
-															class="flex items-center px-3 py-1 ml-3 font-medium leading-5 rounded-full text-slate-50 bg-slate-400/30 hover:bg-sky-400/20"
+															class="flex px-3 py-1 font-medium leading-5 rounded-full text-slate-50 bg-slate-400/30 hover:bg-sky-400/20"
 															>ui/ux</span
 														>
 														<span
-															class="flex items-center px-3 py-1 ml-3 font-medium leading-5 rounded-full text-slate-50 bg-slate-400/30 hover:bg-sky-400/20"
+															class="flex px-3 py-1 font-medium leading-5 rounded-full text-slate-50 bg-slate-400/30 hover:bg-sky-400/20"
 															>product</span
 														>
 														<span
-															class="flex items-center px-3 py-1 ml-3 font-medium leading-5 rounded-full text-slate-50 bg-slate-400/30 hover:bg-sky-400/20"
+															class="flex px-3 py-1 font-medium leading-5 rounded-full text-slate-50 bg-slate-400/30 hover:bg-sky-400/20"
 															>branding</span
 														>
 														<span
-															class="flex items-center px-3 py-1 ml-3 font-medium leading-5 rounded-full text-slate-50 bg-slate-400/30 hover:bg-sky-400/20"
+															class="flex px-3 py-1 font-medium leading-5 rounded-full text-slate-50 bg-slate-400/30 hover:bg-sky-400/20"
 															>react / vue / vuetify / css</span
 														>
 													</span>

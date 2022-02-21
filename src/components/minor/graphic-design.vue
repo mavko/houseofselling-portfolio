@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div
-			class="relative z-10 col-span-3 -ml-10 shadow-lg bg-slate-100 dark:bg-slate-800 rounded-xl xl:ml-0 dark:shadow-none dark:ring-1 dark:ring-white/10 ring-1 ring-slate-300"
+			class="relative z-10 col-span-3 shadow-lg lg:-ml-10 bg-slate-100 dark:bg-slate-800 rounded-xl xl:ml-0 dark:shadow-none dark:ring-1 dark:ring-white/10 ring-1 ring-slate-300"
 		>
 			<div
 				class="relative flex text-lg font-medium leading-6 text-slate-700 dark:text-slate-100"
@@ -22,7 +22,7 @@
 							href="https://www.dribbble.com/sebastianselling"
 							target="_blank"
 							data-magnetic
-							class="text-sm font-bold btn-underlined text-slate-50"
+							class="text-sm font-bold btn-underlined dark:text-slate-50 text-slate-900"
 						>
 							More on Dribbble
 						</a>

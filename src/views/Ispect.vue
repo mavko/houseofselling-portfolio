@@ -2,21 +2,7 @@
 	<div>
 		<!-- Header -->
 		<div
-			class="
-				large-container
-				container
-				mx-auto
-				lg:px-40
-				xl:px-40
-				md:px-20
-				px-10
-				lg:py-60
-				xl:py-60
-				md:py-40
-				py-10
-				overflow-hidden
-				z-1
-			"
+			class="container px-10 py-10 mx-auto overflow-hidden large-container lg:px-40 xl:px-40 md:px-20 lg:py-60 xl:py-60 md:py-40 z-1"
 			id="ispect"
 		>
 			<img
@@ -24,22 +10,16 @@
 				alt="iSpect"
 				style="width: 240px"
 			/>
-			<div class="lg:text-7xl md:text-6xl text-5xl font-light mt-10">
+			<div class="mt-10 text-5xl font-light lg:text-7xl md:text-6xl">
 				Make informed decisions during procurement with real time data
 			</div>
-			<div class="sm:text-2xl md:text-2xl lg:text-2xl mt-10">
+			<div class="mt-10 sm:text-2xl md:text-2xl lg:text-2xl">
 				<div data-magnetic data-cursor="-opaque">
 					<a
 						href="https://ispect.se/?lang=en"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="
-							btn-underlined
-							sm:text-2xl
-							md:text-2xl
-							lg:text-3xl
-							font-light
-						"
+						class="font-light btn-underlined sm:text-2xl md:text-2xl lg:text-3xl"
 						>See the iSpect landing page</a
 					>
 				</div>
@@ -49,13 +29,7 @@
 						href="https://www.sbuf.se/Om-SBUF/Aretsinnovation/Nyhetsbrev11/"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="
-							btn-underlined
-							sm:text-2xl
-							md:text-2xl
-							lg:text-3xl
-							font-light
-						"
+						class="font-light btn-underlined sm:text-2xl md:text-2xl lg:text-3xl"
 					>
 						Nominated for Innovation of the year 2013
 						<br />
@@ -76,32 +50,20 @@
 		</div>
 
 		<div
-			class="
-				large-container
-				mx-auto
-				lg:px-40
-				xl:px-40
-				md:px-20
-				px-10
-				lg:py-60
-				xl:py-60
-				md:py-40
-				py-10
-				z-10
-			"
+			class="z-10 px-10 py-10 mx-auto large-container lg:px-40 xl:px-40 md:px-20 lg:py-60 xl:py-60 md:py-40"
 		>
 			<div class="grid gap-12 lg:grid-flow-col md:grid-flow-col">
-				<div class="font-medium text-2xl">Why?</div>
-				<div class="lg:text-4xl md:text-3xl text-2xl font-light">
+				<div class="text-2xl font-medium">Why?</div>
+				<div class="text-2xl font-light lg:text-4xl md:text-3xl">
 					iSpect is built to provide transparency in the construction industry
 					in many ways, through data and statistics mainly, but also to provide
 					clear communication routes between contractors, sub-contractors and
 					stakeholders.
 				</div>
 			</div>
-			<div class="grid gap-12 lg:grid-flow-col md:grid-flow-col my-40">
-				<div class="font-medium text-2xl">How?</div>
-				<div class="lg:text-4xl md:text-3xl text-2xl font-light">
+			<div class="grid gap-12 my-40 lg:grid-flow-col md:grid-flow-col">
+				<div class="text-2xl font-medium">How?</div>
+				<div class="text-2xl font-light lg:text-4xl md:text-3xl">
 					With over a decade worth of statistics from the construction industry
 					we have built a web platform which allows contractors and
 					sub-contractors an easy way to see the health of their project.
@@ -116,42 +78,37 @@
 				</div>
 			</div>
 			<div class="flex flex-row flex-wrap -mx-2">
-				<div class="w-100 lg:w-1/2 md:w-1/2 px-2">
+				<div class="px-2 w-100 lg:w-1/2 md:w-1/2">
 					<div
-						class="
-							block
-							w-full
-							h-full
-							bg-grey-dark bg-no-repeat bg-center bg-cover
-						"
+						class="block w-full h-full bg-center bg-no-repeat bg-cover bg-grey-dark"
 					>
 						<img
 							src="../assets/projects/ispect/dashboard_total_issues.png"
 							alt=""
 						/>
-						<p class="font-medium text-center my-5 brief-responsibility">
+						<p class="my-5 font-medium text-center brief-responsibility">
 							A completed project based in stockholm showcasing total project
 							issues
 						</p>
 					</div>
 				</div>
-				<div class="w-100 lg:w-1/2 md:w-1/2 px-2 mt-24">
-					<div class="flex flex-col sm:flex-row md:flex-col -mx-2">
-						<div class="w-full h-96 mb-4 sm:mb-0 md:mb-4 px-2">
+				<div class="px-2 mt-24 w-100 lg:w-1/2 md:w-1/2">
+					<div class="flex flex-col -mx-2 sm:flex-row md:flex-col">
+						<div class="w-full px-2 mb-4 h-96 sm:mb-0 md:mb-4">
 							<img
 								src="../assets/projects/ispect/dashboard_total_location.png"
 								alt=""
 							/>
-							<p class="font-medium text-center my-5 brief-responsibility">
+							<p class="my-5 font-medium text-center brief-responsibility">
 								Quickly overview which areas that lacks the most
 							</p>
 						</div>
 					</div>
 				</div>
 
-				<div class="w-100 lg:w-1/2 md:w-100 px-2">
-					<div class="flex flex-col sm:flex-row md:flex-row -mx-2">
-						<div class="w-full h-96 mb-4 sm:mb-0 md:mb-4 px-2 mt-12 mb-40">
+				<div class="px-2 w-100 lg:w-1/2 md:w-100">
+					<div class="flex flex-col -mx-2 sm:flex-row md:flex-row">
+						<div class="w-full px-2 mt-12 mb-4 mb-40 h-96 sm:mb-0 md:mb-4">
 							<div
 								style="
 									position: relative;
@@ -174,20 +131,20 @@
 									"
 								></iframe>
 							</div>
-							<p class="font-medium text-center my-5 brief-responsibility">
+							<p class="my-5 font-medium text-center brief-responsibility">
 								Deep dive into categories (titles in swedish, sorry about that)
 							</p>
 						</div>
 					</div>
 				</div>
-				<div class="w-100 lg:w-1/2 md:w-100 px-2 mt-24">
-					<div class="flex flex-col sm:flex-row md:flex-row -mx-2">
-						<div class="w-full h-96 mb-40 sm:mb-0 md:mb-40 px-2">
+				<div class="px-2 mt-24 w-100 lg:w-1/2 md:w-100">
+					<div class="flex flex-col -mx-2 sm:flex-row md:flex-row">
+						<div class="w-full px-2 mb-40 h-96 sm:mb-0 md:mb-40">
 							<img
 								src="../assets/projects/ispect/dashboard_avg_time.png"
 								alt=""
 							/>
-							<p class="font-medium text-center my-5 brief-responsibility">
+							<p class="my-5 font-medium text-center brief-responsibility">
 								Showcasing the average time it takes to remedy issues per
 								sub-contractor.
 								<br />
@@ -200,7 +157,7 @@
 		</div>
 
 		<!-- background parallax section -->
-		<div class="parallax-container mt-40">
+		<div class="mt-40 parallax-container">
 			<section class="my-20">
 				<div
 					class="image-2"
@@ -213,21 +170,10 @@
 
 		<!-- branding section -->
 		<div
-			class="
-				large-container
-				mx-auto
-				lg:px-40
-				xl:px-40
-				md:px-20
-				px-10
-				lg:py-60
-				xl:py-60
-				md:py-40
-				py-10
-			"
+			class="px-10 py-10 mx-auto large-container lg:px-40 xl:px-40 md:px-20 lg:py-60 xl:py-60 md:py-40"
 		>
-			<div class="font-medium text-2xl">Branding</div>
-			<p class="lg:text-4xl md:text-3xl text-3xl font-light my-10">
+			<div class="text-2xl font-medium">Branding</div>
+			<p class="my-10 text-3xl font-light lg:text-4xl md:text-3xl">
 				Brand was initially built back in 2012 and has since evolved many times
 				over to finally land in what you see below with a very minimal logo that
 				incorporates our classic search icon in the logotype.
@@ -238,76 +184,71 @@
 				found it needed to be scalable and applicable to many surfaces.
 			</p>
 			<div class="flex flex-row flex-wrap -mx-2">
-				<div class="w-100 lg:w-1/2 md:w-1/2 h-94 px-2">
+				<div class="px-2 w-100 lg:w-1/2 md:w-1/2 h-94">
 					<div
-						class="
-							block
-							w-full
-							h-full
-							bg-grey-dark bg-no-repeat bg-center bg-cover
-						"
+						class="block w-full h-full bg-center bg-no-repeat bg-cover bg-grey-dark"
 					>
 						<img src="../assets/projects/ispect/logotype_800x600.png" alt="" />
-						<p class="font-medium text-center my-5 brief-responsibility">
+						<p class="my-5 font-medium text-center brief-responsibility">
 							Finalized logotype incorporating the Search icon <br />
 							that's been used from the very start 10 years ago.
 						</p>
 					</div>
 				</div>
-				<div class="w-100 lg:w-1/2 md:w-1/2 h-94 px-2">
-					<div class="flex flex-col sm:flex-row md:flex-col -mx-2">
-						<div class="w-full h-96 mb-4 sm:mb-0 md:mb-4 px-2">
+				<div class="px-2 w-100 lg:w-1/2 md:w-1/2 h-94">
+					<div class="flex flex-col -mx-2 sm:flex-row md:flex-col">
+						<div class="w-full px-2 mb-4 h-96 sm:mb-0 md:mb-4">
 							<img src="../assets/projects/ispect/ispect_hard_hat.jpg" alt="" />
-							<p class="font-medium text-center my-5 brief-responsibility">
+							<p class="my-5 font-medium text-center brief-responsibility">
 								iSpect for hard hats (usually not allowed to change the color)
 							</p>
 						</div>
 					</div>
 				</div>
-				<div class="w-100 lg:w-1/2 md:w-1/2 h-94 px-2 pb-0 md:pb-0 lg:pb-2">
-					<div class="flex flex-col sm:flex-row md:flex-col -mx-2">
-						<div class="w-full h-96 mb-4 sm:mb-0 md:mb-4 px-2">
+				<div class="px-2 pb-0 w-100 lg:w-1/2 md:w-1/2 h-94 md:pb-0 lg:pb-2">
+					<div class="flex flex-col -mx-2 sm:flex-row md:flex-col">
+						<div class="w-full px-2 mb-4 h-96 sm:mb-0 md:mb-4">
 							<img
 								src="../assets/projects/ispect/ispect_overview_branding.jpg"
 								alt=""
 							/>
-							<p class="font-medium text-center my-5 brief-responsibility">
+							<p class="my-5 font-medium text-center brief-responsibility">
 								Branding office peripherals mockup
 							</p>
 						</div>
 					</div>
 				</div>
 
-				<div class="w-100 lg:w-1/2 md:w-1/2 h-94 px-2 pb-0 md:pb-0 lg:pb-2">
-					<div class="flex flex-col sm:flex-row md:flex-col -mx-2">
-						<div class="w-full h-96 mb-4 sm:mb-0 md:mb-4 px-2">
+				<div class="px-2 pb-0 w-100 lg:w-1/2 md:w-1/2 h-94 md:pb-0 lg:pb-2">
+					<div class="flex flex-col -mx-2 sm:flex-row md:flex-col">
+						<div class="w-full px-2 mb-4 h-96 sm:mb-0 md:mb-4">
 							<img src="../assets/projects/ispect/ispect_carprint.jpg" alt="" />
-							<p class="font-medium text-center my-5 brief-responsibility">
+							<p class="my-5 font-medium text-center brief-responsibility">
 								iSpect branding rendering on a company car
 							</p>
 						</div>
 					</div>
 				</div>
 
-				<div class="w-100 lg:w-1/2 md:w-1/2 h-94 px-2">
-					<div class="flex flex-col sm:flex-row md:flex-col -mx-2">
-						<div class="w-full h-96 mb-4 sm:mb-0 md:mb-4 px-2">
+				<div class="px-2 w-100 lg:w-1/2 md:w-1/2 h-94">
+					<div class="flex flex-col -mx-2 sm:flex-row md:flex-col">
+						<div class="w-full px-2 mb-4 h-96 sm:mb-0 md:mb-4">
 							<img src="../assets/projects/ispect/ispect_jersey.jpg" alt="" />
-							<p class="font-medium text-center my-5 brief-responsibility">
+							<p class="my-5 font-medium text-center brief-responsibility">
 								iSpect jersey
 							</p>
 						</div>
 					</div>
 				</div>
 
-				<div class="w-100 lg:w-1/2 md:w-1/2 h-94 px-2">
-					<div class="flex flex-col sm:flex-row md:flex-col -mx-2">
-						<div class="w-full h-96 mb-4 sm:mb-0 md:mb-4 px-2">
+				<div class="px-2 w-100 lg:w-1/2 md:w-1/2 h-94">
+					<div class="flex flex-col -mx-2 sm:flex-row md:flex-col">
+						<div class="w-full px-2 mb-4 h-96 sm:mb-0 md:mb-4">
 							<img
 								src="../assets/projects/ispect/ispect_plattform_logo.jpg"
 								alt=""
 							/>
-							<p class="font-medium text-center my-5 brief-responsibility">
+							<p class="my-5 font-medium text-center brief-responsibility">
 								iSpect platform logo
 							</p>
 						</div>
@@ -391,6 +332,7 @@ export default {
 }
 </script>
 <style scoped>
+@import '../styles/custom.css';
 .parallax-container section .image-1 {
 	background-image: url('../assets/projects/ispect/ispect_web.jpg');
 }

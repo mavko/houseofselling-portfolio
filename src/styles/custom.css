@@ -645,7 +645,7 @@ bg effects
 	position: relative;
 	overflow: hidden;
 	background-color: #000;
-	z-index: -1;
+	z-index: 0;
 }
 .parallax-container section #parallax {
 	background-attachment: fixed;

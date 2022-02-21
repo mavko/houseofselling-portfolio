@@ -1,10 +1,6 @@
 <template>
-	<div
-		class="flex items-center justify-center w-full min-h-screen py-20 lg:py-40 md:py-30"
-	>
-		<div
-			class="container flex flex-col w-full px-4 text-slate-900 dark:text-slate-50"
-		>
+	<div class="container">
+		<div class="flex flex-col w-full px-4 text-slate-900 dark:text-slate-50">
 			<div class="w-full">
 				<h1 class="w-full text-4xl font-bold md:w-2/3 sm:pt-20 lg:text-6xl">
 					Got a project?

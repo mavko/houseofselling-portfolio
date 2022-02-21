@@ -1,17 +1,11 @@
 <template>
 	<div>
-		<div
-			class="max-w-full min-w-full shadow-xl sm:rounded-xl"
-			style="width: 862px"
-		>
+		<div class="max-w-full min-w-full shadow-xl sm:rounded-xl">
 			<div class="sm:rounded-xl ring-1 ring-slate-900/5">
 				<div
 					class="sm:rounded-t-xl bg-gradient-to-b from-white to-[#FBFBFB] dark:bg-none dark:bg-slate-700 dark:highlight-white/10"
 				>
-					<div
-						class="py-2.5 grid items-center px-4 gap-8"
-						style="grid-template-columns: 7.125rem 1fr 7.125rem"
-					>
+					<div class="py-2.5 grid items-center px-4 gap-8 grid-cols-3">
 						<div class="flex items-center">
 							<div class="w-2.5 h-2.5 rounded-full bg-[#EC6A5F]"></div>
 							<div class="ml-1.5 w-2.5 h-2.5 rounded-full bg-[#F4BF50]"></div>
@@ -20,7 +14,7 @@
 								width="24"
 								height="24"
 								fill="none"
-								class="flex-none ml-4 text-slate-400 dark:text-slate-500"
+								class="flex-none hidden ml-4 text-slate-400 dark:text-slate-500 md:flex-none"
 							>
 								<path
 									d="m15 7-5 5 5 5"
@@ -33,7 +27,7 @@
 								width="24"
 								height="24"
 								fill="none"
-								class="flex-none ml-2 text-slate-900 dark:text-slate-500"
+								class="flex-none hidden ml-2 text-slate-900 dark:text-slate-500 md:flex-none"
 							>
 								<path
 									d="m10 7 5 5-5 5"
@@ -88,7 +82,7 @@
 				<div
 					class="relative pb-8 -mb-8 text-white bg-white border-t border-slate-200 rounded-b-xl dark:bg-slate-800 dark:border-slate-900/50"
 				>
-					<router-link to="/ispect" class="text-xl btn-underlined">
+					<router-link to="/ispect">
 						<div class="relative">
 							<div
 								data-magnetic
@@ -106,22 +100,22 @@
 									materials, high risk constructions <br />
 									and contractors
 								</p>
-								<div>
+								<div class="flex flex-wrap justify-start gap-2 my-5 text-sm">
 									<span
-										class="items-center px-3 py-1 mt-5 font-medium leading-5 rounded-full w-sm text-slate-50 bg-slate-400/30 hover:bg-sky-400/20"
+										class="flex px-3 py-1 font-medium leading-5 rounded-full text-slate-50 bg-slate-400/30 hover:bg-sky-400/20"
 									>
 										founding member
 									</span>
 									<span
-										class="items-center px-3 py-1 ml-3 font-medium leading-5 rounded-full text-slate-50 bg-slate-400/30 hover:bg-sky-400/20"
+										class="flex px-3 py-1 font-medium leading-5 rounded-full text-slate-50 bg-slate-400/30 hover:bg-sky-400/20"
 										>branding</span
 									>
 									<span
-										class="items-center px-3 py-1 ml-3 font-medium leading-5 rounded-full text-slate-50 bg-slate-400/30 hover:bg-sky-400/20"
+										class="flex px-3 py-1 font-medium leading-5 rounded-full text-slate-50 bg-slate-400/30 hover:bg-sky-400/20"
 										>ui/ux</span
 									>
 									<span
-										class="items-center px-3 py-1 ml-3 font-medium leading-5 rounded-full text-slate-50 bg-slate-400/30 hover:bg-sky-400/20"
+										class="flex px-3 py-1 font-medium leading-5 rounded-full text-slate-50 bg-slate-400/30 hover:bg-sky-400/20"
 										>front-end development</span
 									>
 								</div>
@@ -131,7 +125,7 @@
 
 							<img
 								src="../../assets/projects/ispect/ispect_web.jpg"
-								class="object-cover object-center w-full h-auto bg-transparent"
+								class="object-cover object-center w-full bg-transparent md:h-auto h-96"
 								alt=""
 							/>
 						</div>

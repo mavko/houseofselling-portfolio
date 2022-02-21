@@ -8,14 +8,16 @@
 					class="p-4 space-y-4 rounded-t-xl sm:px-8 sm:py-6 lg:p-4 xl:px-8 xl:py-6 dark:highlight-white/10"
 				>
 					<div class="flex items-center justify-between">
-						<h2 class="text-lg font-semibold text-slate-900 dark:text-white">
+						<h2
+							class="flex flex-col text-lg font-semibold md:block text-slate-900 dark:text-white"
+						>
 							Side Projects
 							<span class="font-medium">| For fun and practice</span>
 						</h2>
-						<div class="pt-6 w-55 md:pt-0">
+						<div class="w-55 md:pt-0">
 							<a
 								href="mailto:sebastian.selling@outlook.com"
-								class="px-6 py-2 font-medium text-center transition-all duration-150 border-2 rounded-full cursor-pointer border-slate-300 text-slate-700 dark:text-slate-50 dark:hover:text-black hover:bg-gray-300 hover:text-black hover:scale-125 ease"
+								class="flex flex-wrap px-6 py-2 font-medium text-center transition-all duration-150 border-2 rounded-full cursor-pointer border-slate-300 text-slate-700 dark:text-slate-50 dark:hover:text-black hover:bg-gray-300 hover:text-black hover:scale-125 ease"
 								data-magnetic
 								data-cursor="-opaque"
 							>
