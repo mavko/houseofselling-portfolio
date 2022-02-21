@@ -1,12 +1,12 @@
 <template>
-	<div class="container">
+	<div class="container mx-auto">
 		<div class="flex flex-col w-full px-4 text-slate-900 dark:text-slate-50">
 			<div class="w-full">
 				<h1 class="w-full text-4xl font-bold md:w-2/3 sm:pt-20 lg:text-6xl">
 					Got a project?
 				</h1>
 				<br />
-				<p class="text-3xl font-light lg:text-5xl">Tell me about it</p>
+				<p class="text-3xl font-light lg:text-4xl">Tell me about it</p>
 			</div>
 			<div class="flex flex-col mt-8 md:flex-row md:justify-between">
 				<div class="pt-6 w-55 md:pt-0">

@@ -1,31 +1,25 @@
 <template>
-	<div>
+	<div class="text-slate-900 dark:text-slate-100">
 		<!-- Header -->
 		<div
-			class="
-				large-container
-				container
-				mx-auto
-				lg:px-40
-				xl:px-40
-				md:px-20
-				px-10
-				lg:py-60
-				xl:py-60
-				md:py-40
-				py-10
-				overflow-hidden
-				z-1
-			"
+			class="container px-10 py-10 mx-auto overflow-hidden large-container lg:px-40 xl:px-40 md:px-20 lg:py-60 xl:py-60 md:py-40 z-1"
 			id="ispect"
 		>
 			<span class="text-4xl font-medium">
 				<img
 					src="../assets/projects/icontrol/icontrol-logo-w.svg"
-					alt="iSpect"
+					alt="iControl"
 					style="width: 240px"
-			/></span>
-			<div class="lg:text-7xl md:text-6xl text-5xl font-light brief mt-16">
+					class="hidden dark:block"
+				/>
+				<img
+					src="../assets/projects/icontrol/icontrol-logo.svg"
+					alt="iControl"
+					style="width: 240px"
+					class="dark:hidden"
+				/>
+			</span>
+			<div class="mt-16 text-5xl font-light lg:text-7xl md:text-6xl brief">
 				A platform for all your construction documentation.
 			</div>
 		</div>
@@ -41,23 +35,11 @@
 		</div>
 
 		<div
-			class="
-				large-container
-				mx-auto
-				lg:px-40
-				xl:px-40
-				md:px-20
-				px-10
-				lg:py-60
-				xl:py-60
-				md:py-40
-				py-10
-				z-10
-			"
+			class="z-10 px-10 py-10 mx-auto large-container lg:px-40 xl:px-40 md:px-20 lg:py-60 xl:py-60 md:py-40"
 		>
 			<div class="grid gap-12 lg:grid-flow-col md:grid-flow-col">
-				<div class="font-medium text-2xl">The Pitch</div>
-				<div class="lg:text-4xl md:text-3xl text-2xl font-light">
+				<div class="text-2xl font-medium">The Pitch</div>
+				<div class="text-2xl font-light lg:text-4xl md:text-3xl">
 					Have a listen to our co-founder
 					<a
 						style="text-decoration: underline; text-underline-offset: 4px"
@@ -71,7 +53,7 @@
 					iControl
 					<br />
 					<div
-						class="my-20 z-0"
+						class="z-0 my-20"
 						style="
 							position: relative;
 							padding-bottom: 70.80536912751678%;
@@ -95,7 +77,7 @@
 					</div>
 
 					<div
-						class="sm:text-2xl md:text-2xl lg:text-3xl mt-10"
+						class="mt-10 sm:text-2xl md:text-2xl lg:text-3xl"
 						data-magnetic
 						data-cursor="-opaque"
 					>
@@ -108,7 +90,7 @@
 						>
 					</div>
 					<div
-						class="sm:text-2xl md:text-2xl lg:text-3xl mt-10"
+						class="mt-10 sm:text-2xl md:text-2xl lg:text-3xl"
 						data-magnetic
 						data-cursor="-opaque"
 					>
@@ -125,7 +107,7 @@
 			</div>
 		</div>
 		<!-- background parallax section -->
-		<div class="parallax-container mt-40">
+		<div class="mt-40 parallax-container">
 			<section class="my-20">
 				<div
 					class="image-2"
@@ -136,22 +118,11 @@
 			</section>
 		</div>
 		<div
-			class="
-				large-container
-				mx-auto
-				lg:px-40
-				xl:px-40
-				md:px-20
-				px-10
-				lg:py-60
-				xl:py-60
-				md:py-40
-				py-10
-			"
+			class="px-10 py-10 mx-auto large-container lg:px-40 xl:px-40 md:px-20 lg:py-60 xl:py-60 md:py-40"
 		>
 			<div class="grid gap-12 lg:grid-flow-col md:grid-flow-col">
-				<div class="font-medium text-2xl">Zero to one</div>
-				<div class="lg:text-4xl md:text-3xl text-2xl font-light mb-10">
+				<div class="text-2xl font-medium">Zero to one</div>
+				<div class="mb-10 text-2xl font-light lg:text-4xl md:text-3xl">
 					Setting the foundation with tons of sketching, brand & voice outlining
 					and UI iteration
 				</div>
@@ -164,31 +135,21 @@
 							alt=""
 						/>
 						<p
-							class="
-								font-medium
-								text-center text-white
-								my-5
-								brief-responsibility
-							"
+							class="my-5 font-medium text-center text-white brief-responsibility"
 						>
 							Mid 2015 ideation sessions to figure out the iControl mvp
 						</p>
 					</div>
 				</div>
 				<div class="w-100 lg:w-1/2 md:w-1/2 h-94 ma-2">
-					<div class="flex flex-col sm:flex-row md:flex-col -mx-2">
+					<div class="flex flex-col -mx-2 sm:flex-row md:flex-col">
 						<div class="block w-full h-full px-5">
 							<img
 								src="../assets/projects/icontrol/sketches/ideation2.jpg"
 								alt=""
 							/>
 							<p
-								class="
-									font-medium
-									text-center text-white
-									my-5
-									brief-responsibility
-								"
+								class="my-5 font-medium text-center text-white brief-responsibility"
 							>
 								Setting a branding tone of voice
 							</p>
@@ -196,19 +157,14 @@
 					</div>
 				</div>
 				<div class="w-100 lg:w-1/2 md:w-100 h-94 ma-2">
-					<div class="flex flex-col sm:flex-row md:flex-row -mx-2">
+					<div class="flex flex-col -mx-2 sm:flex-row md:flex-row">
 						<div class="block w-full h-full px-5">
 							<img
 								src="../assets/projects/icontrol/sketches/sketch1.jpg"
 								alt=""
 							/>
 							<p
-								class="
-									font-medium
-									text-center text-white
-									my-5
-									brief-responsibility
-								"
+								class="my-5 font-medium text-center text-white brief-responsibility"
 							>
 								Initial outlines of iControl iPhone features
 							</p>
@@ -217,19 +173,14 @@
 				</div>
 
 				<div class="w-100 lg:w-1/2 md:w-100 h-94 ma-2">
-					<div class="flex flex-col sm:flex-row md:flex-row -mx-2">
+					<div class="flex flex-col -mx-2 sm:flex-row md:flex-row">
 						<div class="block w-full h-full px-5">
 							<img
 								src="../assets/projects/icontrol/sketches/sketch2.jpg"
 								alt=""
 							/>
 							<p
-								class="
-									font-medium
-									text-center text-white
-									my-5
-									brief-responsibility
-								"
+								class="my-5 font-medium text-center text-white brief-responsibility"
 							>
 								Example feedback prompts throughout the app
 							</p>
@@ -238,19 +189,14 @@
 				</div>
 
 				<div class="w-100 lg:w-1/2 md:w-100 h-94 ma-2">
-					<div class="flex flex-col sm:flex-row md:flex-row -mx-2">
+					<div class="flex flex-col -mx-2 sm:flex-row md:flex-row">
 						<div class="block w-full h-full px-5 pt-5">
 							<img
 								src="../assets/projects/icontrol/sketches/sketch3.jpg"
 								alt=""
 							/>
 							<p
-								class="
-									font-medium
-									text-center text-white
-									my-5
-									brief-responsibility
-								"
+								class="my-5 font-medium text-center text-white brief-responsibility"
 							>
 								Overlay invite modal
 							</p>
@@ -258,19 +204,14 @@
 					</div>
 				</div>
 				<div class="w-100 lg:w-1/2 md:w-100 h-94 ma-2">
-					<div class="flex flex-col sm:flex-row md:flex-row -mx-2">
+					<div class="flex flex-col -mx-2 sm:flex-row md:flex-row">
 						<div class="block w-full h-full px-5 pt-5">
 							<img
 								src="../assets/projects/icontrol/sketches/sketch4.jpg"
 								alt=""
 							/>
 							<p
-								class="
-									font-medium
-									text-center text-white
-									my-5
-									brief-responsibility
-								"
+								class="my-5 font-medium text-center text-white brief-responsibility"
 							>
 								Issue view - outlining what the user can interact with
 							</p>
@@ -278,19 +219,14 @@
 					</div>
 				</div>
 				<div class="w-100 lg:w-1/2 md:w-100 h-94 ma-2">
-					<div class="flex flex-col sm:flex-row md:flex-row -mx-2">
+					<div class="flex flex-col -mx-2 sm:flex-row md:flex-row">
 						<div class="block w-full h-full px-5 pt-5">
 							<img
 								src="../assets/projects/icontrol/sketches/sketch5.jpg"
 								alt=""
 							/>
 							<p
-								class="
-									font-medium
-									text-center text-white
-									my-5
-									brief-responsibility
-								"
+								class="my-5 font-medium text-center text-white brief-responsibility"
 							>
 								Blueprint view filtering since there could be hundreds of notes
 							</p>
@@ -299,19 +235,14 @@
 				</div>
 
 				<div class="w-100 lg:w-1/2 md:w-100 h-94 ma-2">
-					<div class="flex flex-col sm:flex-row md:flex-row -mx-2">
+					<div class="flex flex-col -mx-2 sm:flex-row md:flex-row">
 						<div class="block w-full h-full px-5 pt-5">
 							<img
 								src="../assets/projects/icontrol/sketches/sketch7.jpg"
 								alt=""
 							/>
 							<p
-								class="
-									font-medium
-									text-center text-white
-									my-5
-									brief-responsibility
-								"
+								class="my-5 font-medium text-center text-white brief-responsibility"
 							>
 								Basic message when we to send the report
 							</p>
@@ -320,19 +251,14 @@
 				</div>
 
 				<div class="w-100 h-94 ma-2">
-					<div class="flex flex-col sm:flex-row md:flex-row -mx-2">
+					<div class="flex flex-col -mx-2 sm:flex-row md:flex-row">
 						<div class="block w-full h-full px-5 pt-5">
 							<img
 								src="../assets/projects/icontrol/sketches/icontrol_loop_2016.jpg"
 								alt=""
 							/>
 							<p
-								class="
-									font-medium
-									text-center text-white
-									my-5
-									brief-responsibility
-								"
+								class="my-5 font-medium text-center text-white brief-responsibility"
 							>
 								Ideating on the product loop
 							</p>
@@ -340,19 +266,14 @@
 					</div>
 
 					<div class="w-100 h-94 ma-2">
-						<div class="flex flex-col sm:flex-row md:flex-row -mx-2">
+						<div class="flex flex-col -mx-2 sm:flex-row md:flex-row">
 							<div class="block w-full h-full px-5 pt-5">
 								<img
 									src="../assets/projects/icontrol/sketches/icontrol_scaleuptoipad.jpg"
 									alt=""
 								/>
 								<p
-									class="
-										font-medium
-										text-center text-white
-										my-5
-										brief-responsibility
-									"
+									class="my-5 font-medium text-center text-white brief-responsibility"
 								>
 									Basic sketch of our iPad version
 								</p>
@@ -363,7 +284,7 @@
 			</div>
 		</div>
 		<!-- background parallax section -->
-		<div class="parallax-container mt-40">
+		<div class="mt-40 parallax-container">
 			<section class="my-20">
 				<div
 					class="image-3"
@@ -375,22 +296,11 @@
 		</div>
 
 		<div
-			class="
-				large-container
-				mx-auto
-				lg:px-40
-				xl:px-40
-				md:px-20
-				px-10
-				lg:py-60
-				xl:py-60
-				md:py-40
-				py-10
-			"
+			class="px-10 py-10 mx-auto large-container lg:px-40 xl:px-40 md:px-20 lg:py-60 xl:py-60 md:py-40"
 		>
 			<div class="grid gap-12 lg:grid-flow-col md:grid-flow-col">
-				<div class="font-medium text-2xl">Building it</div>
-				<div class="lg:text-4xl md:text-3xl text-2xl font-light mb-10">
+				<div class="text-2xl font-medium">Building it</div>
+				<div class="mb-10 text-2xl font-light lg:text-4xl md:text-3xl">
 					With a rather rapid build, deploy and iterate cycle once customers
 					have gotten their hands on the app we went through quite a large
 					number of versions of the app over the years. During my time there we
@@ -402,65 +312,45 @@
 				</div>
 			</div>
 			<div class="flex flex-row flex-wrap -mx-2">
-				<div class="w-100 lg:w-1/2 md:w-1/2 h-94 px-2">
+				<div class="px-2 w-100 lg:w-1/2 md:w-1/2 h-94">
 					<div
-						class="
-							block
-							w-full
-							h-full
-							bg-grey-dark bg-no-repeat bg-center bg-cover
-						"
+						class="block w-full h-full bg-center bg-no-repeat bg-cover bg-grey-dark"
 					>
 						<img
 							src="../assets/projects/icontrol/screens/icontrol-ipad-blueprint.png"
 							alt=""
 						/>
 						<p
-							class="
-								font-medium
-								text-center text-white
-								my-5
-								brief-responsibility
-							"
+							class="my-5 font-medium text-center text-white brief-responsibility"
 						>
 							iControl scaled to accomodate the iPad
 						</p>
 					</div>
 				</div>
-				<div class="w-100 lg:w-1/2 md:w-1/2 h-94 px-2">
-					<div class="flex flex-col sm:flex-row md:flex-col -mx-2">
-						<div class="w-full h-96 mb-4 sm:mb-0 md:mb-4 px-2">
+				<div class="px-2 w-100 lg:w-1/2 md:w-1/2 h-94">
+					<div class="flex flex-col -mx-2 sm:flex-row md:flex-col">
+						<div class="w-full px-2 mb-4 h-96 sm:mb-0 md:mb-4">
 							<img
 								src="../assets/projects/icontrol/screens/icontrol_dashboard_modals.png"
 								alt=""
 							/>
 							<p
-								class="
-									font-medium
-									text-center text-white
-									my-5
-									brief-responsibility
-								"
+								class="my-5 font-medium text-center text-white brief-responsibility"
 							>
 								Onboarding the invite process for iControl
 							</p>
 						</div>
 					</div>
 				</div>
-				<div class="w-100 h-94 px-2 pb-0 md:pb-0 lg:pb-20">
-					<div class="flex flex-col sm:flex-row md:flex-col -mx-2">
-						<div class="w-full h-96 mb-4 sm:mb-0 md:mb-4 px-2">
+				<div class="px-2 pb-0 w-100 h-94 md:pb-0 lg:pb-20">
+					<div class="flex flex-col -mx-2 sm:flex-row md:flex-col">
+						<div class="w-full px-2 mb-4 h-96 sm:mb-0 md:mb-4">
 							<img
 								src="../assets/projects/icontrol/screens/icontrol_dashboard_blueprint.png"
 								alt=""
 							/>
 							<p
-								class="
-									font-medium
-									text-center text-white
-									my-5
-									brief-responsibility
-								"
+								class="my-5 font-medium text-center text-white brief-responsibility"
 							>
 								Access to their blueprint cross devices
 							</p>
@@ -483,22 +373,11 @@
 		</div>
 		<!-- branding section -->
 		<div
-			class="
-				large-container
-				mx-auto
-				lg:px-40
-				xl:px-40
-				md:px-20
-				px-10
-				lg:py-60
-				xl:py-60
-				md:py-40
-				py-10
-			"
+			class="px-10 py-10 mx-auto large-container lg:px-40 xl:px-40 md:px-20 lg:py-60 xl:py-60 md:py-40"
 		>
 			<div class="grid gap-12 lg:grid-flow-col md:grid-flow-col">
-				<div class="font-medium text-2xl">Branding</div>
-				<div class="lg:text-4xl md:text-3xl text-2xl font-light mb-10">
+				<div class="text-2xl font-medium">Branding</div>
+				<div class="mb-10 text-2xl font-light lg:text-4xl md:text-3xl">
 					Building out the iControl brand was done in a rather typical startup
 					touch-n-go process.
 					<br />
@@ -508,44 +387,29 @@
 				</div>
 			</div>
 			<div class="flex flex-row flex-wrap -mx-2">
-				<div class="w-100 lg:w-1/2 md:w-1/2 h-94 px-2">
+				<div class="px-2 w-100 lg:w-1/2 md:w-1/2 h-94">
 					<div
-						class="
-							block
-							w-full
-							h-full
-							bg-grey-dark bg-no-repeat bg-center bg-cover
-						"
+						class="block w-full h-full bg-center bg-no-repeat bg-cover bg-grey-dark"
 					>
 						<img src="../assets/projects/icontrol/icontrol_logo.png" alt="" />
 						<p
-							class="
-								font-medium
-								text-center text-white
-								my-5
-								brief-responsibility
-							"
+							class="my-5 font-medium text-center text-white brief-responsibility"
 						>
 							Finalized logo and icon with the icon <br />
 							symbolizing the marked location on the blueprint
 						</p>
 					</div>
 				</div>
-				<div class="w-100 lg:w-1/2 md:w-1/2 h-94 px-2">
-					<div class="flex flex-col sm:flex-row md:flex-col -mx-2">
-						<div class="w-full h-96 mb-4 sm:mb-0 md:mb-4 px-2">
+				<div class="px-2 w-100 lg:w-1/2 md:w-1/2 h-94">
+					<div class="flex flex-col -mx-2 sm:flex-row md:flex-col">
+						<div class="w-full px-2 mb-4 h-96 sm:mb-0 md:mb-4">
 							<img
 								src="../assets/projects/icontrol/mascot_bobbythebuilder.png"
 								class="rounded-3xl"
 								alt=""
 							/>
 							<p
-								class="
-									font-medium
-									text-center text-white
-									my-5
-									brief-responsibility
-								"
+								class="my-5 font-medium text-center text-white brief-responsibility"
 							>
 								Our very diligent mascot Bobby the builder.
 								<br />
@@ -554,21 +418,16 @@
 						</div>
 					</div>
 				</div>
-				<div class="w-100 h-94 px-2 pb-0 md:pb-0 lg:pb-20">
-					<div class="flex flex-col sm:flex-row md:flex-col -mx-2">
-						<div class="w-full h-96 mb-4 sm:mb-0 md:mb-4 px-2">
+				<div class="px-2 pb-0 w-100 h-94 md:pb-0 lg:pb-20">
+					<div class="flex flex-col -mx-2 sm:flex-row md:flex-col">
+						<div class="w-full px-2 mb-4 h-96 sm:mb-0 md:mb-4">
 							<img
 								src="../assets/projects/icontrol/Cover.png"
 								class="rounded-3xl"
 								alt=""
 							/>
 							<p
-								class="
-									font-medium
-									text-center text-white
-									my-5
-									brief-responsibility
-								"
+								class="my-5 font-medium text-center text-white brief-responsibility"
 							>
 								General style guide elements mostly for development
 							</p>
