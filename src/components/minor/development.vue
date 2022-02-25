@@ -78,7 +78,7 @@
 											class="mt-1 text-sm font-medium text-slate-700 dark:text-slate-400"
 										>
 											Built w/ Solidity | Next.js | Sanity.io | tailwindcss +
-											vercal deploy
+											vercal deploy (Rinkeby Test Network)
 										</p>
 									</div>
 								</div>
