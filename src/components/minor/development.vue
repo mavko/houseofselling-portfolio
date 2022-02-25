@@ -57,6 +57,48 @@
 									class="w-full overflow-hidden rounded-md min-h-80 aspect-w-1 aspect-h-1 group-hover:opacity-75 lg:aspect-none"
 								>
 									<img
+										src="../../assets/projects/hobby/uniswap-clone.png"
+										alt="Uniswap Clone"
+										class="object-cover object-center w-full rounded-2xl h-96"
+									/>
+								</div>
+								<div class="flex justify-between mt-4">
+									<div>
+										<h3 class="font-bold text-slate-100 font-2xl">
+											<a
+												href="https://uniswapclonery.vercel.app/"
+												target="_blank"
+											>
+												<span aria-hidden="true" class="absolute inset-3"
+													>Functional uniswap clone</span
+												>
+											</a>
+										</h3>
+										<p
+											class="mt-1 text-sm font-medium text-slate-700 dark:text-slate-400"
+										>
+											Built w/ Solidity | Next.js | Sanity.io | tailwindcss +
+											vercal deploy
+										</p>
+									</div>
+								</div>
+							</div>
+						</dl>
+					</li>
+					<!-- latest post -->
+					<li
+						class="p-3 bg-white shadow-sm cursor-pointer rounded-xl group ring-1 ring-slate-200 hover:bg-slate-700 hover:ring-slate-500 hover:shadow-md dark:bg-slate-700 dark:ring-0 dark:highlight-white/10 dark:hover:bg-slate-700"
+						data-cursor="-text"
+					>
+						<dl
+							class="grid md:grid-cols-2 md:grid-rows-2 sm:block lg:grid xl:block"
+						>
+							<!-- post 0 -->
+							<div class="relative group">
+								<div
+									class="w-full overflow-hidden rounded-md min-h-80 aspect-w-1 aspect-h-1 group-hover:opacity-75 lg:aspect-none"
+								>
+									<img
 										src="../../assets/projects/hobby/seedvault.png"
 										alt="Netflix Clone"
 										class="object-cover object-center w-full rounded-2xl h-96"
@@ -64,7 +106,7 @@
 								</div>
 								<div class="flex justify-between mt-4">
 									<div>
-										<h3 class="font-bold text-gray-100 font-2xl">
+										<h3 class="font-bold text-slate-100 font-2xl">
 											<a
 												href="https://tender-ritchie-77beda.netlify.app/"
 												target="_blank"
@@ -75,7 +117,7 @@
 											</a>
 										</h3>
 										<p
-											class="mt-1 text-sm font-medium text-gray-700 dark:text-slate-400"
+											class="mt-1 text-sm font-medium text-slate-700 dark:text-slate-400"
 										>
 											Built w/ react + tailwind
 										</p>
@@ -104,7 +146,7 @@
 								</div>
 								<div class="flex justify-between mt-4">
 									<div>
-										<h3 class="font-bold text-gray-100 font-2xl">
+										<h3 class="font-bold text-slate-100 font-2xl">
 											<a
 												href="https://vigorous-lumiere-acf9a2.netlify.app/"
 												target="_blank"
@@ -115,7 +157,7 @@
 											</a>
 										</h3>
 										<p
-											class="mt-1 text-sm font-medium dark:text-gray-300 text-slate-700"
+											class="mt-1 text-sm font-medium dark:text-slate-300 text-slate-700"
 										>
 											ThreeJS landing page
 										</p>
@@ -144,7 +186,7 @@
 								</div>
 								<div class="flex justify-between mt-4">
 									<div>
-										<h3 class="font-bold text-gray-100 font-2xl">
+										<h3 class="font-bold text-slate-100 font-2xl">
 											<a
 												href="https://netflix-clone-d8976.web.app/"
 												target="_blank"
