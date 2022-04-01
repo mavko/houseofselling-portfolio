@@ -84,7 +84,7 @@
 				<div
 					class="relative pb-8 -mb-8 text-white bg-white border-t border-slate-200 rounded-b-xl dark:bg-slate-800 dark:border-slate-900/50"
 				>
-					<router-link to="/ispect">
+					<router-link to="/icontrol">
 						<div class="relative">
 							<div
 								data-magnetic

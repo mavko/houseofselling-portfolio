@@ -1,8 +1,5 @@
 <template>
-	<div
-		id="app"
-		class="antialiased bg-slate-50 dark:text-slate-400 dark:bg-slate-900"
-	>
+	<div id="app" class="antialiased bg-slate-50 dark:bg-[#0b0c0d]">
 		<navbar />
 		<router-view :key="$route.fullPath" />
 		<page-footer />

@@ -22,7 +22,7 @@
 
 				<a
 					class="items-center hidden px-3 py-1 ml-3 text-xs font-medium leading-5 rounded-full text-slate-900 dark:text-slate-900 xl:flex hover:bg-sky-400/20 bg-slate-400/50 dark:bg-slate-400"
-					href="_target:sebastian.selling@outlook.com"
+					href="mailto:sebastian.selling@outlook.com"
 					><strong class="font-semibold">Job notice</strong
 					><svg
 						width="2"
