@@ -1,5 +1,5 @@
 <template>
-	<div id="app" class="antialiased bg-slate-50 dark:bg-[#0b0c0d]">
+	<div id="app" class="antialiased">
 		<navbar />
 		<router-view :key="$route.fullPath" />
 		<page-footer />
@@ -7,15 +7,15 @@
 </template>
 
 <script>
-import navbar from './components/navbar.vue'
 import pageFooter from './components/page-footer.vue'
+import Navbar from './components/navbar.vue'
 
 export default {
 	name: 'app',
 
 	components: {
 		pageFooter,
-		navbar,
+		Navbar,
 	},
 }
 </script>

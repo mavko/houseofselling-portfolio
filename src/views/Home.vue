@@ -2,15 +2,12 @@
 	<div id="app">
 		<!-- Header -->
 		<section id="intro"><intro /></section>
-
-		<!-- Main Projects -->
-		<section id="career">
+		<!-- <section id="career">
 			<career />
 		</section>
-		<!-- gallery of hobby projects -->
 		<section id="sideprojects">
 			<sideProjects />
-		</section>
+		</section> -->
 	</div>
 </template>
 

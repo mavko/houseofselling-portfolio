@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Ispect from '../views/Ispect.vue'
 import Icontrol from '../views/Icontrol.vue'
+import Contact from '../views/Contact.vue'
 
 const routes = [
 	{
@@ -19,19 +20,23 @@ const routes = [
 		name: 'icontrol',
 		component: Icontrol,
 	},
+	{
+		path: '/contact',
+		name: 'contact',
+		component: Contact,
+	},
 ]
-
 
 const router = createRouter({
 	history: createWebHistory(),
-	routes
+	routes,
 })
 
-router.beforeEach(function (to, from, next) { 
-    setTimeout(() => {
-        window.scrollTo(0, 0);
-    }, 100);
-    next();
-});
+router.beforeEach(function (to, from, next) {
+	setTimeout(() => {
+		window.scrollTo(0, 0)
+	}, 100)
+	next()
+})
 
 export default router

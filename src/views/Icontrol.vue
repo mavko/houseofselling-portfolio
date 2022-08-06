@@ -1,5 +1,5 @@
 <template>
-	<div class="text-slate-900 dark:text-slate-100">
+	<div class="text-slate-100">
 		<!-- Header -->
 		<div
 			class="container px-10 py-10 mx-auto overflow-hidden large-container lg:px-40 xl:px-40 md:px-20 lg:py-60 xl:py-60 md:py-40 z-1"
