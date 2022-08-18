@@ -258,7 +258,7 @@ body {
 	opacity: 0;
 	z-index: 2;
 	pointer-events: none;
-	animation: flicker 0.15s infinite;
+	animation: flicker 0.55s infinite;
 }
 .crt::before {
 	content: ' ';
@@ -280,13 +280,43 @@ body {
 	pointer-events: none;
 }
 .crt {
-	animation: textShadow 1.6s infinite;
+	animation: textShadow 2s infinite;
 }
+#terminal-text {
+	position: absolute;
+	top: 50px;
 
-.site-title {
-	font-size: 2rem;
+	left: 50px;
+	bottom: 50px;
+	right: 50px;
+	overflow: hidden;
+	color: #fff;
 }
+#code {
+	color: #fff;
 
+	font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console';
+}
+.lrg-copy {
+}
+.blink {
+	opacity: 0;
+	animation: blinker 0.75s linear infinite;
+}
+@keyframes blinker {
+	50% {
+		opacity: 0;
+	}
+	51% {
+		opacity: 1;
+	}
+	98% {
+		opacity: 1;
+	}
+	99% {
+		opacity: 0;
+	}
+}
 /* General text
 --------------------------*/
 strong {

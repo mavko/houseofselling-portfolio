@@ -1,7 +1,7 @@
 <template>
 	<div class="container mx-auto">
 		<div
-			class="flex flex-col w-full text-lg font-semibold text-slate-50 crt site-title"
+			class="flex flex-col w-full px-12 text-lg font-semibold text-slate-50 crt site-title"
 		>
 			<div class="flex flex-col">
 				<div class="flex justify-between mb-12 md:flex-row sm:flex-inline">

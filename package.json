@@ -17,6 +17,7 @@
     "pixi.js": "^6.1.2",
     "simplex-noise": "^3.0.0",
     "smooth-scrollbar": "^8.6.3",
+    "typewriter-effect": "^2.19.0",
     "vue": "^3.0.5",
     "vue-router": "^4.0.11",
     "vuex": "^4.0.0-0"
