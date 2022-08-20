@@ -1,7 +1,9 @@
 <template>
 	<div id="app" class="antialiased">
 		<navbar />
-		<router-view :key="$route.fullPath" />
+		<div class="container mx-auto">
+			<router-view :key="$route.fullPath" />
+		</div>
 		<page-footer />
 	</div>
 </template>

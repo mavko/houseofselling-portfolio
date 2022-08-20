@@ -283,19 +283,13 @@ body {
 	animation: textShadow 2s infinite;
 }
 #terminal-text {
-	position: absolute;
-	top: 50px;
+	white-space: normal;
 
-	left: 50px;
-	bottom: 50px;
-	right: 50px;
-	overflow: hidden;
 	color: #fff;
 }
 #code {
 	color: #fff;
-
-	font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console';
+	white-space: normal;
 }
 .lrg-copy {
 }
