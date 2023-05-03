@@ -100,6 +100,9 @@ onMounted(() => {
 			'CURRENTLY : <a href="https://www.ispect.se"  rel="noopener noreferrer" style="color: #3ff0ed !important" class="mr-3">	// BUILDING ❯ ISPECT</a><br>'
 		)
 		.typeString(
+			'CONTRIBUTOR : <a href="https://www.besiktningsman.se"  rel="noopener noreferrer" style="color: #3ff0ed !important" class="mr-3">	// BESIKTNINGSMAN.SE ❯ SWEDENS PREMIER B2B INSPECTION SERVICE</a><br>'
+		)
+		.typeString(
 			'PREVIOUSLY : <a href="https://www.icontrolapp.se"  rel="noopener noreferrer"  style="color: #3ff0ed !important" class="mr-3">	// BUILT ❯ ICONTROL</a><br>'
 		)
 		.start()
