@@ -55,7 +55,7 @@
 				leave-to="opacity-0"
 			>
 				<div
-					class="fixed inset-0 bg-gray-500 bg-opacity-25 transition-opacity"
+					class="fixed inset-0 bg-slate-900 bg-opacity-25 transition-opacity"
 				/>
 			</TransitionChild>
 
@@ -69,9 +69,7 @@
 					leave-from="opacity-100 scale-100"
 					leave-to="opacity-0 scale-95"
 				>
-					<DialogPanel
-						class="mx-auto max-w-2xl transform divide-y divide-gray-500 divide-opacity-20 overflow-hidden rounded-xl bg-gray-900 shadow-2xl transition-all"
-					>
+					<DialogPanel class="mx-auto max-w-4xl mt-10 transform transition-all">
 						<Terminal />
 					</DialogPanel>
 				</TransitionChild>

@@ -1,12 +1,12 @@
 <template>
-	<div class="font-semibold text-md crt site-title">
+	<div class="font-semibold text-md crt site-title font-mono">
 		<div class="relative">
 			<div
-				class="relative flex *rounded-xl bg-slate-900/70 backdrop-blur ring-1 ring-inset ring-white/10"
+				class="relative flex rounded-3xl bg-slate-950/60 backdrop-blur ring-2 ring-inset ring-indigo-500/20 overflow-hidden"
 			>
 				<div class="relative flex flex-col w-full">
 					<div class="flex-none border-b border-slate-500/30">
-						<div class="flex items-center h-8 space-x-1.5 px-3">
+						<div class="flex items-center h-8 space-x-1.5 p-5">
 							<div class="w-2.5 h-2.5 bg-slate-600 rounded-full"></div>
 							<div class="w-2.5 h-2.5 bg-slate-600 rounded-full"></div>
 							<div class="w-2.5 h-2.5 bg-slate-600 rounded-full"></div>
@@ -44,7 +44,7 @@
                         class="relative flex-auto md:block m-h-[50vh] px-4  text-slate-50 inline-block max-w-xs md:max-w-full"
                       >
 												<div id="terminal-text">
-													<div id="code"></div>
+													<div id="code font-mono"></div>
 												</div>
 											</code>
 										</pre>
@@ -67,43 +67,49 @@ onMounted(() => {
 
 	const typewriter = new Typewriter(codeRef.value, {
 		loop: false,
-		delay: 0.01,
+		delay: 0.00000000000001,
 	})
 
 	typewriter
-		.typeString('INITIALISING CONNECTION<br/>')
-		.pauseFor(150)
-		.typeString('WAITING...................<br>')
-		.pauseFor(150)
 		.typeString(
-			'<span class="whitespace-normal">[ FOUND CONNECTION : HOUSE OF SELLING ]</span><br>'
+			'<span class="text-indigo-400 font-mono">INITIALISING CONNECTION</span><br/>'
+		)
+		.pauseFor(0.01)
+		.typeString('WAITING...................<br>')
+		.pauseFor(0.01)
+		.typeString(
+			'<span class="whitespace-normal font-mono">[ FOUND CONNECTION ] <span class="text-fuchsia-300">HOUSE OF SELLING</span>  </span><br>'
 		)
 		.typeString('..........................<br>')
-		.pauseFor(150)
+		.pauseFor(0.01)
 		.typeString('[ LOCATING NETWORK INFORMATION ]<br>')
 		.typeString('..........................<br>')
-		.pauseFor(150)
+		.pauseFor(0.01)
 		.typeString(
-			'[ LOCAL : 3000 / SEBASTIAN SELLING ]<br>[ NETWORK : IN / <a href="https://www.linkedin.com/in/sebastianselling/" target="_blank" rel="noopener noreferrer" style="color: #3ff0ed !important" class="mr-3">http://linkedin/sebastianselling/</a> ]<br>'
+			'[ LOCAL ] STOCKHOLM / SWEDEN <br>[ NETWORK ] IN / <a href="https://www.linkedin.com/in/sebastianselling/" target="_blank" rel="noopener noreferrer"  class="mr-3 text-indigo-600 link font-mono">https://linkedin/sebastianselling/</a> <br>'
 		)
 		.typeString('..........................<br>')
-		.pauseFor(150)
+		.pauseFor(0.01)
 		.typeString('[ LOADING BIO DATA ]<br>')
 		.typeString('..........................<br>')
-		.pauseFor(150)
+		.pauseFor(0.01)
 		.typeString(
-			'<span class="whitespace-normal">[ BIO ACCESSED : Designer who codes. 10 years of building and designing products. ]</span><br>'
+			'<span class="whitespace-normal">[ BIO ACCESSED ] Designer who codes. 10 years of building and designing products. </span><br>'
 		)
 		.typeString('[ LOADING ARCHIVE DATA ]<br>')
 		.typeString('..........................<br>')
 		.typeString(
-			'CURRENTLY : <a href="https://www.ispect.se"  rel="noopener noreferrer" style="color: #3ff0ed !important" class="mr-3">	// BUILDING ❯ ISPECT</a><br>'
+			'[ CURRENTLY ] <a href="https://www.ispect.se"  rel="noopener noreferrer"  class="mr-1 text-indigo-400">	// BUILDING ❯ ISPECT</a><br>'
+		)
+
+		.typeString(
+			'[ PREVIOUSLY ] <a href="https://www.icontrolapp.se"  rel="noopener noreferrer"  class="mr-1 text-indigo-400">	// BUILT ❯ ICONTROL</a><br>'
 		)
 		.typeString(
-			'CONTRIBUTOR : <a href="https://www.besiktningsman.se"  rel="noopener noreferrer" style="color: #3ff0ed !important" class="mr-3">	// BESIKTNINGSMAN.SE ❯ SWEDENS PREMIER B2B INSPECTION SERVICE</a><br>'
+			'[ CONTRIBUTOR ] <a href="https://www.besiktningsman.se"  rel="noopener noreferrer" class="mr-1 text-blue-400">	// BESIKTNINGSMAN.SE ❯ SWEDENS PREMIER B2B INSPECTION SERVICE</a><br>'
 		)
 		.typeString(
-			'PREVIOUSLY : <a href="https://www.icontrolapp.se"  rel="noopener noreferrer"  style="color: #3ff0ed !important" class="mr-3">	// BUILT ❯ ICONTROL</a><br>'
+			'[ ALUMNI ] <a href="https://www.crunchbase.com/organization/icontrol-2"  rel="noopener noreferrer"  class="mr-1 text-indigo-400">	// ❯ 500 STARTUPS</a><br>'
 		)
 		.start()
 })
