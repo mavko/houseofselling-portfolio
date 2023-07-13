@@ -1,108 +1,19 @@
 <template>
-	<div class="bg-slate-950 h-screen">
-		<div class="relative isolate crt">
-			<div class="absolute inset-0 top-[calc(max(2rem,50%-38rem)+17rem)] z-30">
-				<img
-					src="/seb.jpg"
-					alt=""
-					class="rounded-full w-52 h-52 text-center mx-auto"
-				/>
-				<div class="text-center mx-auto mt-24">
+	<div class="bg-black h-screen  overflow-hidden">
+		<div class="relative isolate   h-screen">
+			<div class="home-bg absolute top-40 inset-x-0">
+
+				<div class="character-bg character ring-2 ring-white/20"></div>
+
+
+				<div aria-hidden="true" class="spotlight absolute z-0 h-full top-[15rem]"></div>
+
+				<div class="text-center mx-auto  absolute inset-x-0 bottom-40 terminal-btn">
 					<Commandbar />
 				</div>
 			</div>
-			<SingularityAnimation />
 
-			<div
-				class="relative flex-none overflow-hidden px-6 lg:pointer-events-none lg:fixed lg:inset-0 lg:z-0 lg:flex lg:px-0"
-			>
-				<!-- gradient effect left -->
-				<div
-					class="absolute inset-0 -z-10 overflow-hidden bg-gray-950 lg:right-[calc(max(2rem,50%-38rem)+38rem)] lg:min-w-[32rem] -rotate-90 top-96"
-				>
-					<svg
-						class="absolute -bottom-48 left-[-40%] h-[80rem] w-[180%] lg:-right-40 lg:bottom-auto lg:left-auto lg:top-[-40%] lg:h-[180%] lg:w-[80rem]"
-						aria-hidden="true"
-					>
-						<defs>
-							<radialGradient id=":R1d6:-desktop" cx="100%">
-								<stop offset="0%" stop-color="rgba(56, 189, 248, 0.3)"></stop>
-								<stop
-									offset="53.95%"
-									stop-color="rgba(0, 71, 255, 0.09)"
-								></stop>
-								<stop offset="100%" stop-color="rgba(10, 14, 23, 0)"></stop>
-							</radialGradient>
-							<radialGradient id=":R1d6:-mobile" cy="100%">
-								<stop offset="0%" stop-color="rgba(56, 189, 248, 0.3)"></stop>
-								<stop
-									offset="53.95%"
-									stop-color="rgba(0, 71, 255, 0.09)"
-								></stop>
-								<stop offset="100%" stop-color="rgba(10, 14, 23, 0)"></stop>
-							</radialGradient>
-						</defs>
-						<rect
-							width="100%"
-							height="100%"
-							fill="url(#:R1d6:-desktop)"
-							class="hidden lg:block"
-						></rect>
-						<rect
-							width="100%"
-							height="100%"
-							fill="url(#:R1d6:-mobile)"
-							class="lg:hidden"
-						></rect>
-					</svg>
-					<div
-						class="absolute inset-x-0 bottom-0 right-0 h-px bg-white mix-blend-overlay lg:left-auto lg:top-0 lg:h-auto lg:w-px"
-					></div>
-				</div>
-				<!-- gradient effect right -->
-				<div
-					class="absolute inset-0 -z-10 overflow-hidden bg-gray-950 lg:left-[calc(max(2rem,50%-38rem)+38rem)] lg:min-w-[32rem] -rotate-90 top-96"
-				>
-					<svg
-						class="absolute -bottom-48 left-[-40%] h-[80rem] w-[180%] lg:-right-40 lg:bottom-auto lg:left-auto lg:top-[-40%] lg:h-[180%] lg:w-[80rem]"
-						aria-hidden="true"
-					>
-						<defs>
-							<radialGradient id=":R1d6:-desktop" cx="100%">
-								<stop offset="0%" stop-color="rgba(56, 189, 248, 0.3)"></stop>
-								<stop
-									offset="53.95%"
-									stop-color="rgba(0, 71, 255, 0.09)"
-								></stop>
-								<stop offset="100%" stop-color="rgba(10, 14, 23, 0)"></stop>
-							</radialGradient>
-							<radialGradient id=":R1d6:-mobile" cy="100%">
-								<stop offset="0%" stop-color="rgba(56, 189, 248, 0.3)"></stop>
-								<stop
-									offset="53.95%"
-									stop-color="rgba(0, 71, 255, 0.09)"
-								></stop>
-								<stop offset="100%" stop-color="rgba(10, 14, 23, 0)"></stop>
-							</radialGradient>
-						</defs>
-						<rect
-							width="100%"
-							height="100%"
-							fill="url(#:R1d6:-desktop)"
-							class="hidden lg:block"
-						></rect>
-						<rect
-							width="100%"
-							height="100%"
-							fill="url(#:R1d6:-mobile)"
-							class="lg:hidden"
-						></rect>
-					</svg>
-					<div
-						class="absolute inset-x-0 bottom-0 right-0 h-px bg-white mix-blend-overlay lg:left-auto lg:top-0 lg:h-auto lg:w-px"
-					></div>
-				</div>
-			</div>
+
 			<!-- <div class="py-24 sm:py-32 lg:pb-40 relative z-20">
 				<div class="mx-auto max-w-7xl px-6 lg:px-8">
 					<div class="mx-auto max-w-4xl text-center">
@@ -149,72 +60,152 @@
 
 <script setup></script>
 <style>
+.spotlight {
+	background: radial-gradient(50% 50% at 50% 50%, #fff 0, hsla(0, 0%, 100%, 0) 100%);
+	opacity: .1;
+	transform: rotate(45deg);
+	width: 100%;
+	top: -80px;
+	max-width: 1800px;
+}
+
+.character-bg {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-image: url(/maincharacter.jpg);
+	width: 100%;
+	height: 100vh;
+	max-width: 400px;
+	max-height: 400px;
+	background-size: contain;
+	position: relative;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	border-radius: 100%;
+
+}
+
+.home-bg {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-image: url(/rings-bg.svg);
+	width: 100%;
+	height: 100vh;
+	max-height: 900px;
+	background-size: cover;
+	position: relative;
+	background-repeat: no-repeat;
+	background-position: 50%;
+}
+
+@keyframes fade {
+	to {
+		opacity: 1;
+		filter: blur(0px);
+	}
+}
+
+.character {
+	opacity: 0;
+	filter: blur(2px);
+	animation: fade 5s ease forwards;
+}
+
+.terminal-btn {
+	opacity: 0;
+	filter: blur(6px);
+	animation: fade 6s ease forwards;
+}
+
 /* CRT text effects */
 @keyframes flicker {
 	0% {
 		opacity: 0.27861;
 	}
+
 	5% {
 		opacity: 0.34769;
 	}
+
 	10% {
 		opacity: 0.23604;
 	}
+
 	15% {
 		opacity: 0.90626;
 	}
+
 	20% {
 		opacity: 0.18128;
 	}
+
 	25% {
 		opacity: 0.83891;
 	}
+
 	30% {
 		opacity: 0.65583;
 	}
+
 	35% {
 		opacity: 0.67807;
 	}
+
 	40% {
 		opacity: 0.26559;
 	}
+
 	45% {
 		opacity: 0.84693;
 	}
+
 	50% {
 		opacity: 0.96019;
 	}
+
 	55% {
 		opacity: 0.08594;
 	}
+
 	60% {
 		opacity: 0.20313;
 	}
+
 	65% {
 		opacity: 0.71988;
 	}
+
 	70% {
 		opacity: 0.53455;
 	}
+
 	75% {
 		opacity: 0.37288;
 	}
+
 	80% {
 		opacity: 0.71428;
 	}
+
 	85% {
 		opacity: 0.70419;
 	}
+
 	90% {
 		opacity: 0.7003;
 	}
+
 	95% {
 		opacity: 0.36108;
 	}
+
 	100% {
 		opacity: 0.24387;
 	}
 }
+
 .crt::after {
 	content: ' ';
 	display: block;

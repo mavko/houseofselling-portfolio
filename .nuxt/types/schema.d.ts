@@ -24,8 +24,3 @@ declare module 'vue' {
           $config: RuntimeConfig
         }
       }
-declare module '@vue/runtime-dom' {
-        interface ComponentCustomProperties {
-          $config: RuntimeConfig
-        }
-      }

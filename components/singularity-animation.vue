@@ -1,20 +1,8 @@
 <template>
 	<div class="absolute z-20 inset-0 h-screen">
-		<svg
-			id="mainSVG"
-			xmlns="http://www.w3.org/2000/svg"
-			viewBox="0 0 800 800"
-			class="stroke-2 w-128 h-128"
-		>
+		<svg id="mainSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" class="stroke-2 w-128 h-128">
 			<defs>
-				<linearGradient
-					id="aiGrad"
-					x1="513.98"
-					y1="290"
-					x2="479.72"
-					y2="320"
-					gradientUnits="userSpaceOnUse"
-				>
+				<linearGradient id="aiGrad" x1="513.98" y1="290" x2="479.72" y2="320" gradientUnits="userSpaceOnUse">
 					<stop offset="0" stop-color="#FCB7E3" stop-opacity="0" />
 					<stop offset=".15" stop-color="#FCB7E3" />
 					<stop offset=".4" stop-color="#8C94C5" />
@@ -81,7 +69,7 @@ onMounted(() => {
 			defaults: {
 				ease: 'sine.inOut',
 			},
-			repeat: -1,
+			repeat: 1,
 		})
 		gsap.set(el, {
 			opacity: 1 - count / allEll.length,
@@ -125,14 +113,14 @@ onMounted(() => {
 		},
 		scale: 1.8,
 		transformOrigin: '25% 25%',
-		repeat: -1,
+		repeat: 1,
 		ease: 'none',
 	})
 	gsap.to('#ai', {
 		duration: 1,
 		scale: 1.6,
 		transformOrigin: '25% 25%',
-		repeat: -1,
+		repeat: 1,
 		yoyo: true,
 		ease: 'sine.inOut',
 	})

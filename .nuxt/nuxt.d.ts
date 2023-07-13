@@ -7,6 +7,7 @@
 /// <reference path="types/vue-shim.d.ts" />
 /// <reference path="types/schema.d.ts" />
 /// <reference path="types/app.config.d.ts" />
+/// <reference types="vite/client" />
 /// <reference path="components.d.ts" />
 /// <reference path="types/imports.d.ts" />
 /// <reference path="imports.d.ts" />

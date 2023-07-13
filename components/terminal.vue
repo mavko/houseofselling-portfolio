@@ -1,22 +1,20 @@
 <template>
-	<div class="font-semibold text-md crt site-title font-mono">
+	<div class="font-semibold text-md crt site-title font-mono crt">
 		<div class="relative">
-			<div
-				class="relative flex rounded-3xl bg-slate-950/60 backdrop-blur ring-2 ring-inset ring-indigo-500/20 overflow-hidden"
-			>
+			<div class="relative flex rounded-3xl bg-black/60 backdrop-blur ring-2 ring-inset ring-white/20 overflow-hidden">
 				<div class="relative flex flex-col w-full">
-					<div class="flex-none border-b border-slate-500/30">
+					<div class="flex-none border-b border-white/30">
 						<div class="flex items-center h-8 space-x-1.5 p-5">
-							<div class="w-2.5 h-2.5 bg-slate-600 rounded-full"></div>
-							<div class="w-2.5 h-2.5 bg-slate-600 rounded-full"></div>
-							<div class="w-2.5 h-2.5 bg-slate-600 rounded-full"></div>
+							<div class="w-2.5 h-2.5 bg-white/20 rounded-full"></div>
+							<div class="w-2.5 h-2.5 bg-white/20 rounded-full"></div>
+							<div class="w-2.5 h-2.5 bg-white/20 rounded-full"></div>
 						</div>
 					</div>
 					<div class="relative">
 						<div class="flex flex-auto">
 							<div class="relative flex-auto w-full h-auto">
 								<pre class="flex h-full text-sm leading-6">
-											<div aria-hidden="true" class="flex-none hidden pr-4 text-right select-none md:block text-slate-600" style="width:50px">
+											<div aria-hidden="true" class="flex-none hidden pr-4 text-right select-none md:block text-white/20" style="width:50px">
 	1
 	2
 	3
@@ -41,7 +39,7 @@
 											</div>
 											<code   
                         ref="codeRef"
-                        class="relative flex-auto md:block m-h-[50vh] px-4  text-slate-50 inline-block max-w-xs md:max-w-full"
+                        class="relative flex-auto md:block m-h-[50vh] px-4 text-gray-400 inline-block max-w-xs md:max-w-full pt-6"
                       >
 												<div id="terminal-text">
 													<div id="code font-mono"></div>
@@ -99,17 +97,17 @@ onMounted(() => {
 		.typeString('[ LOADING ARCHIVE DATA ]<br>')
 		.typeString('..........................<br>')
 		.typeString(
-			'[ CURRENTLY ] <a href="https://www.ispect.se"  rel="noopener noreferrer"  class="mr-1 text-indigo-400">	// BUILDING ❯ ISPECT</a><br>'
+			'[ CURRENTLY ] <a href="https://www.ispect.se" target="_blank"  rel="noopener noreferrer"  class="mr-1 text-indigo-400">	// BUILDING ❯ ISPECT</a><br>'
 		)
 
 		.typeString(
-			'[ PREVIOUSLY ] <a href="https://www.icontrolapp.se"  rel="noopener noreferrer"  class="mr-1 text-indigo-400">	// BUILT ❯ ICONTROL</a><br>'
+			'[ PREVIOUSLY ] <a href="https://www.icontrolapp.se" target="_blank"  rel="noopener noreferrer"  class="mr-1 text-indigo-400">	// BUILT ❯ ICONTROL</a><br>'
 		)
 		.typeString(
-			'[ CONTRIBUTOR ] <a href="https://www.besiktningsman.se"  rel="noopener noreferrer" class="mr-1 text-blue-400">	// BESIKTNINGSMAN.SE ❯ SWEDENS PREMIER B2B INSPECTION SERVICE</a><br>'
+			'[ CONTRIBUTOR ] <a href="https://www.besiktningsman.se" target="_blank"  rel="noopener noreferrer" class="mr-1 text-blue-400">	// BESIKTNINGSMAN.SE ❯ SWEDENS PREMIER B2B INSPECTION SERVICE</a><br>'
 		)
 		.typeString(
-			'[ ALUMNI ] <a href="https://www.crunchbase.com/organization/icontrol-2"  rel="noopener noreferrer"  class="mr-1 text-indigo-400">	// ❯ 500 STARTUPS</a><br>'
+			'[ ALUMNI ] <a href="https://www.crunchbase.com/organization/icontrol-2" target="_blank"  rel="noopener noreferrer"  class="mr-1 text-indigo-400">	// ❯ 500 STARTUPS</a><br>'
 		)
 		.start()
 })

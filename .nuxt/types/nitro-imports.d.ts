@@ -41,6 +41,7 @@ declare global {
   const getRequestHeader: typeof import('h3')['getRequestHeader']
   const getRequestHeaders: typeof import('h3')['getRequestHeaders']
   const getRequestHost: typeof import('h3')['getRequestHost']
+  const getRequestPath: typeof import('h3')['getRequestPath']
   const getRequestProtocol: typeof import('h3')['getRequestProtocol']
   const getRequestURL: typeof import('h3')['getRequestURL']
   const getResponseHeader: typeof import('h3')['getResponseHeader']
@@ -96,4 +97,7 @@ declare global {
   const useStorage: typeof import('/Users/sebastianselling/Developer/houseofselling-portfolio/node_modules/nitropack/dist/runtime')['useStorage']
   const writeEarlyHints: typeof import('h3')['writeEarlyHints']
 }
-export {}
+export { defineCachedFunction, defineCachedEventHandler, cachedFunction, cachedEventHandler, useRuntimeConfig, useStorage, useNitroApp, defineNitroPlugin, nitroPlugin, defineRenderHandler, getRouteRules, useAppConfig } from '/Users/sebastianselling/Developer/houseofselling-portfolio/node_modules/nitropack/dist/runtime';
+export { appendCorsHeaders, appendCorsPreflightHeaders, appendHeader, appendHeaders, appendResponseHeader, appendResponseHeaders, assertMethod, callNodeListener, clearSession, createApp, createAppEventHandler, createError, createEvent, createRouter, defaultContentType, defineEventHandler, defineLazyEventHandler, defineNodeListener, defineNodeMiddleware, deleteCookie, dynamicEventHandler, eventHandler, fetchWithEvent, fromNodeMiddleware, getCookie, getHeader, getHeaders, getMethod, getProxyRequestHeaders, getQuery, getRequestHeader, getRequestHeaders, getRequestHost, getRequestPath, getRequestProtocol, getRequestURL, getResponseHeader, getResponseHeaders, getResponseStatus, getResponseStatusText, getRouterParam, getRouterParams, getSession, handleCacheHeaders, handleCors, isCorsOriginAllowed, isError, isEvent, isEventHandler, isMethod, isPreflightRequest, isStream, lazyEventHandler, parseCookies, promisifyNodeListener, proxyRequest, readBody, readMultipartFormData, readRawBody, sanitizeStatusCode, sanitizeStatusMessage, sealSession, send, sendError, sendNoContent, sendProxy, sendRedirect, sendStream, setCookie, setHeader, setHeaders, setResponseHeader, setResponseHeaders, setResponseStatus, splitCookiesString, toEventHandler, toNodeListener, unsealSession, updateSession, useBase, useSession, writeEarlyHints } from 'h3';
+export { buildAssetsURL as __buildAssetsURL, publicAssetsURL as __publicAssetsURL } from '../../node_modules/nuxt/dist/core/runtime/nitro/paths';
+export { defineAppConfig } from '../../node_modules/nuxt/dist/core/runtime/nitro/config';
