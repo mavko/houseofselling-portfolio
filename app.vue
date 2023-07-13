@@ -1,25 +1,28 @@
 <template>
 	<div class="bg-black h-screen  overflow-hidden">
-		<div class="relative isolate   h-screen">
-			<div class="home-bg absolute top-40 inset-x-0">
-				<div class="character-bg character ring-2 ring-white/20 absolute z-10"></div>
+		<div class="relative isolate h-screen">
+			<div
+				class="home-bg absolute !max-h-[550px] sm:!max-h-[900px] top-[calc(max(-5rem,40%-98rem)+0rem)] sm:top-[calc(max(2rem,50%-38rem)+0rem)] inset-x-0">
 				<div
-					class="character-base ring-1 ring-inset ring-white ring-white/20 rounded-full w-96 h-96 absolute z-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-black via-neutral-100 to-neutral-900 opacity-20 ">
+					class="character ring-2 ring-white/20 absolute z-10 rounded-full max-w-[200px] sm:max-w-[300px] w-full overflow-hidden">
+
+					<img src="/maincharacter.jpg" alt="">
+				</div>
+				<div
+					class="character-base ring-1 ring-inset ring-white ring-white/20 rounded-full sm:w-96 w-60 sm:h-96 h-60 absolute z-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-black via-neutral-100 to-neutral-900 opacity-20 ">
 
 				</div>
-
-
 				<div aria-hidden="true" class="spotlight absolute z-0 h-full top-[15rem]"></div>
 
-				<div class="text-center mx-auto  absolute inset-x-0 bottom-40 terminal-btn">
+				<div class="text-center mx-auto  absolute inset-x-0 bottom-20 sm:bottom-40 terminal-btn">
 					<Commandbar />
 				</div>
 			</div>
 			<footer class="w-full overflow-hidden absolute bottom-0">
 				<div
-					class="translate-y-12 mx-auto relative bottom-0 text-[100%] w-full flex align-center justify-center -z-[1] inset-x-0">
+					class="translate-y-16 md:translate-y-24  mx-auto relative bottom-0 text-[100%] w-full flex align-center justify-center -z-[1] inset-x-0">
 					<h1
-						class="text-4xl font-bold tracking-tight bg-gradient-to-r from-white/10 via-white/40 to-white/10 bg-clip-text text-transparent sm:text-[10rem] py-12 font-outline">
+						class="text-4xl font-bold tracking-tight bg-gradient-to-r from-white/10 via-white/60 to-white/10 bg-clip-text text-transparent sm:text-7xl lg:text-[10rem] py-12 font-outline">
 
 						house of selling
 					</h1>
@@ -80,28 +83,11 @@
 <style>
 .spotlight {
 	background: radial-gradient(50% 50% at 50% 50%, #fff 0, hsla(0, 0%, 100%, 0) 100%);
-	opacity: .1;
+	opacity: .2;
 	transform: rotate(45deg);
 	width: 100%;
 	top: -80px;
 	max-width: 1800px;
-}
-
-.character-bg {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-image: url(/maincharacter.jpg);
-	width: 100%;
-	height: 100vh;
-	max-width: 300px;
-	max-height: 300px;
-	background-size: contain;
-	position: relative;
-	background-repeat: no-repeat;
-	background-position: 50%;
-	border-radius: 100%;
-
 }
 
 .home-bg {
@@ -111,7 +97,6 @@
 	background-image: url(/rings-bg.svg);
 	width: 100%;
 	height: 100vh;
-	max-height: 900px;
 	background-size: cover;
 	position: relative;
 	background-repeat: no-repeat;
