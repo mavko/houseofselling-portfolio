@@ -39,7 +39,7 @@
 											</div>
 											<code   
                         ref="codeRef"
-                        class="relative flex-auto md:block m-h-[50vh] px-4 text-gray-400 inline-block max-w-xs md:max-w-full pt-6"
+                        class="relative flex-auto md:block m-h-[50vh] px-4 text-gray-400 inline-block max-w-xs md:max-w-full py-6"
                       >
 												<div id="terminal-text">
 													<div id="code font-mono"></div>
@@ -76,7 +76,7 @@ onMounted(() => {
 		.typeString('WAITING...................<br>')
 		.pauseFor(0.01)
 		.typeString(
-			'<span class="whitespace-normal font-mono">[ FOUND CONNECTION ] <span class="text-fuchsia-300">HOUSE OF SELLING</span>  </span><br>'
+			'<span class="whitespace-normal font-mono">[ FOUND CONNECTION ] <span class="text-white">HOUSE OF SELLING</span>  </span><br>'
 		)
 		.typeString('..........................<br>')
 		.pauseFor(0.01)
@@ -84,7 +84,7 @@ onMounted(() => {
 		.typeString('..........................<br>')
 		.pauseFor(0.01)
 		.typeString(
-			'[ LOCAL ] STOCKHOLM / SWEDEN <br>[ NETWORK ] IN / <a href="https://www.linkedin.com/in/sebastianselling/" target="_blank" rel="noopener noreferrer"  class="mr-3 text-indigo-600 link font-mono">https://linkedin/sebastianselling/</a> <br>'
+			'[ LOCAL ] <span class="whitespace-normal text-white">STOCKHOLM / SWEDEN</span> <br>[ NETWORK ] IN / <a href="https://www.linkedin.com/in/sebastianselling/" target="_blank" rel="noopener noreferrer"  class="mr-3 text-indigo-400 link font-mono">https://linkedin/sebastianselling/</a> <br>'
 		)
 		.typeString('..........................<br>')
 		.pauseFor(0.01)
@@ -92,7 +92,7 @@ onMounted(() => {
 		.typeString('..........................<br>')
 		.pauseFor(0.01)
 		.typeString(
-			'<span class="whitespace-normal">[ BIO ACCESSED ] Designer who codes. 10 years of building and designing products. </span><br>'
+			'[ BIO ACCESSED ]<span class="whitespace-normal text-white"> Designer who codes. 10 years of building and designing products. </span><br>'
 		)
 		.typeString('[ LOADING ARCHIVE DATA ]<br>')
 		.typeString('..........................<br>')
@@ -104,7 +104,7 @@ onMounted(() => {
 			'[ PREVIOUSLY ] <a href="https://www.icontrolapp.se" target="_blank"  rel="noopener noreferrer"  class="mr-1 text-indigo-400">	// BUILT ❯ ICONTROL</a><br>'
 		)
 		.typeString(
-			'[ CONTRIBUTOR ] <a href="https://www.besiktningsman.se" target="_blank"  rel="noopener noreferrer" class="mr-1 text-blue-400">	// BESIKTNINGSMAN.SE ❯ SWEDENS PREMIER B2B INSPECTION SERVICE</a><br>'
+			'[ CONTRIBUTOR ] <a href="https://www.besiktningsman.se" target="_blank"  rel="noopener noreferrer" class="mr-1 text-indigo-400 whitespace-normal">	// BESIKTNINGSMAN.SE ❯ SWEDENS PREMIER B2B INSPECTION SERVICE</a><br>'
 		)
 		.typeString(
 			'[ ALUMNI ] <a href="https://www.crunchbase.com/organization/icontrol-2" target="_blank"  rel="noopener noreferrer"  class="mr-1 text-indigo-400">	// ❯ 500 STARTUPS</a><br>'
