@@ -14,11 +14,11 @@
 				</div>
 				<div aria-hidden="true" class="spotlight absolute z-0 h-full top-[15rem]"></div>
 
-				<div class="text-center mx-auto  absolute inset-x-0 bottom-20 sm:bottom-40 terminal-btn">
+				<div class="text-center mx-auto  absolute inset-x-0 bottom-20 sm:bottom-40 terminal-btn z-40">
 					<Commandbar />
 				</div>
 			</div>
-			<footer class="w-full overflow-hidden absolute bottom-0">
+			<footer class="w-full overflow-hidden absolute bottom-0 z-10">
 				<div
 					class="translate-y-16 md:translate-y-24  mx-auto relative bottom-0 text-[100%] w-full flex align-center justify-center -z-[1] inset-x-0">
 					<h1
