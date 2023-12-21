@@ -3,84 +3,100 @@
   "compilerOptions": {
     "forceConsistentCasingInFileNames": true,
     "jsx": "preserve",
+    "jsxImportSource": "vue",
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Node",
     "skipLibCheck": true,
+    "isolatedModules": true,
+    "useDefineForClassFields": true,
     "strict": true,
+    "noImplicitThis": true,
+    "esModuleInterop": true,
+    "types": [],
+    "verbatimModuleSyntax": true,
     "allowJs": true,
-    "baseUrl": "/Users/sebastianselling/Developer/houseofselling-portfolio",
     "noEmit": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "types": [
-      "node"
-    ],
     "paths": {
       "~": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio"
+        ".."
       ],
       "~/*": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio/*"
+        "../*"
       ],
       "@": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio"
+        ".."
       ],
       "@/*": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio/*"
+        "../*"
       ],
       "~~": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio"
+        ".."
       ],
       "~~/*": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio/*"
+        "../*"
       ],
       "@@": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio"
+        ".."
       ],
       "@@/*": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio/*"
+        "../*"
       ],
       "assets": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio/assets"
+        "../assets"
+      ],
+      "assets/*": [
+        "../assets/*"
       ],
       "public": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio/public"
+        "../public"
       ],
       "public/*": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio/public/*"
+        "../public/*"
       ],
       "#app": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio/node_modules/nuxt/dist/app"
+        "../node_modules/nuxt/dist/app"
       ],
       "#app/*": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio/node_modules/nuxt/dist/app/*"
+        "../node_modules/nuxt/dist/app/*"
       ],
       "vue-demi": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio/node_modules/nuxt/dist/app/compat/vue-demi"
+        "../node_modules/nuxt/dist/app/compat/vue-demi"
       ],
       "#vue-router": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio/.nuxt/vue-router"
+        "./vue-router-stub"
       ],
       "#imports": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio/.nuxt/imports"
+        "./imports"
       ],
       "#build": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio/.nuxt"
+        "."
       ],
       "#build/*": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio/.nuxt/*"
+        "./*"
       ],
       "#components": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio/.nuxt/components"
+        "./components"
       ]
     }
   },
   "include": [
     "./nuxt.d.ts",
-    "../**/*"
+    "../**/*",
+    "../node_modules/@nuxtjs/tailwindcss/runtime",
+    "../../../.nvm/versions/node/v16.15.1/lib/node_modules/@nuxt/devtools/runtime",
+    "../node_modules/@nuxt/telemetry/runtime",
+    ".."
   ],
   "exclude": [
+    "../node_modules",
+    "../node_modules/nuxt/node_modules",
+    "../../../.nvm/versions/node/v16.15.1/lib/node_modules/@nuxt/devtools",
+    "../node_modules/@nuxtjs/tailwindcss/runtime/server",
+    "../../../.nvm/versions/node/v16.15.1/lib/node_modules/@nuxt/devtools/runtime/server",
+    "../node_modules/@nuxt/telemetry/runtime/server",
     "../dist",
     "../.output"
   ]

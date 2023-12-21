@@ -1,81 +1,16 @@
 <template>
-	<div class="bg-black h-screen  overflow-hidden">
-		<div class="relative isolate h-screen">
+	<div class="bg-zinc-950  overflow-hidden">
+
+		<div class="home-bg absolute top-[calc(max(-5rem,40%-98rem)+0rem)] sm:top-[calc(max(2rem,50%-38rem)+0rem)] inset-x-0">
 			<div
-				class="home-bg absolute !max-h-[550px] sm:!max-h-[900px] top-[calc(max(-5rem,40%-98rem)+0rem)] sm:top-[calc(max(2rem,50%-38rem)+0rem)] inset-x-0">
-				<div
-					class="character ring-2 ring-white/20 absolute z-10 rounded-full max-w-[200px] sm:max-w-[300px] w-full overflow-hidden">
-
-					<img src="/maincharacter.jpg" alt="">
-				</div>
-				<div
-					class="character-base ring-1 ring-inset ring-white ring-white/20 rounded-full sm:w-96 w-60 sm:h-96 h-60 absolute z-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-black via-neutral-100 to-neutral-900 opacity-20 ">
-
-				</div>
-				<div aria-hidden="true" class="spotlight absolute z-0 h-full top-[15rem]"></div>
-
-				<div class="text-center mx-auto  absolute inset-x-0 bottom-20 sm:bottom-40 terminal-btn z-40">
-					<Commandbar />
-				</div>
+				class="character ring-2 ring-white/20 absolute z-10 rounded-full max-w-fit w-full overflow-hidden mx-auto inset-x-0">
+				<MainCharacter />
 			</div>
-			<footer class="w-full overflow-hidden absolute bottom-0 z-10">
-				<div
-					class="translate-y-16 md:translate-y-24  mx-auto relative bottom-0 text-[100%] w-full flex align-center justify-center -z-[1] inset-x-0">
-					<h1
-						class="text-4xl font-bold tracking-tight bg-gradient-to-r from-white/10 via-white/60 to-white/10 bg-clip-text text-transparent sm:text-7xl lg:text-[10rem] py-12 font-outline">
-
-						house of selling
-					</h1>
-
-				</div>
-				<div class="flex py-16 bg-black/70 backdrop-blur-2xl h-10 w-full relative z-[2]">
-					<div aria-hidden='true'
-						class='absolute top-0 w-full z-10 h-px  bg-gradient-to-r from-slate-400/10 via-white/60 to-slate-400/10'>
-					</div>
-				</div>
-			</footer>
-
-			<!-- <div class="py-24 sm:py-32 lg:pb-40 relative z-20">
-				<div class="mx-auto max-w-7xl px-6 lg:px-8">
-					<div class="mx-auto max-w-4xl text-center">
-						<h1
-							class="text-4xl font-bold tracking-tight text-white sm:text-6xl"
-						>
-							Designer that codes and intrapreneur. Occassional janitor.
-						</h1>
-						<p class="mt-6 text-lg leading-8 text-gray-300">
-							I’m Sebastian, a designer and intrapreneur based in Stockholm,
-							Sweden. I’ve co-founded the construction apps ispect & icontrol,
-							where we enable both 3rd party inspections of construction
-							projects in ispect, as well as the in-house checks by the
-							contractors of projects via icontrol.
-						</p>
-						<div
-							class="mt-10 flex-row row-auto text-slate-200 max-w-3xl mx-auto divide-y divide-slate-400 border-spacing-1"
-						>
-							<div class="flex justify-between py-6">
-								<div class="font-bold">Currently building:</div>
-								<div class="text-indigo-400">
-									ispect - the fingerprint of construction
-								</div>
-							</div>
-							<div class="flex justify-between py-6">
-								<div class="font-bold">Active in:</div>
-								<div class="text-indigo-400">
-									Besiktningsman.se - the premier inspector service in Sweden
-								</div>
-							</div>
-							<div class="flex justify-between py-6">
-								<div class="font-bold">Previously:</div>
-								<div class="text-indigo-400">
-									iControl - Never write another report
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div> -->
+			<div class="text-center mx-auto  absolute inset-x-0 bottom-20 sm:bottom-40 terminal-btn z-40 w-full">
+				<Commandbar />
+			</div>
 		</div>
+
 	</div>
 </template>
 

@@ -8,54 +8,67 @@
     "allowJs": true,
     "resolveJsonModule": true,
     "jsx": "preserve",
+    "allowSyntheticDefaultImports": true,
     "jsxFactory": "h",
     "jsxFragmentFactory": "Fragment",
     "paths": {
       "#imports": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio/.nuxt/types/nitro-imports"
+        "./types/nitro-imports"
       ],
       "#paths": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio/node_modules/nuxt/dist/core/runtime/nitro/paths"
+        "../node_modules/nuxt/dist/core/runtime/nitro/paths"
       ],
       "~": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio"
+        "./.."
       ],
       "~/*": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio/*"
+        "../*"
       ],
       "@": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio"
+        "./.."
       ],
       "@/*": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio/*"
+        "../*"
       ],
       "~~": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio"
+        "./.."
       ],
       "~~/*": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio/*"
+        "../*"
       ],
       "@@": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio"
+        "./.."
       ],
       "@@/*": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio/*"
+        "../*"
       ],
       "assets": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio/assets"
+        "../assets"
+      ],
+      "assets/*": [
+        "../assets/*"
       ],
       "public": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio/public"
+        "../public"
       ],
       "public/*": [
-        "/Users/sebastianselling/Developer/houseofselling-portfolio/public/*"
+        "../public/*"
       ]
     }
   },
   "include": [
-    "/Users/sebastianselling/Developer/houseofselling-portfolio/.nuxt/types/nitro-nuxt.d.ts",
+    "./types/nitro-nuxt.d.ts",
+    "../node_modules/@nuxtjs/tailwindcss/runtime/server",
+    "../../../.nvm/versions/node/v16.15.1/lib/node_modules/@nuxt/devtools/module.cjs/runtime/server",
+    "../node_modules/@nuxt/telemetry/runtime/server",
     "./types/nitro.d.ts",
     "../**/*",
     "../server/**/*"
+  ],
+  "exclude": [
+    "../node_modules",
+    "../node_modules/nuxt/node_modules",
+    "../../../.nvm/versions/node/v16.15.1/lib/node_modules/@nuxt/devtools",
+    "../dist"
   ]
 }
