@@ -3,7 +3,7 @@
 
 		<div class="home-bg absolute top-[calc(max(-5rem,40%-98rem)+0rem)] sm:top-[calc(max(2rem,50%-38rem)+0rem)] inset-x-0">
 			<div
-				class="character ring-2 ring-white/20 absolute z-10 rounded-full max-w-fit w-full overflow-hidden mx-auto inset-x-0">
+				class="character border border-white/20 absolute z-10 rounded-full max-w-fit w-full overflow-hidden mx-auto inset-x-0">
 				<MainCharacter />
 			</div>
 			<div class="text-center mx-auto  absolute inset-x-0 bottom-20 sm:bottom-40 terminal-btn z-40 w-full">

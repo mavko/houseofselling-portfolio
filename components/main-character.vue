@@ -1,5 +1,5 @@
 <template>
-  <div class="Loader max-w-xs w-full max-h-96 overflow-hidden p-1.5 rounded-full relative">
+  <div class="Loader max-w-xs w-full max-h-96 overflow-hidden m-3 p-1 rounded-full relative">
     <span class="Loader__Circle"></span>
     <span class="Loader__Circle"></span>
     <span class="Loader__Circle"></span>
@@ -9,13 +9,13 @@
 </template>
 <style>
 :root {
-  --loader-size: 250px;
+  --loader-size: 150px;
   /* Fill data-text */
-  --color-one: #000;
-  --color-two: #333;
-  --color-three: #111;
-  --color-four: #fff;
-  --light-size: 12px;
+  --color-one: #e11d48;
+  --color-two: #fda4af;
+  --color-three: #e11d48;
+  --color-four: #ffe4e6;
+  --light-size: 6px;
 }
 
 /* █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ */
