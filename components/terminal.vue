@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="relative flex rounded-sm bg-zinc-950/90 backdrop-blur-lg border border-white/20 overflow-hidden shadow-2xl shadow-zinc-500/10">
+		class="relative flex bg-neutral-900/90 backdrop-blur-lg border border-white/20 overflow-hidden shadow-2xl shadow-neutral-500/10  rounded-2xl max-w-2xl">
 		<div class="relative flex flex-col w-full">
 			<div class="flex-none border-b border-white/20">
 				<div class="flex items-center h-8 space-x-1.5 p-5">
@@ -11,14 +11,14 @@
 			</div>
 			<div class="relative">
 				<div class="flex flex-auto">
-					<div class="relative flex-auto w-full h-auto">
+					<div class="relative flex-auto w-full h-auto max-w-xs md:max-w-full">
 						<pre class="flex h-full text-sm leading-6">
 							<code   
 								ref="codeRef"
-								class="relative flex-auto md:block m-h-[50vh] px-1.5 text-white/60 inline-block max-w-xs md:max-w-full py-6 ml-3 text-xs leading-relaxed"
+								class="relative flex-auto md:block m-h-[50vh] pl-1.5 pr-3 text-white/80 inline-block  py-6 ml-3 text-sm leading-relaxed"
 							>
-								<div id="terminal-text">
-									<div id="code"></div>
+								<div id="terminal-text" class="whitespace-normal">
+									<div id="code" class="whitespace-normal"></div>
 								</div>
 							</code>
 						</pre>
@@ -50,7 +50,7 @@ onMounted(() => {
 		.typeString('WAITING...................<br>')
 		.pauseFor(0.01)
 		.typeString(
-			'<span class="whitespace-normal font-mono">[ FOUND CONNECTION ] <span class="text-white">HOUSE OF SELLING</span>  </span><br>'
+			'<span class="whitespace-normal font-mono">[ FOUND CONNECTION ] <span class="text-white">House of Selling</span>  </span><br>'
 		)
 		.typeString('..........................<br>')
 		.pauseFor(0.01)
@@ -58,7 +58,7 @@ onMounted(() => {
 		.typeString('..........................<br>')
 		.pauseFor(0.01)
 		.typeString(
-			'[ LOCAL ] <span class="whitespace-normal text-white">STOCKHOLM / SWEDEN</span> <br>[ NETWORK ] IN / <a href="https://www.linkedin.com/in/sebastianselling/" target="_blank" rel="noopener noreferrer"  class="mr-3 text-rose-400 link font-mono">https://linkedin/sebastianselling/</a> <br>'
+			'[ LOCAL ] <span class="whitespace-normal text-white">Stockholm / Sweden</span> <br>[ NETWORK ] IN / <a href="https://www.linkedin.com/in/sebastianselling/" target="_blank" rel="noopener noreferrer"  class="mr-3 text-rose-400 link font-mono whitespace-normal">https://linkedin/sebastianselling/</a> <br>'
 		)
 		.typeString('..........................<br>')
 		.pauseFor(0.01)
@@ -66,22 +66,25 @@ onMounted(() => {
 		.typeString('..........................<br>')
 		.pauseFor(0.01)
 		.typeString(
-			'[ BIO ACCESSED ]<span class="whitespace-normal text-white"> Designer who codes. 10 years of building and designing products. </span><br>'
+			'[ BIO ACCESSED ]<span class="whitespace-normal text-white"> Designer who codes. Over a decade of building and designing products. </span><br>'
 		)
 		.typeString('[ LOADING ARCHIVE DATA ]<br>')
 		.typeString('..........................<br>')
 		.typeString(
-			'[ CURRENTLY ] <a href="https://www.ispect.se" target="_blank"  rel="noopener noreferrer"  class="mr-1 text-rose-400">	// BUILDING ❯ ISPECT</a><br>'
+			'[ STARTING UP ] <a href="https://www.drykit.co" target="_blank"  rel="noopener noreferrer" class="mr-1 text-rose-400 whitespace-normal">	// drykit.co ❯ Revolutionary moisture detection sensor that keeps you and your home safe from mold. </a><br>'
+		)
+		.typeString(
+			'[ CONTRIBUTOR ] <a href="https://www.besiktningsman.se" target="_blank"  rel="noopener noreferrer" class="mr-1 text-rose-400 whitespace-normal">	// besiktningsman.se ❯ Swedens premier construction inspection agency</a><br>'
+		)
+		.typeString(
+			'[ MAINTAINING ] <a href="https://www.ispect.se" target="_blank"  rel="noopener noreferrer"  class="mr-1 text-rose-400 whitespace-normal">	// ispect.se ❯ The standardized inspection app</a><br>'
 		)
 
 		.typeString(
-			'[ PREVIOUSLY ] <a href="https://www.icontrolapp.se" target="_blank"  rel="noopener noreferrer"  class="mr-1 text-rose-400">	// BUILT ❯ ICONTROL</a><br>'
+			'[ PREVIOUSLY ] <a href="https://www.icontrolapp.se" target="_blank"  rel="noopener noreferrer"  class="mr-1 text-rose-400 whitespace-normal">	// icontrol ❯ replaces paper with an app out on the field </a><br>'
 		)
 		.typeString(
-			'[ CONTRIBUTOR ] <a href="https://www.besiktningsman.se" target="_blank"  rel="noopener noreferrer" class="mr-1 text-rose-400 whitespace-normal">	// BESIKTNINGSMAN.SE ❯ SWEDENS PREMIER B2B INSPECTION SERVICE</a><br>'
-		)
-		.typeString(
-			'[ ALUMNI ] <a href="https://www.crunchbase.com/organization/icontrol-2" target="_blank"  rel="noopener noreferrer"  class="mr-1 text-rose-400">	// ❯ 500 STARTUPS</a><br>'
+			'[ ALUMNI ] <a href="https://www.crunchbase.com/organization/icontrol-2" target="_blank"  rel="noopener noreferrer"  class="mr-1 text-rose-400 whitespace-normal">	// ❯ 500 STARTUPS</a><br>'
 		)
 		.start()
 })

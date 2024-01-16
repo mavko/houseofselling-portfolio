@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const defaultTheme = require('tailwindcss/defaultTheme')
 export default defineNuxtConfig({
   css: ['~/main.css'],
   content: [
@@ -11,6 +12,13 @@ export default defineNuxtConfig({
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Mona Sans', ...defaultTheme.fontFamily.sans],
+        display: [
+          ['Mona Sans', ...defaultTheme.fontFamily.sans],
+          { fontVariationSettings: '"wdth" 125' },
+        ],
+      },
       animation: {
         marquee: 'marquee 35s linear infinite',
         marquee2: 'marquee2 35s linear infinite',

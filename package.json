@@ -16,6 +16,7 @@
   "dependencies": {
     "@heroicons/vue": "^2.0.17",
     "@vercel/analytics": "^1.0.1",
+    "cobe": "^0.6.3",
     "gsap": "^3.11.5",
     "nuxt-headlessui": "^1.1.4",
     "typewriter-effect": "^2.19.0"
