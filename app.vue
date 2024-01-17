@@ -9,7 +9,7 @@
 				class="relative flex h-full w-full min-h-[20rem] max-w-2xl items-center justify-center overflow-hidden rounded-2xl border border-white/20 bg-neutral-800 pb-96 sm:pb-40 shadow-2xl md:pb-60">
 
 				<div
-					class="pointer-events-none text-neutral-300 sm:pt-6 absolute left-0 bottom-0 p-6 z-10 font-display font-semibold tracking-widest text-xl ">
+					class="pointer-events-none text-neutral-100 sm:pt-6 absolute left-0 bottom-0 p-6 z-10 font-display font-medium tracking-widest text-xl ">
 					sebastian
 					selling
 				</div>

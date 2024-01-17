@@ -15,7 +15,7 @@
 						<pre class="flex h-full text-sm leading-6">
 							<code   
 								ref="codeRef"
-								class="relative flex-auto md:block m-h-[50vh] pl-1.5 pr-3 text-white/80 inline-block  py-6 ml-3 text-sm leading-relaxed"
+								class="relative flex-auto md:block m-h-[50vh] pl-1.5 pr-3 text-white/60 inline-block  py-6 ml-3 text-sm leading-relaxed"
 							>
 								<div id="terminal-text" class="whitespace-normal">
 									<div id="code" class="whitespace-normal"></div>
