@@ -1,10 +1,10 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, RefObject } from 'react'
 import Typewriter from 'typewriter-effect/dist/core'
 
 const Terminal = () => {
-  const codeRef = useRef(null)
+  const codeRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (!codeRef.current) return
@@ -66,7 +66,7 @@ const Terminal = () => {
   return (
     <pre className="mt-6 flex h-full text-sm leading-6">
       <code
-        ref={codeRef}
+        ref={codeRef as RefObject<HTMLDivElement>}
         className="relative ml-3 mt-6 inline-block h-full flex-auto overflow-y-scroll text-wrap py-6 pl-2.5 pr-3 text-sm leading-relaxed text-neutral-950/80 md:block dark:text-white"
       >
         <div id="terminal-text" className="py-6 text-sm font-medium uppercase ">
