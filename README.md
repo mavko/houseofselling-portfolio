@@ -1,42 +1,43 @@
-# Nuxt 3 Minimal Starter
+# Spotlight
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Spotlight is a [Tailwind UI](https://tailwindui.com) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
 
-## Setup
+## Getting started
 
-Make sure to install the dependencies:
+To get started with this template, first install the npm dependencies:
 
 ```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
 pnpm install
 ```
 
-## Development Server
+Next, create a `.env.local` file in the root of your project and set the `NEXT_PUBLIC_SITE_URL` variable to your site's public URL:
 
-Start the development server on `http://localhost:3000`
-
-```bash
-npm run dev
+```
+NEXT_PUBLIC_SITE_URL=https://example.com
 ```
 
-## Production
-
-Build the application for production:
+Next, run the development server:
 
 ```bash
-npm run build
+pnpm run dev
 ```
 
-Locally preview production build:
+Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
 
-```bash
-npm run preview
-```
+## Customizing
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+You can start editing this template by modifying the files in the `/src` folder. The site will auto-update as you edit these files.
+
+## Learn more
+- [Tailwind CSS](https://tailwindcss.com/docs) - the official Tailwind CSS documentation
+- [Next.js](https://nextjs.org/docs) - the official Next.js documentation
+- [Headless UI](https://headlessui.dev) - the official Headless UI documentation
+- [MDX](https://mdxjs.com) - the MDX documentation
+
+## Todo
+
+[] Update landing page to look like my current website (doing)
+[] Update nav
+[] Polish design to be ultra slick
+[] Photography gallery: https://vercel.com/templates/next.js/image-gallery-starter
+[] Projects / case study update
