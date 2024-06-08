@@ -15,65 +15,63 @@ const Terminal = () => {
     })
 
     typewriter
-      .typeString(
-        '<span class="dark:text-white text-neutral-950 text-sm font-medium">INITIALISING CONNECTION</span><br/>',
-      )
-      .pauseFor(0.01)
-      .typeString('WAITING...................<br>')
+      .pauseFor(2500)
+      .typeString('<span class="font-medium pb-6">Initializing...</span><br>')
       .pauseFor(0.01)
       .typeString(
-        '<span class="whitespace-normal text-sm font-medium">[ FOUND CONNECTION ] <span class="dark:text-white text-neutral-950">house of selling</span>  </span><br>',
+        '<span class="whitespace-normal text-sm font-medium"><span class="bg-white/20 text-white p-1">Connection established</span> <span class="">❯ house of selling</span>  </span><br>',
       )
-      .typeString('..........................<br>')
-      .pauseFor(0.01)
-      .typeString('[ LOCATING NETWORK INFORMATION ]<br>')
-      .typeString('..........................<br>')
       .pauseFor(0.01)
       .typeString(
-        '[ LOCAL ] <span class="whitespace-normal dark:text-white text-neutral-950 text-sm font-medium">stockholm / sweden</span> <br>[ NETWORK ] IN / <a href="https://www.linkedin.com/in/sebastianselling/" target="_blank" rel="noopener noreferrer" class="mr-3 dark:text-white text-neutral-950 link  whitespace-normal underline underline-offset-2">https://linkedin/sebastianselling/</a> <br>',
+        '<span class="font-medium my-3">Fetching profile...</span><br>',
       )
-      .typeString('..........................<br>')
-      .pauseFor(0.01)
-      .typeString('[ LOADING BIO DATA ]<br>')
-      .typeString('..........................<br>')
       .pauseFor(0.01)
       .typeString(
-        '[ BIO ACCESSED ]<span class="dark:text-white text-neutral-950 text-sm font-medium whitespace-normal"> Designer who codes. Over a decade of building and designing products. </span><br>',
+        '❯ IN / <a href="https://www.linkedin.com/in/sebastianselling/" target="_blank" rel="noopener noreferrer" class="mr-3  link  whitespace-normal underline underline-offset-2">https://linkedin/sebastianselling/</a> <br>',
       )
-      .typeString('..........................<br>')
       .pauseFor(0.01)
-      .typeString('[ LOADING ARCHIVE DATA ]<br>')
-      .typeString('..........................<br>')
+      .typeString('<span class="font-medium">Loading bio...</span><br>')
       .pauseFor(0.01)
       .typeString(
-        '[ STARTING UP ] <a href="https://www.drykit.co" target="_blank" rel="noopener noreferrer" class="mr-1 dark:text-white text-neutral-950 whitespace-normal underline underline-offset-2 text-sm font-medium">// drykit.co ❯ Sensors that keeps You and Your Home safe from Mold. </a><br>',
+        '<span class="bg-white/20 text-white p-1">Bio accessed</span><span class=" text-sm font-medium whitespace-normal">❯  Designer who codes. Over a decade of building and designing products. </span><br>',
+      )
+      .pauseFor(0.01)
+      .typeString('<span class="font-medium">Accessing archive...</span><br>')
+      .pauseFor(0.01)
+      .typeString(
+        '<span class="bg-white/20 text-white p-1">starting up</span> <a href="https://www.drykit.co" target="_blank" rel="noopener noreferrer" class="mr-1  whitespace-normal underline underline-offset-2 text-sm font-medium">// drykit.co ❯ Sensors that keeps You and Your Home safe from Mold. </a><br>',
       )
       .typeString(
-        '[ CONTRIBUTOR ] <a href="https://www.besiktningsman.se" target="_blank" rel="noopener noreferrer" class="mr-1 dark:text-white text-neutral-950 whitespace-normal underline underline-offset-2 text-sm font-medium">// besiktningsman.se ❯ Swedens premier construction inspection agency</a><br>',
+        '<span class="bg-white/20 text-white p-1">key contributor</span> <a href="https://www.besiktningsman.se" target="_blank" rel="noopener noreferrer" class="mr-1  whitespace-normal underline underline-offset-2 text-sm font-medium">// besiktningsman.se ❯ Swedens premier construction inspection agency</a><br>',
       )
       .typeString(
-        '[ MAINTAINING ] <a href="https://www.ispect.se" target="_blank" rel="noopener noreferrer" class="mr-1 dark:text-white text-neutral-950 whitespace-normal underline underline-offset-2 text-sm font-medium">// ispect.se ❯ The standardized inspection app</a><br>',
+        '<span class="bg-white/20 text-white p-1">maintaining</span> <a href="https://www.ispect.se" target="_blank" rel="noopener noreferrer" class="mr-1  whitespace-normal underline underline-offset-2 text-sm font-medium">// ispect.se ❯ The standardized inspection app</a><br>',
       )
       .typeString(
-        '[ PREVIOUSLY ] <a href="https://www.icontrolapp.se" target="_blank" rel="noopener noreferrer" class="mr-1 dark:text-white text-neutral-950 whitespace-normal underline underline-offset-2 text-sm font-medium">// icontrol ❯ replace paper with an app on the field </a><br>',
+        '<span class="bg-white/20 text-white p-1">previously</span> <a href="https://www.icontrolapp.se" target="_blank" rel="noopener noreferrer" class="mr-1  whitespace-normal underline underline-offset-2 text-sm font-medium">// icontrol ❯ replace paper with an app on the field </a><br>',
       )
       .typeString(
-        '[ ALUMNI ] <a href="https://www.crunchbase.com/organization/icontrol-2" target="_blank" rel="noopener noreferrer" class="mr-1 dark:text-white text-neutral-950 whitespace-normal underline underline-offset-2 text-sm font-medium">// ❯ 500 STARTUPS</a><br>',
+        '<span class="bg-white/20 text-white p-1">alumni</span> <a href="https://www.crunchbase.com/organization/icontrol-2" target="_blank" rel="noopener noreferrer" class="mr-1  whitespace-normal underline underline-offset-2 text-sm font-medium">// ❯ 500 STARTUPS</a><br>',
       )
       .start()
   }, [])
 
   return (
-    <pre className="mt-6 flex h-full text-sm leading-6">
-      <code
+    <table className="table-auto">
+      <tbody
         ref={codeRef as RefObject<HTMLDivElement>}
-        className="relative ml-3 mt-6 inline-block h-full flex-auto overflow-y-scroll text-wrap py-6 pl-2.5 pr-3 text-sm leading-relaxed text-neutral-950/80 md:block dark:text-white"
+        className="text-sm font-medium text-white"
       >
-        <div id="terminal-text" className="py-6 text-sm font-medium uppercase ">
-          <div id="code" className=""></div>
-        </div>
-      </code>
-    </pre>
+        <tr
+          id="terminal-text"
+          className="w-full cursor-pointer gap-y-8 space-y-8 p-2 hover:bg-black/10 dark:hover:bg-white/20"
+        >
+          <td className="p-1.5">
+            <span id="code"></span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   )
 }
 

@@ -3,11 +3,11 @@ import { GeistMono } from 'geist/font/mono'
 
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
-import { Analytics } from '@vercel/analytics/react';
-
+import { Analytics } from '@vercel/analytics/react'
 
 import '@/styles/tailwind.css'
-
+import Image from 'next/image'
+import bgNoise from '../images/bg-noise.png'
 export const metadata: Metadata = {
   title: {
     template: '%s - Sebastian Selling',
@@ -29,14 +29,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={GeistMono.className} suppressHydrationWarning>
-      <body className="flex h-full bg-neutral-50  antialiased dark:bg-neutral-950">
-        {/* <Image
+      <body className="flex h-full bg-black antialiased">
+        <Image
           src={bgNoise}
           alt=""
-          className="absolute inset-0 -z-10 h-full w-full bg-top opacity-5 dark:opacity-[0.01] forced-colors:hidden"
+          className="absolute inset-0 -z-10 h-full w-full bg-top opacity-[0.03] forced-colors:hidden"
           priority
-        /> */}
-        <div className="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(#00000022_1px,transparent_1px)] [background-size:16px_16px] dark:bg-[radial-gradient(#ffffff22_1px,transparent_1px)]"></div>
+        />
         <Providers>
           <div className="flex w-full">
             <Layout>{children}</Layout>

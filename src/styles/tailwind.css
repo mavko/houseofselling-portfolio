@@ -53,3 +53,10 @@
     background-position: 0 100vh;
   }
 }
+.player_dither__2ctrc {
+  animation: player_animate-mask__2OmYh 350s linear infinite;
+  -webkit-mask-size: 71px;
+  mask-size: 71px;
+  -webkit-mask-image: url(https://assets.vercel.com/image/upload/v1715810978/front/ship-2024/perlin-noise-2.png);
+  mask-image: url(https://assets.vercel.com/image/upload/v1715810978/front/ship-2024/perlin-noise-2.png);
+}
