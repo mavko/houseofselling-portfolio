@@ -2,6 +2,7 @@ declare module 'typewriter-effect/dist/core' {
   import { TypewriterOptions } from 'typewriter-effect'
 
   export default class Typewriter {
+    [x: string]: any
     constructor(element: HTMLElement | null, options?: TypewriterOptions)
     typeString(string: string): Typewriter
     pauseFor(ms: number): Typewriter
