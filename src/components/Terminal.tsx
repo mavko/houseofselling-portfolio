@@ -59,7 +59,6 @@ const Terminal = () => {
   return (
     <table className="table-auto">
       <tbody
-        ref={codeRef as RefObject<HTMLDivElement>}
         className="text-sm font-medium text-white"
       >
         <tr

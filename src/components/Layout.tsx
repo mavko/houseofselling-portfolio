@@ -1,6 +1,5 @@
-import { Header } from '@/components/Header'
+
 import { Container } from './Container'
-import { Navbar, NavbarItem, NavbarSection } from './NavBar'
 import { Link } from './link'
 import {
   Dropdown,

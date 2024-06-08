@@ -1,14 +1,24 @@
 'use client'
 import React, { useState } from 'react'
 
-const Tooltip = ({ children, text }) => {
-  const [isVisible, setIsVisible] = useState(false)
+/**
+ * Tooltip component.
+ *
+ * @param {React.ReactNode} children - The children to display.
+ * @param {string} text - The text to display in the tooltip.
+ * @returns {JSX.Element} The Tooltip component.
+ */
+const Tooltip: React.FC<{
+  children: React.ReactNode
+  text: string
+}> = ({ children, text }): JSX.Element => {
+  const [isVisible, setIsVisible] = useState<boolean>(false)
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = (): void => {
     setIsVisible(true)
   }
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = (): void => {
     setIsVisible(false)
   }
 
