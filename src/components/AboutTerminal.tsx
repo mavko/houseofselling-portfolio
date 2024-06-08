@@ -42,7 +42,6 @@ const AboutTerminal = () => {
     <div>
       <table className="table-auto">
         <tbody
-          ref={codeRef as RefObject<HTMLDivElement>}
           className="text-sm font-medium text-white"
         >
           <tr
