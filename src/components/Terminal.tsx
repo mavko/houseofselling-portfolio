@@ -4,7 +4,7 @@ import { useEffect, useRef, RefObject } from 'react'
 import Typewriter from 'typewriter-effect/dist/core'
 
 const Terminal = () => {
-  const codeRef = useRef<HTMLDivElement>(null)
+  const codeRef = useRef<HTMLTableSectionElement>(null)
 
   useEffect(() => {
     if (!codeRef.current) return
@@ -59,6 +59,7 @@ const Terminal = () => {
   return (
     <table className="table-auto">
       <tbody
+        ref={codeRef as RefObject<HTMLTableSectionElement>}
         className="text-sm font-medium text-white"
       >
         <tr
