@@ -25,6 +25,7 @@ Finally, open [http://localhost:3000](http://localhost:3000) in your browser to 
 You can start editing this template by modifying the files in the `/src` folder. The site will auto-update as you edit these files.
 
 ## Learn more
+
 - [Tailwind CSS](https://tailwindcss.com/docs) - the official Tailwind CSS documentation
 - [Next.js](https://nextjs.org/docs) - the official Next.js documentation
 - [Headless UI](https://headlessui.dev) - the official Headless UI documentation
@@ -32,9 +33,8 @@ You can start editing this template by modifying the files in the `/src` folder.
 
 ## Todo
 
--[x] Update landing page to look like my current website (doing)
--[] Update nav
--[x] Polish design to be ultra slick
+-[x] Update landing page to look like my current website (doing) -[x] Update nav -[x] Polish design to be ultra slick
 -[] Photography gallery: https://vercel.com/templates/next.js/image-gallery-starter
 -[] Projects / case study update
 -[] setup cms like payload, or just go local lol
+-[] inspiration: https://www.miao.company/about
