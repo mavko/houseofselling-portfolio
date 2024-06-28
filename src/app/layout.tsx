@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     default: 'Sebastian Selling - Designer who Codes.',
   },
   description:
-    'I’m Seb, a designer and entrepreneur based in Stockholm, Sweden. Hoping to leave the world slightly more beautiful than I found it.',
+    'I’m Seb, a designer based in Stockholm, Sweden. Hoping to leave the world slightly more beautiful than I found it.',
   alternates: {
     types: {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,

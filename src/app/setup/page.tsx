@@ -1,6 +1,5 @@
 import { Card } from '@/components/Card'
 import { Section } from '@/components/Section'
-import { SimpleLayout } from '@/components/SimpleLayout'
 
 function ToolsSection({
   children,
@@ -41,80 +40,61 @@ export const metadata = {
 
 export default function Setup() {
   return (
-    <section
-    >
+    <section className='pb-20'>
       <div className="space-y-20">
         <ToolsSection title="Workstation">
-          <Tool title="16” MacBook Pro, M1 Max, 64GB RAM (2021)">
-            I was using an Intel-based 16” MacBook Pro prior to this and the
-            difference is night and day. I’ve never heard the fans turn on a
-            single time, even under the incredibly heavy loads I put it through
-            with our various launch simulations.
+          <Tool title="16” MacBook Pro, Intel Core i7, 16GB RAM (2017)">
+            All these years later and it's still kicking. Can't say I'm not eyeing that M-series Macbooks, though...
           </Tool>
-          <Tool title="Apple Pro Display XDR (Standard Glass)">
-            The only display on the market if you want something HiDPI and
-            bigger than 27”. When you’re working at planetary scale, every pixel
-            you can get counts.
+          <Tool title="Samsung UltraWide 49”">
+            Complete immersion. Complete overkill. And used exlusively at the office.
           </Tool>
-          <Tool title="IBM Model M SSK Industrial Keyboard">
-            They don’t make keyboards the way they used to. I buy these any time
-            I see them go up for sale and keep them in storage in case I need
-            parts or need to retire my main.
+          <Tool title="Apple Magic Keyboard">
+            I'm sure there's plenty of really cool hipster premium keyboards out there but at the end of the day, it just works.
           </Tool>
-          <Tool title="Apple Magic Trackpad">
-            Something about all the gestures makes me feel like a wizard with
-            special powers. I really like feeling like a wizard with special
-            powers.
+          <Tool title="Apple Magic Mouse">
+            Same as above, but also the macOS touch features are hard to beat.
           </Tool>
-          <Tool title="Herman Miller Aeron Chair">
-            If I’m going to slouch in the worst ergonomic position imaginable
-            all day, I might as well do it in an expensive chair.
+          <Tool title="Ikea Markus">
+            Same old argument: gets the job done.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Development tools">
-          <Tool title="Sublime Text 4">
-            I don’t care if it’s missing all of the fancy IDE features everyone
-            else relies on, Sublime Text is still the best text editor ever
-            made.
+          <Tool title="Cursor.ai but eyeing Zed">
+            Cursor having integreated AI feature that let's me cookup components and minor features in minutes is hard to beat.
+            Zed however, is performant and minimal - gets out of the way completely. But, needs more maturity.
           </Tool>
-          <Tool title="iTerm2">
-            I’m honestly not even sure what features I get with this that aren’t
-            just part of the macOS Terminal but it’s what I use.
+          <Tool title="Warp Terminal">
+            Making the AI feature describe errors for me as someone who spends minimal time on backend is golden.
           </Tool>
-          <Tool title="TablePlus">
-            Great software for working with databases. Has saved me from
-            building about a thousand admin interfaces for my various projects
-            over the years.
+          <Tool title="Tailwindcss">
+            Not an app or tool necessarily but it fundamentally changed my frontend work to where I now rarely feel like there isn't something I can cookup in css that I envision in my designs.
+            So it deserves a mention just based on that.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Design">
           <Tool title="Figma">
-            We started using Figma as just a design tool but now it’s become our
-            virtual whiteboard for the entire company. Never would have expected
-            the collaboration features to be the real hook.
+            Wasn't the easiest choice to let go of Sketch as I've used it since the early beta days, with its superior native performance, vector tooling etc - but as time goes on and I mostly work on branding and graphics for my projects, Figma fills my needs just fine.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Productivity">
-          <Tool title="Alfred">
-            It’s not the newest kid on the block but it’s still the fastest. The
-            Sublime Text of the application launcher world.
+          <Tool title="Raycast">
+            I don't use even close to what this powerhouse of a tool gives you, but snippets and scripts right in the Spotlight search is increadible. Doesn't hurt the team behind it has a killer brand and design ;)
           </Tool>
-          <Tool title="Reflect">
-            Using a daily notes system instead of trying to keep things
-            organized by topics has been super powerful for me. And with
-            Reflect, it’s still easy for me to keep all of that stuff
-            discoverable by topic even though all of my writing happens in the
-            daily note.
+          <Tool title="Linear">
+            Document and execute on every single project in Linear today. I unironically use it as a source of inspiration for my projects, too. Much like Raycast, the Linear team has done a phenomenal job.
           </Tool>
-          <Tool title="SavvyCal">
-            Great tool for scheduling meetings while protecting my calendar and
-            making sure I still have lots of time for deep work during the week.
+          <Tool title="Discord">
+            Not necessarily the best, but until something more streamlined comes along that doesn't break the bank - it is the go to communications app.
           </Tool>
-          <Tool title="Focus">
-            Simple tool for blocking distracting websites when I need to just do
-            the work and get some momentum going.
+          <Tool title="Cleanshot">
+            Use it every single day, constantly, to share work or create marketing posts. Killer app, worth every penny.
+          </Tool>
+          <Tool title="Apple Notes">
+            I've tried all kinds of notes app over the years but decided to simply stick to the native apple app. Gets the job done and I can easily invite my wife to document things together. Any serious ideas or projects later gets imported into Linear.
           </Tool>
         </ToolsSection>
+
       </div>
     </section>
   )

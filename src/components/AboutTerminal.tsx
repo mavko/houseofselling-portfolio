@@ -27,9 +27,17 @@ const AboutTerminal = () => {
       )
       .pauseFor(0.01)
       .typeString(
-        '<span class="whitespace-normal text-sm font-medium"><span class="bg-white/20 text-white p-1">Archive data found</span> <span class="text-pretty max-w-md">❯ Sebastian Selling is a multi-disciplinary designer of products, brands and websites (he just does not like the word entrepreneur). He is the creative force behind ispect, icontrol (500s), among others. Born in Sweden, with stints in Malta, Spain and Florida, Sebastian currently lives in Stockholm with his wife and daughter.</span>  </span><br>',
+        '<span class="whitespace-normal text-sm font-medium"><span class="bg-white/20 text-white p-1">archive/entry/01</span> <span class="text-pretty max-w-md">❯ Love of the craft since I first laid my hands on Photoshop back in 2001, where I spent my days designing forum signatures and gaming wallpapers.</span>  </span><br>',
+      )
+
+      .pauseFor(0.01)
+      .typeString(
+        '<span class="whitespace-normal text-sm font-medium"><span class="bg-white/20 text-white p-1">archive/entry/02</span> <span class="text-pretty max-w-md">❯ Fast forward to 2012 and my career in making apps took off, initially iOS but overtime quickly focused my efforts on web development and brand design. Today I dabble in fullstack development, but mostly frontend with a focus on the design and experience.</span>  </span><br>',
       )
       .pauseFor(0.01)
+      .typeString(
+        '<span class="whitespace-normal text-sm font-medium"><span class="bg-white/20 text-white p-1">archive/entry/03</span> <span class="text-pretty max-w-md">❯ Entrepreneurial spirit, hence I dream up big ideas and try and make them a reality - mostly in construction or properties. Born in Sweden, with stints in Malta, Spain and Florida. I currently live in Stockholm with my wife and daughter.</span>  </span><br>',
+      )
       .start()
   }, [])
 

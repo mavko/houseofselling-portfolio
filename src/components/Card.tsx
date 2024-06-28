@@ -70,7 +70,7 @@ Card.Description = function CardDescription({
 }: {
   children: React.ReactNode
 }) {
-  return <p className="relative z-10 mt-2 text-sm text-zinc-400">{children}</p>
+  return <p className="relative z-10 mt-2 text-sm text-zinc-300">{children}</p>
 }
 
 Card.Cta = function CardCta({ children }: { children: React.ReactNode }) {
@@ -101,7 +101,7 @@ Card.Eyebrow = function CardEyebrow<T extends React.ElementType = 'p'>({
     <Component
       className={clsx(
         className,
-        'relative z-10 order-first mb-3 flex items-center text-sm text-zinc-500',
+        'relative z-10 order-first mb-3 flex items-center text-sm text-zinc-100',
         decorate && 'pl-3.5',
       )}
       {...props}

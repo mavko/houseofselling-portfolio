@@ -1,4 +1,3 @@
-
 import { Container } from './Container'
 import { Link } from './link'
 import {
@@ -112,17 +111,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 >
                   02_about
                 </Link>
-                {/* <Link
-                  href="/articles"
-                  className="hidden border-r border-white/5 px-4 py-2 sm:block"
-                >
-                  03_articles
-                </Link>
+
                 <Link
                   href="/setup"
                   className="hidden border-r border-white/5 px-4 py-2 sm:block"
                 >
-                  04_setup
+                  03_setup
+                </Link>
+                {/* <Link
+                  href="/articles"
+                  className="hidden border-r border-white/5 px-4 py-2 sm:block"
+                >
+                  04_articles
                 </Link> */}
                 <div className="flex flex-auto items-center justify-end space-x-4 px-4">
                   <svg width="12" height="2" fill="currentColor">
