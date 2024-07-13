@@ -36,10 +36,14 @@ const Terminal = () => {
         '<span class="bg-white/20 text-white p-1">Bio accessed</span><span class=" text-sm font-medium whitespace-normal">❯  Designer who codes. Over a decade of building and designing products. </span><br>',
       )
       .pauseFor(0.01)
-      .typeString('<span class="font-medium">Accessing archive...</span><br>')
+      .typeString('<span class="font-medium">Accessing work archive...</span><br>')
       .pauseFor(0.01)
       .typeString(
-        '<span class="bg-white/20 text-white p-1">starting up</span> <a href="https://www.drykit.co" target="_blank" rel="noopener noreferrer" class="mr-1  whitespace-normal underline underline-offset-2 text-sm font-medium">// drykit.co ❯ Sensors that keeps You and Your Home safe from Mold. </a><br>',
+        '<span class="bg-white/20 text-white p-1">starting up</span> <a href="https://gcorp-landingpage.vercel.app/" target="_blank" rel="noopener noreferrer" class="mr-1  whitespace-normal underline underline-offset-2 text-sm font-medium">// g:corp ❯ micro service app studio </a><br>',
+      )
+      .pauseFor(0.01)
+      .typeString(
+        '<span class="bg-white/20 text-white p-1">key contributor</span> <a href="https://www.drykit.co" target="_blank" rel="noopener noreferrer" class="mr-1  whitespace-normal underline underline-offset-2 text-sm font-medium">// drykit.co ❯ Sensors that keeps You and Your Home safe from Mold. </a><br>',
       )
       .typeString(
         '<span class="bg-white/20 text-white p-1">key contributor</span> <a href="https://www.besiktningsman.se" target="_blank" rel="noopener noreferrer" class="mr-1  whitespace-normal underline underline-offset-2 text-sm font-medium">// besiktningsman.se ❯ Swedens premier construction inspection agency</a><br>',

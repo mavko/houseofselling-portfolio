@@ -66,8 +66,8 @@ export const metadata: Metadata = {
 export default function Projects() {
   return (
     <SimpleLayout
-      title="Things I’ve made trying to put my dent in the universe."
-      intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+      title="Some of my projects."
+      intro="I’ve worked on quite a few smaller and larger projects over the years but these are the ones that I’m most proud of. Coming from a family that's been in the construction industry for generations, it became quite natural to try and solve their issues with technology, so most if not all projects are in construction or properties."
     >
       <ul
         role="list"
@@ -83,7 +83,7 @@ export default function Projects() {
                 unoptimized
               />
             </div>
-            <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+            <h2 className="mt-6 text-base font-semibold text-zinc-100">
               <Card.Link href={project.link.href}>{project.name}</Card.Link>
             </h2>
             <Card.Description>{project.description}</Card.Description>

@@ -105,6 +105,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <span className="pt-1.5">01_home</span>
               </Link>
               <div className="mt-2 flex flex-auto items-center rounded-tl border-y border-l border-r-0 border-white/10 bg-neutral-900 lg:rounded-tr">
+                {/* <Link
+                  href="/articles"
+                  className="hidden border-r border-white/5 px-4 py-2 sm:block"
+                >
+                  02_articles
+                </Link>
+                <Link
+                  href="/projects"
+                  className="hidden border-r border-white/5 px-4 py-2 sm:block"
+                >
+                  02_projects
+                </Link> */}
                 <Link
                   href="/about"
                   className="border-r border-white/5 px-4 py-2"
@@ -118,12 +130,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 >
                   03_setup
                 </Link>
-                {/* <Link
-                  href="/articles"
-                  className="hidden border-r border-white/5 px-4 py-2 sm:block"
-                >
-                  04_articles
-                </Link> */}
+
                 <div className="flex flex-auto items-center justify-end space-x-4 px-4">
                   <svg width="12" height="2" fill="currentColor">
                     <circle cx="1" cy="1" r="1"></circle>
