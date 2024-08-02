@@ -60,3 +60,10 @@
   -webkit-mask-image: url(https://assets.vercel.com/image/upload/v1715810978/front/ship-2024/perlin-noise-2.png);
   mask-image: url(https://assets.vercel.com/image/upload/v1715810978/front/ship-2024/perlin-noise-2.png);
 }
+.bg {
+  --grid-offset: calc(50% - 3.75rem / 2);
+  background-image: linear-gradient(to right, #0b0b0b 1px, transparent 1px),
+    linear-gradient(to bottom, #0b0b0b 1px, transparent 1px);
+  background-position: var(--grid-offset) var(--grid-offset);
+  background-size: 3.75rem 3.75rem;
+}
