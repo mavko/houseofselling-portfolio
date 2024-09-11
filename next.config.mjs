@@ -5,6 +5,24 @@ import remarkGfm from 'remark-gfm'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.(mp4|webm)$/,
+      use: {
+        loader: 'file-loader',
+        options: {
+          publicPath: '/_next/static/videos/',
+          outputPath: 'static/videos/',
+          name: '[name].[hash].[ext]',
+        },
+      },
+    });
+
+    return config;
+  },
+  images: {
+    domains: ['f003.backblazeb2.com'], // Add this line to allow Backblaze B2 domain
+  },
 }
 
 const withMDX = nextMDX({

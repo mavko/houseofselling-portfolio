@@ -4,10 +4,9 @@ import { GeistSans } from 'geist/font/sans'
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
 import { Analytics } from '@vercel/analytics/react'
-import Image from 'next/image'
-import avatarImage from '@/images/dither.avif'
 
 import '@/styles/tailwind.css'
+import { PortfolioNav } from '@/components/PortfolioNav'
 
 export const metadata: Metadata = {
   title: {
@@ -30,17 +29,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={GeistSans.className} suppressHydrationWarning>
-      <body className="flex h-full bg-[#1a1a1a] text-[#f2f2f2] antialiased font-sans">
+      <body className="w-full bg-[#111213] text-[#f2f2f2] antialiased font-sans">
 
         <Providers>
-          <div className="flex w-full">
-            <Image
-              src={avatarImage}
-              alt=""
-              className="player_dither__2ctrc absolute left-0 top-0 h-12 w-16 rotate-180 -scale-y-150 opacity-50 brightness-100 invert z-50"
-            />
-            <Layout>{children}</Layout>
-          </div>
+          <Layout>
+            {children}
+            <PortfolioNav />
+            <div className='[mask-image:linear-gradient(to_top,_rgb(0,_0,_0)_25%,_transparent)] bg-black/20 backdrop-filter backdrop-blur-[5px] w-full h-20 bottom-0 pointer-events-none fixed z-40 inset-x-0'></div>
+          </Layout>
         </Providers>
         <Analytics />
       </body>
