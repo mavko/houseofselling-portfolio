@@ -8,7 +8,8 @@ import {
   DialogImage,
   DialogContainer,
 } from '@/components/Dialog'
-
+import { XMarkIcon } from '@heroicons/react/24/solid'
+// content
 import bussStation from '@/images/photos/bussStation.jpg'
 import codingEvening from '@/images/photos/codingEvening.jpeg'
 import cyberTullen from '@/images/photos/cyberTullen.jpg'
@@ -45,7 +46,7 @@ import vasterhaningeShops from '@/images/photos/vasterhaningeShops.jpg'
 import wanderingHorse from '@/images/photos/wanderingHorse.jpg'
 import windowIntoSummer from '@/images/photos/windowIntoSummer.jpg'
 import winteryCity from '@/images/photos/winteryCity.jpg'
-import { XMarkIcon } from '@heroicons/react/24/solid'
+
 
 export const metadata: Metadata = {
   title: 'Photography',
