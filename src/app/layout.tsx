@@ -35,7 +35,7 @@ export default function RootLayout({
           <Layout>
             {children}
             <PortfolioNav />
-            <div className='[mask-image:linear-gradient(to_top,_rgb(0,_0,_0)_25%,_transparent)] bg-black/20 backdrop-filter backdrop-blur-[5px] w-full h-20 bottom-0 pointer-events-none fixed z-40 inset-x-0'></div>
+            <div className='[mask-image:linear-gradient(to_top,_rgb(0,_0,_0)_25%,_transparent)] bg-black/20 backdrop-filter backdrop-blur-[5px] w-full h-20 bottom-0 pointer-events-none fixed z-30 inset-x-0'></div>
           </Layout>
         </Providers>
         <Analytics />

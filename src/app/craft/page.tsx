@@ -1,8 +1,19 @@
 import { type Metadata } from 'next'
 import Image, { StaticImageData } from 'next/image'
+
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogClose,
+  DialogImage,
+  DialogContainer,
+} from '@/components/Dialog'
+
 import woordwave from '@/images/craft/woordwave.png'
 import scribblyFolder from '@/images/craft/scribbly-folder.png'
 import ispectLogo from '@/images/craft/ispect-logo-update.png'
+import { XMarkIcon } from '@heroicons/react/24/solid'
 
 // Import any video files you want to use
 // import exampleVideo from '@/videos/example.mp4'
@@ -120,9 +131,38 @@ export default function Craft() {
     <>
       <section className='columns-1 sm:columns-2 md:columns-3 space-y-3 gap-3 px-3 py-6'>
         {craftItems.map((item, index) => (
-          <div key={index} className='relative ring-1 ring-white/20 bg-[#1c1c1c] p-1.5 rounded-xl overflow-hidden h-fit w-full'>
-            <MediaComponent item={item} />
-          </div>
+          <Dialog
+            transition={{
+              duration: 0.3,
+              ease: 'easeInOut',
+            }}
+          >
+            <DialogTrigger>
+              <div key={index} className='relative ring-1 ring-white/20 bg-[#1c1c1c] p-1.5 rounded-xl overflow-hidden h-fit w-full'>
+                <MediaComponent item={item} />
+              </div>
+            </DialogTrigger>
+            <DialogContainer>
+              <DialogContent className='relative'>
+                <div key={index} className='relative ring-1 ring-white/10 bg-[#1c1c1c] p-1.5 rounded-xl overflow-hidden h-full w-full'>
+                  <MediaComponent item={item} />
+                </div>
+              </DialogContent>
+              <DialogClose
+                className='fixed right-6 top-6 h-fit w-fit rounded-full bg-white p-1'
+                variants={{
+                  initial: { opacity: 0 },
+                  animate: {
+                    opacity: 1,
+                    transition: { delay: 0.3, duration: 0.1 },
+                  },
+                  exit: { opacity: 0, transition: { duration: 0 } },
+                }}
+              >
+                <XMarkIcon className='size-6 fill-black' />
+              </DialogClose>
+            </DialogContainer>
+          </Dialog>
         ))}
       </section>
     </>
