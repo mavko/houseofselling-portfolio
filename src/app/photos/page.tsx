@@ -84,7 +84,6 @@ const photoItems: PhotoItem[] = [
   { type: 'image', src: saturdayLights, alt: "Saturday lights" },
   { type: 'image', src: september, alt: "September" },
   { type: 'image', src: sleepylangholmen, alt: "Sleepy Langholmen" },
-  { type: 'image', src: stairsatDusk, alt: "Stairs at dusk" },
   { type: 'image', src: subwayDystopia, alt: "Subway dystopia" },
   { type: 'image', src: summerDream, alt: "Summer dream" },
   { type: 'image', src: sunsetPov, alt: "Sunset POV" },
