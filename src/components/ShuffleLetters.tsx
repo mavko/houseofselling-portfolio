@@ -22,16 +22,16 @@ const projects = [
     year: 2017
   },
   {
-    name: "icontrol",
-    description: "Replace paper with an app on the field",
-    href: "https://www.icontrolapp.se",
-    year: 2014
-  },
-  {
     name: "500 startups",
     description: "Investment and leadership to build iControl",
     href: "https://www.crunchbase.com/organization/icontrol-2",
     year: 2016
+  },
+  {
+    name: "icontrol",
+    description: "Replace paper with an app on the field",
+    href: "https://www.icontrolapp.se",
+    year: 2014
   },
   {
     name: "ispect",

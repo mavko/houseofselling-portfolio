@@ -1,5 +1,4 @@
-import BlurIn from '@/components/BlurIn'
-import { PortfolioNav } from '@/components/PortfolioNav'
+
 import ProjectsList from '@/components/ShuffleLetters'
 import Image from 'next/image'
 import avatarImage from '@/images/dither.avif'

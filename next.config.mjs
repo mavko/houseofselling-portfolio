@@ -21,7 +21,7 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: ['f003.backblazeb2.com'], // Add this line to allow Backblaze B2 domain
+    domains: ['f003.backblazeb2.com', 'api.microlink.io'], // Add this line to allow Backblaze B2 domain
   },
 }
 

@@ -27,13 +27,13 @@ const data = [
     ),
     href: '/photos',
   },
-  // {
-  //   title: 'About',
-  //   icon: (
-  //     <FaceSmileIcon className='h-full w-full text-neutral-300' />
-  //   ),
-  //   href: '/about',
-  // },
+  {
+    title: 'About',
+    icon: (
+      <FaceSmileIcon className='h-full w-full text-neutral-300' />
+    ),
+    href: '/about',
+  },
   {
     title: 'Github',
     icon: (
