@@ -4,6 +4,7 @@ import { GeistSans } from 'geist/font/sans'
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import '@/styles/tailwind.css'
 import { PortfolioNav } from '@/components/PortfolioNav'
@@ -76,6 +77,7 @@ export default function RootLayout({
           </Layout>
         </Providers>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
