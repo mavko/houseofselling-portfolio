@@ -35,6 +35,28 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sebastian Selling',
+    description: 'Design Engineer with over a Decade of experience building brands and apps.',
+    siteId: '@houseofselling',
+    creator: '@houseofselling',
+    creatorId: '1675809229276364802',
+    images: ['https://sebastianselling.com/og.png'], // Must be an absolute URL
+  },
+  robots: {
+    index: false,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: false,
+      noimageindex: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export default function RootLayout({
