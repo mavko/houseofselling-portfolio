@@ -32,7 +32,7 @@ export default function About() {
           className="player_dither__2ctrc absolute right-0 bottom-0 h-6 w-16  -scale-y-150 opacity-50 brightness-100 invert z-50"
         />
       </header>
-      <section className='prose prose-p:text-[#ededed]/80'>
+      <section className='prose prose-p:text-[#ededed]/80 prose-a:text-[#FFC799]'>
         <h2 className='text-[#e8e6e3]'>Hello there, I'm Sebastian Selling</h2>
         <p >Love of the craft since I first laid my hands on Photoshop back in 2001, where I spent my days designing forum signatures and gaming wallpapers. As I grew older I competed in e-sports, mostly counter-strike 1.6 (dating myself here) but also world of warcraft - during this time I found that I loved creating compilation videos of my matches, and of my team mates / friends. </p>
         <p>
@@ -90,7 +90,7 @@ export default function About() {
         </p>
         <h3 className='text-[#e8e6e3]'>Contact:</h3>
 
-        <div className='border border-white/10 bg-[#1c1c1c] rounded-xl flex flex-col sm:flex-row w-fit px-6 py-3 gap-6'>
+        <div className='border border-white/10 bg-[#1c1c1c] rounded-xl flex flex-col sm:flex-row w-fit px-6 py-3 gap-6 text-sm'>
 
           <a href="mailto:houseofselling@proton.me">houseofselling@proton.me</a>
 
