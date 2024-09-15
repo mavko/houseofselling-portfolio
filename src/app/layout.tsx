@@ -14,11 +14,26 @@ export const metadata: Metadata = {
     default: 'Sebastian Selling - Designer who Codes.',
   },
   description:
-    'I’m Seb, a designer based in Stockholm, Sweden. Hoping to leave the world slightly more beautiful than I found it.',
+    'Design Engineer with over a Decade of experience building brands and apps.',
   alternates: {
     types: {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
     },
+  },
+  openGraph: {
+    title: 'Sebastian Selling',
+    description: 'Design Engineer with over a Decade of experience building brands and apps.',
+    url: 'https://sebastianselling.com',
+    siteName: 'Sebastian Selling',
+    images: [
+      {
+        url: 'https://sebastianselling.com/og.png', // Must be an absolute URL
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
   },
 }
 
