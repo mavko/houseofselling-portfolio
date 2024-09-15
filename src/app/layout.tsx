@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     images: ['https://sebastianselling.com/og.png'], // Must be an absolute URL
   },
   robots: {
-    index: false,
+    index: true,
     follow: true,
     nocache: true,
     googleBot: {
