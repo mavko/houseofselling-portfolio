@@ -19,19 +19,7 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <main className='max-w-3xl mx-auto px-6 sm:px-10 py-24 '>
-      <header className='relative ring-1 ring-white/10 bg-white/5  -mx-2 rounded-xl overflow-hidden'>
-        <Image
-          src={avatarImage}
-          alt=""
-          className="player_dither__2ctrc absolute left-0 top-0 h-6 w-16 rotate-180 -scale-y-150 opacity-50 brightness-100 invert z-50"
-        />
-        <h1 className="text-base font-sans font-medium text-center px-2 py-3">❯ About me</h1>
-        <Image
-          src={avatarImage}
-          alt=""
-          className="player_dither__2ctrc absolute right-0 bottom-0 h-6 w-16  -scale-y-150 opacity-50 brightness-100 invert z-50"
-        />
-      </header>
+
       <section className='prose prose-p:text-[#ededed]/80 prose-a:text-[#FFC799]'>
         <h2 className='text-[#e8e6e3]'>Hello there, I'm Sebastian Selling</h2>
         <p >Love of the craft since I first laid my hands on Photoshop back in 2001, where I spent my days designing forum signatures and gaming wallpapers. As I grew older I competed in e-sports, mostly counter-strike 1.6 (dating myself here) but also world of warcraft - during this time I found that I loved creating compilation videos of my matches, and of my team mates / friends. </p>

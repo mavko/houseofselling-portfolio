@@ -1,5 +1,5 @@
 pre[class*='language-'] {
-  color: theme('colors.zinc.100');
+  color: theme('colors.neutral.100');
 }
 
 .token.tag,
@@ -7,8 +7,9 @@ pre[class*='language-'] {
 .token.selector,
 .token.selector .class,
 .token.selector.class,
-.token.function {
-  color: theme('colors.pink.400');
+.token.function,
+.token.number {
+  color: theme('colors.orange.300');
 }
 
 .token.attr-name,
@@ -16,7 +17,7 @@ pre[class*='language-'] {
 .token.rule,
 .token.pseudo-class,
 .token.important {
-  color: theme('colors.zinc.300');
+  color: theme('colors.orange.300');
 }
 
 .token.module {

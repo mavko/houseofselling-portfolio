@@ -1,8 +1,13 @@
 "use client"
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-
-const projects = [
+const current = [
+  {
+    name: "South Korea",
+    description: "Actively looking for opportunities in SK",
+    href: "/about",
+    year: 2025
+  },
   {
     name: "g:corp",
     description: "App studio for the 21st century",
@@ -21,6 +26,8 @@ const projects = [
     href: "https://www.besiktningsman.se",
     year: 2017
   },
+];
+const previous = [
   {
     name: "500 startups",
     description: "Investment and leadership to build iControl",
@@ -30,7 +37,7 @@ const projects = [
   {
     name: "icontrol",
     description: "Replace paper with an app on the field",
-    href: "https://www.icontrolapp.se",
+    href: "/craft/makings-of-icontrol",
     year: 2014
   },
   {
@@ -183,9 +190,26 @@ const Project: React.FC<{ href: string; name: string; description: string; year:
 const ProjectsList = () => {
   return (
     <>
+      <motion.h2 initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className='text-xs p-2 -m-3 font-bold flex items-center my-5'>
+        ❯ Currently
+      </motion.h2>
+      <div className="mt-4 flex flex-col gap-7 mx-auto w-full max-w-7xl">
+        {current.map((project, index) => (
+          <Project key={project.href} {...project} index={index} />
+        ))}
+      </div>
+
+
+      <motion.h2 initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className='text-xs p-2 -m-3 font-bold flex items-center my-5'>
+        ❯ Previously
+      </motion.h2>
 
       <div className="mt-4 flex flex-col gap-7 mx-auto w-full max-w-7xl">
-        {projects.map((project, index) => (
+        {previous.map((project, index) => (
           <Project key={project.href} {...project} index={index} />
         ))}
       </div>

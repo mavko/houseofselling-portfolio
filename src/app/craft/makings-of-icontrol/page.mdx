@@ -1,0 +1,142 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import ideation1 from '@/images/craft/icontrol/sketches/ideation1.jpg'
+import ideation2 from '@/images/craft/icontrol/icontrol_iphone_sketches.jpg'
+
+import dashboardBlueprint from '@/images/craft/icontrol/screens/icontrol_dashboard_blueprint.png'
+import dashboardModals from '@/images/craft/icontrol/screens/icontrol_dashboard_modals.png'
+import ipadBlueprint from '@/images/craft/icontrol/screens/icontrol-ipad-blueprint.png'
+import iphoneMockup from '@/images/craft/icontrol/icontrol_iphone_photo.jpg'
+
+import onTheField from '@/images/craft/icontrol/onthefield.jpg'
+import onTheField2 from '@/images/craft/icontrol/icontrol_constructionsite_inspection.jpg'
+
+import bobby from '@/images/craft/icontrol/mascot_bobbythebuilder.png'
+import logoFin from '@/images/craft/icontrol/icontrol_logo.png'
+
+export const article = {
+  author: 'Seb',
+  date: '2024-09-17',
+  title: 'Makings of iControl',
+  description:
+    'An overview of how we laid the foundation of icontrol from the perspective of the sole designer, little old me.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+### The Pitch
+
+Have a listen to our co-founder [Anton Fagerberg's](https://www.linkedin.com/in/aejfager/) 2 min pitch at 500 startups to get a good grasp of why we created iControl
+
+<iframe
+  src="https://www.youtube-nocookie.com/embed/9Q6iwRgAejE"
+  title="500 global icontrol pitch"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+  className="aspect-video w-full"
+></iframe>
+
+[500 Demo Day Batch 19: iControl Slideshare](https://www.slideshare.net/500startups/500-demo-day-batch-19-icontrol)
+
+[iControl landing page](https://icontrolapp.se/en/)
+
+### Zero to One
+
+Setting the foundation with tons of sketching, brand & voice outlining and UI iteration.
+
+<Image
+  src={ideation1}
+  objectFit="cover"
+  alt="Ideation sketch 1"
+  className="h-auto w-full"
+/>
+-Setting a branding tone of voice
+<Image
+  src={ideation2}
+  objectFit="cover"
+  alt="Ideation sketch 1"
+  className="h-auto w-full"
+/>
+-Initial outlines of iControl iPhone features
+
+Obviously a ton of more work than shown here but for the sake of brevity I've chosen the pictures and screens that convey the core rather than blasting you with dozens and dozens of images.
+
+### Actual implementations
+
+With a rather rapid build, deploy and iterate cycle once customers have gotten their hands on the app we went through quite a large number of versions of the app over the years. During my time there we built the app on iOS for iPhone and iPad, later adding in a web dashboard to accomodate the ever increasing project sizes.
+
+I'll try and highlight some of the finished screens from the app(s).
+
+<Image
+  src={dashboardBlueprint}
+  objectFit="cover"
+  alt="Ideation sketch 1"
+  className="h-auto w-full"
+/>
+Dashboard and blueprint feature mockup
+<Image
+  src={dashboardModals}
+  objectFit="cover"
+  alt="Ideation sketch 1"
+  className="h-auto w-full"
+/>
+Invite onboarding upon team creation
+<Image
+  src={ipadBlueprint}
+  objectFit="cover"
+  alt="Ideation sketch 1"
+  className="h-auto w-full"
+/>
+We later scaled the app to iPad which was greatly appreciated for the blueprint
+issue feature
+<Image
+  src={iphoneMockup}
+  objectFit="cover"
+  alt="Ideation sketch 1"
+  className="h-auto w-full"
+/>
+Communication on the iphone version
+
+### On the field
+
+We landed quite a few projects rather rapidly. We tried every approach: From the CEO's to the boots on the ground carpenters, and quickly realized it was the project managers who made sure something like iControl got widespread adoption. They lived in the real world day to day headaches of both the construction workers but also the money constrains - so to them, shining the light on issues early on meant not only saving time, but the budget didn't get crushed.
+
+<Image
+  src={onTheField}
+  objectFit="cover"
+  alt="Ideation sketch 1"
+  className="h-auto w-full"
+/>
+<Image
+  src={onTheField2}
+  objectFit="cover"
+  alt="Ideation sketch 1"
+  className="h-auto w-full"
+/>
+
+### Mascot & Logo
+
+Building out the iControl brand was done in a rather typical startup touch-n-go process. As I got to know the market, its customers and what we as a team valued I worked in iterative phases whenever there was space to do so.
+
+As a sidenote: I still approach most of my branding work this way - branding is so hard to get right and everyone has their own reaction to it. It's best to not get married to whatever you first produce, and consistently iterate on it as you grow in experience and know more.
+
+<Image
+  src={logoFin}
+  objectFit="cover"
+  alt="Ideation sketch 1"
+  className="h-auto w-full"
+/>
+Somewhat finalized logo.
+<Image
+  src={bobby}
+  objectFit="cover"
+  alt="Ideation sketch 1"
+  className="h-auto w-full"
+/>
+Our diligent mascot Bobby who loves to eat reports. Fun way to illustrate
+features but was used sparingly.

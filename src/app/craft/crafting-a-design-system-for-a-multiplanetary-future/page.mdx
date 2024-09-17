@@ -1,11 +1,12 @@
 import { ArticleLayout } from '@/components/ArticleLayout'
+import designSystem from './planetaria-design-system.png'
 
 export const article = {
   author: 'Adam Wathan',
-  date: '2022-09-02',
-  title: 'Introducing Animaginary: High performance web animations',
+  date: '2022-09-05',
+  title: 'Crafting a design system for a multiplanetary future',
   description:
-    'When you’re building a website for a company as ambitious as Planetaria, you need to make an impression. I wanted people to visit our website and see animations that looked more realistic than reality itself.',
+    'Most companies try to stay ahead of the curve when it comes to visual design, but for Planetaria we needed to create a brand that would still inspire us 100 years from now when humanity has spread across our entire solar system.',
 }
 
 export const metadata = {
@@ -15,28 +16,11 @@ export const metadata = {
 
 export default (props) => <ArticleLayout article={article} {...props} />
 
-When you’re building a website for a company as ambitious as Planetaria, you need to make an impression. I wanted people to visit our website and see animations that looked more realistic than reality itself.
+Most companies try to stay ahead of the curve when it comes to visual design, but for Planetaria we needed to create a brand that would still inspire us 100 years from now when humanity has spread across our entire solar system.
 
-To make this possible, we needed to squeeze every drop of performance out of the browser possible. And so Animaginary was born.
+<Image src={designSystem} alt="" />
 
-```js
-import { animate } from '@planetaria/animaginary'
-
-export function MyComponent({ open, children }) {
-  return (
-    <animate.div
-      in={open}
-      animateFrom="opacity-0 scale-95"
-      animateTo="opacity-100 scale-100"
-      duration={350}
-    >
-      {children}
-    </animate.div>
-  )
-}
-```
-
-Animaginary is our new web animation library that redefines what you thought was possible on the web. Hand-written in optimized WASM, Animaginary can even animate the `height` property of an element at 60fps.
+I knew that to get it right I was going to have to replicate the viewing conditions of someone from the future, so I grabbed my space helmet from the closet, created a new Figma document, and got to work.
 
 ## Sermone fata
 
@@ -90,15 +74,44 @@ regna. Postquam conpescit iuvenis habet corpus, et erratica, perdere, tot mota
 ars talis.
 
 ```c
-digital.webcam_dual_frequency = webmasterMms;
-if (5 + language_standalone_google) {
-    cc_inbox_layout *= file_character;
-    task += p;
-    lockUnicode += enterprise_monochrome(tokenFunctionPersonal, keyVirtual,
-            adf);
+.gridLine {
+  --background: #FFFFFF;
+  --color: rgba(0, 0, 0, 0.5);
+  --height: 1px;
+  --width: 5px;
+  --fade-stop: 90%;
+  /* Bleed in or out from the container */
+  --offset: -100px;
+
+  position: absolute;
+  width: calc(100% + var(--offset));
+  height: var(--height);
+  left: calc(var(--offset) / 2 * -1);
+
+  background: linear-gradient(
+    to right,
+    var(--color),
+    var(--color) 50%,
+    transparent 0,
+    transparent
+  );
+  background-size: var(--width) var(--height);
+
+  /* Fade out the edges */
+  mask-composite: exclude;
+  -webkit-mask:
+    linear-gradient(
+      to left,
+      var(--background) var(--fade-stop),
+      transparent
+    ),
+    linear-gradient(
+      to right,
+      var(--background) var(--fade-stop),
+      transparent
+    ),
+    linear-gradient(black, black);
 }
-windows_binary_esports(87734, array(restoreRomTopology, adRaw(407314),
-        dongleBashThumbnail), interpreter);
 ```
 
 Sit volat naturam; motu Cancri. Erat pro simul quae valuit quoque timorem quam
