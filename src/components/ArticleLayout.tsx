@@ -5,6 +5,7 @@ import { Container } from '@/components/Container'
 import { Prose } from '@/components/Prose'
 import { type ArticleWithSlug } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
+import { Metadata } from 'next'
 import Link from 'next/link'
 
 function ArrowLeftIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
@@ -20,6 +21,62 @@ function ArrowLeftIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
+export function generateMetadata({ article }: { article: ArticleWithSlug }): Metadata {
+  // Assuming article.coverImage is the path to the article's cover image
+  // If it doesn't exist, fall back to the default image
+  const imageUrl = article.coverImage
+    ? `${process.env.NEXT_PUBLIC_SITE_URL}${article.coverImage}`
+    : 'https://sebastianselling.com/og.png'
+
+  return {
+    title: `${article.title} - Sebastian Selling`,
+    description: article.description || 'Design Engineer with over a Decade of experience building brands and apps.',
+    alternates: {
+      types: {
+        'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
+      },
+    },
+    openGraph: {
+      title: article.title,
+      description: article.description || 'Design Engineer with over a Decade of experience building brands and apps.',
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}/craft/${article.slug}`,
+      siteName: 'Sebastian Selling',
+      images: [
+        {
+          url: imageUrl,
+          width: 800,
+          height: 600,
+          alt: article.title,
+        },
+      ],
+      locale: 'en_US',
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.description || 'Design Engineer with over a Decade of experience building brands and apps.',
+      siteId: '@houseofselling',
+      creator: '@houseofselling',
+      creatorId: '1675809229276364802',
+      images: [imageUrl],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      nocache: true,
+      googleBot: {
+        index: true,
+        follow: false,
+        noimageindex: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+  }
+}
+
 export function ArticleLayout({
   article,
   children,
@@ -27,7 +84,6 @@ export function ArticleLayout({
   article: ArticleWithSlug
   children: React.ReactNode
 }) {
-
   return (
     <Container className="my-16 mb-44">
       <Template>
@@ -78,6 +134,5 @@ export function ArticleLayout({
         </div>
       </Template>
     </Container>
-
   )
 }
