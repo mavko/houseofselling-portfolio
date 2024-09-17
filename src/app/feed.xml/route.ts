@@ -16,7 +16,7 @@ export async function GET(req: Request) {
 
   let feed = new Feed({
     title: author.name,
-    description: 'Rambles of a Mad Man',
+    description: 'Rambles of a Designer',
     author,
     id: siteUrl,
     link: siteUrl,
@@ -29,7 +29,7 @@ export async function GET(req: Request) {
   })
 
   let articleIds = require
-    .context('../articles', true, /\/page\.mdx$/)
+    .context('../craft', true, /\/page\.mdx$/)
     .keys()
     .filter((key) => key.startsWith('./'))
     .map((key) => key.slice(2).replace(/\/page\.mdx$/, ''))
