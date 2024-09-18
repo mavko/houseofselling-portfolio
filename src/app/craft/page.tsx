@@ -32,7 +32,7 @@ const craftItems: CraftItem[] = [
   {
     type: 'image',
     src: woordwave,
-    alt: "Woordwave",
+    alt: "Woordwave logotype",
     post: ""
   },
   {
