@@ -43,7 +43,7 @@ const previous = [
   {
     name: "ispect",
     description: "The standardized inspection app [maintained]",
-    href: "https://www.ispect.se",
+    href: "/craft/makings-of-ispect",
     year: 2012
   },
 

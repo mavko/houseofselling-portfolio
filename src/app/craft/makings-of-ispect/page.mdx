@@ -1,0 +1,164 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+import Image from 'next/image'
+import Link from 'next/link'
+
+import ispectWeb from '@/images/craft/ispect/ispect_web.jpg'
+import totalProjectIssues from '@/images/craft/ispect/dashboard_total_issues.png'
+import totalByLocation from '@/images/craft/ispect/dashboard_total_location.png'
+import avgRemedyTime from '@/images/craft/ispect/dashboard_avg_time.png'
+import logotype from '@/images/craft/ispect/logotype_800x600.png'
+import hardhat from '@/images/craft/ispect/ispect_hard_hat.jpg'
+import platformLogo from '@/images/craft/ispect/ispect_plattform_logo.jpg'
+export const article = {
+  author: 'Seb',
+  date: '2024-09-17',
+  title: 'Makings of iSpect',
+  description:
+    'An overview of how we laid the foundation of ispect from the perspective of the sole designer, little old me.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+### Note from 2024
+
+Quite a lot has happened over the years in the journey of ispect,
+and as such I will be treating this post more as an archive than a case study.
+
+My role started out very innocently back in 2012 with designing the brand and the UI
+in Photoshop (with custom scripts to export the assets to xcode!). Thank Goodness Sketch came out...
+But, I quickly became quite disatisfied with the implementation of said UI's and started my journey into xcode frontend work ([Meng To](https://x.com/MengTo) came in clutch and provided [designcode.io](https://designcode.io/) which helped me a ton).
+
+Over time we put the iOS app on maintenance to work on <Link href="/craft/makings-of-icontrol">icontrol</Link> so my work shifted as well, and my focus became more and more on web development. CSS, React, Vue, Vuetify.
+
+Hitting 2020, we got the opportunity to scale ispect - it seemed the market was ready for something bigger.
+We made what was only an app for inspections into a fully fledged project management and order flow web app for construction and inspections with the ambitions to release it nation wide.
+
+I was thrown head first into web development and it set the foundations for what I know, and how I work today.
+Rapid iterations & complete ownership.
+
+However, as we all experienced, covid happened and we had to put a complete stop to everything in 2021.
+Since then it has been a grind to keep everything running, and hence I will be presenting some older, newer and yet to be released work from over the years below.
+
+### Make informed decisions during procurement with real time data
+
+[iSpect landing page](https://ispect.se)
+
+[Nominated for Innovation of the year 2013 (Article in Swedish)](https://www.sbuf.se/Om-SBUF/Aretsinnovation/Nyhetsbrev11/)
+
+<Image
+  src={ispectWeb}
+  alt="iSpect Web Interface"
+  width={1200}
+  height={600}
+  layout="responsive"
+/>
+
+### Why?
+
+iSpect is built to provide transparency in the construction industry in many
+ways, through data and statistics mainly, but also to provide clear
+communication routes between contractors, sub-contractors and stakeholders.
+
+### How?
+
+With over a decade worth of statistics from the construction industry
+we have built a web platform which allows contractors and
+sub-contractors an easy way to see the health of their project.
+
+They get to see how many issues has happened throughout the project as
+well as the average time it takes to complete it, in real time.
+
+This allows contractors to see which sub-contractors are performing
+well or subpar - saving time when negotiating for contracts.
+
+### Features
+
+<Image
+  src={totalProjectIssues}
+  alt="Total Project Issues"
+  width={600}
+  height={400}
+  layout="responsive"
+/>
+
+A completed project based in Stockholm showcasing total project issues
+
+<Image
+  src={totalByLocation}
+  alt="Issues by Location"
+  width={600}
+  height={400}
+  layout="responsive"
+/>
+
+Quickly overview which areas that lack the most
+
+<iframe
+  src="https://www.loom.com/embed/799cba8301b048d2b524b7c55505b486?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true&autoplay=1"
+  frameBorder="0"
+  allowFullScreen
+  style={{
+    position: 'relative',
+    width: '100%',
+    height: '400px',
+  }}
+  className="rounded-xl"
+></iframe>
+
+Deep dive into categories (titles in Swedish)
+
+<Image
+  src={avgRemedyTime}
+  alt="Average Time to Remedy Issues"
+  width={600}
+  height={400}
+  layout="responsive"
+/>
+
+Showcasing the average time it takes to remedy issues per sub-contractor.
+Including how long it took to report their self regulations.
+
+## Branding
+
+Brand was initially built back in 2012 and has since evolved many times
+over to finally land in what you see below with a very minimal logo that
+incorporates our classic search icon in the logotype.
+
+As iSpect grew not only as a product but as a company it represented
+more than just the app, but also the people behind it and as such I
+found it needed to be scalable and applicable to many surfaces.
+
+<Image
+  src={logotype}
+  alt="iSpect Logotype"
+  width={800}
+  height={600}
+  layout="responsive"
+/>
+
+Finalized logotype incorporating the Search icon that's been used from the
+very start 10 years ago.
+
+<Image
+  src={hardhat}
+  alt="iSpect Hard Hat"
+  width={600}
+  height={400}
+  layout="responsive"
+/>
+
+iSpect for hard hats (usually not allowed to change the color)
+
+<Image
+  src={platformLogo}
+  alt="iSpect Hard Hat"
+  width={600}
+  height={400}
+  layout="responsive"
+/>

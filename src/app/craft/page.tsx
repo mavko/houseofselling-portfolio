@@ -38,8 +38,14 @@ const craftItems: CraftItem[] = [
   {
     type: 'image',
     src: icontrol,
-    alt: "read: makings of icontrol➚",
+    alt: "read: makings of icontrol↗",
     post: "/craft/makings-of-icontrol"
+  },
+  {
+    type: 'image',
+    src: ispectLogo,
+    alt: "read: makings of ispect↗",
+    post: "/craft/makings-of-ispect"
   },
   {
     type: 'video',
@@ -93,12 +99,6 @@ const craftItems: CraftItem[] = [
     type: 'image',
     src: scribblyFolder,
     alt: "scribby logo",
-    post: ""
-  },
-  {
-    type: 'image',
-    src: ispectLogo,
-    alt: "ispect logo refresh",
     post: ""
   },
   // Example of how to add a video item
