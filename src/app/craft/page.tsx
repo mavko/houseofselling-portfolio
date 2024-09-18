@@ -7,6 +7,7 @@ import scribblyFolder from '@/images/craft/scribbly-folder.png'
 import ispectLogo from '@/images/craft/ispect-logo-update.png'
 import icontrol from '@/images/craft/icontrol_logo.png'
 import Template from '../template'
+import ArticleDropdown from '@/components/ArticleMenu'
 
 
 
@@ -145,7 +146,12 @@ export default function Craft() {
 
   return (
     <Template>
-      <section className='columns-1 sm:columns-2 md:columns-3 space-y-3 gap-3 px-3 py-6'>
+      <nav className='w-full h-auto pt-3 px-3 flex items-center justify-end z-20 relative'>
+
+        <ArticleDropdown />
+
+      </nav>
+      <section className='columns-1 sm:columns-2 md:columns-3 space-y-3 gap-3 px-3 pt-3 pb-20'>
         {craftItems.map((item, index) => (
           <div key={index} className='relative ring-1 ring-white/10 bg-[#1c1c1c] p-1.5 space-y-1 rounded-xl overflow-hidden h-full w-full flex flex-col'>
             <MediaComponent item={item} />
@@ -153,7 +159,6 @@ export default function Craft() {
               {item.alt}
             </Link>
           </div>
-
         ))}
       </section>
     </Template>
