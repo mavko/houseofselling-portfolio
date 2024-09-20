@@ -6,10 +6,11 @@ import woordwave from '@/images/craft/woordwave.png'
 import scribblyFolder from '@/images/craft/scribbly-folder.png'
 import ispectLogo from '@/images/craft/ispect-logo-update.png'
 import icontrol from '@/images/craft/icontrol_logo.png'
+import dinfastighetsforvaltare from '@images/craft/dff-landing-page.png'
+import solveExtension from '@images/craft/solve-extension-icon.png'
+
 import Template from '../template'
 import ArticleDropdown from '@/components/ArticleMenu'
-
-
 
 // Import any video files you want to use
 // import exampleVideo from '@/videos/example.mp4'
@@ -32,75 +33,87 @@ type CraftItem = {
 const craftItems: CraftItem[] = [
   {
     type: 'image',
-    src: woordwave,
-    alt: "Woordwave logotype",
-    post: ""
+    src: dinfastighetsforvaltare,
+    alt: 'property management brand',
+    post: '',
+  },
+  {
+    type: 'image',
+    src: solveExtension,
+    alt: 'property management brand',
+    post: '',
   },
   {
     type: 'image',
     src: icontrol,
-    alt: "read: makings of icontrol↗",
-    post: "/craft/makings-of-icontrol"
+    alt: 'read: makings of icontrol↗',
+    post: '/craft/makings-of-icontrol',
   },
   {
     type: 'image',
     src: ispectLogo,
-    alt: "read: makings of ispect↗",
-    post: "/craft/makings-of-ispect"
+    alt: 'read: makings of ispect↗',
+    post: '/craft/makings-of-ispect',
   },
   {
     type: 'video',
     src: '/videos/gohst_grid.mp4',
-    alt: "gohst grid animation",
-    post: ""
+    alt: 'gohst grid animation',
+    post: '',
+  },
+  {
+    type: 'image',
+    src: woordwave,
+    alt: 'Woordwave logotype',
+    post: '',
   },
   {
     type: 'video',
     src: '/videos/3d-cube-test.mp4',
-    alt: "3d cube test",
-    post: ""
+    alt: '3d cube test',
+    post: '',
   },
   {
     type: 'video',
     src: '/videos/file-upload-scribbly.mp4',
-    alt: "file upload stagger",
-    post: ""
+    alt: 'file upload stagger',
+    post: '',
   },
   {
     type: 'video',
     src: '/videos/gallery-anim.mp4',
-    alt: "gallery stagger in",
-    post: ""
+    alt: 'gallery stagger in',
+    post: '',
   },
   {
     type: 'video',
     src: '/videos/terminal-portfolio-intro.mp4',
-    alt: "terminal entry",
-    post: ""
+    alt: 'terminal entry',
+    post: '',
   },
   {
     type: 'video',
     src: '/videos/globe-intro.mp4',
-    alt: "globe text intro",
-    post: ""
+    alt: 'globe text intro',
+    post: '',
   },
   {
     type: 'video',
     src: '/videos/sharedspace-landing-anim.mp4',
-    alt: "sharedspace landing page",
-    post: ""
+    alt: 'sharedspace landing page',
+    post: '',
   },
   {
     type: 'video',
     src: '/videos/quick-scribbly-animation.mp4',
-    alt: "scribbly landing page",
-    post: ""
+    alt: 'scribbly landing page',
+    post: '',
   },
   {
     type: 'image',
     src: scribblyFolder,
-    alt: "scribby logo",
-    post: ""
+    alt: 'scribby logo',
+    post: '',
   },
   // Example of how to add a video item
   // {
@@ -115,12 +128,11 @@ const craftItems: CraftItem[] = [
 const MediaComponent = ({ item }: { item: CraftItem }) => {
   if (item.type === 'image') {
     return (
-      <div className=''>
-
+      <div className="">
         <Image
           src={item.src}
           alt={item.alt}
-          className="bg-cover w-full h-auto rounded-2xl"
+          className="h-auto w-full rounded-2xl bg-cover"
           width={400}
           height={400}
         />
@@ -129,8 +141,8 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
   } else {
     return (
       <video
-        src={item.src as string}  // Type assertion here
-        className="w-full h-auto rounded-2xl object-cover"
+        src={item.src as string} // Type assertion here
+        className="h-auto w-full rounded-2xl object-cover"
         autoPlay
         muted
         playsInline
@@ -143,19 +155,22 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
 }
 
 export default function Craft() {
-
   return (
     <Template>
-      <nav className='w-full h-auto pt-3 px-3 flex items-center justify-end z-20 relative'>
-
+      <nav className="relative z-20 flex h-auto w-full items-center justify-end px-3 pt-3">
         <ArticleDropdown />
-
       </nav>
-      <section className='columns-1 sm:columns-2 md:columns-3 space-y-3 gap-3 px-3 pt-3 pb-20'>
+      <section className="columns-1 gap-3 space-y-3 px-3 pb-20 pt-3 sm:columns-2 md:columns-3">
         {craftItems.map((item, index) => (
-          <div key={index} className='relative ring-1 ring-white/10 bg-[#1c1c1c] p-1.5 space-y-1 rounded-xl overflow-hidden h-full w-full flex flex-col'>
+          <div
+            key={index}
+            className="relative flex h-full w-full flex-col space-y-1 overflow-hidden rounded-xl bg-[#1c1c1c] p-1.5 ring-1 ring-white/10"
+          >
             <MediaComponent item={item} />
-            <Link href={item.post} className='bg-[#232323] w-full px-4 py-2 ring-1 ring-white/10 text-center rounded-lg'>
+            <Link
+              href={item.post}
+              className="w-full rounded-lg bg-[#232323] px-4 py-2 text-center ring-1 ring-white/10"
+            >
               {item.alt}
             </Link>
           </div>
