@@ -8,6 +8,9 @@ import ispectLogo from '@/images/craft/ispect-logo-update.png'
 import icontrol from '@/images/craft/icontrol_logo.png'
 import dinfastighetsforvaltare from '@/images/craft/dff-landing-page.png'
 import solveExtension from '@/images/craft/solve-extension-icon.jpg'
+import gradiance from '@/images/craft/gradiance.jpg'
+import idStudios from '@/images/craft/idstudios2013.png'
+import inspectorAI from '@/images/craft/inspector-ai-icon.png'
 
 import Template from '../template'
 import ArticleDropdown from '@/components/ArticleMenu'
@@ -18,7 +21,7 @@ import ArticleDropdown from '@/components/ArticleMenu'
 export const metadata: Metadata = {
   title: 'Craft',
   description:
-    'Some of my builds, designs, brands or whatever else I happen to work on.',
+    'Some of my apps, designs, brands or whatever else I happen to work on.',
 }
 
 // Define a type for our craft items
@@ -119,6 +122,24 @@ const craftItems: CraftItem[] = [
     type: 'image',
     src: scribblyFolder,
     alt: 'scribby logo',
+    post: '',
+  },
+  {
+    type: 'image',
+    src: gradiance,
+    alt: 'personal brand gradiance',
+    post: '',
+  },
+  {
+    type: 'image',
+    src: idStudios,
+    alt: 'id studios 2013',
+    post: '',
+  },
+  {
+    type: 'image',
+    src: inspectorAI,
+    alt: 'inspector AI icon (ispect)',
     post: '',
   },
   // Example of how to add a video item
