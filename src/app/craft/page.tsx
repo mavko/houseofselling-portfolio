@@ -57,6 +57,12 @@ const craftItems: CraftItem[] = [
   },
   {
     type: 'video',
+    src: '/videos/bm-landing-subtle.mp4',
+    alt: 'besiktningsman.se above the fold',
+    post: '',
+  },
+  {
+    type: 'video',
     src: '/videos/gohst_grid.mp4',
     alt: 'gohst grid animation',
     post: '',
