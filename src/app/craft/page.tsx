@@ -40,7 +40,7 @@ const craftItems: CraftItem[] = [
   {
     type: 'image',
     src: solveExtension,
-    alt: 'property management brand',
+    alt: 'solve web extension icon',
     post: '',
   },
   {
