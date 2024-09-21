@@ -35,6 +35,12 @@ type CraftItem = {
 // Create an array of craft items
 const craftItems: CraftItem[] = [
   {
+    type: 'video',
+    src: '/videos/logo-cloud-glimmer.mp4',
+    alt: 'subtle customer glimmer',
+    post: '',
+  },
+  {
     type: 'image',
     src: dinfastighetsforvaltare,
     alt: 'property management brand',
