@@ -7,7 +7,7 @@ import AboutText from '@/components/ShuffleLettersAboutPage'
 import Description from '@/components/ShuffleLettersAboutPage'
 import Link from 'next/link'
 import { LinkPreview } from '@/components/LinkPreview'
-
+import seb from '@/images/avatar.png'
 
 
 export const metadata: Metadata = {
@@ -21,8 +21,11 @@ export default function About() {
     <main className='max-w-3xl mx-auto px-6 sm:px-10 py-24 '>
 
       <section className='prose prose-p:text-[#ededed]/80 prose-a:text-[#FFC799]'>
-        <h2 className='text-[#e8e6e3]'>Hello there, I'm Sebastian Selling</h2>
-        <p >Love of the craft since I first laid my hands on Photoshop back in 2001, where I spent my days designing forum signatures and gaming wallpapers. As I grew older I competed in e-sports, mostly counter-strike 1.6 (dating myself here) but also world of warcraft - during this time I found that I loved creating compilation videos of my matches, and of my team mates / friends. </p>
+        <Image src={seb} alt='picture of sebastian' className='size-40 rounded-2xl ring-1 ring-white/20' width={160} height={160} />
+        <h2 className='text-[#e8e6e3]'>
+          Hello there, I'm Sebastian Selling
+        </h2>
+        <p>Love of the craft since I first laid my hands on Photoshop back in 2001, where I spent my days designing forum signatures and gaming wallpapers. As I grew older I competed in e-sports, mostly counter-strike 1.6 (dating myself here) but also world of warcraft - during this time I found that I loved creating compilation videos of my matches, and of my team mates / friends. </p>
         <p>
           As time went on I wondered if I could ever make a living using my creative side, but it seemed far off and not realistic at all. Growing up in a lower class status makes these sorts of things seem foolish.
         </p>
