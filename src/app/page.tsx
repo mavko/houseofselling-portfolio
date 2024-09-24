@@ -8,7 +8,7 @@ export default async function Home() {
     <>
       <section className='max-w-3xl mx-auto px-6 sm:px-10 py-24 '>
         <div className='drop-shadow-lg shadow-lg shadow-white/5'>
-          <header className='relative ring-1 ring-[#3e3e44] bg-[#232326]  -mx-2 rounded-xl overflow-hidden mb-8'>
+          <header className='relative ring-1 ring-[#3e3e44] bg-white/5  -mx-2 rounded-xl overflow-hidden mb-8'>
             <Image
               src={avatarImage}
               alt=""

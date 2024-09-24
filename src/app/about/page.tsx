@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <main className='max-w-3xl mx-auto px-6 sm:px-10 py-24 '>
+    <main className='max-w-3xl mx-auto px-6 sm:px-10 pt-24 pb-36'>
 
       <section className='prose prose-p:text-[#ededed]/80 prose-a:text-[#FFC799]'>
         <Image src={seb} alt='picture of sebastian' className='size-40 rounded-2xl ring-1 ring-white/20' width={160} height={160} />
@@ -81,7 +81,7 @@ export default function About() {
         </p>
         <h3 className='text-[#e8e6e3]'>Contact:</h3>
 
-        <div className='border border-white/10 bg-[#1c1c1c] rounded-xl flex flex-col sm:flex-row w-fit px-6 py-3 gap-6 text-sm'>
+        <div className='flex flex-col sm:flex-row w-fit gap-6 text-sm'>
 
           <a href="mailto:houseofselling@proton.me">houseofselling@proton.me</a>
 
