@@ -4,14 +4,14 @@ import { motion } from 'framer-motion';
 const current = [
   {
     name: "South Korea",
-    description: "Actively looking for opportunities in SK",
+    description: "Actively looking for opportunities in South Korea",
     href: "/about",
     year: 2025
   },
   {
-    name: "g:corp",
-    description: "App studio for the 21st century",
-    href: "https://gcorp-landingpage.vercel.app/",
+    name: "din.fastighetsförvaltare [TBA]",
+    description: "Premier Prop Management by BM",
+    href: "#",
     year: 2024
   },
   {
@@ -27,10 +27,36 @@ const current = [
     year: 2017
   },
 ];
+const gcorp = [
+  {
+    name: "g:corp studio page",
+    description: "App studio for the 21st century",
+    href: "https://gcorp-landingpage.vercel.app/",
+    year: 2024
+  },
+  {
+    name: "scribbly",
+    description: "Automated transcription service",
+    href: "https://scribbly.se/",
+    year: 2024
+  },
+  {
+    name: "a / sharedspace [in dev]",
+    description: "Tenant / home owner association web app",
+    href: "https://sharedspace.se/",
+    year: 2024
+  },
+  {
+    name: "cubic",
+    description: "Send and save websites as issues in Linear [in dev]",
+    href: "#",
+    year: 2024
+  },
+];
 const previous = [
   {
     name: "500 startups",
-    description: "Investment and leadership to build iControl",
+    description: "Investment and mentorship to build iControl",
     href: "https://www.crunchbase.com/organization/icontrol-2",
     year: 2016
   },
@@ -201,7 +227,16 @@ const ProjectsList = () => {
         ))}
       </div>
 
-
+      <motion.h2 initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className='text-xs p-2 -m-3 font-bold flex items-center my-5'>
+        ❯ g:corp app studio
+      </motion.h2>
+      <div className="mt-4 flex flex-col gap-7 mx-auto w-full max-w-7xl">
+        {gcorp.map((project, index) => (
+          <Project key={project.href} {...project} index={index} />
+        ))}
+      </div>
       <motion.h2 initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         className='text-xs p-2 -m-3 font-bold flex items-center my-5'>

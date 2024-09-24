@@ -173,16 +173,28 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
     )
   } else {
     return (
-      <video
-        src={item.src as string} // Type assertion here
-        className="h-auto w-full rounded-2xl object-cover"
-        autoPlay
-        muted
-        playsInline
-        loop
-      >
-        <track kind="captions" />
-      </video>
+      <>
+        <video
+          src={item.src as string} // Type assertion here
+          className="h-auto w-full rounded-2xl object-cover hidden sm:block"
+          autoPlay
+          muted
+          playsInline
+          loop
+        >
+          <track kind="captions" />
+        </video>
+        <video
+          src={item.src as string} // Type assertion here
+          className="h-auto w-full rounded-2xl object-cover block sm:hidden"
+          autoPlay
+          muted
+          playsInline
+          controls
+        >
+          <track kind="captions" />
+        </video>
+      </>
     )
   }
 }
