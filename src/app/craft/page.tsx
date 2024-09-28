@@ -41,6 +41,12 @@ const craftItems: CraftItem[] = [
     post: '',
   },
   {
+    type: 'video',
+    src: '/videos/canvas-on-hover.mp4',
+    alt: 'canvas reveal on hover',
+    post: '',
+  },
+  {
     type: 'image',
     src: dinfastighetsforvaltare,
     alt: 'property management brand',
