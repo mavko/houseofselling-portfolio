@@ -72,6 +72,12 @@ const craftItems: CraftItem[] = [
   },
   {
     type: 'video',
+    src: '/videos/subtle-hover-button.mp4',
+    alt: 'subtle :hover',
+    post: '',
+  },
+  {
+    type: 'video',
     src: '/videos/bm-landing-subtle.mp4',
     alt: 'besiktningsman.se above the fold',
     post: '',
