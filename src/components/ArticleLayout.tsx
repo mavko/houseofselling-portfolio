@@ -30,17 +30,17 @@ export function generateMetadata({ article }: { article: ArticleWithSlug }): Met
 
   return {
     title: `${article.title} - Sebastian Selling`,
-    description: article.description || 'Design Engineer with over a Decade of experience building brands and apps.',
+    description: `${article.description}`,
     alternates: {
       types: {
         'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
       },
     },
     openGraph: {
-      title: article.title,
-      description: article.description || 'Design Engineer with over a Decade of experience building brands and apps.',
+      title: `${article.title} - Sebastian Selling`,
+      description: `${article.description}`,
       url: `${process.env.NEXT_PUBLIC_SITE_URL}/craft/${article.slug}`,
-      siteName: 'Sebastian Selling',
+      siteName: '${article.title} - Craft by Sebastian',
       images: [
         {
           url: imageUrl,
@@ -54,8 +54,8 @@ export function generateMetadata({ article }: { article: ArticleWithSlug }): Met
     },
     twitter: {
       card: 'summary_large_image',
-      title: article.title,
-      description: article.description || 'Design Engineer with over a Decade of experience building brands and apps.',
+      title: `${article.title} - Sebastian Selling`,
+      description: `${article.description}`,
       siteId: '@houseofselling',
       creator: '@houseofselling',
       creatorId: '1675809229276364802',
