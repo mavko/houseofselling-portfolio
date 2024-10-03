@@ -1,6 +1,6 @@
 import { ArticleLayout } from '@/components/ArticleLayout'
+import { EnlargeableImage } from '@/components/EnlargeableImage'
 
-import Image from 'next/image'
 import Link from 'next/link'
 
 import ispectWeb from '@/images/craft/ispect/ispect_web.jpg'
@@ -11,9 +11,21 @@ import logotype from '@/images/craft/ispect/logotype_800x600.png'
 import hardhat from '@/images/craft/ispect/ispect_hard_hat.jpg'
 import platformLogo from '@/images/craft/ispect/ispect_plattform_logo.jpg'
 
+import login from '@/images/craft/ispect/2023-refactor/login.png'
+import projects from '@/images/craft/ispect/2023-refactor/projects.png'
+import projectsDarkmode from '@/images/craft/ispect/2023-refactor/projects-darkmode.png'
+import util from '@/images/craft/ispect/2023-refactor/utilization.png'
+import orders from '@/images/craft/ispect/2023-refactor/orders.png'
+import projectInfo from '@/images/craft/ispect/2023-refactor/project-info.png'
+import issues from '@/images/craft/ispect/2023-refactor/issues.png'
+import issuesDarkmode from '@/images/craft/ispect/2023-refactor/issues-darkmode.png'
+import shareReport from '@/images/craft/ispect/2023-refactor/share-report.png'
+import projectActivity from '@/images/craft/ispect/2023-refactor/project-activities.png'
+import verdictEditor from '@/images/craft/ispect/2023-refactor/verdict-editor.png'
+
 export const article = {
   author: 'Seb',
-  date: '2024-09-17',
+  date: '2024-10-03',
   title: 'Makings of iSpect',
   description:
     'An overview of how we laid the foundation of ispect from the perspective of the sole designer, little old me.',
@@ -48,16 +60,15 @@ Since then it has been a grind to keep everything running, and hence I will be p
 
 ### Make informed decisions during procurement with real time data
 
-[iSpect landing page](https://ispect.se)
+[iSpect landing page](https://ispect.se) (2023 edition)
 
 [Nominated for Innovation of the year 2013 (Article in Swedish)](https://www.sbuf.se/Om-SBUF/Aretsinnovation/Nyhetsbrev11/)
 
-<Image
+<EnlargeableImage
   src={ispectWeb}
   alt="iSpect Web Interface"
   width={1200}
   height={600}
-  layout="responsive"
 />
 
 ### Why?
@@ -80,22 +91,20 @@ well or subpar - saving time when negotiating for contracts.
 
 ### Features
 
-<Image
+<EnlargeableImage
   src={totalProjectIssues}
   alt="Total Project Issues"
   width={600}
   height={400}
-  layout="responsive"
 />
 
 A completed project based in Stockholm showcasing total project issues
 
-<Image
+<EnlargeableImage
   src={totalByLocation}
   alt="Issues by Location"
   width={600}
   height={400}
-  layout="responsive"
 />
 
 Quickly overview which areas that lack the most
@@ -114,12 +123,11 @@ Quickly overview which areas that lack the most
 
 Deep dive into categories (titles in Swedish)
 
-<Image
+<EnlargeableImage
   src={avgRemedyTime}
   alt="Average Time to Remedy Issues"
   width={600}
   height={400}
-  layout="responsive"
 />
 
 Showcasing the average time it takes to remedy issues per sub-contractor.
@@ -135,31 +143,105 @@ As iSpect grew not only as a product but as a company it represented
 more than just the app, but also the people behind it and as such I
 found it needed to be scalable and applicable to many surfaces.
 
-<Image
+<EnlargeableImage
   src={logotype}
   alt="iSpect Logotype"
   width={800}
   height={600}
-  layout="responsive"
 />
 
 Finalized logotype incorporating the Search icon that's been used from the
 very start 10 years ago.
 
-<Image
+<EnlargeableImage
   src={hardhat}
   alt="iSpect Hard Hat"
   width={600}
   height={400}
-  layout="responsive"
 />
 
 iSpect for hard hats (usually not allowed to change the color)
 
-<Image
-  src={platformLogo}
-  alt="iSpect Hard Hat"
-  width={600}
-  height={400}
-  layout="responsive"
+<EnlargeableImage src={platformLogo} alt="platform logo" />
+
+## Refactoring of ispect 2023
+
+Here I'll be highlighting some app views from my work in refactoring the app from vue 2 / vuetify 2 to vue 2.7
+(plan was vue 3, but with time constraints it was put on hold) and tailwindcss.
+In the interest of time and given the complexity of the app I chose to keep Vuetify (the table being a key component across the app, especially),
+but completely strip all of its css, effectively making it headless.
+
+My aim was simply to modernize the design, make the UI streamlined and less janky (personally find the vuetify google theme a complete abomination, but also doesn't scale well.).
+Long term vision was to make the app more performant, and show a lot less info to the user - making the experience more "auto-magically".
+
+Do note that there's pleeenty of pages and features in the app, but they're generally speaking (visually) similar so
+I've tried to distill it down some main features for your viewing pleasure:
+
+<EnlargeableImage
+  src={login}
+  alt="ispect login view 2023"
+
 />
+
+<EnlargeableImage
+  src={projects}
+  alt="ispect projects view 2023"
+
+/>
+
+<EnlargeableImage
+  src={projectsDarkmode}
+  alt="ispect login view 2023 (dark mode)"
+
+/>
+
+<EnlargeableImage
+  src={util}
+  alt="ispect utilization view 2023"
+
+/>
+
+<EnlargeableImage
+  src={orders}
+  alt="ispect orders view 2023"
+
+/>
+
+<EnlargeableImage
+  src={projectInfo}
+  alt="ispect project info view 2023"
+
+/>
+
+<EnlargeableImage
+  src={issues}
+  alt="ispect issues view 2023"
+
+/>
+
+<EnlargeableImage
+  src={issuesDarkmode}
+  alt="ispect login view 2023 (dark mode)"
+
+/>
+
+<EnlargeableImage
+  src={shareReport}
+  alt="ispect issues view - share report modal 2023"
+
+/>
+
+<EnlargeableImage
+  src={projectActivity}
+  alt="ispect project activity modal 2023"
+
+/>
+
+<EnlargeableImage
+  src={verdictEditor}
+  alt="ispect verdict editor view 2023"
+
+/>
+
+The ispect landing page was redesigned at the same time and can be viewed live:
+[iSpect landing page](https://ispect.se)

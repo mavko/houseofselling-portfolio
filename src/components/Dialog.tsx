@@ -228,7 +228,7 @@ function DialogContainer({ children }: DialogContainerProps) {
         <>
           <motion.div
             key={`backdrop-${uniqueId}`}
-            className='fixed inset-0 h-full w-full bg-black/40 backdrop-blur-sm'
+            className='fixed inset-0 h-full w-full bg-black/40 backdrop-blur-sm z-40'
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -367,7 +367,7 @@ function DialogClose({ children, className, variants }: DialogCloseProps) {
       type='button'
       aria-label='Close dialog'
       key={`dialog-close-${uniqueId}`}
-      className={cn('absolute right-6 top-6', className)}
+      className={cn('absolute right-6 top-6 ring-1 ring-inset ring-black shadow-xl', className)}
       initial='initial'
       animate='animate'
       exit='exit'

@@ -45,7 +45,7 @@ const data = [
 
 export function PortfolioNav() {
   return (
-    <div className='fixed bottom-6 inset-x-0 w-full z-40'>
+    <div className='fixed bottom-6 inset-x-0 w-full z-30'>
       <Dock className='items-end pb-3'>
         {data.map((item, idx) => (
           <Link href={item.href}>
