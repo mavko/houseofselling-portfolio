@@ -20,7 +20,7 @@ export default function About() {
   return (
     <main className='max-w-3xl mx-auto px-6 sm:px-10 pt-24 pb-36'>
 
-      <section className='prose prose-p:text-[#ededed]/80 prose-a:text-[#FFC799]'>
+      <section className='prose prose-p:text-[#ededed] prose-a:text-green-300'>
         <Image src={seb} alt='picture of sebastian' className='size-40 rounded-2xl ring-1 ring-white/20' width={160} height={160} />
         <h2 className='text-[#e8e6e3]'>
           Hello there, I'm Sebastian Selling

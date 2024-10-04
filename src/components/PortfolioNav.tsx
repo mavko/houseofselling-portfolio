@@ -1,7 +1,7 @@
 
 
 import { Dock, DockIcon, DockItem, DockLabel } from './Dock';
-import { CameraIcon, FaceSmileIcon, HomeIcon, SwatchIcon } from '@heroicons/react/24/solid';
+import { BeakerIcon, CameraIcon, FaceSmileIcon, HomeIcon, Square3Stack3DIcon, SwatchIcon } from '@heroicons/react/24/solid';
 import { GitHubIcon } from './SocialIcons';
 import Link from 'next/link';
 
@@ -14,11 +14,11 @@ const data = [
     href: '/',
   },
   {
-    title: 'Craft',
+    title: 'Alchemy',
     icon: (
-      <SwatchIcon className='h-full w-full text-neutral-300' />
+      <BeakerIcon className='h-full w-full text-neutral-300' />
     ),
-    href: '/craft',
+    href: '/alchemy',
   },
   {
     title: 'Photos',
@@ -26,6 +26,13 @@ const data = [
       <CameraIcon className='h-full w-full text-neutral-300' />
     ),
     href: '/photos',
+  },
+  {
+    title: 'Essentials',
+    icon: (
+      <Square3Stack3DIcon className='h-full w-full text-neutral-300' />
+    ),
+    href: '/essentials',
   },
   {
     title: 'About',
@@ -51,7 +58,8 @@ export function PortfolioNav() {
           <Link href={item.href}>
             <DockItem
               key={idx}
-              className='aspect-square rounded-full bg-neutral-800'
+              href={item.href}
+              className='aspect-square rounded-full backdrop-blur-3xl bg-transparent'
             >
               <DockLabel>{item.title}</DockLabel>
               <DockIcon>{item.icon}</DockIcon>

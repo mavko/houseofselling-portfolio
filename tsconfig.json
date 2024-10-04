@@ -30,7 +30,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/craft/makings-of-ispect/page.mdx"
+    "src/app/alchemy/makings-of-ispect/page.mdx"
   ],
   "exclude": ["node_modules"]
 }

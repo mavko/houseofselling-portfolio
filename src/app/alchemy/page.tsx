@@ -14,6 +14,7 @@ import inspectorAI from '@/images/craft/inspector-ai-icon.png'
 
 import Template from '../template'
 import ArticleDropdown from '@/components/ArticleMenu'
+import { BeakerIcon } from '@heroicons/react/24/solid'
 
 // Import any video files you want to use
 // import exampleVideo from '@/videos/example.mp4'
@@ -214,7 +215,12 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
 export default function Craft() {
   return (
     <Template>
-      <nav className="relative z-20 flex h-auto w-full items-center justify-end px-3 pt-3">
+      <nav className="relative z-20 flex h-auto w-full items-center justify-between px-3 pt-3">
+        <h2 className='flex items-center gap-3'>
+          <BeakerIcon className='size-5 ring-1 ring-white rounded-md p-0.5' />
+          Alchemy :: my work captured in snippets
+        </h2>
+
         <ArticleDropdown />
       </nav>
       <section className="columns-1 gap-3 space-y-3 px-3 pb-20 pt-3 sm:columns-2 md:columns-3">

@@ -90,7 +90,7 @@ export function ArticleLayout({
         <div className="xl:relative">
           <div className="mx-auto max-w-2xl">
             <Link
-              href="/craft"
+              href="/alchemy"
               aria-label="Go back"
               className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6  text-white/80 inline-block">
               <span className="absolute inset-0 overflow-hidden rounded-full">
@@ -98,9 +98,9 @@ export function ArticleLayout({
               </span>
               <div className="relative flex space-x-1 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
                 <ArrowLeftIcon className="h-4 w-4 stroke-white/80 " />
-                <span>{`Craft`}</span>
+                <span>{`Alchemy`}</span>
               </div>
-              <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-[#FFC799] to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40"></span>
+              <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-green-300 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40"></span>
             </Link>
             <article>
               <header className="flex flex-col">
@@ -118,7 +118,7 @@ export function ArticleLayout({
               </Prose>
             </article>
             <Link
-              href="/craft"
+              href="/alchemy"
               aria-label="Go back"
               className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6  text-white/80 inline-block mt-6">
               <span className="absolute inset-0 overflow-hidden rounded-full">
@@ -126,9 +126,9 @@ export function ArticleLayout({
               </span>
               <div className="relative flex space-x-1 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
                 <ArrowLeftIcon className="h-4 w-4 stroke-white/80 " />
-                <span>{`Craft`}</span>
+                <span>{`Alchemy`}</span>
               </div>
-              <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-[#FFC799] to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40"></span>
+              <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-green-300 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40"></span>
             </Link>
           </div>
         </div>

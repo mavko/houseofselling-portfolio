@@ -21,6 +21,7 @@ import {
   useState,
 } from 'react';
 import { cn } from '@/lib/utils';
+import { usePathname } from 'next/navigation';
 
 const DOCK_HEIGHT = 128;
 const DEFAULT_MAGNIFICATION = 80;
@@ -38,6 +39,7 @@ type DockProps = {
 type DockItemProps = {
   className?: string;
   children: React.ReactNode;
+  href: string; // Add this new prop
 };
 type DockLabelProps = {
   className?: string;
@@ -109,7 +111,7 @@ function Dock({
           mouseX.set(Infinity);
         }}
         className={cn(
-          'mx-auto flex w-fit gap-4 rounded-full bg-neutral-950 backdrop-blur-sm border border-white/10 px-3 shadow-xl',
+          'mx-auto flex w-fit gap-4 rounded-xl bg-neutral-950/20 backdrop-blur-sm border border-neutral-50/20 px-3 py-0 shadow-xl',
           className
         )}
         style={{ height: panelHeight }}
@@ -124,12 +126,14 @@ function Dock({
   );
 }
 
-function DockItem({ children, className }: DockItemProps) {
+function DockItem({ children, className, href }: DockItemProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
 
   const { distance, magnification, mouseX, spring } = useDock();
 
   const isHovered = useMotionValue(0);
+  const isActive = pathname === href;
 
   const mouseDistance = useTransform(mouseX, (val) => {
     const domRect = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
@@ -163,6 +167,13 @@ function DockItem({ children, className }: DockItemProps) {
       {Children.map(children, (child) =>
         cloneElement(child as React.ReactElement, { width, isHovered })
       )}
+      {isActive && (
+        <motion.div
+          className="absolute bottom-0 left-0 right-0 h-0.5 w-3 mx-auto bg-green-300 rounded-full"
+          layoutId="activeIndicator"
+          transition={spring}
+        />
+      )}
     </motion.div>
   );
 }
@@ -189,7 +200,7 @@ function DockLabel({ children, className, ...rest }: DockLabelProps) {
           exit={{ opacity: 0, y: 0 }}
           transition={{ duration: 0.2 }}
           className={cn(
-            'absolute -top-6 left-1/2 w-fit whitespace-pre rounded-md border  px-2 py-0.5 text-xs border-white/20 bg-neutral-600 text-white z-30',
+            'absolute -top-6 left-1/2 w-fit whitespace-pre rounded-md border  px-2 py-0.5 text-xs border-white/50 bg-black/70 backdrop-blur-md font-semibold text-white z-30',
             className
           )}
           role='tooltip'

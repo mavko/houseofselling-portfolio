@@ -34,13 +34,13 @@ function Tool({
 }
 
 export const metadata = {
-  title: 'Setup',
+  title: 'Essentials',
   description: 'Software I use, gadgets I love, and other things I recommend.',
 }
 
-export default function Setup() {
+export default function Essentials() {
   return (
-    <section className='pb-20'>
+    <section className='py-20 max-w-3xl mx-auto'>
       <div className="space-y-20">
         <ToolsSection title="Workstation">
           <Tool title="16” MacBook Pro, Intel Core i7, 16GB RAM (2017)">
@@ -54,9 +54,6 @@ export default function Setup() {
           </Tool>
           <Tool title="Apple Magic Mouse">
             Same as above, but also the macOS touch features are hard to beat.
-          </Tool>
-          <Tool title="Ikea Markus">
-            Same old argument: gets the job done.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Development tools">
