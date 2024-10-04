@@ -20,7 +20,7 @@ import { BeakerIcon } from '@heroicons/react/24/solid'
 // import exampleVideo from '@/videos/example.mp4'
 
 export const metadata: Metadata = {
-  title: 'Craft',
+  title: 'Alchemy by Sebastian',
   description:
     'Some of my apps, designs, brands or whatever else I happen to work on.',
 }
