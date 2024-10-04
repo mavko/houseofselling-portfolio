@@ -63,13 +63,13 @@ const previous = [
   {
     name: "icontrol",
     description: "Replace paper with an app on the field",
-    href: "/craft/makings-of-icontrol",
+    href: "/alchemy/makings-of-icontrol",
     year: 2014
   },
   {
     name: "ispect",
     description: "The standardized inspection app [maintained]",
-    href: "/craft/makings-of-ispect",
+    href: "/alchemy/makings-of-ispect",
     year: 2012
   },
 
@@ -181,7 +181,6 @@ const Project: React.FC<{ href: string; name: string; description: string; year:
   return (
     <motion.a
       href={href}
-      target="_blank"
       rel="noopener noreferrer"
       className="flex items-center gap-3 w-[calc(100%+2rem)] relative overflow-hidden p-2 -m-3 rounded-xl outline-none hover:bg-white/5 hover:ring-1 hover:ring-white/10 transition-colors text-sm"
       initial={{ opacity: 0 }}
