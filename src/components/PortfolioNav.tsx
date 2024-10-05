@@ -9,42 +9,42 @@ const data = [
   {
     title: 'Home',
     icon: (
-      <HomeIcon className='h-full w-full text-neutral-300' />
+      <HomeIcon className='h-full w-full' />
     ),
     href: '/',
   },
   {
     title: 'Alchemy',
     icon: (
-      <BeakerIcon className='h-full w-full text-neutral-300' />
+      <BeakerIcon className='h-full w-full' />
     ),
     href: '/alchemy',
   },
   {
-    title: 'Photos',
+    title: 'Visuals',
     icon: (
-      <CameraIcon className='h-full w-full text-neutral-300' />
+      <CameraIcon className='h-full w-full' />
     ),
-    href: '/photos',
+    href: '/visuals',
   },
   {
     title: 'Essentials',
     icon: (
-      <Square3Stack3DIcon className='h-full w-full text-neutral-300' />
+      <Square3Stack3DIcon className='h-full w-full' />
     ),
     href: '/essentials',
   },
   {
     title: 'About',
     icon: (
-      <FaceSmileIcon className='h-full w-full text-neutral-300' />
+      <FaceSmileIcon className='h-full w-full' />
     ),
     href: '/about',
   },
   {
     title: 'Github',
     icon: (
-      <GitHubIcon className='h-full w-full fill-neutral-300' />
+      <GitHubIcon className='h-full w-full' />
     ),
     href: 'https://github.com/mavko',
   },
@@ -55,14 +55,14 @@ export function PortfolioNav() {
     <div className='fixed bottom-6 inset-x-0 w-full z-30'>
       <Dock className='items-end pb-3'>
         {data.map((item, idx) => (
-          <Link href={item.href}>
+          <Link href={item.href} className=''>
             <DockItem
               key={idx}
               href={item.href}
-              className='aspect-square rounded-full backdrop-blur-3xl bg-transparent'
+              className='aspect-square rounded-lg bg-neutral-950 backdrop-blur-sm ring-1 ring-inset ring-neutral-800 fill-neutral-300 hover:fill-white active:fill-green-300 focus:fill-green-300 hover:brightness-150'
             >
               <DockLabel>{item.title}</DockLabel>
-              <DockIcon>{item.icon}</DockIcon>
+              <DockIcon className=''>{item.icon}</DockIcon>
             </DockItem>
           </Link>
         ))}

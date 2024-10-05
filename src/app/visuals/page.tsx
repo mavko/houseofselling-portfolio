@@ -48,7 +48,7 @@ import winteryCity from '@/images/photos/winteryCity.jpg'
 
 
 export const metadata: Metadata = {
-  title: 'Photography',
+  title: 'Visuals by Sebastian',
   description: 'Capturing moments in time from every day life.',
 }
 
@@ -125,7 +125,7 @@ const MediaComponent = ({ item }: { item: PhotoItem }) => {
   }
 }
 
-export default function Photography() {
+export default function Visuals() {
   return (
     <>
       <section className='columns-1 sm:columns-2 md:columns-3 space-y-3 gap-3 px-3 py-6'>

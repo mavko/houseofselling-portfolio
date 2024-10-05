@@ -78,7 +78,7 @@ function useDock() {
 function Dock({
   children,
   className,
-  spring = { mass: 0.1, stiffness: 150, damping: 12 },
+  spring = { mass: 0.5, stiffness: 250, damping: 24 },
   magnification = DEFAULT_MAGNIFICATION,
   distance = DEFAULT_DISTANCE,
   panelHeight = DEFAULT_PANEL_HEIGHT,
@@ -111,7 +111,7 @@ function Dock({
           mouseX.set(Infinity);
         }}
         className={cn(
-          'mx-auto flex w-fit gap-4 rounded-xl bg-neutral-950/20 backdrop-blur-sm border border-neutral-50/20 px-3 py-0 shadow-xl',
+          'mx-auto flex w-fit gap-4 rounded-2xl bg-neutral-950/0 backdrop-blur-sm border border-neutral-800 px-3 py-0 shadow-xl',
           className
         )}
         style={{ height: panelHeight }}
@@ -157,7 +157,7 @@ function DockItem({ children, className, href }: DockItemProps) {
       onFocus={() => isHovered.set(1)}
       onBlur={() => isHovered.set(0)}
       className={cn(
-        'relative inline-flex items-center justify-center',
+        'relative inline-flex items-center justify-center ',
         className
       )}
       tabIndex={0}
@@ -168,11 +168,9 @@ function DockItem({ children, className, href }: DockItemProps) {
         cloneElement(child as React.ReactElement, { width, isHovered })
       )}
       {isActive && (
-        <motion.div
-          className="absolute bottom-0 left-0 right-0 h-0.5 w-3 mx-auto bg-green-300 rounded-full"
-          layoutId="activeIndicator"
-          transition={spring}
-        />
+        <motion.div layoutId="activeIndicator"
+          transition={spring} className="absolute rounded-full -bottom-2 inset-x-0 h-1.5 w-1.5 mx-auto bg-green-300 transition-opacity duration-500 group-hover:opacity-40"></motion.div>
+
       )}
     </motion.div>
   );
@@ -200,7 +198,7 @@ function DockLabel({ children, className, ...rest }: DockLabelProps) {
           exit={{ opacity: 0, y: 0 }}
           transition={{ duration: 0.2 }}
           className={cn(
-            'absolute -top-6 left-1/2 w-fit whitespace-pre rounded-md border  px-2 py-0.5 text-xs border-white/50 bg-black/70 backdrop-blur-md font-semibold text-white z-30',
+            'absolute -top-6 left-1/2 w-fit whitespace-pre rounded-md border  px-2 py-0.5 text-xs border-white/50 bg-black/70 backdrop-blur-md mix-blend-plus-darker font-semibold text-white z-30',
             className
           )}
           role='tooltip'
