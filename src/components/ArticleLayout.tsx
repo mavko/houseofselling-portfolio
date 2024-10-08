@@ -39,8 +39,8 @@ export function generateMetadata({ article }: { article: ArticleWithSlug }): Met
     openGraph: {
       title: `${article.title} - Sebastian Selling`,
       description: `${article.description}`,
-      url: `${process.env.NEXT_PUBLIC_SITE_URL}/craft/${article.slug}`,
-      siteName: '${article.title} - Craft by Sebastian',
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}/alchemy/${article.slug}`,
+      siteName: `${article.title} - Alchemy by Sebastian`,
       images: [
         {
           url: imageUrl,
