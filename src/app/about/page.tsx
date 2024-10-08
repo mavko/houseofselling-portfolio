@@ -36,11 +36,12 @@ export default function About() {
         </p>
         <p>
           Finally in 2012, my brother came to me with the very beginnings of what later became
-          <LinkPreview
-            url="https://www.ispect.se"
-            className="mx-1"
-            appName="ispect app"
-          >ispect</LinkPreview>,
+          <span>
+            <Link
+              href="https://www.ispect.se"
+              className="mx-1"
+            >ispect</Link>,
+          </span>
           where he showed me the prototype and I responded, in a typical cocky youngster fashion: "That looks like shit, nobody is gonna use that." - and he simply replied "Well, prove that you can do better."
         </p>
 
@@ -48,33 +49,39 @@ export default function About() {
           The rest is history as they say. We spent the next decade building out not only
           ispect
           but
-          <LinkPreview
-            url="https://www.icontrolapp.se"
-            className="px-1"
-            appName="icontrol app"
-          >icontrol</LinkPreview> aswell.
+          <span>
+            <Link
+              href="https://www.icontrolapp.se"
+              className="px-1"
+            >icontrol</Link>
+          </span>
+          aswell.
         </p>
         <p>
           Fast forward to today and I spend my days contributing and helping my parents with
-          <LinkPreview
-            url="https://www.besiktningsman.se"
-            className="px-1"
-            appName="construction inspection agency"
-          >their business</LinkPreview>
+          <span>
+            <Link
+              href="https://www.besiktningsman.se"
+              className="px-1"
+            >their business</Link>
+          </span>
           so that they may get a nest-egg to retire with, whilst also running an
-          <LinkPreview
-            url="https://gcorp-landingpage.vercel.app/"
-            className="px-1"
-            appName="g:corp app studio"
-          >app studio</LinkPreview> to build niche micro apps.
+          <span>
+            <Link
+              href="https://gcorp-landingpage.vercel.app/"
+              className="px-1"
+            >app studio</Link> to build niche micro apps.
+          </span>
         </p>
         <p>
           My spare time is spent with my
-          <LinkPreview
-            url="https://www.vheekey.com/"
-            className="px-1"
-            appName="Victoria Essien Selling"
-          >beautiful wife Victoria</LinkPreview> and our little newborn daughter Elizabeth. Very much into lifting, bikes and gaming as well.
+          <span>
+            <Link
+              href="https://www.vheekey.com/"
+              className="px-1"
+            >beautiful wife Victoria</Link> and our little newborn daughter Elizabeth. Very much into lifting, bikes and gaming as well.
+
+          </span>
         </p>
         <p>
           Our sights have recently been set on Seoul, South Korea and are looking to relocate over coming year or two.
