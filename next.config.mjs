@@ -23,6 +23,32 @@ const nextConfig = {
   images: {
     domains: ['f003.backblazeb2.com', 'api.microlink.io'], // Add this line to allow Backblaze B2 domain
   },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.sebastianselling.com/craft/makings-of-icontrol',
+          },
+        ],
+        destination: 'https://sebastianselling.com/alchemy/makings-of-icontrol',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.sebastianselling.com/craft/makings-of-ispect',
+          },
+        ],
+        destination: 'https://sebastianselling.com/alchemy/makings-of-ispect',
+        permanent: true,
+      },
+    ];
+  },
 }
 
 const withMDX = nextMDX({
