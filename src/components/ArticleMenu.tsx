@@ -19,7 +19,7 @@ export default function ArticleDropdown() {
         </span>
         <div className="relative flex space-x-1 items-center z-10 rounded-xl bg-zinc-950 py-0.5 px-4 ring-1 ring-white/30 h-10">
           <ChevronDownIcon className="size-4 fill-white/60" />
-          <span>{`See all my articles`}</span>
+          <span>{`Articles`}</span>
         </div>
         <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-green-300 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40"></span>
       </MenuButton>

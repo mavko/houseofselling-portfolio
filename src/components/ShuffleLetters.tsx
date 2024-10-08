@@ -55,7 +55,7 @@ const gcorp = [
 ];
 const previous = [
   {
-    name: "500 startups",
+    name: "500 startups Batch 19",
     description: "Investment and mentorship to build iControl",
     href: "https://www.crunchbase.com/organization/icontrol-2",
     year: 2016
@@ -222,7 +222,7 @@ const ProjectsList = () => {
       </motion.h2>
       <div className="mt-4 flex flex-col gap-7 mx-auto w-full max-w-7xl">
         {current.map((project, index) => (
-          <Project key={project.href} {...project} index={index} />
+          <Project key={`current-${project.href}-${index}`} {...project} index={index} />
         ))}
       </div>
 
@@ -233,7 +233,7 @@ const ProjectsList = () => {
       </motion.h2>
       <div className="mt-4 flex flex-col gap-7 mx-auto w-full max-w-7xl">
         {gcorp.map((project, index) => (
-          <Project key={project.href} {...project} index={index} />
+          <Project key={`gcorp-${project.href}-${index}`} {...project} index={index} />
         ))}
       </div>
       <motion.h2 initial={{ opacity: 0 }}
@@ -244,7 +244,7 @@ const ProjectsList = () => {
 
       <div className="mt-4 flex flex-col gap-7 mx-auto w-full max-w-7xl">
         {previous.map((project, index) => (
-          <Project key={project.href} {...project} index={index} />
+          <Project key={`previous-${project.href}-${index}`} {...project} index={index} />
         ))}
       </div>
     </>
