@@ -3,15 +3,15 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 const current = [
   {
-    name: "South Korea",
+    name: "South Korea [networking]",
     description: "Actively looking for opportunities in South Korea",
     href: "/about",
     year: 2025
   },
   {
-    name: "din.fastighetsförvaltare [TBA]",
+    name: "din.fastighetsförvaltare [soft launch]",
     description: "Premier Prop Management by BM",
-    href: "#",
+    href: "https://www.dinfastighetsforvaltare.se/",
     year: 2024
   },
   {
