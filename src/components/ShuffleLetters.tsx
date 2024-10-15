@@ -1,26 +1,32 @@
 "use client"
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { nanoid } from 'nanoid';
+
 const current = [
   {
+    id: nanoid(),
     name: "South Korea [networking]",
     description: "Actively looking for opportunities in South Korea",
     href: "/about",
     year: [2025, 2026]
   },
   {
+    id: nanoid(),
     name: "din.fastighetsförvaltare [soft launch]",
     description: "Premier Prop Management by BM",
     href: "https://www.dinfastighetsforvaltare.se/",
     year: [2024]
   },
   {
+    id: nanoid(),
     name: "drykit.co",
     description: "Sensors that keep You and Your Home safe from Mold.",
     href: "https://www.drykit.co",
     year: [2023, 2024]
   },
   {
+    id: nanoid(),
     name: "besiktningsman.se",
     description: "Premier construction inspection agency",
     href: "https://www.besiktningsman.se",
@@ -29,24 +35,28 @@ const current = [
 ];
 const gcorp = [
   {
+    id: nanoid(),
     name: "g:corp studio page",
     description: "App studio for the 21st century",
     href: "https://gcorp-landingpage.vercel.app/",
     year: [2024]
   },
   {
+    id: nanoid(),
     name: "scribbly",
     description: "Automated transcription service",
     href: "https://scribbly.se/",
     year: [2024]
   },
   {
+    id: nanoid(),
     name: "a / sharedspace [in dev]",
     description: "Tenant / home owner association web app",
     href: "https://sharedspace.se/",
     year: [2024]
   },
   {
+    id: nanoid(),
     name: "cubic",
     description: "Send and save websites as issues in Linear [in dev]",
     href: "#",
@@ -55,18 +65,21 @@ const gcorp = [
 ];
 const previous = [
   {
+    id: nanoid(),
     name: "500 startups Batch 19",
     description: "Investment and mentorship to build iControl",
     href: "https://www.crunchbase.com/organization/icontrol-2",
     year: [2016]
   },
   {
+    id: nanoid(),
     name: "icontrol",
     description: "Replace paper with an app on the field",
     href: "/alchemy/makings-of-icontrol",
     year: [2014, 2017]
   },
   {
+    id: nanoid(),
     name: "ispect",
     description: "The standardized inspection app [maintained]",
     href: "/alchemy/makings-of-ispect",
@@ -165,7 +178,7 @@ const getRandomCharacter = (characterType: string) => {
   return characters[Math.floor(Math.random() * characters.length)];
 };
 
-const Project: React.FC<{ href: string; name: string; description: string; year: number[]; index: number }> = ({ href, name, description, year, index }) => {
+const Project: React.FC<{ id: string; href: string; name: string; description: string; year: (string | number)[]; index: number }> = ({ id, href, name, description, year, index }) => {
   const nameRef = useRef<HTMLSpanElement>(null);
   const descriptionRef = useRef<HTMLSpanElement>(null);
   const yearRef = useRef<HTMLSpanElement>(null);
@@ -222,7 +235,11 @@ const ProjectsList = () => {
       </motion.h2>
       <div className="mt-4 flex flex-col gap-7 mx-auto w-full max-w-7xl">
         {current.map((project, index) => (
-          <Project key={`current-${project.href}-${index}`} {...project} index={index} />
+          <Project
+            key={project.id}
+            {...project}
+            index={index}
+          />
         ))}
       </div>
 
@@ -233,7 +250,11 @@ const ProjectsList = () => {
       </motion.h2>
       <div className="mt-4 flex flex-col gap-7 mx-auto w-full max-w-7xl">
         {gcorp.map((project, index) => (
-          <Project key={`gcorp-${project.href}-${index}`} {...project} index={index} />
+          <Project
+            key={project.id}
+            {...project}
+            index={index}
+          />
         ))}
       </div>
       <motion.h2 initial={{ opacity: 0 }}
@@ -244,7 +265,11 @@ const ProjectsList = () => {
 
       <div className="mt-4 flex flex-col gap-7 mx-auto w-full max-w-7xl">
         {previous.map((project, index) => (
-          <Project key={`previous-${project.href}-${index}`} {...project} index={index} />
+          <Project
+            key={project.id}
+            {...project}
+            index={index}
+          />
         ))}
       </div>
     </>
