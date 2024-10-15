@@ -11,7 +11,7 @@ import solveExtension from '@/images/craft/solve-extension-icon.jpg'
 import gradiance from '@/images/craft/gradiance.jpg'
 import idStudios from '@/images/craft/idstudios2013.png'
 import inspectorAI from '@/images/craft/inspector-ai-icon.png'
-
+import ispectCloseout2020 from '@/images/craft/ispect/ispect-closeout-demo-2020-january.jpg'
 import Template from '../template'
 import ArticleDropdown from '@/components/ArticleMenu'
 import { BeakerIcon } from '@heroicons/react/24/solid'
@@ -39,6 +39,12 @@ const craftItems: CraftItem[] = [
     type: 'video',
     src: '/videos/logo-cloud-glimmer.mp4',
     alt: 'subtle customer glimmer',
+    post: '',
+  },
+  {
+    type: 'image',
+    src: ispectCloseout2020,
+    alt: 'ispect closeout mobile 2020',
     post: '',
   },
   {

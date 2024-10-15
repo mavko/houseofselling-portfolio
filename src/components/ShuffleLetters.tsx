@@ -6,25 +6,25 @@ const current = [
     name: "South Korea [networking]",
     description: "Actively looking for opportunities in South Korea",
     href: "/about",
-    year: 2025
+    year: [2025, 2026]
   },
   {
     name: "din.fastighetsförvaltare [soft launch]",
     description: "Premier Prop Management by BM",
     href: "https://www.dinfastighetsforvaltare.se/",
-    year: 2024
+    year: [2024]
   },
   {
     name: "drykit.co",
     description: "Sensors that keep You and Your Home safe from Mold.",
     href: "https://www.drykit.co",
-    year: 2023
+    year: [2023, 2024]
   },
   {
     name: "besiktningsman.se",
     description: "Premier construction inspection agency",
     href: "https://www.besiktningsman.se",
-    year: 2017
+    year: [2017, 'ongoing']
   },
 ];
 const gcorp = [
@@ -32,25 +32,25 @@ const gcorp = [
     name: "g:corp studio page",
     description: "App studio for the 21st century",
     href: "https://gcorp-landingpage.vercel.app/",
-    year: 2024
+    year: [2024]
   },
   {
     name: "scribbly",
     description: "Automated transcription service",
     href: "https://scribbly.se/",
-    year: 2024
+    year: [2024]
   },
   {
     name: "a / sharedspace [in dev]",
     description: "Tenant / home owner association web app",
     href: "https://sharedspace.se/",
-    year: 2024
+    year: [2024]
   },
   {
     name: "cubic",
     description: "Send and save websites as issues in Linear [in dev]",
     href: "#",
-    year: 2024
+    year: [2024]
   },
 ];
 const previous = [
@@ -58,19 +58,19 @@ const previous = [
     name: "500 startups Batch 19",
     description: "Investment and mentorship to build iControl",
     href: "https://www.crunchbase.com/organization/icontrol-2",
-    year: 2016
+    year: [2016]
   },
   {
     name: "icontrol",
     description: "Replace paper with an app on the field",
     href: "/alchemy/makings-of-icontrol",
-    year: 2014
+    year: [2014, 2017]
   },
   {
     name: "ispect",
     description: "The standardized inspection app [maintained]",
     href: "/alchemy/makings-of-ispect",
-    year: 2012
+    year: [2012, 2024]
   },
 
 ];
@@ -165,7 +165,7 @@ const getRandomCharacter = (characterType: string) => {
   return characters[Math.floor(Math.random() * characters.length)];
 };
 
-const Project: React.FC<{ href: string; name: string; description: string; year: number; index: number }> = ({ href, name, description, year, index }) => {
+const Project: React.FC<{ href: string; name: string; description: string; year: number[]; index: number }> = ({ href, name, description, year, index }) => {
   const nameRef = useRef<HTMLSpanElement>(null);
   const descriptionRef = useRef<HTMLSpanElement>(null);
   const yearRef = useRef<HTMLSpanElement>(null);
@@ -206,7 +206,7 @@ const Project: React.FC<{ href: string; name: string; description: string; year:
         />
       </motion.div>
       <span ref={yearRef} className="text-[#e8e6e3] justify-end">
-        {year}
+        {year.length > 1 ? `${year[0]}-${year[year.length - 1]}` : year[0]}
       </span>
     </motion.a>
   );
