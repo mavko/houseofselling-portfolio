@@ -228,6 +228,7 @@ const Project: React.FC<{ id: string; href: string; name: string; description: s
 const ProjectsList = () => {
   return (
     <>
+
       <motion.h2 initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         className='text-xs p-2 -m-3 font-bold flex items-center my-5'>
