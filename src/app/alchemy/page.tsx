@@ -37,6 +37,12 @@ type CraftItem = {
 const craftItems: CraftItem[] = [
   {
     type: 'video',
+    src: '/videos/profiledash.mp4',
+    alt: 'profiledash app',
+    post: '',
+  },
+  {
+    type: 'video',
     src: '/videos/logo-cloud-glimmer.mp4',
     alt: 'subtle customer glimmer',
     post: '',
