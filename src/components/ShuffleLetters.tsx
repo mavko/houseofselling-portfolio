@@ -33,12 +33,20 @@ const current = [
     year: [2017, 'ongoing']
   },
 ];
+
 const gcorp = [
   {
     id: nanoid(),
     name: "g:corp studio page",
     description: "App studio for the 21st century",
     href: "https://gcorp-landingpage.vercel.app/",
+    year: [2024]
+  },
+  {
+    id: nanoid(),
+    name: "ProfileDash",
+    description: "Extract Socials Instantly",
+    href: "https://profiledash.vercel.app/",
     year: [2024]
   },
   {
