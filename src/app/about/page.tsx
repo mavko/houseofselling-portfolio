@@ -83,10 +83,6 @@ export default function About() {
 
           </span>
         </p>
-        <p>
-          Our sights have recently been set on Seoul, South Korea and are looking to relocate over coming year or two.
-          If you happen to be in tech scene in korea, by all means get in touch!
-        </p>
         <h3 className='text-[#e8e6e3]'>Contact:</h3>
 
         <div className='flex flex-col sm:flex-row w-fit gap-6 text-sm'>

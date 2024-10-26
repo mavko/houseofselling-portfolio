@@ -6,13 +6,6 @@ import { nanoid } from 'nanoid';
 const current = [
   {
     id: nanoid(),
-    name: "South Korea [networking]",
-    description: "Actively looking for opportunities in South Korea",
-    href: "/about",
-    year: [2025, 2026]
-  },
-  {
-    id: nanoid(),
     name: "din.fastighetsförvaltare [soft launch]",
     description: "Premier Prop Management by BM",
     href: "https://www.dinfastighetsforvaltare.se/",
