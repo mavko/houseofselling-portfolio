@@ -4,7 +4,7 @@ import { GeistSans } from 'geist/font/sans'
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
 import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 import '@/styles/tailwind.css'
 import { PortfolioNav } from '@/components/PortfolioNav'
@@ -23,7 +23,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Sebastian Selling',
-    description: 'Design Engineer with over a Decade of experience building brands and apps.',
+    description:
+      'Design Engineer with over a Decade of experience building brands and apps.',
     url: 'https://sebastianselling.com',
     siteName: 'Sebastian Selling',
     images: [
@@ -39,7 +40,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Sebastian Selling',
-    description: 'Design Engineer with over a Decade of experience building brands and apps.',
+    description:
+      'Design Engineer with over a Decade of experience building brands and apps.',
     siteId: '@houseofselling',
     creator: '@houseofselling',
     creatorId: '1675809229276364802',
@@ -67,13 +69,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={GeistSans.className} suppressHydrationWarning>
-      <body className="w-full bg-[#111213] text-[#f2f2f2] antialiased font-sans">
-
+      <body className="w-full bg-neutral-950 font-sans text-[#f2f2f2] antialiased">
         <Providers>
           <Layout>
             {children}
             <PortfolioNav />
-            <div className='[mask-image:linear-gradient(to_top,_rgb(0,_0,_0)_25%,_transparent)] bg-black/20 backdrop-filter backdrop-blur-[5px] w-full h-20 bottom-0 pointer-events-none fixed z-20 inset-x-0'></div>
+            <div
+              aria-hidden="true"
+              className="pointer-events-none fixed inset-x-0 bottom-0 z-20 h-20 w-full bg-black/20 backdrop-blur-[5px] backdrop-filter [mask-image:linear-gradient(to_top,_rgb(0,_0,_0)_25%,_transparent)]"
+            />
           </Layout>
         </Providers>
         <Analytics />

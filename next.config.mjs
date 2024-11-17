@@ -21,7 +21,15 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: ['f003.backblazeb2.com', 'api.microlink.io'], // Add this line to allow Backblaze B2 domain
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'sebastianselling.com',
+        port: '',
+        pathname: '/**',
+      },
+      // Add other domains if needed
+    ],
   },
   async redirects() {
     return [

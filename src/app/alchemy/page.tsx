@@ -3,6 +3,7 @@ import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 
 import woordwave from '@/images/craft/woordwave.png'
+import houseofselling from '@/images/craft/houseofselling-crest-red:black.png'
 import scribblyFolder from '@/images/craft/scribbly-folder.png'
 import ispectLogo from '@/images/craft/ispect-logo-update.png'
 import icontrol from '@/images/craft/icontrol_logo.png'
@@ -36,9 +37,9 @@ type CraftItem = {
 // Create an array of craft items
 const craftItems: CraftItem[] = [
   {
-    type: 'video',
-    src: '/videos/profiledash.mp4',
-    alt: 'profiledash app',
+    type: 'image',
+    src: houseofselling,
+    alt: 'house of selling crest',
     post: '',
   },
   {
@@ -201,7 +202,7 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
       <>
         <video
           src={item.src as string} // Type assertion here
-          className="h-auto w-full rounded-2xl object-cover hidden sm:block"
+          className="hidden h-auto w-full rounded-2xl object-cover sm:block"
           autoPlay
           muted
           playsInline
@@ -211,7 +212,7 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
         </video>
         <video
           src={item.src as string} // Type assertion here
-          className="h-auto w-full rounded-2xl object-cover block sm:hidden"
+          className="block h-auto w-full rounded-2xl object-cover sm:hidden"
           autoPlay
           muted
           playsInline
@@ -228,9 +229,12 @@ export default function Craft() {
   return (
     <Template>
       <nav className="relative z-20 flex h-auto w-full items-center justify-between px-3 pt-3">
-        <h2 className='flex items-center gap-3'>
-          <BeakerIcon className='size-5 ring-1 ring-white rounded-md p-0.5' />
-          Alchemy <span className='hidden sm:block'>:: my work captured in snippets</span>
+        <h2 className="flex items-center gap-3">
+          <BeakerIcon className="size-5 rounded-md p-0.5 ring-1 ring-white" />
+          Alchemy{' '}
+          <span className="hidden sm:block">
+            :: my work captured in snippets
+          </span>
         </h2>
 
         <ArticleDropdown />
