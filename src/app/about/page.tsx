@@ -105,18 +105,18 @@ export default function About() {
 
         <div className="flex w-fit flex-col gap-6 text-sm sm:flex-row">
           <Link
-            className="!text-green-300"
+            className="text-green-300!"
             href="mailto:houseofselling@proton.me"
           >
             houseofselling@proton.me
           </Link>
 
-          <Link className="!text-green-300" href="https://x.com/houseofselling">
+          <Link className="text-green-300!" href="https://x.com/houseofselling">
             X / @houseofselling
           </Link>
 
           <Link
-            className="!text-green-300"
+            className="text-green-300!"
             href="https://linkedin/sebastianselling/"
           >
             Linkedin / sebastian.selling

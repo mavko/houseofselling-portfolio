@@ -8,7 +8,7 @@ import {
 } from 'framer-motion';
 import React from 'react';
 
-type PresetType = 'blur' | 'shake' | 'scale' | 'fade' | 'slide';
+type PresetType = 'blur-sm' | 'shake' | 'scale' | 'fade' | 'slide';
 
 type TextEffectProps = {
   children: string;
@@ -60,9 +60,9 @@ const presetVariants: Record<
   blur: {
     container: defaultContainerVariants,
     item: {
-      hidden: { opacity: 0, filter: 'blur(12px)' },
-      visible: { opacity: 1, filter: 'blur(0px)' },
-      exit: { opacity: 0, filter: 'blur(12px)' },
+      hidden: { opacity: 0, filter: 'blur-sm(12px)' },
+      visible: { opacity: 1, filter: 'blur-sm(0px)' },
+      exit: { opacity: 0, filter: 'blur-sm(12px)' },
     },
   },
   shake: {

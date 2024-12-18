@@ -100,7 +100,7 @@ export function ArticleLayout({
                 <ArrowLeftIcon className="h-4 w-4 stroke-white/80 " />
                 <span>{`Alchemy`}</span>
               </div>
-              <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-green-300 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40"></span>
+              <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-linear-to-r from-emerald-400/0 via-green-300 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40"></span>
             </Link>
             <article>
               <header className="flex flex-col">
@@ -128,7 +128,7 @@ export function ArticleLayout({
                 <ArrowLeftIcon className="h-4 w-4 stroke-white/80 " />
                 <span>{`Alchemy`}</span>
               </div>
-              <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-green-300 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40"></span>
+              <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-linear-to-r from-emerald-400/0 via-green-300 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40"></span>
             </Link>
           </div>
         </div>

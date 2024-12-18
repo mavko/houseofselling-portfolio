@@ -21,15 +21,15 @@ export default function ArticleDropdown() {
           <ChevronDownIcon className="size-4 fill-white/60" />
           <span>{`Articles`}</span>
         </div>
-        <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-green-300 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40"></span>
+        <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-linear-to-r from-emerald-400/0 via-green-300 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40"></span>
       </MenuButton>
       <MenuItems
         transition
         anchor="bottom end"
-        className="w-64 origin-top-right rounded-xl border border-white/20 bg-black/30 backdrop-blur-lg p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0 mt-3"
+        className="w-64 origin-top-right rounded-xl border border-white/20 bg-black/30 backdrop-blur-lg p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-hidden data-closed:scale-95 data-closed:opacity-0 mt-3"
       >
         <MenuItem>
-          <Link href="/alchemy/makings-of-ispect" className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
+          <Link href="/alchemy/makings-of-ispect" className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-focus:bg-white/10">
             <ForwardIcon className="size-4 fill-white/80" />
             Makings of iSpect
 
@@ -37,7 +37,7 @@ export default function ArticleDropdown() {
         </MenuItem>
         <div className="my-1 h-px bg-white/5" />
         <MenuItem>
-          <Link href="/alchemy/makings-of-icontrol" className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
+          <Link href="/alchemy/makings-of-icontrol" className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-focus:bg-white/10">
             <ForwardIcon className="size-4 fill-white/80" />
             Makings of iControl
 

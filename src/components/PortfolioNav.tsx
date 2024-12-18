@@ -51,7 +51,7 @@ export function PortfolioNav() {
           <Link key={item.title} href={item.href}>
             <DockItem
               href={item.href}
-              className="aspect-square rounded-xl bg-neutral-950  ring-1 ring-inset ring-neutral-700 backdrop-blur-sm  "
+              className="aspect-square rounded-xl bg-neutral-950  ring-1 ring-inset ring-neutral-700 backdrop-blur-xs  "
             >
               <DockLabel>{item.title}</DockLabel>
               <DockIcon className="fill-neutral-100 text-neutral-100 hover:fill-white hover:brightness-150 focus:fill-[#FE0303] active:fill-[#FE0303]">

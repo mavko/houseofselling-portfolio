@@ -196,7 +196,7 @@ const Project: React.FC<{ id: string; href: string; name: string; description: s
     <motion.a
       href={href}
       rel="noopener noreferrer"
-      className="flex items-center gap-3 w-[calc(100%+2rem)] relative overflow-hidden p-2 -m-3 rounded-xl outline-none hover:bg-white/5 hover:ring-1 hover:ring-white/10 transition-colors text-sm"
+      className="flex items-center gap-3 w-[calc(100%+2rem)] relative overflow-hidden p-2 -m-3 rounded-xl outline-hidden hover:bg-white/5 hover:ring-1 hover:ring-white/10 transition-colors text-sm"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay }}

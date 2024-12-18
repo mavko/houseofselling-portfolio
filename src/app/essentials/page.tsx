@@ -44,7 +44,7 @@ export default function Essentials() {
   return (
     <section className="mx-auto max-w-3xl p-4 pb-24 sm:py-24">
       <div className="space-y-8">
-        <section className="relative mx-auto h-full w-full overflow-hidden rounded-xl  shadow-2xl shadow-white/5 ring-1 ring-white/20 backdrop-blur-sm">
+        <section className="relative mx-auto h-full w-full overflow-hidden rounded-xl  shadow-2xl shadow-white/5 ring-1 ring-white/20 backdrop-blur-xs">
 
           <div className="relative flex leading-6 ">
             <div className="mt-2 flex flex-none items-center border-b border-t border-b-white border-t-transparent px-4 py-1">
@@ -111,7 +111,7 @@ export default function Essentials() {
 
           </div>
         </section>
-        <section className="relative mx-auto h-full w-full overflow-hidden rounded-xl  shadow-2xl shadow-white/5 ring-1 ring-white/20 backdrop-blur-sm">
+        <section className="relative mx-auto h-full w-full overflow-hidden rounded-xl  shadow-2xl shadow-white/5 ring-1 ring-white/20 backdrop-blur-xs">
 
           <div className="relative flex leading-6 ">
             <div className="mt-2 flex flex-none items-center border-b border-t border-b-white border-t-transparent px-4 py-1">
@@ -162,7 +162,7 @@ export default function Essentials() {
 
           </div>
         </section>
-        <section className="relative mx-auto h-full w-full overflow-hidden rounded-xl  shadow-2xl shadow-white/5 ring-1 ring-white/20 backdrop-blur-sm">
+        <section className="relative mx-auto h-full w-full overflow-hidden rounded-xl  shadow-2xl shadow-white/5 ring-1 ring-white/20 backdrop-blur-xs">
 
           <div className="relative flex leading-6 ">
             <div className="mt-2 flex flex-none items-center border-b border-t border-b-white border-t-transparent px-4 py-1">
@@ -192,7 +192,7 @@ export default function Essentials() {
 
           </div>
         </section>
-        <section className="relative mx-auto h-full w-full overflow-hidden rounded-xl  shadow-2xl shadow-white/5 ring-1 ring-white/20 backdrop-blur-sm">
+        <section className="relative mx-auto h-full w-full overflow-hidden rounded-xl  shadow-2xl shadow-white/5 ring-1 ring-white/20 backdrop-blur-xs">
 
           <div className="relative flex leading-6 ">
             <div className="mt-2 flex flex-none items-center border-b border-t border-b-white border-t-transparent px-4 py-1">

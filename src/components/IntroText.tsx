@@ -44,7 +44,7 @@ export function IntroText() {
         per='char'
         delay={2.5}
         className='pt-12 text-xs'
-        preset='blur'
+        preset='blur-sm'
       >
         (and delay!)
       </TextEffect>
