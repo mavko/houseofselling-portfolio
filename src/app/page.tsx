@@ -3,15 +3,6 @@ import Image from 'next/image'
 import avatarImage from '@/images/dither.avif'
 import houseofselling from '@/images/houseofselling-entry.png'
 
-const header = [
-  {
-    type: 'video',
-    src: '/videos/alchemist.mp4',
-    alt: 'subtle customer glimmer',
-    post: '',
-    id: 'header-1', // Added a unique id to each header item
-  },
-]
 export default async function Home() {
   return (
     <>
