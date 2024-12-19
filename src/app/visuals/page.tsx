@@ -46,7 +46,6 @@ import wanderingHorse from '@/images/photos/wanderingHorse.jpg'
 import windowIntoSummer from '@/images/photos/windowIntoSummer.jpg'
 import winteryCity from '@/images/photos/winteryCity.jpg'
 
-
 export const metadata: Metadata = {
   title: 'Visuals by Sebastian',
   description: 'Capturing moments in time from every day life.',
@@ -59,43 +58,42 @@ type PhotoItem = {
 }
 
 const photoItems: PhotoItem[] = [
-  { type: 'image', src: bussStation, alt: "Cyber dusk bus station" },
-  { type: 'video', src: '/videos/subwayMorning.mp4', alt: "The dusk train" },
-  { type: 'image', src: laptop, alt: "Laptop" },
-  { type: 'image', src: codingEvening, alt: "Evening of coding" },
-  { type: 'image', src: cyberTullen, alt: "Hornstull walkway cyberwave style" },
-  { type: 'image', src: danderydDystopia, alt: "Danderyd dystopia" },
-  { type: 'image', src: drowsyLangholmen, alt: "Drowsy Langholmen" },
-  { type: 'image', src: duskofSummer, alt: "Dusk of summer" },
-  { type: 'image', src: dystopianStairway, alt: "Dystopian stairway" },
-  { type: 'image', src: fragmentsOfSelf, alt: "Fragments of self" },
-  { type: 'image', src: gardetsunset, alt: "Gardet sunset" },
-  { type: 'image', src: hornstulldimman, alt: "Hornstull dimman" },
-  { type: 'image', src: lift, alt: "Lift" },
-  { type: 'image', src: lonelyDawn, alt: "Lonely dawn" },
-  { type: 'image', src: midnightFog, alt: "Midnight fog" },
-  { type: 'image', src: midsommarNatten, alt: "Midsommar natten" },
-  { type: 'image', src: midsommarWinter, alt: "Midsommar winter" },
-  { type: 'image', src: midsummarMorning, alt: "Midsummer morning" },
-  { type: 'image', src: midsummerDusk, alt: "Midsummer dusk" },
-  { type: 'image', src: midwinterRailroad, alt: "Midwinter railroad" },
-  { type: 'image', src: nightHUD, alt: "Night HUD" },
-  { type: 'image', src: pathwaytoNowhere, alt: "Pathway to nowhere" },
-  { type: 'image', src: saturdayLights, alt: "Saturday lights" },
-  { type: 'image', src: september, alt: "September" },
-  { type: 'image', src: sleepylangholmen, alt: "Sleepy Langholmen" },
-  { type: 'image', src: subwayDystopia, alt: "Subway dystopia" },
-  { type: 'image', src: summerDream, alt: "Summer dream" },
-  { type: 'image', src: sunsetPov, alt: "Sunset POV" },
-  { type: 'image', src: swedishMidsummer, alt: "Swedish midsummer" },
-  { type: 'image', src: telefonplanApt, alt: "Telefonplan apartment" },
-  { type: 'image', src: templeWarrior, alt: "Temple warrior" },
-  { type: 'image', src: vasterhaningeApril, alt: "Vasterhaninge April" },
-  { type: 'image', src: vasterhaningeShops, alt: "Vasterhaninge shops" },
-  { type: 'image', src: wanderingHorse, alt: "Wandering horse" },
-  { type: 'image', src: windowIntoSummer, alt: "Window into summer" },
-  { type: 'image', src: winteryCity, alt: "Wintery city" },
-
+  { type: 'image', src: bussStation, alt: 'Cyber dusk bus station' },
+  { type: 'video', src: '/videos/subwayMorning.mp4', alt: 'The dusk train' },
+  { type: 'image', src: laptop, alt: 'Laptop' },
+  { type: 'image', src: codingEvening, alt: 'Evening of coding' },
+  { type: 'image', src: cyberTullen, alt: 'Hornstull walkway cyberwave style' },
+  { type: 'image', src: danderydDystopia, alt: 'Danderyd dystopia' },
+  { type: 'image', src: drowsyLangholmen, alt: 'Drowsy Langholmen' },
+  { type: 'image', src: duskofSummer, alt: 'Dusk of summer' },
+  { type: 'image', src: dystopianStairway, alt: 'Dystopian stairway' },
+  { type: 'image', src: fragmentsOfSelf, alt: 'Fragments of self' },
+  { type: 'image', src: gardetsunset, alt: 'Gardet sunset' },
+  { type: 'image', src: hornstulldimman, alt: 'Hornstull dimman' },
+  { type: 'image', src: lift, alt: 'Lift' },
+  { type: 'image', src: lonelyDawn, alt: 'Lonely dawn' },
+  { type: 'image', src: midnightFog, alt: 'Midnight fog' },
+  { type: 'image', src: midsommarNatten, alt: 'Midsommar natten' },
+  { type: 'image', src: midsommarWinter, alt: 'Midsommar winter' },
+  { type: 'image', src: midsummarMorning, alt: 'Midsummer morning' },
+  { type: 'image', src: midsummerDusk, alt: 'Midsummer dusk' },
+  { type: 'image', src: midwinterRailroad, alt: 'Midwinter railroad' },
+  { type: 'image', src: nightHUD, alt: 'Night HUD' },
+  { type: 'image', src: pathwaytoNowhere, alt: 'Pathway to nowhere' },
+  { type: 'image', src: saturdayLights, alt: 'Saturday lights' },
+  { type: 'image', src: september, alt: 'September' },
+  { type: 'image', src: sleepylangholmen, alt: 'Sleepy Langholmen' },
+  { type: 'image', src: subwayDystopia, alt: 'Subway dystopia' },
+  { type: 'image', src: summerDream, alt: 'Summer dream' },
+  { type: 'image', src: sunsetPov, alt: 'Sunset POV' },
+  { type: 'image', src: swedishMidsummer, alt: 'Swedish midsummer' },
+  { type: 'image', src: telefonplanApt, alt: 'Telefonplan apartment' },
+  { type: 'image', src: templeWarrior, alt: 'Temple warrior' },
+  { type: 'image', src: vasterhaningeApril, alt: 'Vasterhaninge April' },
+  { type: 'image', src: vasterhaningeShops, alt: 'Vasterhaninge shops' },
+  { type: 'image', src: wanderingHorse, alt: 'Wandering horse' },
+  { type: 'image', src: windowIntoSummer, alt: 'Window into summer' },
+  { type: 'image', src: winteryCity, alt: 'Wintery city' },
 ]
 
 const MediaComponent = ({ item }: { item: PhotoItem }) => {
@@ -104,7 +102,7 @@ const MediaComponent = ({ item }: { item: PhotoItem }) => {
       <Image
         src={item.src}
         alt={item.alt}
-        className="bg-cover w-full h-auto rounded-2xl"
+        className="h-auto w-full rounded-2xl bg-cover"
         width={400}
         height={400}
       />
@@ -113,7 +111,7 @@ const MediaComponent = ({ item }: { item: PhotoItem }) => {
     return (
       <video
         src={item.src as string}
-        className="w-full h-auto rounded-2xl object-cover"
+        className="h-auto w-full rounded-2xl object-cover"
         autoPlay
         muted
         playsInline
@@ -128,27 +126,33 @@ const MediaComponent = ({ item }: { item: PhotoItem }) => {
 export default function Visuals() {
   return (
     <>
-      <section className='columns-1 sm:columns-2 md:columns-3 space-y-3 gap-3 px-3 py-6'>
+      <section className="columns-1 gap-3 space-y-3 px-3 py-6 sm:columns-2 md:columns-3">
         {photoItems.map((item, index) => (
           <Dialog
+            key={`photo-${index}`}
             transition={{
-              duration: 0.3,
-              ease: 'easeInOut',
+              duration: 0.5,
             }}
           >
             <DialogTrigger>
-              <div key={index} className='relative ring-1 ring-white/20 bg-[#1c1c1c] p-1.5 rounded-xl overflow-hidden h-fit w-full'>
+              <div
+                key={index}
+                className="relative h-fit w-full overflow-hidden rounded-xl bg-[#1c1c1c] p-1.5 ring-1 ring-white/20"
+              >
                 <MediaComponent item={item} />
               </div>
             </DialogTrigger>
             <DialogContainer>
-              <DialogContent className='relative'>
-                <div key={index} className='relative ring-1 ring-white/10 bg-[#1c1c1c] p-1.5 rounded-xl overflow-hidden h-full w-full'>
+              <DialogContent className="relative">
+                <div
+                  key={index}
+                  className="relative h-full w-full overflow-hidden rounded-xl bg-[#1c1c1c] p-1.5 ring-1 ring-white/10"
+                >
                   <MediaComponent item={item} />
                 </div>
               </DialogContent>
               <DialogClose
-                className='fixed right-6 top-6 h-fit w-fit rounded-full bg-white p-1'
+                className="fixed top-6 right-6 h-fit w-fit rounded-full bg-white p-1"
                 variants={{
                   initial: { opacity: 0 },
                   animate: {
@@ -158,7 +162,7 @@ export default function Visuals() {
                   exit: { opacity: 0, transition: { duration: 0 } },
                 }}
               >
-                <XMarkIcon className='size-6 fill-black' />
+                <XMarkIcon className="size-6 fill-black" />
               </DialogClose>
             </DialogContainer>
           </Dialog>

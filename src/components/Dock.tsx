@@ -75,6 +75,14 @@ function useDock() {
   return context
 }
 
+// Add interface for child props
+interface DockItemWithProps extends React.ReactElement {
+  props: {
+    width?: number
+    isHovered?: boolean
+  }
+}
+
 function Dock({
   children,
   className,
@@ -157,7 +165,7 @@ function DockItem({ children, className, href }: DockItemProps) {
       onFocus={() => isHovered.set(1)}
       onBlur={() => isHovered.set(0)}
       className={cn(
-        'relative inline-flex items-center justify-center ',
+        'relative inline-flex items-center justify-center',
         className,
       )}
       tabIndex={0}
@@ -165,7 +173,10 @@ function DockItem({ children, className, href }: DockItemProps) {
       aria-haspopup="true"
     >
       {Children.map(children, (child) =>
-        cloneElement(child as React.ReactElement, { width, isHovered }),
+        cloneElement(child as DockItemWithProps, {
+          width: width.get(),
+          isHovered: isHovered.get() === 1,
+        }),
       )}
       {isActive && (
         <motion.div
@@ -184,11 +195,13 @@ function DockLabel({ children, className, ...rest }: DockLabelProps) {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    const unsubscribe = isHovered.on('change', (latest) => {
-      setIsVisible(latest === 1)
-    })
+    if (isHovered && typeof isHovered.onChange === 'function') {
+      const unsubscribe = isHovered.onChange((latest) => {
+        setIsVisible(latest === 1)
+      })
 
-    return () => unsubscribe()
+      return () => unsubscribe()
+    }
   }, [isHovered])
 
   return (
@@ -200,7 +213,7 @@ function DockLabel({ children, className, ...rest }: DockLabelProps) {
           exit={{ opacity: 0, y: 0 }}
           transition={{ duration: 0.2 }}
           className={cn(
-            'absolute -top-6 left-1/2 z-30 w-fit whitespace-pre rounded-md  border border-white/50 bg-black/70 px-2 py-0.5 text-xs font-semibold text-white mix-blend-plus-darker backdrop-blur-md',
+            'absolute -top-6 left-1/2 z-30 w-fit rounded-md border border-white/50 bg-black/70 px-2 py-0.5 text-xs font-semibold whitespace-pre text-white mix-blend-plus-darker backdrop-blur-md',
             className,
           )}
           role="tooltip"
@@ -215,9 +228,11 @@ function DockLabel({ children, className, ...rest }: DockLabelProps) {
 
 function DockIcon({ children, className, ...rest }: DockIconProps) {
   const restProps = rest as Record<string, unknown>
-  const width = restProps['width'] as MotionValue<number>
+  const widthValue =
+    typeof restProps['width'] === 'number' ? restProps['width'] : 0
+  const width = useMotionValue<number>(widthValue)
 
-  const widthTransform = useTransform(width, (val) => val / 2)
+  const widthTransform = useTransform(width, (val: number) => val / 2)
 
   return (
     <motion.div

@@ -1,10 +1,16 @@
-import rehypePrism from '@mapbox/rehype-prism'
-import nextMDX from '@next/mdx'
-import remarkGfm from 'remark-gfm'
-
+import createMDX from '@next/mdx'
 /** @type {import('next').NextConfig} */
+
+const withMDX = createMDX({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
+})
+
 const nextConfig = {
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   webpack(config) {
     config.module.rules.push({
       test: /\.(mp4|webm)$/,
@@ -25,11 +31,10 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'sebastianselling.com',
-        port: '',
         pathname: '/**',
       },
-      // Add other domains if needed
     ],
+    unoptimized: false,
   },
   async redirects() {
     return [
@@ -59,21 +64,4 @@ const nextConfig = {
   },
 }
 
-const withMDX = nextMDX({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [rehypePrism],
-  },
-})
-
-const config = {
-  ...withMDX(nextConfig),
-  eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
-    ignoreDuringBuilds: true,
-  },
-}
-
-export default config
+export default withMDX(nextConfig)

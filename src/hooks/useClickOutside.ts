@@ -1,18 +1,30 @@
+'use client'
+
 import { useRef, useEffect } from 'react'
 
 export type ClickOutsideCallback = () => void
 
 function useClickOutside<ElementType extends HTMLElement>(
-  containerRef: React.RefObject<ElementType>,
+  containerRef: React.RefObject<ElementType | null>,
   clickOutsideFn: ClickOutsideCallback,
 ) {
   const callbackRef = useRef<ClickOutsideCallback>(clickOutsideFn)
+  const mounted = useRef(false)
+
+  useEffect(() => {
+    mounted.current = true
+    return () => {
+      mounted.current = false
+    }
+  }, [])
 
   useEffect(() => {
     callbackRef.current = clickOutsideFn
   }, [clickOutsideFn])
 
   useEffect(() => {
+    if (!mounted.current) return
+
     const listenerCallback = (event: MouseEvent) => {
       if (
         containerRef.current &&
@@ -27,7 +39,7 @@ function useClickOutside<ElementType extends HTMLElement>(
     return () => {
       window.removeEventListener('mousedown', listenerCallback)
     }
-  }, [containerRef])
+  }, [containerRef, mounted])
 }
 
 export default useClickOutside

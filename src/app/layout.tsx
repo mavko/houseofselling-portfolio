@@ -10,6 +10,9 @@ import '@/styles/tailwind.css'
 import { PortfolioNav } from '@/components/PortfolioNav'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+  ),
   title: {
     template: '%s - Sebastian Selling',
     default: 'Sebastian Selling - Designer who Codes.',
@@ -18,18 +21,18 @@ export const metadata: Metadata = {
     'Design Engineer with over a Decade of experience building brands and apps.',
   alternates: {
     types: {
-      'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
+      'application/rss+xml': '/feed.xml',
     },
   },
   openGraph: {
     title: 'Sebastian Selling',
     description:
       'Design Engineer with over a Decade of experience building brands and apps.',
-    url: 'https://sebastianselling.com',
+    url: '/',
     siteName: 'Sebastian Selling',
     images: [
       {
-        url: 'https://sebastianselling.com/og.png', // Must be an absolute URL
+        url: '/og.png',
         width: 800,
         height: 600,
       },
