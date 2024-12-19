@@ -1,5 +1,7 @@
 import { type Metadata } from 'next'
 import AlchemyContent from './AlchemyContent'
+import { Suspense } from 'react'
+import { Loading } from '@/components/Loading'
 
 export const metadata: Metadata = {
   title: 'Alchemy by Sebastian',
@@ -8,5 +10,11 @@ export const metadata: Metadata = {
 }
 
 export default function Craft() {
-  return <AlchemyContent />
+  return (
+    <>
+      <Suspense fallback={<Loading />}>
+        <AlchemyContent />
+      </Suspense>
+    </>
+  )
 }

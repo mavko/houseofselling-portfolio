@@ -219,7 +219,7 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
 
 export default function AlchemyContent() {
   return (
-    <Template>
+    <>
       <nav className="relative z-20 flex h-auto w-full items-center justify-between px-3 pt-3">
         <h2 className="flex items-center gap-3">
           <BeakerIcon className="size-5 rounded-md p-0.5 ring-1 ring-white" />
@@ -247,6 +247,6 @@ export default function AlchemyContent() {
           </div>
         ))}
       </section>
-    </Template>
+    </>
   )
 }

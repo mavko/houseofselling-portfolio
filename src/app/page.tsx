@@ -15,19 +15,21 @@ const header = [
 export default async function Home() {
   return (
     <>
-      <section className="mx-auto max-w-3xl px-6 pb-44 pt-6 sm:px-10 sm:pt-24 ">
+      <section className="mx-auto max-w-3xl px-6 pt-6 pb-44 sm:px-10 sm:pt-24">
         <div className="shadow-lg shadow-neutral-900 drop-shadow-lg">
-          <header className="relative -mx-2 mb-8 min-h-80  overflow-hidden  bg-white/5 ring-1 ring-[#3e3e44]">
+          <header className="relative -mx-2 mb-8 min-h-80 overflow-hidden bg-white/5 ring-1 ring-[#3e3e44]">
             <div className="overlay z-40"></div>
             <Image
               src={avatarImage}
               alt=""
-              className="player_dither__2ctrc absolute left-0 top-0 z-50 h-10 w-24 rotate-180 -scale-y-150 opacity-20 brightness-100 invert"
+              className="player_dither__2ctrc absolute top-0 left-0 z-50 h-10 w-24 -scale-y-150 rotate-180 opacity-20 brightness-100 invert"
             />
             <Image
               src={houseofselling}
               alt="house of selling crest"
-              className=" absolute inset-0 z-0 h-full w-full object-cover"
+              className="absolute inset-0 z-0 h-full w-full object-cover"
+              priority
+              placeholder="blur"
             />
             {/* <video
               src={header[0].src}
@@ -43,7 +45,7 @@ export default async function Home() {
             <Image
               src={avatarImage}
               alt=""
-              className="player_dither__2ctrc absolute bottom-0 right-0 z-50 h-10  w-24 -scale-y-150 opacity-20 brightness-100 invert"
+              className="player_dither__2ctrc absolute right-0 bottom-0 z-50 h-10 w-24 -scale-y-150 opacity-20 brightness-100 invert"
             />
           </header>
         </div>

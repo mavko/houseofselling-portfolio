@@ -72,6 +72,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={GeistSans.className} suppressHydrationWarning>
+      <head>
+        <meta name="view-transition" content="same-origin" />
+      </head>
       <body className="w-full bg-neutral-950 font-sans text-[#f2f2f2] antialiased">
         <Providers>
           <Layout>
