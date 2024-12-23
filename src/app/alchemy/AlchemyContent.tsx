@@ -36,6 +36,12 @@ const craftItems: CraftItem[] = [
   },
   {
     type: 'video',
+    src: '/videos/morph-intro.mp4',
+    alt: 'retro modern morph intro',
+    post: '',
+  },
+  {
+    type: 'video',
     src: '/videos/logo-cloud-glimmer.mp4',
     alt: 'subtle customer glimmer',
     post: '',
