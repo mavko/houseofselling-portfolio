@@ -23,7 +23,7 @@ export default function ArticleDropdown() {
       >
         <MenuItem>
           <Link
-            href="/alchemy/archive/makings-of-ispect"
+            href="/artifacts/archive/makings-of-ispect"
             className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-focus:bg-white/10"
           >
             <ForwardIcon className="size-4 fill-white/80" />
@@ -33,7 +33,7 @@ export default function ArticleDropdown() {
         <div className="my-1 h-px bg-white/5" />
         <MenuItem>
           <Link
-            href="/alchemy/archive/makings-of-icontrol"
+            href="/artifacts/archive/makings-of-icontrol"
             className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-focus:bg-white/10"
           >
             <ForwardIcon className="size-4 fill-white/80" />

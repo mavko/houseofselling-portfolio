@@ -33,7 +33,7 @@ export function ArticleLayoutContent({
       <div className="xl:relative">
         <div className="mx-auto max-w-2xl">
           <Link
-            href="/alchemy"
+            href="/artifacts"
             aria-label="Go back"
             className="group relative inline-block cursor-pointer rounded-full bg-slate-800 p-px text-xs leading-6 font-semibold text-white/80 no-underline shadow-2xl shadow-zinc-900"
           >
@@ -63,7 +63,7 @@ export function ArticleLayoutContent({
             </Prose>
           </article>
           <Link
-            href="/alchemy"
+            href="/artifacts"
             aria-label="Go back"
             className="group relative mt-6 inline-block cursor-pointer rounded-full bg-slate-800 p-px text-xs leading-6 font-semibold text-white/80 no-underline shadow-2xl shadow-zinc-900"
           >

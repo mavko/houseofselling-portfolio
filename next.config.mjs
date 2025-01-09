@@ -46,7 +46,7 @@ const nextConfig = {
             value: 'www.sebastianselling.com/craft/makings-of-icontrol',
           },
         ],
-        destination: 'https://sebastianselling.com/alchemy/makings-of-icontrol',
+        destination: 'https://sebastianselling.com/artifacts/makings-of-icontrol',
         permanent: true,
       },
       {
@@ -57,7 +57,7 @@ const nextConfig = {
             value: 'www.sebastianselling.com/craft/makings-of-ispect',
           },
         ],
-        destination: 'https://sebastianselling.com/alchemy/makings-of-ispect',
+        destination: 'https://sebastianselling.com/artifacts/makings-of-ispect',
         permanent: true,
       },
     ];

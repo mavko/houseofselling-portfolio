@@ -24,7 +24,7 @@ export function generateMetadata({
     openGraph: {
       title: `${article.title} - Sebastian Selling`,
       description: `${article.description}`,
-      url: `${process.env.NEXT_PUBLIC_SITE_URL}/alchemy/${article.slug}`,
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}/artifacts/${article.slug}`,
       siteName: `${article.title} - Alchemy by Sebastian`,
       images: [
         {

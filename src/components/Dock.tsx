@@ -24,7 +24,7 @@ import { cn } from '@/lib/utils'
 import { usePathname } from 'next/navigation'
 
 const DOCK_HEIGHT = 128
-const DEFAULT_MAGNIFICATION = 80
+const DEFAULT_MAGNIFICATION = 50
 const DEFAULT_DISTANCE = 150
 const DEFAULT_PANEL_HEIGHT = 64
 
@@ -195,12 +195,10 @@ function DockLabel({ children, className, ...rest }: DockLabelProps) {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    if (isHovered && typeof isHovered.onChange === 'function') {
-      const unsubscribe = isHovered.onChange((latest) => {
+    if (isHovered && typeof isHovered.on === 'function') {
+      return isHovered.on('change', (latest) => {
         setIsVisible(latest === 1)
       })
-
-      return () => unsubscribe()
     }
   }, [isHovered])
 
@@ -213,7 +211,7 @@ function DockLabel({ children, className, ...rest }: DockLabelProps) {
           exit={{ opacity: 0, y: 0 }}
           transition={{ duration: 0.2 }}
           className={cn(
-            'absolute -top-6 left-1/2 z-30 w-fit rounded-md border border-white/50 bg-black/70 px-2 py-0.5 text-xs font-semibold whitespace-pre text-white mix-blend-plus-darker backdrop-blur-md',
+            'absolute -top-6 left-1/2 z-30 w-fit border border-white/50 bg-black/70 px-2 py-0.5 text-xs font-semibold whitespace-pre text-white mix-blend-plus-darker backdrop-blur-md',
             className,
           )}
           role="tooltip"
@@ -232,7 +230,7 @@ function DockIcon({ children, className, ...rest }: DockIconProps) {
     typeof restProps['width'] === 'number' ? restProps['width'] : 0
   const width = useMotionValue<number>(widthValue)
 
-  const widthTransform = useTransform(width, (val: number) => val / 2)
+  const widthTransform = useTransform(width, (val: number) => val / 2.5)
 
   return (
     <motion.div

@@ -1,6 +1,5 @@
 import { Dock, DockIcon, DockItem, DockLabel } from './Dock'
 import {
-  BeakerIcon,
   CameraIcon,
   FaceSmileIcon,
   HomeIcon,
@@ -9,6 +8,7 @@ import {
 } from '@heroicons/react/24/solid'
 import { GitHubIcon } from './SocialIcons'
 import Link from 'next/link'
+import Tooltip from './Tooltip'
 
 const data = [
   {
@@ -17,9 +17,9 @@ const data = [
     href: '/',
   },
   {
-    title: 'Alchemy',
-    icon: <BeakerIcon className="h-full w-full" />,
-    href: '/alchemy',
+    title: 'Artifacts',
+    icon: <SwatchIcon className="h-full w-full" />,
+    href: '/artifacts',
   },
   {
     title: 'Visuals',
@@ -38,7 +38,7 @@ const data = [
   },
   {
     title: 'Github',
-    icon: <GitHubIcon className="h-full w-full " />,
+    icon: <GitHubIcon className="h-full w-full" />,
     href: 'https://github.com/mavko',
   },
 ]
@@ -48,17 +48,19 @@ export function PortfolioNav() {
     <div className="fixed inset-x-0 bottom-6 z-30 w-full">
       <Dock className="items-end pb-3">
         {data.map((item) => (
-          <Link key={item.title} href={item.href}>
-            <DockItem
-              href={item.href}
-              className="aspect-square rounded-xl bg-neutral-950  ring-1 ring-inset ring-neutral-700 backdrop-blur-xs  "
-            >
-              <DockLabel>{item.title}</DockLabel>
-              <DockIcon className="fill-neutral-100 text-neutral-100 hover:fill-white hover:brightness-150 focus:fill-[#FE0303] active:fill-[#FE0303]">
-                {item.icon}
-              </DockIcon>
-            </DockItem>
-          </Link>
+          <Tooltip key={item.title} text={item.title}>
+            <Link href={item.href}>
+              <DockItem
+                href={item.href}
+                className="aspect-square rounded-xl bg-neutral-950 ring-1 ring-neutral-700 backdrop-blur-xs ring-inset"
+              >
+                <DockLabel>{item.title}</DockLabel>
+                <DockIcon className="fill-neutral-100 text-neutral-100 hover:fill-white hover:brightness-150 focus:fill-[#FE0303] active:fill-[#FE0303]">
+                  {item.icon}
+                </DockIcon>
+              </DockItem>
+            </Link>
+          </Tooltip>
         ))}
       </Dock>
     </div>
