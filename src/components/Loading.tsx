@@ -55,7 +55,7 @@ export function Loading() {
       variants={blurSlideVariants}
       trigger={trigger}
     >
-      Cooking up some alchemy 🧙🏼‍♂️
+      Conjuring Artifacts 🧙🏼‍♂️
     </TextEffect>
   )
 }

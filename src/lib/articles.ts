@@ -27,7 +27,8 @@ async function importArticle(
     process.cwd(),
     'src',
     'app',
-    'alchemy',
+    'artifacts',
+    'archive',
     articleFilename,
   )
   const fileContent = await fs.readFile(fullPath, 'utf8')
@@ -45,7 +46,7 @@ async function importArticle(
 
 export async function getAllArticles() {
   const articleFilenames = await glob('*/page.mdx', {
-    cwd: './src/app/artifacts',
+    cwd: './src/app/artifacts/archive',
   })
 
   const articles = await Promise.all(articleFilenames.map(importArticle))

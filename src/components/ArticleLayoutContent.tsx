@@ -42,7 +42,7 @@ export function ArticleLayoutContent({
             </span>
             <div className="relative z-10 flex items-center space-x-1 rounded-full bg-zinc-950 px-4 py-0.5 ring-1 ring-white/10">
               <ArrowLeftIcon className="h-4 w-4 stroke-white/80" />
-              <span>{`Alchemy`}</span>
+              <span>{`Back`}</span>
             </div>
             <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-linear-to-r from-emerald-400/0 via-green-300 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40"></span>
           </Link>
@@ -72,7 +72,7 @@ export function ArticleLayoutContent({
             </span>
             <div className="relative z-10 flex items-center space-x-1 rounded-full bg-zinc-950 px-4 py-0.5 ring-1 ring-white/10">
               <ArrowLeftIcon className="h-4 w-4 stroke-white/80" />
-              <span>{`Alchemy`}</span>
+              <span>{`Back`}</span>
             </div>
             <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-linear-to-r from-emerald-400/0 via-green-300 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40"></span>
           </Link>
