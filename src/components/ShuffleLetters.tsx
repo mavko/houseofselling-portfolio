@@ -69,14 +69,14 @@ const previous = [
     id: nanoid(),
     name: 'icontrol',
     description: 'Replace paper with an app on the field [maintained]',
-    href: '/artifacts/makings-of-icontrol',
+    href: '/artifacts/archive/makings-of-icontrol',
     year: [2014, 2017],
   },
   {
     id: nanoid(),
     name: 'ispect',
     description: 'The standardized inspection app [maintained]',
-    href: '/artifacts/makings-of-ispect',
+    href: '/artifacts/archive/makings-of-ispect',
     year: [2012, 2024],
   },
 ]

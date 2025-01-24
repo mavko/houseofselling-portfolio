@@ -74,13 +74,13 @@ const craftItems: CraftItem[] = [
     type: 'image',
     src: icontrol,
     alt: 'read: makings of icontrol↗',
-    post: '/craft/makings-of-icontrol',
+    post: '/artifacts/archive/makings-of-icontrol',
   },
   {
     type: 'image',
     src: ispectLogo,
     alt: 'read: makings of ispect↗',
-    post: '/craft/makings-of-ispect',
+    post: '/artifacts/archive/makings-of-ispect',
   },
   {
     type: 'video',
