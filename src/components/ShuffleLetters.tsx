@@ -23,10 +23,17 @@ const current = [
 const gcorp = [
   {
     id: nanoid(),
+    name: 'tailwind extractor',
+    description: 'Extract themes from any tailwind website',
+    href: 'https://tw-css-extractor.vercel.app/',
+    year: [2025],
+  },
+  {
+    id: nanoid(),
     name: 'g:corp studio page',
     description: 'App studio for the 21st century',
     href: 'https://gcorp-landingpage.vercel.app/',
-    year: [2024],
+    year: [2024, 2025],
   },
   {
     id: nanoid(),
