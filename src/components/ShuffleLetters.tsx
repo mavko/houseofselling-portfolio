@@ -24,7 +24,7 @@ const gcorp = [
   {
     id: nanoid(),
     name: 'tailwind extractor',
-    description: 'Extract themes from any tailwind website',
+    description: 'Extract themes from tailwind styled websites',
     href: 'https://tw-css-extractor.vercel.app/',
     year: [2025],
   },
