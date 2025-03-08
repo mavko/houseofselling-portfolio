@@ -6,8 +6,8 @@ import seb from '@/images/avatar.png'
 
 export default function AboutContent() {
   return (
-    <main className="mx-auto max-w-3xl px-6 pt-6 pb-36 sm:px-10 sm:pt-24">
-      <section className="prose prose-p:text-[#ededed] prose-a:text-neutral-200 text-pretty">
+    <main className="rounded-[2.5rem] border-t border-white/30 bg-black/70 px-6 pt-6 pb-36 sm:px-10 sm:pt-24">
+      <section className="prose prose-p:text-[#ededed] prose-a:text-neutral-200 mx-auto max-w-3xl text-pretty">
         <Image
           src={seb}
           alt="picture of sebastian"

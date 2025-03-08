@@ -21,25 +21,9 @@ export default function ArticleDropdown() {
         anchor="bottom end"
         className="mt-3 w-64 origin-top-right rounded-xl border border-white/20 bg-black/30 p-1 text-sm/6 text-white backdrop-blur-lg transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-hidden data-closed:scale-95 data-closed:opacity-0"
       >
-        <MenuItem>
-          <Link
-            href="/artifacts/archive/makings-of-ispect"
-            className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-focus:bg-white/10"
-          >
-            <ForwardIcon className="size-4 fill-white/80" />
-            Makings of iSpect
-          </Link>
-        </MenuItem>
+        <MenuItem></MenuItem>
         <div className="my-1 h-px bg-white/5" />
-        <MenuItem>
-          <Link
-            href="/artifacts/archive/makings-of-icontrol"
-            className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-focus:bg-white/10"
-          >
-            <ForwardIcon className="size-4 fill-white/80" />
-            Makings of iControl
-          </Link>
-        </MenuItem>
+        <MenuItem></MenuItem>
       </MenuItems>
     </Menu>
   )

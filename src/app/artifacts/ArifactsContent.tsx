@@ -2,8 +2,6 @@
 
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
-import Template from '../template'
-import ArticleDropdown from '@/components/ArticleMenu'
 import { BeakerIcon } from '@heroicons/react/24/solid'
 
 import woordwave from '@/images/craft/woordwave.png'
@@ -43,7 +41,7 @@ const craftItems: CraftItem[] = [
   {
     type: 'video',
     src: '/videos/logo-cloud-glimmer.mp4',
-    alt: 'subtle customer glimmer',
+    alt: 'logo cloud glimmer effect',
     post: '',
   },
   {
@@ -85,7 +83,7 @@ const craftItems: CraftItem[] = [
   {
     type: 'video',
     src: '/videos/subtle-hover-button.mp4',
-    alt: 'subtle :hover',
+    alt: 'subtle hover button effect',
     post: '',
   },
   {
@@ -108,12 +106,6 @@ const craftItems: CraftItem[] = [
   },
   {
     type: 'video',
-    src: '/videos/3d-cube-test.mp4',
-    alt: '3d cube test',
-    post: '',
-  },
-  {
-    type: 'video',
     src: '/videos/file-upload-scribbly.mp4',
     alt: 'file upload stagger',
     post: '',
@@ -132,12 +124,6 @@ const craftItems: CraftItem[] = [
   },
   {
     type: 'video',
-    src: '/videos/globe-intro.mp4',
-    alt: 'globe text intro',
-    post: '',
-  },
-  {
-    type: 'video',
     src: '/videos/sharedspace-landing-anim.mp4',
     alt: 'sharedspace landing page',
     post: '',
@@ -151,7 +137,7 @@ const craftItems: CraftItem[] = [
   {
     type: 'image',
     src: scribblyFolder,
-    alt: 'scribby logo',
+    alt: 'scribbly logo',
     post: '',
   },
   {
@@ -189,9 +175,11 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
         <Image
           src={item.src}
           alt={item.alt}
-          className="h-auto w-full rounded-2xl bg-cover"
+          className="h-auto w-full bg-cover"
           width={400}
           height={400}
+          priority
+          blurDataURL={item.src.toString()}
         />
       </div>
     )
@@ -200,7 +188,7 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
       <>
         <video
           src={item.src as string}
-          className="hidden h-auto w-full rounded-2xl object-cover sm:block"
+          className="hidden h-auto w-full object-cover sm:block"
           autoPlay
           muted
           playsInline
@@ -210,7 +198,7 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
         </video>
         <video
           src={item.src as string}
-          className="block h-auto w-full rounded-2xl object-cover sm:hidden"
+          className="block h-auto w-full object-cover sm:hidden"
           autoPlay
           muted
           playsInline
@@ -225,34 +213,129 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
 
 export default function ArtifactsContent() {
   return (
-    <>
-      <nav className="relative z-20 flex h-auto w-full items-center justify-between px-3 pt-3">
-        <h2 className="flex items-center gap-3">
-          <BeakerIcon className="size-5 rounded-md p-0.5 ring-1 ring-white" />
-          Artifacts{' '}
-          <span className="hidden sm:block">
-            :: design work and experiments
-          </span>
-        </h2>
-
-        <ArticleDropdown />
-      </nav>
-      <section className="columns-1 gap-3 space-y-3 px-3 pt-3 pb-20 sm:columns-2 md:columns-3">
-        {craftItems.map((item, index) => (
-          <div
-            key={index}
-            className="relative flex h-full w-full flex-col space-y-1 overflow-hidden rounded-xl bg-[#1c1c1c] p-1.5 ring-1 ring-white/10"
+    <main className="rounded-[2.5rem] border-t border-white/30 bg-black/70 px-4 pb-12 sm:px-6">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-2">
+        <div>
+          <h2 className="font-mono text-xs font-semibold tracking-widest text-white/50 uppercase">
+            Artifacts{' '}
+            <span className="hidden sm:block">:: design and experiments</span>
+          </h2>
+        </div>
+        <div className="flex gap-4 py-8">
+          <Link
+            className="rounded-full px-3 py-1 text-sm/6 font-semibold text-white/90 hover:bg-white/5 hover:text-white/75"
+            href="/artifacts/archive/makings-of-ispect"
           >
-            <MediaComponent item={item} />
-            <Link
-              href={item.post}
-              className="w-full rounded-lg bg-[#232323] px-4 py-2 text-center ring-1 ring-white/10"
-            >
-              {item.alt}
-            </Link>
+            Makings of iSpect
+          </Link>
+          <Link
+            className="rounded-full px-3 py-1 text-sm/6 font-semibold text-white/90 hover:bg-white/5 hover:text-white/75"
+            href="/artifacts/archive/makings-of-icontrol"
+          >
+            Makings of iControl
+          </Link>
+        </div>
+      </div>
+
+      <div className="relative">
+        <aside className="pointer-events-none absolute -inset-x-4 h-full columns-1 gap-y-6 sm:-inset-x-6 sm:columns-2 lg:columns-3">
+          <div className="relative h-64 sm:block lg:block">
+            <div className="absolute inset-x-0 -inset-y-[calc(0.5rem+1px)] border-y border-white/[7.5%] text-white"></div>
           </div>
-        ))}
-      </section>
-    </>
+          <div className="relative h-64 sm:block lg:block">
+            <div className="absolute inset-x-0 -inset-y-[calc(0.5rem+1px)] border-y border-white/[7.5%] text-white"></div>
+          </div>
+          <div className="relative h-64 sm:block lg:block">
+            <div className="absolute inset-x-0 -inset-y-[calc(0.5rem+1px)] border-y border-white/[7.5%] text-white"></div>
+          </div>
+          <div className="relative h-64 sm:block lg:block">
+            <div className="absolute inset-x-0 -inset-y-[calc(0.5rem+1px)] border-y border-white/[7.5%] text-white"></div>
+          </div>
+          <div className="relative h-64 sm:block lg:block">
+            <div className="absolute inset-x-0 -inset-y-[calc(0.5rem+1px)] border-y border-white/[7.5%] text-white"></div>
+          </div>
+          <div className="relative h-64 sm:block lg:block">
+            <div className="absolute inset-x-0 -inset-y-[calc(0.5rem+1px)] border-y border-white/[7.5%] text-white"></div>
+          </div>
+        </aside>
+
+        <div className="mx-auto max-w-7xl px-2 pb-8">
+          <div className="mt-2 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="flex flex-col gap-8">
+              {craftItems.slice(0, 7).map((item, index) => (
+                <div key={`col1-${index}`}>
+                  <Link href={item.post} className="group flex flex-col">
+                    <div className="relative bg-white/[4%] transition-colors group-hover:bg-white/[6%] group-focus-visible:ring-1 group-focus-visible:ring-white">
+                      <div className="overflow-hidden rounded-xl bg-[#1c1c1c] p-1.5 ring-1 ring-white/10">
+                        <MediaComponent item={item} />
+                      </div>
+                    </div>
+
+                    <div className="justify-end truncate bg-white/[4%] py-4 text-center text-sm font-semibold text-white">
+                      {item.alt}
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-col gap-8">
+              {craftItems.slice(7, 14).map((item, index) => (
+                <div key={`col2-${index}`}>
+                  <Link href={item.post} className="group flex flex-col">
+                    <div className="relative bg-white/[4%] transition-colors group-hover:bg-white/[6%] group-focus-visible:ring-1 group-focus-visible:ring-white">
+                      <div className="overflow-hidden rounded-xl bg-[#1c1c1c] p-1.5 ring-1 ring-white/10">
+                        <MediaComponent item={item} />
+                      </div>
+                    </div>
+
+                    <div className="justify-end truncate bg-white/[4%] py-4 text-center text-sm font-semibold text-white">
+                      {item.alt}
+                    </div>
+                  </Link>
+                </div>
+              ))}
+              <div key="terminal-entry">
+                <Link
+                  href={craftItems[15].post}
+                  className="group flex flex-col"
+                >
+                  <div className="relative bg-white/[4%] transition-colors group-hover:bg-white/[6%] group-focus-visible:ring-1 group-focus-visible:ring-white">
+                    <div className="overflow-hidden rounded-xl bg-[#1c1c1c] p-1.5 ring-1 ring-white/10">
+                      <MediaComponent item={craftItems[15]} />
+                    </div>
+                  </div>
+
+                  <div className="justify-end truncate bg-white/[4%] py-4 text-center text-sm font-semibold text-white">
+                    {craftItems[15].alt}
+                  </div>
+                </Link>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-8">
+              {craftItems
+                .slice(14, 15)
+                .concat(craftItems.slice(16))
+                .map((item, index) => (
+                  <div key={`col3-${index}`}>
+                    <Link href={item.post} className="group flex flex-col">
+                      <div className="relative bg-white/[4%] transition-colors group-hover:bg-white/[6%] group-focus-visible:ring-1 group-focus-visible:ring-white">
+                        <div className="overflow-hidden rounded-xl bg-[#1c1c1c] p-1.5 ring-1 ring-white/10">
+                          <MediaComponent item={item} />
+                        </div>
+                      </div>
+
+                      <div className="justify-end truncate bg-white/[4%] py-4 text-center text-sm font-semibold text-white">
+                        {item.alt}
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   )
 }
