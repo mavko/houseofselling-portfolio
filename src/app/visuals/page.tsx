@@ -1,14 +1,9 @@
-import { type Metadata } from 'next'
+'use client'
+
 import Image, { StaticImageData } from 'next/image'
-import {
-  Dialog,
-  DialogTrigger,
-  DialogContent,
-  DialogClose,
-  DialogImage,
-  DialogContainer,
-} from '@/components/Dialog'
-import { XMarkIcon } from '@heroicons/react/24/solid'
+import { useState } from 'react'
+import VisualsDialog, { VisualItem } from '@/components/VisualsDialog'
+
 // content
 import bussStation from '@/images/photos/bussStation.jpg'
 import codingEvening from '@/images/photos/codingEvening.jpeg'
@@ -46,18 +41,7 @@ import wanderingHorse from '@/images/photos/wanderingHorse.jpg'
 import windowIntoSummer from '@/images/photos/windowIntoSummer.jpg'
 import winteryCity from '@/images/photos/winteryCity.jpg'
 
-export const metadata: Metadata = {
-  title: 'Visuals by Sebastian',
-  description: 'Capturing moments in time from every day life.',
-}
-
-type PhotoItem = {
-  type: 'image' | 'video'
-  src: string | StaticImageData
-  alt: string
-}
-
-const photoItems: PhotoItem[] = [
+const photoItems: VisualItem[] = [
   { type: 'image', src: bussStation, alt: 'Cyber dusk bus station' },
   { type: 'video', src: '/videos/subwayMorning.mp4', alt: 'The dusk train' },
   { type: 'image', src: laptop, alt: 'Laptop' },
@@ -96,7 +80,7 @@ const photoItems: PhotoItem[] = [
   { type: 'image', src: winteryCity, alt: 'Wintery city' },
 ]
 
-const MediaComponent = ({ item }: { item: PhotoItem }) => {
+const MediaComponent = ({ item }: { item: VisualItem }) => {
   if (item.type === 'image') {
     return (
       <Image
@@ -124,50 +108,31 @@ const MediaComponent = ({ item }: { item: PhotoItem }) => {
 }
 
 export default function Visuals() {
+  const [selectedItem, setSelectedItem] = useState<VisualItem | null>(null)
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
     <>
-      <section className="columns-1 gap-3 space-y-3 px-3 py-6 sm:columns-2 md:columns-3">
+      <section className="relative z-10 columns-1 gap-3 space-y-3 rounded-[2.5rem] border-t border-white/30 bg-black/70 px-3 py-6 pt-6 pb-36 sm:columns-2 sm:px-6 sm:pt-24 md:columns-3">
         {photoItems.map((item, index) => (
-          <Dialog
+          <div
             key={`photo-${index}`}
-            transition={{
-              duration: 0.5,
+            onClick={() => {
+              setSelectedItem(item)
+              setIsOpen(true)
             }}
+            className="relative h-fit w-full cursor-pointer overflow-hidden rounded-xl bg-[#1c1c1c] p-1.5 ring-1 ring-white/20"
           >
-            <DialogTrigger>
-              <div
-                key={index}
-                className="relative h-fit w-full overflow-hidden rounded-xl bg-[#1c1c1c] p-1.5 ring-1 ring-white/20"
-              >
-                <MediaComponent item={item} />
-              </div>
-            </DialogTrigger>
-            <DialogContainer>
-              <DialogContent className="relative">
-                <div
-                  key={index}
-                  className="relative h-full w-full overflow-hidden rounded-xl bg-[#1c1c1c] p-1.5 ring-1 ring-white/10"
-                >
-                  <MediaComponent item={item} />
-                </div>
-              </DialogContent>
-              <DialogClose
-                className="fixed top-6 right-6 h-fit w-fit rounded-full bg-white p-1"
-                variants={{
-                  initial: { opacity: 0 },
-                  animate: {
-                    opacity: 1,
-                    transition: { delay: 0.3, duration: 0.1 },
-                  },
-                  exit: { opacity: 0, transition: { duration: 0 } },
-                }}
-              >
-                <XMarkIcon className="size-6 fill-black" />
-              </DialogClose>
-            </DialogContainer>
-          </Dialog>
+            <MediaComponent item={item} />
+          </div>
         ))}
       </section>
+
+      <VisualsDialog
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        item={selectedItem}
+      />
     </>
   )
 }

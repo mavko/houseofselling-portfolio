@@ -1,392 +1,73 @@
 'use client'
 
-import React, {
-  useCallback,
-  useContext,
-  useEffect,
-  useId,
-  useMemo,
-  useRef,
-  useState,
-} from 'react'
 import {
-  motion,
-  AnimatePresence,
-  MotionConfig,
-  Transition,
-  Variant,
-} from 'framer-motion'
-import { createPortal } from 'react-dom'
-import { cn } from '@/lib/utils'
-import useClickOutside from '@/hooks/useClickOutside'
+  Button,
+  Description,
+  Dialog,
+  DialogPanel,
+  DialogTitle,
+} from '@headlessui/react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { useState } from 'react'
+import ProjectsList from './ProjectsList'
 import { XMarkIcon } from '@heroicons/react/24/solid'
 
-type DialogContextType = {
-  isOpen: boolean
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
-  uniqueId: string
-  triggerRef: React.RefObject<HTMLDivElement | null>
-}
-
-const DialogContext = React.createContext<DialogContextType | null>(null)
-
-function useDialog() {
-  const context = useContext(DialogContext)
-  if (!context) {
-    throw new Error('useDialog must be used within a DialogProvider')
-  }
-  return context
-}
-
-type DialogProviderProps = {
-  children: React.ReactNode
-  transition?: Transition
-}
-
-function DialogProvider({ children, transition }: DialogProviderProps) {
-  const [isOpen, setIsOpen] = useState(false)
-  const uniqueId = useId()
-  const triggerRef = useRef<HTMLDivElement>(null)
-
-  const contextValue = useMemo(
-    () => ({ isOpen, setIsOpen, uniqueId, triggerRef }),
-    [isOpen, uniqueId],
-  )
+export default function DialogComponent() {
+  let [isOpen, setIsOpen] = useState(false)
 
   return (
-    <DialogContext.Provider value={contextValue}>
-      <MotionConfig transition={transition}>{children}</MotionConfig>
-    </DialogContext.Provider>
+    <>
+      <Button
+        onClick={() => setIsOpen(true)}
+        className="group relative inline-block cursor-pointer rounded-xl p-px text-sm leading-6 font-semibold text-white/80 no-underline"
+      >
+        <span className="absolute inset-0 overflow-hidden rounded-xl">
+          <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"></span>
+        </span>
+        <div className="relative z-10 flex h-10 items-center space-x-1 rounded-xl bg-zinc-950 px-4 py-0.5 ring-1 ring-white/30">
+          <span>{`What am I up to?`}</span>
+        </div>
+        <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-linear-to-r from-emerald-400/0 via-green-300 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40"></span>
+      </Button>
+      <AnimatePresence>
+        {isOpen && (
+          <Dialog
+            static
+            open={isOpen}
+            onClose={() => setIsOpen(false)}
+            className="relative z-50"
+          >
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/30 backdrop-blur-sm"
+            />
+            <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
+              <DialogPanel
+                as={motion.div}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                className="h-full w-full max-w-3xl border border-white/20 bg-black/5 p-6 backdrop-blur-2xl duration-300 ease-out sm:p-12"
+              >
+                <DialogTitle className="flex items-center justify-between text-lg font-bold">
+                  <span className="font-mono text-sm font-semibold tracking-widest text-white/90 uppercase">
+                    What am I up to?
+                  </span>
+                  <button onClick={() => setIsOpen(false)}>
+                    <XMarkIcon className="size-6 fill-white/60" />
+                  </button>
+                </DialogTitle>
+                <Description className="font-mono text-xs font-semibold tracking-widest text-white/50 uppercase">
+                  My projects and startups since 2012.
+                </Description>
+                <ProjectsList />
+              </DialogPanel>
+            </div>
+          </Dialog>
+        )}
+      </AnimatePresence>
+    </>
   )
-}
-
-type DialogProps = {
-  children: React.ReactNode
-  transition?: Transition
-}
-
-function Dialog({ children, transition }: DialogProps) {
-  return (
-    <DialogProvider>
-      <MotionConfig transition={transition}>{children}</MotionConfig>
-    </DialogProvider>
-  )
-}
-
-type DialogTriggerProps = {
-  children: React.ReactNode
-  className?: string
-  style?: React.CSSProperties
-  triggerRef?: React.RefObject<HTMLDivElement>
-}
-
-function DialogTrigger({
-  children,
-  className,
-  style,
-  triggerRef,
-}: DialogTriggerProps) {
-  const { setIsOpen, isOpen, uniqueId } = useDialog()
-
-  const handleClick = useCallback(() => {
-    setIsOpen(!isOpen)
-  }, [isOpen, setIsOpen])
-
-  const handleKeyDown = useCallback(
-    (event: React.KeyboardEvent) => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault()
-        setIsOpen(!isOpen)
-      }
-    },
-    [isOpen, setIsOpen],
-  )
-
-  return (
-    <motion.div
-      ref={triggerRef}
-      layoutId={`dialog-${uniqueId}`}
-      className={cn('relative cursor-pointer', className)}
-      onClick={handleClick}
-      onKeyDown={handleKeyDown}
-      style={style}
-      role="button"
-      aria-haspopup="dialog"
-      aria-expanded={isOpen}
-      aria-controls={`dialog-content-${uniqueId}`}
-    >
-      {children}
-    </motion.div>
-  )
-}
-
-type DialogContent = {
-  children: React.ReactNode
-  className?: string
-  style?: React.CSSProperties
-}
-
-function DialogContent({ children, className, style }: DialogContent) {
-  const { setIsOpen, isOpen, uniqueId, triggerRef } = useDialog()
-  const containerRef = useRef<HTMLDivElement>(null)
-  const [firstFocusableElement, setFirstFocusableElement] =
-    useState<HTMLElement | null>(null)
-  const [lastFocusableElement, setLastFocusableElement] =
-    useState<HTMLElement | null>(null)
-
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setIsOpen(false)
-      }
-      if (event.key === 'Tab') {
-        if (!firstFocusableElement || !lastFocusableElement) return
-
-        if (event.shiftKey) {
-          if (document.activeElement === firstFocusableElement) {
-            event.preventDefault()
-            lastFocusableElement.focus()
-          }
-        } else {
-          if (document.activeElement === lastFocusableElement) {
-            event.preventDefault()
-            firstFocusableElement.focus()
-          }
-        }
-      }
-    }
-
-    document.addEventListener('keydown', handleKeyDown)
-
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown)
-    }
-  }, [setIsOpen, firstFocusableElement, lastFocusableElement])
-
-  useEffect(() => {
-    if (isOpen) {
-      document.body.classList.add('overflow-hidden')
-      const focusableElements = containerRef.current?.querySelectorAll(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
-      )
-      if (focusableElements && focusableElements.length > 0) {
-        setFirstFocusableElement(focusableElements[0] as HTMLElement)
-        setLastFocusableElement(
-          focusableElements[focusableElements.length - 1] as HTMLElement,
-        )
-        ;(focusableElements[0] as HTMLElement).focus()
-      }
-    } else {
-      document.body.classList.remove('overflow-hidden')
-      triggerRef.current?.focus()
-    }
-  }, [isOpen, triggerRef])
-
-  useClickOutside(containerRef, () => {
-    if (isOpen) {
-      setIsOpen(false)
-    }
-  })
-
-  return (
-    <motion.div
-      ref={containerRef}
-      layoutId={`dialog-${uniqueId}`}
-      className={cn('overflow-hidden', className)}
-      style={style}
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby={`dialog-title-${uniqueId}`}
-      aria-describedby={`dialog-description-${uniqueId}`}
-    >
-      {children}
-    </motion.div>
-  )
-}
-
-type DialogContainerProps = {
-  children: React.ReactNode
-  className?: string
-  style?: React.CSSProperties
-}
-
-function DialogContainer({ children }: DialogContainerProps) {
-  const { isOpen, uniqueId } = useDialog()
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted || typeof window === 'undefined') return null
-
-  return createPortal(
-    <AnimatePresence initial={false} mode="sync">
-      {isOpen && (
-        <>
-          <motion.div
-            key={`backdrop-${uniqueId}`}
-            className="fixed inset-0 z-40 h-full w-full bg-black/40 backdrop-blur-xs"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          />
-          <div className="fixed inset-0 z-50 flex items-center justify-center">
-            {children}
-          </div>
-        </>
-      )}
-    </AnimatePresence>,
-    document.body,
-  )
-}
-
-type DialogTitleProps = {
-  children: React.ReactNode
-  className?: string
-  style?: React.CSSProperties
-}
-
-function DialogTitle({ children, className, style }: DialogTitleProps) {
-  const { uniqueId } = useDialog()
-
-  return (
-    <motion.div
-      layoutId={`dialog-title-container-${uniqueId}`}
-      className={className}
-      style={style}
-      layout
-    >
-      {children}
-    </motion.div>
-  )
-}
-
-type DialogSubtitleProps = {
-  children: React.ReactNode
-  className?: string
-  style?: React.CSSProperties
-}
-
-function DialogSubtitle({ children, className, style }: DialogSubtitleProps) {
-  const { uniqueId } = useDialog()
-
-  return (
-    <motion.div
-      layoutId={`dialog-subtitle-container-${uniqueId}`}
-      className={className}
-      style={style}
-    >
-      {children}
-    </motion.div>
-  )
-}
-
-type DialogDescriptionProps = {
-  children: React.ReactNode
-  className?: string
-  disableLayoutAnimation?: boolean
-  variants?: {
-    initial: Variant
-    animate: Variant
-    exit: Variant
-  }
-}
-
-function DialogDescription({
-  children,
-  className,
-  variants,
-  disableLayoutAnimation,
-}: DialogDescriptionProps) {
-  const { uniqueId } = useDialog()
-
-  return (
-    <motion.div
-      key={`dialog-description-${uniqueId}`}
-      layoutId={
-        disableLayoutAnimation
-          ? undefined
-          : `dialog-description-content-${uniqueId}`
-      }
-      variants={variants}
-      className={className}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      id={`dialog-description-${uniqueId}`}
-    >
-      {children}
-    </motion.div>
-  )
-}
-
-type DialogImageProps = {
-  src: string
-  alt: string
-  className?: string
-  style?: React.CSSProperties
-}
-
-function DialogImage({ src, alt, className, style }: DialogImageProps) {
-  const { uniqueId } = useDialog()
-
-  return (
-    <motion.img
-      src={src}
-      alt={alt}
-      className={cn(className)}
-      layoutId={`dialog-img-${uniqueId}`}
-      style={style}
-    />
-  )
-}
-
-type DialogCloseProps = {
-  children?: React.ReactNode
-  className?: string
-  variants?: {
-    initial: Variant
-    animate: Variant
-    exit: Variant
-  }
-}
-
-function DialogClose({ children, className, variants }: DialogCloseProps) {
-  const { setIsOpen, uniqueId } = useDialog()
-
-  const handleClose = useCallback(() => {
-    setIsOpen(false)
-  }, [setIsOpen])
-
-  return (
-    <motion.button
-      onClick={handleClose}
-      type="button"
-      aria-label="Close dialog"
-      key={`dialog-close-${uniqueId}`}
-      className={cn(
-        'absolute top-6 right-6 ring-1 shadow-xl ring-black ring-inset',
-        className,
-      )}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      variants={variants}
-    >
-      {children || <XMarkIcon className="size-4 fill-black" />}
-    </motion.button>
-  )
-}
-
-export {
-  Dialog,
-  DialogTrigger,
-  DialogContainer,
-  DialogContent,
-  DialogClose,
-  DialogTitle,
-  DialogSubtitle,
-  DialogDescription,
-  DialogImage,
 }

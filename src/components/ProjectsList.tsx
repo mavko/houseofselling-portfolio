@@ -6,10 +6,17 @@ import { nanoid } from 'nanoid'
 const current = [
   {
     id: nanoid(),
-    name: 'din.fastighetsförvaltare [soft launch]',
-    description: 'Premier Prop Management',
+    name: 'sharedspace',
+    description: 'Proptech for tenant / home owner associations',
+    href: 'https://sharedspace.se/',
+    year: [2024, 'ongoing'],
+  },
+  {
+    id: nanoid(),
+    name: 'din.fastighetsförvaltare',
+    description: 'Premier Property Management',
     href: 'https://www.dinfastighetsforvaltare.se/',
-    year: [2025],
+    year: [2025, 'ongoing'],
   },
   {
     id: nanoid(),
@@ -20,27 +27,13 @@ const current = [
   },
 ]
 
-const gcorp = [
+const projects = [
   {
     id: nanoid(),
-    name: 'tailwind extractor',
-    description: 'Extract themes from tailwind styled websites',
-    href: 'https://tw-css-extractor.vercel.app/',
-    year: [2025],
-  },
-  {
-    id: nanoid(),
-    name: 'g:corp studio page',
-    description: 'App studio for the 21st century',
-    href: 'https://gcorp-landingpage.vercel.app/',
-    year: [2024, 2025],
-  },
-  {
-    id: nanoid(),
-    name: 'ProfileDash',
-    description: 'Extract Socials Instantly',
-    href: 'https://profiledash.vercel.app/',
-    year: [2024],
+    name: 'drykit.co',
+    description: 'Sensors that keep You and Your Home safe from Mold.',
+    href: 'https://www.drykit.co',
+    year: [2023, 2024],
   },
   {
     id: nanoid(),
@@ -49,22 +42,8 @@ const gcorp = [
     href: 'https://scribbly.se/',
     year: [2024],
   },
-  {
-    id: nanoid(),
-    name: 'pages by sharedspace [in dev]',
-    description: 'Tenant / home owner association web app',
-    href: 'https://sharedspace.se/',
-    year: [2024, 2025],
-  },
 ]
-const previous = [
-  {
-    id: nanoid(),
-    name: 'drykit.co',
-    description: 'Sensors that keep You and Your Home safe from Mold.',
-    href: 'https://www.drykit.co',
-    year: [2023, 2024],
-  },
+const startups = [
   {
     id: nanoid(),
     name: '500 startups Batch 19',
@@ -229,7 +208,8 @@ const Project: React.FC<{
         />
         <motion.span
           className="absolute bottom-0 left-0 z-10 h-px w-0 bg-white/30"
-          animate={{ width: '100%', backgroundColor: 'transparent' }}
+          animate={{ width: '100%', backgroundColor: 'rgba(255, 255, 255, 0)' }}
+          style={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}
           transition={{ delay, duration: 1, ease: 'easeInOut' }}
         />
       </motion.div>
@@ -248,7 +228,7 @@ const ProjectsList = () => {
         animate={{ opacity: 1 }}
         className="-m-3 my-5 flex items-center p-2 text-xs font-bold"
       >
-        ❯ Currently
+        Currently
       </motion.h2>
       <div className="mx-auto mt-4 flex w-full max-w-7xl flex-col gap-7">
         {current.map((project, index) => (
@@ -261,10 +241,10 @@ const ProjectsList = () => {
         animate={{ opacity: 1 }}
         className="-m-3 my-5 flex items-center p-2 text-xs font-bold"
       >
-        ❯ g:corp app studio
+        Projects
       </motion.h2>
       <div className="mx-auto mt-4 flex w-full max-w-7xl flex-col gap-7">
-        {gcorp.map((project, index) => (
+        {projects.map((project, index) => (
           <Project key={project.id} {...project} index={index} />
         ))}
       </div>
@@ -273,11 +253,11 @@ const ProjectsList = () => {
         animate={{ opacity: 1 }}
         className="-m-3 my-5 flex items-center p-2 text-xs font-bold"
       >
-        ❯ Previously
+        Startups
       </motion.h2>
 
       <div className="mx-auto mt-4 flex w-full max-w-7xl flex-col gap-7">
-        {previous.map((project, index) => (
+        {startups.map((project, index) => (
           <Project key={project.id} {...project} index={index} />
         ))}
       </div>
