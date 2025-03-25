@@ -15,7 +15,7 @@ import gradiance from '@/images/craft/gradiance.jpg'
 import idStudios from '@/images/craft/idstudios2013.png'
 import inspectorAI from '@/images/craft/inspector-ai-icon.png'
 import ispectCloseout2020 from '@/images/craft/ispect/ispect-closeout-demo-2020-january.jpg'
-
+import dffPost from '@/images/craft/dff-retro-poster.jpg'
 // Define a type for our craft items
 type CraftItem = {
   type: 'image' | 'video'
@@ -43,6 +43,12 @@ const craftItems: CraftItem[] = [
     src: '/videos/logo-cloud-glimmer.mp4',
     alt: 'logo cloud glimmer effect',
     post: '',
+  },
+  {
+    type: 'image',
+    src: dffPost,
+    alt: 'modern retro poster',
+    post: 'https://dinfastighetsforvaltare.se',
   },
   {
     type: 'image',

@@ -40,8 +40,14 @@ import vasterhaningeShops from '@/images/photos/vasterhaningeShops.jpg'
 import wanderingHorse from '@/images/photos/wanderingHorse.jpg'
 import windowIntoSummer from '@/images/photos/windowIntoSummer.jpg'
 import winteryCity from '@/images/photos/winteryCity.jpg'
+import sharedspaceHeaderPlaceholder from '@/images/photos/sharedspace-header-placeholder.jpg'
 
 const photoItems: VisualItem[] = [
+  {
+    type: 'image',
+    src: sharedspaceHeaderPlaceholder,
+    alt: 'Sharedspace Landing Page',
+  },
   { type: 'image', src: bussStation, alt: 'Cyber dusk bus station' },
   { type: 'video', src: '/videos/subwayMorning.mp4', alt: 'The dusk train' },
   { type: 'image', src: laptop, alt: 'Laptop' },
