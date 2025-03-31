@@ -244,27 +244,6 @@ export default function ArtifactsContent() {
       </div>
 
       <div className="relative">
-        <aside className="pointer-events-none absolute -inset-x-4 h-full columns-1 gap-y-6 sm:-inset-x-6 sm:columns-2 lg:columns-3">
-          <div className="relative h-64 sm:block lg:block">
-            <div className="absolute inset-x-0 -inset-y-[calc(0.5rem+1px)] border-y border-white/[7.5%] text-white"></div>
-          </div>
-          <div className="relative h-64 sm:block lg:block">
-            <div className="absolute inset-x-0 -inset-y-[calc(0.5rem+1px)] border-y border-white/[7.5%] text-white"></div>
-          </div>
-          <div className="relative h-64 sm:block lg:block">
-            <div className="absolute inset-x-0 -inset-y-[calc(0.5rem+1px)] border-y border-white/[7.5%] text-white"></div>
-          </div>
-          <div className="relative h-64 sm:block lg:block">
-            <div className="absolute inset-x-0 -inset-y-[calc(0.5rem+1px)] border-y border-white/[7.5%] text-white"></div>
-          </div>
-          <div className="relative h-64 sm:block lg:block">
-            <div className="absolute inset-x-0 -inset-y-[calc(0.5rem+1px)] border-y border-white/[7.5%] text-white"></div>
-          </div>
-          <div className="relative h-64 sm:block lg:block">
-            <div className="absolute inset-x-0 -inset-y-[calc(0.5rem+1px)] border-y border-white/[7.5%] text-white"></div>
-          </div>
-        </aside>
-
         <div className="mx-auto max-w-7xl px-2 pb-8">
           <div className="mt-2 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             <div className="flex flex-col gap-8">
@@ -277,7 +256,7 @@ export default function ArtifactsContent() {
                       </div>
                     </div>
 
-                    <div className="justify-end truncate bg-white/[4%] py-4 text-center text-sm font-semibold text-white">
+                    <div className="mx-auto mt-4 w-fit justify-end truncate rounded-full bg-white/[4%] px-4 py-2 text-center text-sm font-semibold text-white ring-white/20">
                       {item.alt}
                     </div>
                   </Link>
@@ -295,7 +274,7 @@ export default function ArtifactsContent() {
                       </div>
                     </div>
 
-                    <div className="justify-end truncate bg-white/[4%] py-4 text-center text-sm font-semibold text-white">
+                    <div className="mx-auto mt-4 w-fit justify-end truncate rounded-full bg-white/[4%] px-4 py-2 text-center text-sm font-semibold text-white ring-white/20">
                       {item.alt}
                     </div>
                   </Link>
@@ -312,7 +291,7 @@ export default function ArtifactsContent() {
                     </div>
                   </div>
 
-                  <div className="justify-end truncate bg-white/[4%] py-4 text-center text-sm font-semibold text-white">
+                  <div className="mx-auto mt-4 w-fit justify-end truncate rounded-full bg-white/[4%] px-4 py-2 text-center text-sm font-semibold text-white ring-white/20">
                     {craftItems[15].alt}
                   </div>
                 </Link>
@@ -332,7 +311,7 @@ export default function ArtifactsContent() {
                         </div>
                       </div>
 
-                      <div className="justify-end truncate bg-white/[4%] py-4 text-center text-sm font-semibold text-white">
+                      <div className="mx-auto mt-4 w-fit justify-end truncate rounded-full bg-white/[4%] px-4 py-2 text-center text-sm font-semibold text-white ring-white/20">
                         {item.alt}
                       </div>
                     </Link>

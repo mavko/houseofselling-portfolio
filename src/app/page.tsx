@@ -1,6 +1,8 @@
 import React from 'react'
 import ArtifactsContent from './artifacts/ArifactsContent'
 import DialogComponent from '@/components/Dialog'
+import Link from 'next/link'
+
 export default function Home() {
   return (
     <>
@@ -11,7 +13,9 @@ export default function Home() {
             <br />
             Decade+ of taking ideas from zero to one.
           </h1>
-          <DialogComponent />
+          <div className="flex gap-4">
+            <DialogComponent />
+          </div>
         </div>
       </div>
 

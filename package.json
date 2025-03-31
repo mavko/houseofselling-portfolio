@@ -17,6 +17,7 @@
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.2.1",
     "@radix-ui/react-hover-card": "^1.1.6",
+    "@react-pdf/renderer": "^4.3.0",
     "@tailwindcss/postcss": "4.0.0",
     "@types/mdx": "^2.0.13",
     "@types/node": "^22.13.10",

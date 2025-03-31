@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
   ),
   title: {
-    template: '%s - HeadlessUI',
+    template: '%s - house of selling',
     default: 'sebastian selling - Entreprenurial Design Engineer',
   },
   description:
-    'Self taught designer, web artisan, and entrepreneur. Passionate about taking ideas from zero to one.',
+    'Self taught designer, web artisan and builder. Passionate about taking ideas from zero to one.',
   alternates: {
     types: {
       'application/rss+xml': '/feed.xml',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'sebastian selling',
     description:
-      'Self taught designer, web artisan, and entrepreneur. Passionate about taking ideas from zero to one.',
+      'Self taught designer, web artisan and builder. Passionate about taking ideas from zero to one.',
     url: '/',
     siteName: 'sebastianselling.com',
     images: [
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'sebastian selling',
     description:
-      'Self taught designer, web artisan, and entrepreneur. Passionate about taking ideas from zero to one.',
+      'Self taught designer, web artisan and builder. Passionate about taking ideas from zero to one.',
     images: ['/og.png'],
   },
   robots: {
@@ -74,7 +74,7 @@ export default function RootLayout({
       <head>
         <meta name="view-transition" content="same-origin" />
       </head>
-      <body className="w-full bg-neutral-950 font-sans text-[#f2f2f2] antialiased">
+      <body className="h-screen w-full bg-neutral-950 font-sans text-[#f2f2f2] antialiased">
         <Providers>
           <div className="relative">
             <header className="relative px-4 sm:px-6">
@@ -110,18 +110,6 @@ export default function RootLayout({
                 </div>
               </div>
             </header>
-            <Image
-              src={headerBackground}
-              alt="Background"
-              priority
-              className="absolute inset-x-0 top-0 -z-10 h-[43rem] w-full forced-colors:hidden"
-            />
-            <Image
-              src={textureBackground}
-              alt="Background"
-              priority
-              className="absolute inset-x-0 top-0 -z-5 h-full w-full opacity-50 mix-blend-screen forced-colors:hidden"
-            />
 
             <div
               className="pointer-events-none absolute inset-0 z-10 px-4 sm:px-6"
@@ -135,7 +123,6 @@ export default function RootLayout({
             </div>
 
             {children}
-
             <footer className="py-12 text-center text-sm/6 text-white">
               © 2025 house of selling.
             </footer>
@@ -144,6 +131,18 @@ export default function RootLayout({
               className="pointer-events-none fixed inset-x-0 bottom-0 z-20 h-20 w-full bg-black/20 backdrop-blur-[5px] backdrop-filter [mask-image:linear-gradient(to_top,_rgb(0,_0,_0)_25%,_transparent)]"
             />
           </div>
+          <Image
+            src={headerBackground}
+            alt="Background"
+            priority
+            className="absolute inset-x-0 top-0 -z-10 h-screen w-full forced-colors:hidden"
+          />
+          <Image
+            src={textureBackground}
+            alt="Background"
+            priority
+            className="absolute inset-x-0 top-0 -z-5 h-screen w-full opacity-50 mix-blend-screen forced-colors:hidden"
+          />
         </Providers>
         <Analytics />
         <SpeedInsights />
