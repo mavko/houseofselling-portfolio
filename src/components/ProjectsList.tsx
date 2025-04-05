@@ -6,15 +6,17 @@ import { nanoid } from 'nanoid'
 const current = [
   {
     id: nanoid(),
-    name: 'sharedspace',
-    description: 'Proptech for tenant / home owner associations',
-    href: 'https://sharedspace.se/',
-    year: [2024, 'ongoing'],
+    name: 'Open to Opportunities',
+    description: 'From traditional industries to crypto and blockchain',
+    href: 'https://www.linkedin.com/in/sebastian-selling/',
+    year: [2025, 'ongoing'],
   },
+]
+const business = [
   {
     id: nanoid(),
     name: 'din.fastighetsförvaltare',
-    description: 'Premier Property Management',
+    description: 'Technical Property Management',
     href: 'https://www.dinfastighetsforvaltare.se/',
     year: [2025, 'ongoing'],
   },
@@ -26,8 +28,14 @@ const current = [
     year: [2017, 'ongoing'],
   },
 ]
-
 const projects = [
+  {
+    id: nanoid(),
+    name: 'sharedspace',
+    description: 'Proptech for tenant / home owner associations',
+    href: 'https://sharedspace.se/',
+    year: [2024, 'ongoing'],
+  },
   {
     id: nanoid(),
     name: 'drykit.co',
@@ -235,7 +243,18 @@ const ProjectsList = () => {
           <Project key={project.id} {...project} index={index} />
         ))}
       </div>
-
+      <motion.h2
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="-m-3 my-5 flex items-center p-2 text-xs font-bold"
+      >
+        Business
+      </motion.h2>
+      <div className="mx-auto mt-4 flex w-full max-w-7xl flex-col gap-7">
+        {business.map((project, index) => (
+          <Project key={project.id} {...project} index={index} />
+        ))}
+      </div>
       <motion.h2
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

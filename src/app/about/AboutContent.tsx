@@ -19,63 +19,68 @@ export default function AboutContent() {
           Hello there, I&apos;m Sebastian Selling
         </h2>
         <p>
-          I'm a Design Engineer with over a decade of experience crafting
-          user-centric digital products and building brands from the ground up.
-          I specialize in bridging the gap between design and front-end
-          development, particularly within startup environments.
+          Hi, I'm Sebastian Selling – a Design Engineer with 13+ years of
+          experience building brands and digital products that people actually
+          enjoy using. I've spent my career at the intersection of visual design
+          and front-end development—what some now call a “design engineer.” From
+          early Photoshop experiments in the 2000s to building enterprise apps
+          from scratch, I’ve always chased that perfect balance between beauty
+          and usability.
         </p>
         <p>
-          Love of the craft since I first laid my hands on Photoshop back in
-          2001, where I spent my days designing forum signatures and gaming
-          wallpapers. As I grew older, this drive led me later to co-found and
-          contribute to several ventures over the years.
+          Over the past decade, I helped bring two construction SaaS products—
+          <Link
+            href="/artifacts/archive/makings-of-ispect"
+            className="text-green-300!"
+            target="_blank"
+          >
+            ispect
+          </Link>{' '}
+          and{' '}
+          <Link
+            href="/artifacts/archive/makings-of-icontrol"
+            className="text-green-300!"
+            target="_blank"
+          >
+            icontrol
+          </Link>
+          — to life. I handled everything from branding and product design to
+          implementing UI in Vue and CSS. More recently, I’ve been working with
+          Next.js, Tailwind CSS, shadcn/ui, and Astro on newer projects like{' '}
+          <a
+            href="https://sharedspace.se"
+            className="text-green-300!"
+            target="_blank"
+          >
+            sharedspace.se
+          </a>
+          , a proptech platform currently in development.
         </p>
         <p>
-          - 2012, my brother came to me with the very beginnings of what later
-          became
-          <span>
-            <Link href="https://www.ispect.se" className="mx-1">
-              ispect
-            </Link>
-            ,
-          </span>
-          where he showed me the prototype and I responded, in a typical cocky
-          youngster fashion: "That looks like shit, nobody is gonna use that." -
-          and he simply replied "Well, prove that you can do better."
-        </p>
-        <p className="">
-          The rest is history as they say. We spent the next decade building out
-          not only ispect but
-          <span>
-            <Link href="https://www.icontrolapp.se" className="px-1">
-              icontrol
-            </Link>
-          </span>
-          as well.
+          I believe design should do more than look good—it should earn trust,
+          create clarity, and build belief in a product’s purpose. That’s
+          especially important in the crypto and blockchain space, which I’m
+          deeply passionate about. I see Bitcoin as a once-in-a-generation shift
+          in how value is stored and transferred, and I want to bring the kind
+          of design polish and UX thinking to crypto that’s still sorely lacking
+          in the space.
         </p>
         <p>
-          Currently I spend my days contributing and helping my parents with
-          <span>
-            <Link href="https://www.besiktningsman.se" className="px-1">
-              their business
-            </Link>
-          </span>
-          so that they get a nest-egg to retire with. Also building
-          <span>
-            <Link href="https://sharedspace.se/" className="px-1">
-              sharedspace.se
-            </Link>
-          </span>
-          and other projects in proptech.
+          Right now, I’m open to new opportunities—especially at the
+          intersection of tech, crypto, AI and product design. I’m excited to
+          bring both craft and conviction to teams building the future.
         </p>
-        <p className="text-[#e8e6e3]">+ Core Skills:</p>
+        <p className="text-[#e8e6e3]">Highlights:</p>
         <ul className="list-disc pl-5 text-[#ededed]">
           <li>Branding & Visual Identity</li>
           <li>Product Design</li>
-          <li>UI/UX Design & Prototyping (Figma, Sketch)</li>
+          <li>UI Design</li>
           <li>
             Front-End Design ( React, Next.js, Vue, Tailwind CSS, Shadcn/ui,
             Astrojs)
+          </li>
+          <li>
+            Strong interest in blockchain, DeFi, Bitcoin, and open protocols
           </li>
         </ul>
         <p className="text-pretty">

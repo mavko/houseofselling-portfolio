@@ -49,7 +49,7 @@ export default function DialogComponent() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                className="h-full w-full max-w-3xl border border-white/20 bg-black/5 p-6 backdrop-blur-2xl duration-300 ease-out sm:p-12"
+                className="h-full w-full max-w-3xl overflow-y-scroll border border-white/20 bg-black/5 p-6 backdrop-blur-2xl duration-300 ease-out sm:p-12"
               >
                 <DialogTitle className="flex items-center justify-between text-lg font-bold">
                   <span className="font-mono text-sm font-semibold tracking-widest text-white/90 uppercase">
