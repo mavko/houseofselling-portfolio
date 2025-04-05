@@ -19,9 +19,8 @@ export default function AboutContent() {
           Hello there, I&apos;m Sebastian Selling
         </h2>
         <p>
-          Hi, I'm Sebastian Selling – a Design Engineer with 13+ years of
-          experience building brands and digital products that people actually
-          enjoy using. I've spent my career at the intersection of visual design
+          Designer with 13+ years of experience building brands and digital
+          products. I've spent my career at the intersection of visual design
           and front-end development—what some now call a “design engineer.” From
           early Photoshop experiments in the 2000s to building enterprise apps
           from scratch, I’ve always chased that perfect balance between beauty
@@ -54,17 +53,9 @@ export default function AboutContent() {
           >
             sharedspace.se
           </a>
-          , a proptech platform currently in development.
+          , a proptech page builder.
         </p>
-        <p>
-          I believe design should do more than look good—it should earn trust,
-          create clarity, and build belief in a product’s purpose. That’s
-          especially important in the crypto and blockchain space, which I’m
-          deeply passionate about. I see Bitcoin as a once-in-a-generation shift
-          in how value is stored and transferred, and I want to bring the kind
-          of design polish and UX thinking to crypto that’s still sorely lacking
-          in the space.
-        </p>
+
         <p>
           Right now, I’m open to new opportunities—especially at the
           intersection of tech, crypto, AI and product design. I’m excited to
@@ -80,7 +71,8 @@ export default function AboutContent() {
             Astrojs)
           </li>
           <li>
-            Strong interest in blockchain, DeFi, Bitcoin, and open protocols
+            Strong interest in blockchain, bitcoin, esports, gaming and
+            business/startups.
           </li>
         </ul>
         <p className="text-pretty">
