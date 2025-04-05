@@ -16,6 +16,8 @@ import idStudios from '@/images/craft/idstudios2013.png'
 import inspectorAI from '@/images/craft/inspector-ai-icon.png'
 import ispectCloseout2020 from '@/images/craft/ispect/ispect-closeout-demo-2020-january.jpg'
 import dffPost from '@/images/craft/dff-retro-poster.jpg'
+import bmLogo from '@/images/craft/bm-logo.jpg'
+import dffLogo from '@/images/craft/dff-card-logo.jpg'
 // Define a type for our craft items
 type CraftItem = {
   type: 'image' | 'video'
@@ -36,6 +38,18 @@ const craftItems: CraftItem[] = [
     type: 'video',
     src: '/videos/morph-intro.mp4',
     alt: 'retro modern morph intro',
+    post: '',
+  },
+  {
+    type: 'image',
+    src: bmLogo,
+    alt: 'besiktningsman.se logo',
+    post: '',
+  },
+  {
+    type: 'image',
+    src: dffLogo,
+    alt: 'dinfastighetsforvaltare.se logo',
     post: '',
   },
   {
@@ -158,12 +172,7 @@ const craftItems: CraftItem[] = [
     alt: 'id studios 2013',
     post: '',
   },
-  {
-    type: 'image',
-    src: inspectorAI,
-    alt: 'inspector AI icon (ispect)',
-    post: '',
-  },
+
   // Example of how to add a video item
   // {
   //   type: 'video',
@@ -219,7 +228,7 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
 
 export default function ArtifactsContent() {
   return (
-    <main className="rounded-[2.5rem] border-t border-white/30 bg-black/70 px-4 pb-12 sm:px-6">
+    <main className="rounded-[2.5rem] border-t border-white/30 bg-gradient-to-b from-neutral-950/70 via-neutral-950 to-neutral-950/90 px-4 pb-12 backdrop-blur-sm sm:px-6">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-2">
         <div>
           <h2 className="font-mono text-xs font-semibold tracking-widest text-white/50 uppercase">
