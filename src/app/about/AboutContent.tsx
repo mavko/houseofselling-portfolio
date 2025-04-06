@@ -44,7 +44,7 @@ export default function AboutContent() {
         </p>
         <p>
           Lately, I’ve been building with Next.js, Tailwind CSS, shadcn/ui, and
-          Cursor.ai (they're changing the game) —
+          Cursor.ai (they're changing the game). One outcome has been —
           <a
             href="https://sharedspace.se"
             className="text-green-300!"
@@ -52,14 +52,17 @@ export default function AboutContent() {
           >
             sharedspace.se
           </a>
-          , a proptech page builder. This was aimed to help property managers
-          create modern websites quickly and cheaply.
+          — a proptech page builder. The speed at which you can launch new ideas
+          now is phenomenal and I'm loving it.
         </p>
 
         <p>
           Right now I’m based in Sweden, with family in Texas. I'm open to
-          <strong>remote U.S.-based opportunities</strong> , especially teams
-          building with conviction, taste, and a vision for a better web.
+          <strong className="pl-1 text-white">
+            remote U.S.-based opportunities
+          </strong>{' '}
+          , especially teams building with conviction, taste, and a vision for a
+          better web.
         </p>
         <p>
           I’m also quietly building a personal creative brand called Merchant of
