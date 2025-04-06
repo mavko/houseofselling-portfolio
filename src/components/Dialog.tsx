@@ -59,7 +59,7 @@ export default function DialogComponent() {
                     <XMarkIcon className="size-6 fill-white/60" />
                   </button>
                 </DialogTitle>
-                <Description className="font-mono text-xs font-semibold tracking-widest text-white/50 uppercase">
+                <Description className="font-mono text-xs font-semibold tracking-widest text-white/80 uppercase">
                   My projects and startups since 2012.
                 </Description>
                 <ProjectsList />

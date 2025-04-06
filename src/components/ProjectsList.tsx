@@ -204,7 +204,7 @@ const Project: React.FC<{
       </span>
       <span
         ref={descriptionRef}
-        className="-ml-2 hidden text-white/70 sm:inline-block"
+        className="-ml-2 hidden text-white/80 sm:inline-block"
       >
         {description}
       </span>

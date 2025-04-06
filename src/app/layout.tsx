@@ -82,7 +82,7 @@ export default function RootLayout({
                 <div className="flex items-center gap-4 px-2 sm:gap-5">
                   <Link
                     href="/"
-                    className="font-mono text-xs font-semibold tracking-widest text-white/50 uppercase"
+                    className="font-mono text-xs font-semibold tracking-widest text-white/80 uppercase"
                   >
                     house of selling anno 1990
                   </Link>
@@ -90,26 +90,26 @@ export default function RootLayout({
                 <div className="flex items-center gap-4">
                   <Link
                     href="/about"
-                    className="font-mono text-xs font-semibold tracking-widest text-white/50 uppercase"
+                    className="font-mono text-xs font-semibold tracking-widest text-white/80 uppercase"
                   >
                     About
                   </Link>
                   <Link
                     href="/visuals"
-                    className="font-mono text-xs font-semibold tracking-widest text-white/50 uppercase"
+                    className="font-mono text-xs font-semibold tracking-widest text-white/80 uppercase"
                   >
                     Visuals
                   </Link>
                   <Link
                     aria-label="Say hello on GitHub"
-                    className="font-mono text-xs font-semibold tracking-widest text-white/50 uppercase"
+                    className="font-mono text-xs font-semibold tracking-widest text-white/80 uppercase"
                     href="https://github.com/mavko"
                   >
                     Github
                   </Link>
                   <Link
                     aria-label="Download resume"
-                    className="font-mono text-xs font-semibold tracking-widest text-white/50 uppercase"
+                    className="font-mono text-xs font-semibold tracking-widest text-white/80 uppercase"
                     href="/resume2025.pdf"
                   >
                     Resume

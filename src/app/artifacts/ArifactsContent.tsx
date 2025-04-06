@@ -231,7 +231,7 @@ export default function ArtifactsContent() {
     <main className="rounded-[2.5rem] border-t border-white/30 bg-gradient-to-b from-neutral-950/70 via-neutral-950 to-neutral-950/90 px-4 pb-12 backdrop-blur-sm sm:px-6">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-2">
         <div>
-          <h2 className="font-mono text-xs font-semibold tracking-widest text-white/50 uppercase">
+          <h2 className="font-mono text-xs font-semibold tracking-widest text-white/80 uppercase">
             Artifacts{' '}
             <span className="hidden sm:block">:: design and experiments</span>
           </h2>
