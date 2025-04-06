@@ -54,13 +54,6 @@ const projects = [
 const startups = [
   {
     id: nanoid(),
-    name: '500 startups Batch 19',
-    description: 'Investment and mentorship to build iControl',
-    href: 'https://www.crunchbase.com/organization/icontrol-2',
-    year: [2016],
-  },
-  {
-    id: nanoid(),
     name: 'icontrol',
     description: 'Replace paper with an app on the field [maintained]',
     href: '/artifacts/archive/makings-of-icontrol',

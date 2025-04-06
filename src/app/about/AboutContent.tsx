@@ -16,18 +16,14 @@ export default function AboutContent() {
           height={160}
         />
         <h2 className="text-[#e8e6e3]">
-          Hello there, I&apos;m Sebastian Selling
+          Hi, I’m Sebastian — a creative technologist, product designer, and
+          self-taught builder from Sweden.
         </h2>
         <p>
-          Designer with 13+ years of experience building brands and digital
-          products. I've spent my career at the intersection of visual design
-          and front-end development—what some now call a “design engineer.” From
-          early Photoshop experiments in the 2000s to building enterprise apps
-          from scratch, I’ve always chased that perfect balance between beauty
-          and usability.
-        </p>
-        <p>
-          Over the past decade, I helped bring two construction SaaS products—
+          I’ve spent the last decade designing and launching software tools in
+          real estate, construction, and legacy industries that badly need
+          better UX. Along the way, I helped bring two construction SaaS
+          products—
           <Link
             href="/artifacts/archive/makings-of-ispect"
             className="text-green-300!"
@@ -44,8 +40,11 @@ export default function AboutContent() {
             icontrol
           </Link>
           — to life. I handled everything from branding and product design to
-          implementing UI in Vue and CSS. More recently, I’ve been working with
-          Next.js, Tailwind CSS, shadcn/ui, and Astro on newer projects like{' '}
+          implementing UI in Vue and CSS.
+        </p>
+        <p>
+          Lately, I’ve been building with Next.js, Tailwind CSS, shadcn/ui, and
+          Cursor.ai (they're changing the game) —
           <a
             href="https://sharedspace.se"
             className="text-green-300!"
@@ -53,37 +52,65 @@ export default function AboutContent() {
           >
             sharedspace.se
           </a>
-          , a proptech page builder.
+          , a proptech page builder. This was aimed to help property managers
+          create modern websites quickly and cheaply.
         </p>
 
         <p>
-          Right now, I’m open to new opportunities—especially at the
-          intersection of tech, crypto, AI and product design. I’m excited to
-          bring both craft and conviction to teams building the future.
+          Right now I’m based in Sweden, with family in Texas. I'm open to
+          <strong>remote U.S.-based opportunities</strong> , especially teams
+          building with conviction, taste, and a vision for a better web.
         </p>
-        <p className="text-[#e8e6e3]">Highlights:</p>
+        <p>
+          I’m also quietly building a personal creative brand called Merchant of
+          Nostalgia — inspired by Diablo II, the golden age of web, and the kind
+          of timeless design that still sparks joy.
+        </p>
+        <p className="font-semibold text-[#e8e6e3]">Highlights:</p>
         <ul className="list-disc pl-5 text-[#ededed]">
-          <li>Branding & Visual Identity</li>
-          <li>Product Design</li>
-          <li>UI Design</li>
           <li>
-            Front-End Design ( React, Next.js, Vue, Tailwind CSS, Shadcn/ui,
-            Astrojs)
+            <strong className="text-white">Design:</strong> Product design,
+            branding, storytelling,{' '}
+            <Link href="/visuals" className="text-green-300!">
+              visuals
+            </Link>
+            , and good old sketch/figma — (also eyeing{' '}
+            <Link href="https://paper.design/" className="underline">
+              Paper
+            </Link>
+            )
           </li>
           <li>
-            Strong interest in blockchain, bitcoin, esports, gaming and
-            business/startups.
+            <strong className="text-white">Product:</strong> UX, copywriting,
+            launch strategy, research
+          </li>
+          <li>
+            <strong className="pr-1 text-white">UI Engineering:</strong>
+            React, Vue, Tailwind, Astro, Shadcn/ui, Framer Motion
+          </li>
+        </ul>
+        <p className="font-semibold text-[#e8e6e3]">What I’m Looking For</p>
+        <ul className="list-disc pl-5 text-[#ededed]">
+          <li>Remote-friendly, U.S.-based companies</li>
+          <li>Design-driven teams with conviction and soul</li>
+          <li>Products that make the internet fun, useful, and human again</li>
+          <li>
+            <Link href="https://www.allmight.us/" className="text-green-300!">
+              Next-generation Americana Builders
+            </Link>
           </li>
         </ul>
         <p className="text-pretty">
-          My spare time is spent with my beautiful
+          <strong className="text-white">Outside of work,</strong> I’m a husband
+          to
           <Link href="https://www.vheekey.com/" className="px-1">
-            beautiful wife Victoria
+            Victoria
           </Link>{' '}
-          and our little newborn daughter Elizabeth. Very much into lifting,
-          biking, gaming and building side projects.
+          and dad to our daughter Elizabeth. I lift weights, ride bikes, play
+          classic games, and dream about building digital worlds that make
+          people feel something.
         </p>
-        <h3 className="text-[#e8e6e3]">Contact:</h3>
+        <h3 className="text-[#e8e6e3]">Connect:</h3>
         <div className="flex w-fit flex-col gap-6 text-sm sm:flex-row">
           <Link
             className="text-green-300!"

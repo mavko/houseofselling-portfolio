@@ -41,6 +41,12 @@ const craftItems: CraftItem[] = [
     post: '',
   },
   {
+    type: 'video',
+    src: '/videos/ready2ship-sb-concept.mp4',
+    alt: 'stackblitz concept page ↗',
+    post: 'https://sb-landing-page-ruddy.vercel.app/',
+  },
+  {
     type: 'image',
     src: bmLogo,
     alt: 'besiktningsman.se logo',
@@ -233,21 +239,21 @@ export default function ArtifactsContent() {
         <div>
           <h2 className="font-mono text-xs font-semibold tracking-widest text-white/80 uppercase">
             Artifacts{' '}
-            <span className="hidden sm:block">:: design and experiments</span>
+            <span className="hidden sm:block">:: designs and experiments</span>
           </h2>
         </div>
         <div className="flex gap-4 py-8">
           <Link
-            className="rounded-full px-3 py-1 text-sm/6 font-semibold text-white/90 hover:bg-white/5 hover:text-white/75"
+            className="font-mono text-xs font-semibold tracking-widest text-white uppercase underline underline-offset-4"
             href="/artifacts/archive/makings-of-ispect"
           >
-            Makings of iSpect
+            Makings of iSpect ↗
           </Link>
           <Link
-            className="rounded-full px-3 py-1 text-sm/6 font-semibold text-white/90 hover:bg-white/5 hover:text-white/75"
+            className="font-mono text-xs font-semibold tracking-widest text-white uppercase underline underline-offset-4"
             href="/artifacts/archive/makings-of-icontrol"
           >
-            Makings of iControl
+            Makings of iControl ↗
           </Link>
         </div>
       </div>

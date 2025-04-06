@@ -11,6 +11,8 @@ import '@/styles/tailwind.css'
 import headerBackground from '@/images/planeteria.png'
 import textureBackground from '@/images/texture.png'
 import Link from 'next/link'
+import { CameraIcon, FaceSmileIcon } from '@heroicons/react/24/solid'
+import { GitHubIcon } from '@/components/SocialIcons'
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
@@ -82,7 +84,7 @@ export default function RootLayout({
                 <div className="flex items-center gap-4 px-2 sm:gap-5">
                   <Link
                     href="/"
-                    className="font-mono text-xs font-semibold tracking-widest text-white/80 uppercase"
+                    className="font-mono text-xs font-semibold tracking-widest text-white uppercase"
                   >
                     house of selling anno 1990
                   </Link>
@@ -90,26 +92,26 @@ export default function RootLayout({
                 <div className="flex items-center gap-4">
                   <Link
                     href="/about"
-                    className="font-mono text-xs font-semibold tracking-widest text-white/80 uppercase"
+                    className="flex items-center gap-2 font-mono text-xs font-semibold tracking-widest text-white uppercase"
                   >
                     About
                   </Link>
                   <Link
                     href="/visuals"
-                    className="font-mono text-xs font-semibold tracking-widest text-white/80 uppercase"
+                    className="flex items-center gap-2 font-mono text-xs font-semibold tracking-widest text-white uppercase"
                   >
                     Visuals
                   </Link>
                   <Link
                     aria-label="Say hello on GitHub"
-                    className="font-mono text-xs font-semibold tracking-widest text-white/80 uppercase"
+                    className="flex items-center gap-2 font-mono text-xs font-semibold tracking-widest text-white uppercase"
                     href="https://github.com/mavko"
                   >
                     Github
                   </Link>
                   <Link
                     aria-label="Download resume"
-                    className="font-mono text-xs font-semibold tracking-widest text-white/80 uppercase"
+                    className="font-mono text-xs font-semibold tracking-widest text-white uppercase"
                     href="/resume2025.pdf"
                   >
                     Resume
