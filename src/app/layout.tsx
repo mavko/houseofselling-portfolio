@@ -107,6 +107,13 @@ export default function RootLayout({
                   >
                     Github
                   </Link>
+                  <Link
+                    aria-label="Download resume"
+                    className="font-mono text-xs font-semibold tracking-widest text-white/50 uppercase"
+                    href="/resume2025.pdf"
+                  >
+                    Resume
+                  </Link>
                 </div>
               </div>
             </header>

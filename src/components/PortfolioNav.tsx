@@ -1,6 +1,7 @@
 import { Dock, DockIcon, DockItem, DockLabel } from './Dock'
 import {
   CameraIcon,
+  DocumentTextIcon,
   FaceSmileIcon,
   HomeIcon,
   Square3Stack3DIcon,
@@ -40,6 +41,11 @@ const data = [
     title: 'Github',
     icon: <GitHubIcon className="h-full w-full" />,
     href: 'https://github.com/mavko',
+  },
+  {
+    title: 'Resume',
+    icon: <DocumentTextIcon className="h-full w-full" />,
+    href: '/resume2025.pdf',
   },
 ]
 
