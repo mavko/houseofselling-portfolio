@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   ),
   title: {
     template: '%s - house of selling',
-    default: 'sebastian selling - Entreprenurial Design Engineer',
+    default: 'Sebastian Selling - Designer who codes',
   },
   description:
     'Self taught designer, web artisan and builder. Passionate about taking ideas from zero to one.',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'sebastian selling',
+    title: 'sebastian selling - Designer who codes',
     description:
       'Self taught designer, web artisan and builder. Passionate about taking ideas from zero to one.',
     url: '/',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'sebastian selling',
+    title: 'sebastian selling - Designer who codes',
     description:
       'Self taught designer, web artisan and builder. Passionate about taking ideas from zero to one.',
     images: ['/og.png'],
