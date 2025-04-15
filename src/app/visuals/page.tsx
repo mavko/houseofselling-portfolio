@@ -1,6 +1,8 @@
 'use client'
 
-import Image, { StaticImageData } from 'next/image'
+import { type Metadata } from 'next'
+import { StaticImageData } from 'next/image'
+import { SafeImage } from '@/components/SafeImage'
 import { useState } from 'react'
 import VisualsDialog, { VisualItem } from '@/components/VisualsDialog'
 
@@ -89,7 +91,7 @@ const photoItems: VisualItem[] = [
 const MediaComponent = ({ item }: { item: VisualItem }) => {
   if (item.type === 'image') {
     return (
-      <Image
+      <SafeImage
         src={item.src}
         alt={item.alt}
         className="h-auto w-full rounded-2xl bg-cover"

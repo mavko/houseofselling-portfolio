@@ -1,30 +1,30 @@
-"use client";
-import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
-import Image from "next/image";
-import { encode } from "qss";
-import React from "react";
+'use client'
+import * as HoverCardPrimitive from '@radix-ui/react-hover-card'
+import { encode } from 'qss'
+import React from 'react'
 import {
   AnimatePresence,
   motion,
   useMotionValue,
   useSpring,
-} from "framer-motion";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
+} from 'framer-motion'
+import Link from 'next/link'
+import { cn } from '@/lib/utils'
+import { SafeImage } from './SafeImage'
 
 type LinkPreviewProps = {
-  children: React.ReactNode;
-  url: string;
-  className?: string;
-  width?: number;
-  height?: number;
-  quality?: number;
-  layout?: string;
-  appName?: string;
+  children: React.ReactNode
+  url: string
+  className?: string
+  width?: number
+  height?: number
+  quality?: number
+  layout?: string
+  appName?: string
 } & (
-    | { isStatic: true; imageSrc: string }
-    | { isStatic?: false; imageSrc?: never }
-  );
+  | { isStatic: true; imageSrc: string }
+  | { isStatic?: false; imageSrc?: never }
+)
 
 export const LinkPreview = ({
   children,
@@ -33,54 +33,54 @@ export const LinkPreview = ({
   width = 300,
   height = 125,
   quality = 50,
-  layout = "fixed",
+  layout = 'fixed',
   isStatic = false,
-  imageSrc = "",
-  appName = "app name here",
+  imageSrc = '',
+  appName = 'app name here',
 }: LinkPreviewProps) => {
-  let src;
+  let src
   if (!isStatic) {
     const params = encode({
       url,
       screenshot: true,
       meta: false,
-      embed: "screenshot.url",
-      colorScheme: "dark",
-      "viewport.isMobile": true,
-      "viewport.deviceScaleFactor": 1,
-      "viewport.width": width * 3,
-      "viewport.height": height * 3,
-    });
-    src = `https://api.microlink.io/?${params}`;
+      embed: 'screenshot.url',
+      colorScheme: 'dark',
+      'viewport.isMobile': true,
+      'viewport.deviceScaleFactor': 1,
+      'viewport.width': width * 3,
+      'viewport.height': height * 3,
+    })
+    src = `https://api.microlink.io/?${params}`
   } else {
-    src = imageSrc;
+    src = imageSrc
   }
 
-  const [isOpen, setOpen] = React.useState(false);
+  const [isOpen, setOpen] = React.useState(false)
 
-  const [isMounted, setIsMounted] = React.useState(false);
+  const [isMounted, setIsMounted] = React.useState(false)
 
   React.useEffect(() => {
-    setIsMounted(true);
-  }, []);
+    setIsMounted(true)
+  }, [])
 
-  const springConfig = { stiffness: 100, damping: 15 };
-  const x = useMotionValue(0);
+  const springConfig = { stiffness: 100, damping: 15 }
+  const x = useMotionValue(0)
 
-  const translateX = useSpring(x, springConfig);
+  const translateX = useSpring(x, springConfig)
 
   const handleMouseMove = (event: any) => {
-    const targetRect = event.target.getBoundingClientRect();
-    const eventOffsetX = event.clientX - targetRect.left;
-    const offsetFromCenter = (eventOffsetX - targetRect.width / 2) / 2; // Reduce the effect to make it subtle
-    x.set(offsetFromCenter);
-  };
+    const targetRect = event.target.getBoundingClientRect()
+    const eventOffsetX = event.clientX - targetRect.left
+    const offsetFromCenter = (eventOffsetX - targetRect.width / 2) / 2 // Reduce the effect to make it subtle
+    x.set(offsetFromCenter)
+  }
 
   return (
     <>
       {isMounted ? (
         <div className="hidden">
-          <Image
+          <SafeImage
             src={src}
             width={width}
             height={height}
@@ -96,12 +96,12 @@ export const LinkPreview = ({
         openDelay={50}
         closeDelay={100}
         onOpenChange={(open) => {
-          setOpen(open);
+          setOpen(open)
         }}
       >
         <HoverCardPrimitive.Trigger
           onMouseMove={handleMouseMove}
-          className={cn("", className)}
+          className={cn('', className)}
           href={url}
         >
           {children}
@@ -122,40 +122,41 @@ export const LinkPreview = ({
                   y: 0,
                   scale: 1,
                   transition: {
-                    type: "spring",
+                    type: 'spring',
                     stiffness: 260,
                     damping: 20,
                   },
                 }}
                 exit={{ opacity: 0, y: 20, scale: 0.6 }}
-                className="shadow-xl rounded-xl"
+                className="rounded-xl shadow-xl"
                 style={{
                   x: translateX,
                 }}
               >
                 <Link
                   href={url}
-                  className="block p-1 bg-black border border-white/20 shadow rounded-xl 
-                hover:border-neutral-800 z-50"
+                  className="z-50 block rounded-xl border border-white/20 bg-black p-1 shadow hover:border-neutral-800"
                   style={{ fontSize: 0 }}
                 >
-                  <Image
+                  <SafeImage
                     src={isStatic ? imageSrc : src}
                     width={width}
                     height={height}
                     quality={quality}
                     layout={layout}
                     priority={true}
-                    className="rounded-lg bg-black w-full"
+                    className="w-full rounded-lg bg-black"
                     alt="preview image"
                   />
                 </Link>
-                <p className="font-departure font-bold text-sm text-center bg-black rounded-full py-0.5 px-2 mx-auto w-fit ring-1 ring-white/20">{appName}</p>
+                <p className="font-departure mx-auto w-fit rounded-full bg-black px-2 py-0.5 text-center text-sm font-bold ring-1 ring-white/20">
+                  {appName}
+                </p>
               </motion.div>
             )}
           </AnimatePresence>
         </HoverCardPrimitive.Content>
       </HoverCardPrimitive.Root>
     </>
-  );
-};
+  )
+}

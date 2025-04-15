@@ -3,7 +3,8 @@
 import { Button, Dialog, DialogPanel } from '@headlessui/react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { XMarkIcon } from '@heroicons/react/24/solid'
-import Image, { StaticImageData } from 'next/image'
+import { StaticImageData } from 'next/image'
+import { SafeImage } from './SafeImage'
 
 export type VisualItem = {
   type: 'image' | 'video'
@@ -20,7 +21,7 @@ type VisualsDialogProps = {
 const MediaComponent = ({ item }: { item: VisualItem }) => {
   if (item.type === 'image') {
     return (
-      <Image
+      <SafeImage
         src={item.src}
         alt={item.alt}
         className="h-auto w-full rounded-2xl bg-cover"

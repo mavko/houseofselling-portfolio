@@ -1,10 +1,10 @@
 'use client'
 
-import Image from 'next/image'
 import { Dialog } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/solid'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
+import { SafeImage } from './SafeImage'
 
 interface EnlargeableImageProps {
   src: string
@@ -25,7 +25,7 @@ export function EnlargeableImage({
 
   return (
     <>
-      <Image
+      <SafeImage
         src={src}
         alt={alt}
         width={width}
@@ -57,7 +57,7 @@ export function EnlargeableImage({
                 className="relative h-auto max-h-[90vh] w-auto max-w-5xl"
               >
                 <div className="relative h-full w-full overflow-hidden rounded-xl bg-[#1c1c1c] p-1.5 ring-1 ring-white/10">
-                  <Image
+                  <SafeImage
                     src={src}
                     alt={alt}
                     width={1280}

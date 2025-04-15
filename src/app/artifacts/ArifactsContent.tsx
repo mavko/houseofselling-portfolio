@@ -1,8 +1,9 @@
 'use client'
 
-import Image, { StaticImageData } from 'next/image'
+import { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import { BeakerIcon } from '@heroicons/react/24/solid'
+import { SafeImage } from '@/components/SafeImage'
 
 import woordwave from '@/images/craft/woordwave.png'
 import houseofselling from '@/images/craft/houseofselling-crest-red:black.png'
@@ -193,7 +194,7 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
   if (item.type === 'image') {
     return (
       <div className="">
-        <Image
+        <SafeImage
           src={item.src}
           alt={item.alt}
           className="h-auto w-full bg-cover"
@@ -235,14 +236,14 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
 export default function ArtifactsContent() {
   return (
     <main className="rounded-[2.5rem] border-t border-white/30 bg-gradient-to-b from-neutral-950/70 via-neutral-950 to-neutral-950/90 px-4 pb-12 backdrop-blur-sm sm:px-6">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-2">
+      <div className="mx-auto max-w-7xl items-center justify-between gap-4 px-2 py-6 sm:flex sm:py-0">
         <div>
           <h2 className="font-mono text-xs font-semibold tracking-widest text-white/80 uppercase">
             Artifacts{' '}
             <span className="hidden sm:block">:: designs and experiments</span>
           </h2>
         </div>
-        <div className="flex gap-4 py-8">
+        <div className="flex gap-4 sm:py-8">
           <Link
             className="font-mono text-xs font-semibold tracking-widest text-white uppercase underline underline-offset-4"
             href="/artifacts/archive/makings-of-ispect"

@@ -1,8 +1,9 @@
 import { type Metadata } from 'next'
-import Image from 'next/image'
+import { SafeImage } from '@/components/SafeImage'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
+import { LinkPreview } from '@/components/LinkPreview'
 import logoAnimaginary from '@/images/logos/animaginary.svg'
 import logoCosmos from '@/images/logos/cosmos.svg'
 import logoHelioStream from '@/images/logos/helio-stream.svg'
@@ -60,14 +61,14 @@ function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: 'Things I’ve made trying to put my dent in the universe.',
+  description: 'Things I've made trying to put my dent in the universe.',
 }
 
 export default function Projects() {
   return (
     <SimpleLayout
       title="Some of my projects."
-      intro="I’ve worked on quite a few smaller and larger projects over the years but these are the ones that I’m most proud of. Coming from a family that's been in the construction industry for generations, it became quite natural to try and solve their issues with technology, so most if not all projects are in construction or properties."
+      intro="I've worked on quite a few smaller and larger projects over the years but these are the ones that I'm most proud of. Coming from a family that's been in the construction industry for generations, it became quite natural to try and solve their issues with technology, so most if not all projects are in construction or properties."
     >
       <ul
         role="list"
@@ -76,7 +77,7 @@ export default function Projects() {
         {projects.map((project) => (
           <Card as="li" key={project.name}>
             <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image
+              <SafeImage
                 src={project.logo}
                 alt=""
                 className="h-8 w-8"

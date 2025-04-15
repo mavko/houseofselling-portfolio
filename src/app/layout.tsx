@@ -4,7 +4,7 @@ import { GeistSans } from 'geist/font/sans'
 import { Providers } from '@/app/providers'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import Image from 'next/image'
+import { SafeImage } from '@/components/SafeImage'
 
 import '@/styles/tailwind.css'
 
@@ -13,6 +13,7 @@ import textureBackground from '@/images/texture.png'
 import Link from 'next/link'
 import { CameraIcon, FaceSmileIcon } from '@heroicons/react/24/solid'
 import { GitHubIcon } from '@/components/SocialIcons'
+
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
@@ -80,7 +81,7 @@ export default function RootLayout({
         <Providers>
           <div className="relative">
             <header className="relative px-4 sm:px-6">
-              <div className="mx-auto flex max-w-7xl items-center justify-between px-2 py-6">
+              <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-2 py-6 sm:flex-row sm:gap-0">
                 <div className="flex items-center gap-4 px-2 sm:gap-5">
                   <Link
                     href="/"
@@ -140,13 +141,13 @@ export default function RootLayout({
               className="pointer-events-none fixed inset-x-0 bottom-0 z-20 h-20 w-full bg-black/20 backdrop-blur-[5px] backdrop-filter [mask-image:linear-gradient(to_top,_rgb(0,_0,_0)_25%,_transparent)]"
             />
           </div>
-          <Image
+          <SafeImage
             src={headerBackground}
             alt="Background"
             priority
             className="absolute inset-x-0 top-0 -z-10 h-screen w-full forced-colors:hidden"
           />
-          <Image
+          <SafeImage
             src={textureBackground}
             alt="Background"
             priority
