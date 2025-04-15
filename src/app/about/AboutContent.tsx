@@ -17,8 +17,7 @@ export default function AboutContent() {
           height={160}
         />
         <h2 className="text-[#e8e6e3]">
-          Hi, I'm Sebastian — a creative technologist, product designer, and
-          self-taught builder from Sweden.
+          Hi, I'm Sebastian — a self taught designer who codes from Sweden.
         </h2>
         <p>
           I've spent the last decade designing and launching software tools in
