@@ -34,7 +34,7 @@ const projects = [
     name: 'sharedspace',
     description: 'Proptech for tenant / home owner associations',
     href: 'https://sharedspace.se/',
-    year: [2024, 'ongoing'],
+    year: [2024, 2025],
   },
   {
     id: nanoid(),
@@ -43,15 +43,15 @@ const projects = [
     href: 'https://www.drykit.co',
     year: [2023, 2024],
   },
-  {
-    id: nanoid(),
-    name: 'scribbly',
-    description: 'Automated transcription service',
-    href: 'https://scribbly.se/',
-    year: [2024],
-  },
 ]
 const startups = [
+  {
+    id: nanoid(),
+    name: 'scribbly.ai',
+    description: 'Bespoke AI transcriptions in seconds',
+    href: 'https://scribbly.se/',
+    year: [2024, 'ongoing'],
+  },
   {
     id: nanoid(),
     name: 'icontrol',

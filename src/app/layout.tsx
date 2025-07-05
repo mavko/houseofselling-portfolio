@@ -77,82 +77,60 @@ export default function RootLayout({
       <head>
         <meta name="view-transition" content="same-origin" />
       </head>
-      <body className="h-screen w-full bg-neutral-950 font-sans text-[#f2f2f2] antialiased">
+      <body className="h-screen w-full bg-black font-sans text-[#f2f2f2] antialiased">
         <Providers>
           <div className="relative">
-            <header className="relative px-4 sm:px-6">
-              <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-2 py-6 sm:flex-row sm:gap-0">
-                <div className="flex items-center gap-4 px-2 sm:gap-5">
-                  <Link
-                    href="/"
-                    className="font-mono text-xs font-semibold tracking-widest text-white uppercase"
-                  >
-                    house of selling anno 1990
-                  </Link>
+            <main className="mx-auto max-w-5xl px-4 sm:px-6">
+              <header className="relative">
+                <div className="flex w-full flex-col justify-between gap-4 py-6 sm:flex-row sm:items-center sm:gap-0">
+                  <div className="flex items-center gap-4 sm:gap-5">
+                    <Link
+                      href="/"
+                      className="font-mono text-xs font-semibold tracking-widest text-white uppercase"
+                    >
+                      house of selling anno 1990
+                    </Link>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <Link
+                      href="/about"
+                      className="flex items-center gap-2 font-mono text-xs font-semibold tracking-widest text-white uppercase"
+                    >
+                      About
+                    </Link>
+                    <Link
+                      href="/visuals"
+                      className="flex items-center gap-2 font-mono text-xs font-semibold tracking-widest text-white uppercase"
+                    >
+                      Visuals
+                    </Link>
+                    <Link
+                      aria-label="Say hello on GitHub"
+                      className="flex items-center gap-2 font-mono text-xs font-semibold tracking-widest text-white uppercase"
+                      href="https://github.com/mavko"
+                    >
+                      Github
+                    </Link>
+                    <Link
+                      aria-label="Download resume"
+                      className="font-mono text-xs font-semibold tracking-widest text-white uppercase"
+                      href="/resume2025.pdf"
+                    >
+                      Resume
+                    </Link>
+                  </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <Link
-                    href="/about"
-                    className="flex items-center gap-2 font-mono text-xs font-semibold tracking-widest text-white uppercase"
-                  >
-                    About
-                  </Link>
-                  <Link
-                    href="/visuals"
-                    className="flex items-center gap-2 font-mono text-xs font-semibold tracking-widest text-white uppercase"
-                  >
-                    Visuals
-                  </Link>
-                  <Link
-                    aria-label="Say hello on GitHub"
-                    className="flex items-center gap-2 font-mono text-xs font-semibold tracking-widest text-white uppercase"
-                    href="https://github.com/mavko"
-                  >
-                    Github
-                  </Link>
-                  <Link
-                    aria-label="Download resume"
-                    className="font-mono text-xs font-semibold tracking-widest text-white uppercase"
-                    href="/resume2025.pdf"
-                  >
-                    Resume
-                  </Link>
-                </div>
-              </div>
-            </header>
-
-            <div
-              className="pointer-events-none absolute inset-0 z-10 px-4 sm:px-6"
-              aria-hidden="true"
-            >
-              <div className="mx-auto flex h-full max-w-7xl gap-[14px]">
-                <div className="flex-1 border-x border-white/[7.5%]"></div>
-                <div className="hidden flex-1 border-x border-white/[7.5%] sm:block"></div>
-                <div className="hidden flex-1 border-x border-white/[7.5%] lg:block"></div>
-              </div>
-            </div>
-
-            {children}
-            <footer className="py-12 text-center text-sm/6 text-white">
-              © 2025 house of selling.
+              </header>
+              {children}
+            </main>
+            <footer className="py-42 text-center font-mono text-base/12 font-semibold text-white">
+              © 2025 // house of selling
             </footer>
             <div
               aria-hidden="true"
               className="pointer-events-none fixed inset-x-0 bottom-0 z-20 h-20 w-full bg-black/20 backdrop-blur-[5px] backdrop-filter [mask-image:linear-gradient(to_top,_rgb(0,_0,_0)_25%,_transparent)]"
             />
           </div>
-          <SafeImage
-            src={headerBackground}
-            alt="Background"
-            priority
-            className="absolute inset-x-0 top-0 -z-10 h-screen w-full forced-colors:hidden"
-          />
-          <SafeImage
-            src={textureBackground}
-            alt="Background"
-            priority
-            className="absolute inset-x-0 top-0 -z-5 h-screen w-full opacity-50 mix-blend-screen forced-colors:hidden"
-          />
         </Providers>
         <Analytics />
         <SpeedInsights />

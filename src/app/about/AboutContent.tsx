@@ -7,8 +7,8 @@ import portraitImage from '@/images/avatar.png'
 
 export default function AboutContent() {
   return (
-    <main className="rounded-[2.5rem] border-t border-white/30 bg-black/70 px-6 pt-6 pb-36 sm:px-10 sm:pt-24">
-      <section className="prose prose-p:text-[#ededed] prose-a:text-neutral-200 mx-auto max-w-3xl text-pretty">
+    <main className="pb-36 sm:pt-24">
+      <section className="prose prose-p:text-[#ededed] prose-a:text-neutral-200 prose-p:text-base/9 max-w-3xl text-pretty">
         <SafeImage
           src={portraitImage}
           alt="picture of sebastian"

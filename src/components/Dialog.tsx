@@ -19,15 +19,15 @@ export default function DialogComponent() {
     <>
       <Button
         onClick={() => setIsOpen(true)}
-        className="group relative inline-block cursor-pointer rounded-xl p-px text-base leading-6 font-semibold text-white no-underline"
+        className="group relative inline-block cursor-pointer rounded-lg p-px text-base/9 leading-6 font-semibold text-white no-underline"
       >
-        <span className="absolute inset-0 overflow-hidden rounded-xl">
-          <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"></span>
+        <span className="absolute inset-0 overflow-hidden rounded-sm">
+          <span className="absolute inset-0 h-2 w-full rounded-full bg-radial-[at_50%_75%] from-orange-300 via-orange-400/5 to-orange-950/5 to-90% opacity-0 transition-opacity duration-500 group-hover:opacity-100"></span>
         </span>
-        <div className="relative z-10 flex h-12 items-center space-x-1 rounded-xl bg-zinc-950 px-4 py-1.5 ring-1 ring-white/30">
+        <div className="relative z-10 flex h-12 items-center space-x-1 rounded-xl px-4 ring-1 ring-white/15">
           <span>{`What am I up to?`}</span>
         </div>
-        <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-linear-to-r from-emerald-400/0 via-green-300 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40"></span>
+        <span className="absolute -bottom-0 left-[1.125rem] h-1 w-[calc(100%-2.25rem)] bg-linear-to-r from-orange-400/0 via-orange-300 to-orange-400/0 transition-opacity duration-500 group-hover:opacity-40"></span>
       </Button>
       <AnimatePresence>
         {isOpen && (
@@ -53,15 +53,13 @@ export default function DialogComponent() {
               >
                 <DialogTitle className="flex items-center justify-between text-lg font-bold">
                   <span className="font-mono text-sm font-semibold tracking-widest text-white/90 uppercase">
-                    What am I up to?
+                    My projects and startups since 2012.
                   </span>
                   <button onClick={() => setIsOpen(false)}>
                     <XMarkIcon className="size-6 fill-white/60" />
                   </button>
                 </DialogTitle>
-                <Description className="font-mono text-xs font-semibold tracking-widest text-white/80 uppercase">
-                  My projects and startups since 2012.
-                </Description>
+
                 <ProjectsList />
               </DialogPanel>
             </div>

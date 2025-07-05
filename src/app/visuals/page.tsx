@@ -121,7 +121,7 @@ export default function Visuals() {
 
   return (
     <>
-      <section className="relative z-10 columns-1 gap-3 space-y-3 rounded-[2.5rem] border-t border-white/30 bg-black/70 px-3 py-6 pt-6 pb-36 sm:columns-2 sm:px-6 sm:pt-24 md:columns-3">
+      <section className="relative z-10 columns-1 gap-2 space-y-3 pb-36 sm:columns-2 md:columns-3">
         {photoItems.map((item, index) => (
           <div
             key={`photo-${index}`}
@@ -129,7 +129,7 @@ export default function Visuals() {
               setSelectedItem(item)
               setIsOpen(true)
             }}
-            className="relative h-fit w-full cursor-pointer overflow-hidden rounded-xl bg-[#1c1c1c] p-1.5 ring-1 ring-white/20"
+            className="relative h-fit w-full cursor-pointer overflow-hidden rounded-xl border border-white/10"
           >
             <MediaComponent item={item} />
           </div>
