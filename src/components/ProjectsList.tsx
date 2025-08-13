@@ -12,6 +12,22 @@ const current = [
     year: [2025, 'ongoing'],
   },
 ]
+const projects = [
+  {
+    id: nanoid(),
+    name: 'inspectionbooker.com',
+    description: 'TBA',
+    href: 'https://inspectionbooker.com/',
+    year: [2025, 'ongoing'],
+  },
+  {
+    id: nanoid(),
+    name: 'sharedspace',
+    description: 'Proptech for tenant / home owner associations',
+    href: 'https://sharedspace.se/',
+    year: [2024, 'ongoing'],
+  },
+]
 const business = [
   {
     id: nanoid(),
@@ -27,15 +43,6 @@ const business = [
     href: 'https://www.besiktningsman.se',
     year: [2017, 'ongoing'],
   },
-]
-const projects = [
-  {
-    id: nanoid(),
-    name: 'sharedspace',
-    description: 'Proptech for tenant / home owner associations',
-    href: 'https://sharedspace.se/',
-    year: [2024, 2025],
-  },
   {
     id: nanoid(),
     name: 'drykit.co',
@@ -44,13 +51,14 @@ const projects = [
     year: [2023, 2024],
   },
 ]
+
 const startups = [
   {
     id: nanoid(),
     name: 'scribbly.ai',
     description: 'Bespoke AI transcriptions in seconds',
     href: 'https://scribbly.se/',
-    year: [2024, 'ongoing'],
+    year: [2024, 2025],
   },
   {
     id: nanoid(),
