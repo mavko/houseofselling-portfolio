@@ -22,9 +22,9 @@ const projects = [
   },
   {
     id: nanoid(),
-    name: 'sharedspace',
+    name: 'minibrf.se',
     description: 'Proptech for tenant / home owner associations',
-    href: 'https://sharedspace.se/',
+    href: 'https://minibrf.se/',
     year: [2024, 'ongoing'],
   },
 ]

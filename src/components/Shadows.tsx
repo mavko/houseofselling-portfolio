@@ -191,8 +191,8 @@ export function Shadows({
             </Link>
           </div>
           <h1 className="text-3xl/12 font-semibold tracking-tight text-balance text-white sm:text-5xl/14">
-            Designer and builder with over a decade+ of taking ideas from zero
-            to one.
+            Designer who Codes, with over a decade+ of taking ideas from zero to
+            one.
           </h1>
           <div className="flex items-center gap-4">
             <DialogComponent />
