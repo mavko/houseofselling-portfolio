@@ -46,11 +46,11 @@ export default function AboutContent() {
           Lately, I've been building with Next.js, Tailwind CSS, shadcn/ui, and
           Cursor.ai (they're changing the game). One outcome has been —
           <a
-            href="https://sharedspace.se"
+            href="https://minibrf.se"
             className="text-green-300!"
             target="_blank"
           >
-            sharedspace.se
+            minibrf.se
           </a>
           — a proptech page builder. The speed at which you can launch new ideas
           now is phenomenal and I'm loving it.

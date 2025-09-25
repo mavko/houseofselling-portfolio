@@ -15,13 +15,6 @@ const current = [
 const projects = [
   {
     id: nanoid(),
-    name: 'inspectionbooker.com',
-    description: 'TBA',
-    href: 'https://inspectionbooker.com/',
-    year: [2025, 'ongoing'],
-  },
-  {
-    id: nanoid(),
     name: 'minibrf.se',
     description: 'Proptech for tenant / home owner associations',
     href: 'https://minibrf.se/',

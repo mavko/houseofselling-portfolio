@@ -153,7 +153,7 @@ export default function ArtifactsContent() {
             item={{
               type: 'video',
               src: '/videos/sharedspace-landing-anim.mp4',
-              alt: 'sharedspace landing page',
+              alt: 'minibrf landing page',
             }}
           />
         </div>
