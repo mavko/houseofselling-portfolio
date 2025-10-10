@@ -56,14 +56,14 @@ const startups = [
   {
     id: nanoid(),
     name: 'icontrol',
-    description: 'Replace paper with an app on the field [maintained]',
+    description: 'Replace paper with an app on the field',
     href: '/artifacts/archive/makings-of-icontrol',
     year: [2014, 2017],
   },
   {
     id: nanoid(),
     name: 'ispect',
-    description: 'The standardized inspection app [maintained]',
+    description: 'The standardized inspection app',
     href: '/artifacts/archive/makings-of-ispect',
     year: [2012, 2024],
   },

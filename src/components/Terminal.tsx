@@ -36,7 +36,9 @@ const Terminal = () => {
         '<span class="bg-white/20  p-1">Bio accessed</span><span class=" text-sm font-medium whitespace-normal">❯  Designer who codes. Over a decade of building and designing products. </span><br>',
       )
       .pauseFor(0.01)
-      .typeString('<span class="font-medium">Accessing work archive...</span><br>')
+      .typeString(
+        '<span class="font-medium">Accessing work archive...</span><br>',
+      )
       .pauseFor(0.01)
       .typeString(
         '<span class="bg-white/20  p-1">starting up</span> <a href="https://gcorp-landingpage.vercel.app/" target="_blank" rel="noopener noreferrer" class="mr-1  whitespace-normal underline underline-offset-2 text-sm font-medium">// g:corp ❯ micro service app studio </a><br>',
@@ -49,7 +51,7 @@ const Terminal = () => {
         '<span class="bg-white/20  p-1">key contributor</span> <a href="https://www.besiktningsman.se" target="_blank" rel="noopener noreferrer" class="mr-1  whitespace-normal underline underline-offset-2 text-sm font-medium">// besiktningsman.se ❯ Swedens premier construction inspection agency</a><br>',
       )
       .typeString(
-        '<span class="bg-white/20  p-1">maintaining</span> <a href="https://www.ispect.se" target="_blank" rel="noopener noreferrer" class="mr-1  whitespace-normal underline underline-offset-2 text-sm font-medium">// ispect.se ❯ The standardized inspection app</a><br>',
+        '<span class="bg-white/20  p-1">maintaining</span> <a href="https://ispect-landing-page.vercel.app/" target="_blank" rel="noopener noreferrer" class="mr-1  whitespace-normal underline underline-offset-2 text-sm font-medium">// ispect.se ❯ The standardized inspection app</a><br>',
       )
       .typeString(
         '<span class="bg-white/20  p-1">previously</span> <a href="https://www.icontrolapp.se" target="_blank" rel="noopener noreferrer" class="mr-1  whitespace-normal underline underline-offset-2 text-sm font-medium">// icontrol ❯ replace paper with an app on the field </a><br>',
@@ -68,7 +70,7 @@ const Terminal = () => {
       >
         <tr
           id="terminal-text"
-          className="w-full cursor-pointer gap-y-8 space-y-8 p-2 hover:bg-black/10"
+          className="w-full cursor-pointer space-y-8 gap-y-8 p-2 hover:bg-black/10"
         >
           <td className="p-1.5">
             <span id="code"></span>
