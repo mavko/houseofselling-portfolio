@@ -6,9 +6,9 @@ import { nanoid } from 'nanoid'
 const current = [
   {
     id: nanoid(),
-    name: 'Open to Opportunities',
-    description: 'From traditional industries to crypto and blockchain',
-    href: 'https://www.linkedin.com/in/sebastian-selling/',
+    name: 'coldharbor.cc',
+    description: 'Niche ai native app dev studio',
+    href: 'https://www.coldharbor.cc/',
     year: [2025, 'ongoing'],
   },
 ]
@@ -19,6 +19,22 @@ const projects = [
     description: 'Proptech for tenant / home owner associations',
     href: 'https://minibrf.se/',
     year: [2024, 'ongoing'],
+  },
+  {
+    id: nanoid(),
+    name: 'podsavings.com',
+    description:
+      'Saw a good podcast sponsorship but forgot the url? Let PodSavings Agent find it for you.',
+    href: 'https://podsavings.com/',
+    year: [2025, 'ongoing'],
+  },
+  {
+    id: nanoid(),
+    name: 'heredium.co',
+    description:
+      'AI Agent for analyzing real estate markets across cities and towns.',
+    href: 'https://heredium.co/',
+    year: [2025, 'ongoing'],
   },
 ]
 const business = [
