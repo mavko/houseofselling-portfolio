@@ -30,17 +30,17 @@ export function DropdownMenu({
         className={clsx(
           className,
           // Anchor positioning
-          '[--anchor-gap:calc(var(--spacing)*2)] [--anchor-padding:calc(var(--spacing)*1)] data-[anchor~=start]:[--anchor-offset:-6px] data-[anchor~=end]:[--anchor-offset:6px] sm:data-[anchor~=start]:[--anchor-offset:-4px] sm:data-[anchor~=end]:[--anchor-offset:4px]',
+          '[--anchor-gap:calc(var(--spacing)*2)] [--anchor-padding:calc(var(--spacing)*1)] data-[anchor~=end]:[--anchor-offset:6px] data-[anchor~=start]:[--anchor-offset:-6px] sm:data-[anchor~=end]:[--anchor-offset:4px] sm:data-[anchor~=start]:[--anchor-offset:-4px]',
           // Base styles
           'isolate w-max rounded-xl p-1',
           // Invisible border that is only visible in `forced-colors` mode for accessibility purposes
-          'outline outline-1 outline-transparent focus:outline-hidden',
+          'outline-1 outline-transparent focus:outline-hidden',
           // Handle scrolling when menu won't fit in viewport
           'overflow-y-auto',
           // Popover background
-          'bg-white/75 backdrop-blur-xl dark:bg-zinc-800/75',
+          'bg-black/25 text-white backdrop-blur-sm',
           // Shadows
-          'shadow-lg ring-1 ring-zinc-950/10 dark:ring-inset dark:ring-white/10',
+          'border border-white/30 shadow-lg ring-1 ring-white ring-inset',
           // Define grid at the menu level if subgrid is supported
           'supports-[grid-template-columns:subgrid]:grid supports-[grid-template-columns:subgrid]:grid-cols-[auto_1fr_1.5rem_0.5rem_auto]',
         )}
@@ -61,9 +61,9 @@ export function DropdownItem({
     // Base styles
     'group cursor-default rounded-lg px-3.5 py-2.5 focus:outline-hidden sm:px-3 sm:py-1.5',
     // Text styles
-    'text-left text-base/6 text-zinc-950 sm:text-sm/6 dark:text-white forced-colors:text-[CanvasText]',
+    'text-left text-base/6 text-white sm:text-sm/6 forced-colors:text-[CanvasText]',
     // Focus
-    'data-focus:bg-blue-500 data-focus:text-white',
+    'data-focus:bg-white/20 data-focus:text-white',
     // Disabled state
     'data-disabled:opacity-50',
     // Forced colors mode
@@ -95,7 +95,7 @@ export function DropdownHeader({
   return (
     <div
       {...props}
-      className={clsx(className, 'col-span-5 px-3.5 pb-1 pt-2.5 sm:px-3')}
+      className={clsx(className, 'col-span-5 px-3.5 pt-2.5 pb-1 sm:px-3')}
     />
   )
 }
@@ -125,7 +125,7 @@ export function DropdownHeading({
       {...props}
       className={clsx(
         className,
-        'col-span-full grid grid-cols-[1fr_auto] gap-x-12 px-3.5 pb-1 pt-2 text-sm/5 font-medium text-zinc-500 sm:px-3 sm:text-xs/5 dark:text-zinc-400',
+        'col-span-full grid grid-cols-[1fr_auto] gap-x-12 px-3.5 pt-2 pb-1 text-sm/5 font-medium text-zinc-500 sm:px-3 sm:text-xs/5 dark:text-zinc-400',
       )}
     />
   )
@@ -197,7 +197,7 @@ export function DropdownShortcut({
         <kbd
           key={index}
           className={clsx([
-            'min-w-[2ch] text-center font-sans capitalize text-zinc-400 group-data-focus:text-white forced-colors:group-data-focus:text-[HighlightText]',
+            'min-w-[2ch] text-center font-sans text-zinc-400 capitalize group-data-focus:text-white forced-colors:group-data-focus:text-[HighlightText]',
             // Make sure key names that are longer than one character (like "Tab") have extra space
             index > 0 && char.length > 1 && 'pl-1',
           ])}

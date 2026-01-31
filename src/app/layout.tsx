@@ -2,6 +2,7 @@ import { type Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 
 import { Providers } from '@/app/providers'
+import { ResumeDropdown } from '@/components/ResumeDropdown'
 import { VercelAnalytics } from '@/components/VercelAnalytics'
 
 import '@/styles/tailwind.css'
@@ -111,13 +112,7 @@ export default function RootLayout({
                     >
                       Github
                     </Link>
-                    <Link
-                      aria-label="Download resume"
-                      className=""
-                      href="/resume2025.pdf"
-                    >
-                      Resume
-                    </Link>
+                    <ResumeDropdown />
                   </div>
                 </div>
               </header>
