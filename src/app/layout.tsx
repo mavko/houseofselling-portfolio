@@ -92,7 +92,7 @@ export default function RootLayout({
                         <path
                           d="M0 10.4999H30.4348M30.4348 10.4999H39M30.4348 10.4999L34 14.5M30.4348 10.4999L34 6.49986M30.4348 10.4999V21.5M30.4348 10.4999L25 16.5M30.4348 10.4999V0M30.4348 10.4999L17 5.5M30.4348 10.4999L17 15.5M30.4348 10.4999L25 4.5"
                           stroke="currentColor"
-                          stroke-width="0.75"
+                          strokeWidth="0.75"
                         ></path>{' '}
                       </svg>
                     </Link>

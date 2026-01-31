@@ -180,9 +180,9 @@ export function Shadows({
         />
       </div>
 
-      <div className="absolute inset-y-0 left-20 z-10 h-full">
+      <div className="absolute inset-y-0 left-5 z-10 h-full w-full md:left-20">
         <div className="space-y-6 py-16 lg:py-24">
-          <h1 className="max-w-lg text-3xl/12 font-semibold tracking-tight text-balance text-white">
+          <h1 className="max-w-xs text-2xl font-semibold tracking-tight text-wrap text-white sm:text-3xl/12 md:max-w-lg md:text-balance">
             Design engineer - with over a decade+ of taking ideas from zero to
             one.
           </h1>
