@@ -125,7 +125,7 @@ export function Shadows({
         style={{
           position: 'absolute',
           inset: -displacementScale,
-          filter: animationEnabled ? `url(#${id}) blur(4px)` : 'none',
+          filter: animationEnabled ? `url(#${id}) blur(6px)` : 'none',
         }}
       >
         {animationEnabled && (
@@ -180,18 +180,10 @@ export function Shadows({
         />
       </div>
 
-      <div className="absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
+      <div className="absolute inset-y-0 left-20 z-10 h-full">
         <div className="space-y-6 py-16 lg:py-24">
-          <div className="flex items-center gap-6">
-            <Link
-              className="font-mono text-xs font-semibold tracking-tight text-white uppercase underline underline-offset-4"
-              href="https://www.linkedin.com/in/sebastianselling/"
-            >
-              sebastian selling
-            </Link>
-          </div>
-          <h1 className="text-3xl/12 font-semibold tracking-tight text-balance text-white sm:text-5xl/14">
-            Designer who Codes, with over a decade+ of taking ideas from zero to
+          <h1 className="max-w-lg text-3xl/12 font-semibold tracking-tight text-balance text-white">
+            Design engineer - with over a decade+ of taking ideas from zero to
             one.
           </h1>
           <div className="flex items-center gap-4">
@@ -199,19 +191,6 @@ export function Shadows({
           </div>
         </div>
       </div>
-
-      {noise && noise.opacity > 0 && (
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            backgroundImage: `url("https://framerusercontent.com/images/g0QcWrxr87K0ufOxIUFBakwYA8.png")`,
-            backgroundSize: noise.scale * 200,
-            backgroundRepeat: 'repeat',
-            opacity: noise.opacity / 2,
-          }}
-        />
-      )}
     </div>
   )
 }

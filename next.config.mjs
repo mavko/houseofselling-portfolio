@@ -11,6 +11,14 @@ const withMDX = createMDX({
 
 const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+  experimental: {
+    optimizePackageImports: [
+      '@headlessui/react',
+      '@heroicons/react/24/solid',
+      '@heroicons/react/16/solid',
+      '@radix-ui/react-hover-card',
+    ],
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.(mp4|webm)$/,

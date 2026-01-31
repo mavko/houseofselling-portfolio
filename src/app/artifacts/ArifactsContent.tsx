@@ -26,7 +26,7 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
         <SafeImage
           src={item.src}
           alt={item.alt}
-          className="h-full w-full rounded-xl border border-white/10"
+          className="h-full w-full rounded-xl border border-white/10 bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)]"
           priority
           blurDataURL={item.src.toString()}
         />
@@ -37,7 +37,7 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
     <>
       <video
         src={item.src as string}
-        className="hidden h-full w-full rounded-xl border border-white/10 bg-cover object-cover sm:block"
+        className="hidden h-full w-full rounded-xl border border-white/10 bg-[rgba(48,48,48,.3)] bg-cover object-cover [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)] sm:block"
         autoPlay
         muted
         playsInline
@@ -47,7 +47,7 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
       </video>
       <video
         src={item.src as string}
-        className="block h-full w-full rounded-xl border border-white/5 bg-cover object-cover sm:hidden"
+        className="block h-full w-full rounded-xl border border-white/5 bg-[rgba(48,48,48,.3)] bg-cover object-cover [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)] sm:hidden"
         autoPlay
         muted
         playsInline
@@ -67,7 +67,7 @@ export default function ArtifactsContent() {
         <div>
           <Link
             href="https://www.besiktningsman.se"
-            className="group flex flex-col rounded-xl"
+            className="group flex flex-col rounded-xl bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)]"
             target="_blank"
           >
             <MediaComponent
@@ -83,7 +83,7 @@ export default function ArtifactsContent() {
         <div>
           <Link
             href="https://www.scribbly.se"
-            className="group flex flex-col rounded-xl"
+            className="group flex flex-col rounded-xl bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)]"
             target="_blank"
           >
             <MediaComponent
@@ -95,7 +95,7 @@ export default function ArtifactsContent() {
         <div className="col-span-full">
           <Link
             href="/artifacts/archive/makings-of-ispect"
-            className="group flex flex-col rounded-xl"
+            className="group flex flex-col rounded-xl bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)]"
           >
             <MediaComponent
               item={{
@@ -171,7 +171,7 @@ export default function ArtifactsContent() {
         <div className="col-span-full">
           <Link
             href="/artifacts/archive/makings-of-icontrol"
-            className="group flex flex-col"
+            className="group flex flex-col bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)]"
           >
             <MediaComponent
               item={{ type: 'image', src: icontrol, alt: 'icontrol logo' }}

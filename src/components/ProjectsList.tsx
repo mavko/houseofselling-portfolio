@@ -6,9 +6,9 @@ import { nanoid } from 'nanoid'
 const current = [
   {
     id: nanoid(),
-    name: 'coldharbor.cc',
-    description: 'Niche ai native app dev studio',
-    href: 'https://www.coldharbor.cc/',
+    name: 'Open',
+    description: 'Available for opportunities in startups',
+    href: 'https://www.linkedin.com/in/sebastianselling/',
     year: [2025, 'ongoing'],
   },
 ]
@@ -16,23 +16,15 @@ const projects = [
   {
     id: nanoid(),
     name: 'minibrf.se',
-    description: 'Proptech for tenant / home owner associations',
+    description: 'Proptech for multi-tenant associations.',
     href: 'https://minibrf.se/',
     year: [2024, 'ongoing'],
   },
   {
     id: nanoid(),
-    name: 'podsavings.com',
-    description:
-      'Saw a good podcast sponsorship but forgot the url? Let PodSavings Agent find it for you.',
-    href: 'https://podsavings.com/',
-    year: [2025, 'ongoing'],
-  },
-  {
-    id: nanoid(),
     name: 'heredium.co',
     description:
-      'AI Agent for analyzing real estate markets across cities and towns.',
+      'AI Agent for analyzing real estate markets across cities (in dev)',
     href: 'https://heredium.co/',
     year: [2025, 'ongoing'],
   },
@@ -204,17 +196,18 @@ const Project: React.FC<{
     <motion.a
       href={href}
       rel="noopener noreferrer"
-      className="relative -m-3 flex w-[calc(100%+2rem)] items-center gap-3 overflow-hidden rounded-xl p-2 text-sm outline-hidden transition-colors hover:bg-white/5 hover:ring-1 hover:ring-white/10"
+      className="relative -m-3 flex w-[calc(100%+2rem)] items-center gap-3 overflow-hidden rounded-2xl p-2 text-base outline-hidden transition-colors hover:bg-white/10 hover:ring-1 hover:ring-white/15 hover:backdrop-blur-md"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay }}
     >
-      <span ref={nameRef} className="inline-block font-medium text-[#e8e6e3]">
+      <span ref={nameRef} className="inline-block pr-3 font-medium text-white">
         {name}
       </span>
+
       <span
         ref={descriptionRef}
-        className="-ml-2 hidden text-white/80 sm:inline-block"
+        className="-ml-2 hidden text-white/60 sm:inline-block"
       >
         {description}
       </span>
@@ -240,11 +233,11 @@ const Project: React.FC<{
 
 const ProjectsList = () => {
   return (
-    <>
+    <section className="space-y-3">
       <motion.h2
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="-m-3 my-5 flex items-center p-2 text-xs font-bold"
+        className="-m-3 mt-5 mb-2 flex items-center p-2 text-base font-bold"
       >
         Currently
       </motion.h2>
@@ -256,7 +249,20 @@ const ProjectsList = () => {
       <motion.h2
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="-m-3 my-5 flex items-center p-2 text-xs font-bold"
+        className="-m-3 mt-5 mb-2 flex items-center p-2 text-base font-bold"
+      >
+        Startups
+      </motion.h2>
+
+      <div className="mx-auto mt-4 flex w-full max-w-7xl flex-col gap-7">
+        {startups.map((project, index) => (
+          <Project key={project.id} {...project} index={index} />
+        ))}
+      </div>
+      <motion.h2
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="-m-3 mt-5 mb-2 flex items-center p-2 text-base font-bold"
       >
         Business
       </motion.h2>
@@ -268,7 +274,7 @@ const ProjectsList = () => {
       <motion.h2
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="-m-3 my-5 flex items-center p-2 text-xs font-bold"
+        className="-m-3 mt-5 mb-2 flex items-center p-2 text-base font-bold"
       >
         Projects
       </motion.h2>
@@ -277,20 +283,7 @@ const ProjectsList = () => {
           <Project key={project.id} {...project} index={index} />
         ))}
       </div>
-      <motion.h2
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="-m-3 my-5 flex items-center p-2 text-xs font-bold"
-      >
-        Startups
-      </motion.h2>
-
-      <div className="mx-auto mt-4 flex w-full max-w-7xl flex-col gap-7">
-        {startups.map((project, index) => (
-          <Project key={project.id} {...project} index={index} />
-        ))}
-      </div>
-    </>
+    </section>
   )
 }
 

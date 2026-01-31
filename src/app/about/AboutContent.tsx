@@ -26,7 +26,7 @@ export default function AboutContent() {
           products—
           <Link
             href="/artifacts/archive/makings-of-ispect"
-            className="text-green-300!"
+            className="text-white"
             target="_blank"
           >
             ispect
@@ -34,7 +34,7 @@ export default function AboutContent() {
           and{' '}
           <Link
             href="/artifacts/archive/makings-of-icontrol"
-            className="text-green-300!"
+            className="text-white"
             target="_blank"
           >
             icontrol
@@ -43,38 +43,20 @@ export default function AboutContent() {
           implementing UI in Vue and CSS.
         </p>
         <p>
-          Lately, I've been building with Next.js, Tailwind CSS, shadcn/ui, and
-          Cursor.ai (they're changing the game). One outcome has been —
-          <a
-            href="https://minibrf.se"
-            className="text-green-300!"
-            target="_blank"
-          >
-            minibrf.se
-          </a>
-          — a proptech page builder. The speed at which you can launch new ideas
-          now is phenomenal and I'm loving it.
+          Lately, I've been building with Cursor and Claude Code, letting me
+          ship fullstack apps completely solo which has been absolutely
+          mindblowing. Currently completely refactoring and migrating our legacy
+          codebase of 200k lines of code iSpect from vue 2.7, vuetify and
+          graphql to Nuxt 4 and I've reached feature parity in weeks. Something
+          that would've taken months just a few years ago.
         </p>
 
-        <p>
-          Right now I'm based in Sweden, with family in Texas. I'm open to
-          <strong className="pl-1 text-white">
-            remote U.S.-based opportunities
-          </strong>{' '}
-          , especially teams building with conviction, taste, and a vision for a
-          better web.
-        </p>
-        <p>
-          I'm also quietly building a personal creative brand called Merchant of
-          Nostalgia — inspired by Diablo II, the golden age of web, and the kind
-          of timeless design that still sparks joy.
-        </p>
         <p className="font-semibold text-[#e8e6e3]">Highlights:</p>
         <ul className="list-disc pl-5 text-[#ededed]">
           <li>
             <strong className="text-white">Design:</strong> Product design,
             branding, storytelling,{' '}
-            <Link href="/visuals" className="text-green-300!">
+            <Link href="/visuals" className="text-white">
               visuals
             </Link>
             , and good old sketch/figma — (also eyeing{' '}
@@ -89,19 +71,14 @@ export default function AboutContent() {
           </li>
           <li>
             <strong className="pr-1 text-white">UI Engineering:</strong>
-            React, Vue, Tailwind, Astro, Shadcn/ui, Framer Motion
+            Cursor, Claude, Antigravity, using Nextjs / Nuxt + Shadcn UI
           </li>
         </ul>
         <p className="font-semibold text-[#e8e6e3]">What I'm Looking For</p>
         <ul className="list-disc pl-5 text-[#ededed]">
-          <li>Remote-friendly, U.S.-based companies</li>
+          <li>Remote-friendly, EU & U.S.-based companies</li>
           <li>Design-driven teams with conviction and soul</li>
           <li>Products that make the internet fun, useful, and human again</li>
-          <li>
-            <Link href="https://www.allmight.us/" className="text-green-300!">
-              Next-generation Americana Builders
-            </Link>
-          </li>
         </ul>
         <p className="text-pretty">
           <strong className="text-white">Outside of work,</strong> I'm a husband
@@ -110,24 +87,23 @@ export default function AboutContent() {
             Victoria
           </Link>{' '}
           and dad to our daughter Elizabeth. I lift weights, ride bikes, play
-          classic games, and dream about building digital worlds that make
-          people feel something.
+          classic games, and dream about building useful technology.
         </p>
         <h3 className="text-[#e8e6e3]">Connect:</h3>
         <div className="flex w-fit flex-col gap-6 text-sm sm:flex-row">
           <Link
-            className="text-green-300!"
+            className="text-amber-300!"
             href="mailto:houseofselling@proton.me"
           >
             houseofselling@proton.me
           </Link>
 
-          <Link className="text-green-300!" href="https://x.com/houseofselling">
+          <Link className="text-amber-300!" href="https://x.com/houseofselling">
             X / @houseofselling
           </Link>
 
           <Link
-            className="text-green-300!"
+            className="text-amber-300!"
             href="https://linkedin/sebastianselling/"
           >
             Linkedin / sebastian.selling
