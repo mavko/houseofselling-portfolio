@@ -43,13 +43,13 @@ export default function DialogComponent() {
               exit={{ opacity: 0 }}
               className="fixed inset-0 z-10 bg-black/50"
             />
-            <div className="fixed inset-0 z-20 flex w-screen items-center justify-center p-20">
+            <div className="fixed inset-0 z-20 flex w-screen items-center justify-center p-2 md:p-20">
               <DialogPanel
                 as={motion.div}
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                className="flex h-full w-full max-w-4xl flex-col overflow-y-scroll rounded-2xl border border-white/20 bg-[linear-gradient(259deg,rgba(0,0,0,0.4)_40.8115%,rgba(28,28,28,0.6)_98%)] p-12 shadow-[rgba(255,255,255,0.2)_2px_0px_10px_-2px_inset,rgba(255,255,255,0.04)_0px_-3px_8px_3px_inset,rgba(255,255,255,0.08)_-4px_-5px_3px_-4px_inset,rgba(255,255,255,0.4)_2px_4px_2px_-3px_inset,rgba(255,255,255,0.7)_3px_3px_1.5px_-4px_inset,rgba(0,0,0,0.9)_0px_20px_30px_5px] backdrop-blur-md duration-300 ease-out"
+                className="flex h-full w-full max-w-4xl flex-col overflow-y-scroll rounded-2xl border border-white/20 bg-[linear-gradient(259deg,rgba(0,0,0,0.4)_40.8115%,rgba(28,28,28,0.6)_98%)] p-4 shadow-[rgba(255,255,255,0.2)_2px_0px_10px_-2px_inset,rgba(255,255,255,0.04)_0px_-3px_8px_3px_inset,rgba(255,255,255,0.08)_-4px_-5px_3px_-4px_inset,rgba(255,255,255,0.4)_2px_4px_2px_-3px_inset,rgba(255,255,255,0.7)_3px_3px_1.5px_-4px_inset,rgba(0,0,0,0.9)_0px_20px_30px_5px] backdrop-blur-md duration-300 ease-out md:p-12"
               >
                 <DialogTitle className="flex items-center justify-between text-lg font-bold">
                   <span className="font-sans text-base font-medium tracking-normal text-white/90">

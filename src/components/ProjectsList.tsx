@@ -233,7 +233,7 @@ const Project: React.FC<{
 
 const ProjectsList = () => {
   return (
-    <section className="space-y-3">
+    <section className="mr-3 space-y-3 sm:mr-0">
       <motion.h2
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
