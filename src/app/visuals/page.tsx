@@ -121,7 +121,7 @@ export default function Visuals() {
 
   return (
     <>
-      <section className="relative z-10 columns-1 gap-2 space-y-3 pb-36 sm:columns-2 md:columns-3">
+      <section className="relative z-0 columns-1 gap-2 space-y-3 pb-36 sm:columns-2 md:columns-3">
         {photoItems.map((item, index) => (
           <div
             key={`photo-${index}`}
