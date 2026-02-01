@@ -9,7 +9,7 @@ const current = [
     name: 'Open',
     description: 'Available for opportunities in startups',
     href: 'https://www.linkedin.com/in/sebastianselling/',
-    year: [2025, 'ongoing'],
+    year: [2026, 'ongoing'],
   },
 ]
 const projects = [
