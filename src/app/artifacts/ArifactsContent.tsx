@@ -3,15 +3,19 @@
 import { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import { SafeImage } from '@/components/SafeImage'
-
-import scribblyFolder from '@/images/craft/scribbly-folder.png'
+import { motion } from 'framer-motion'
 import ispectLogo from '@/images/craft/ispect-header.jpg'
 import icontrol from '@/images/craft/icontrol-header.jpg'
 import solveExtension from '@/images/craft/solve-extension-icon.jpg'
 import bmLogo from '@/images/craft/bm-logo.jpg'
 import scribLogo from '@/images/craft/scribbly-icon.jpg'
 import wordwaveLogo from '@/images/craft/wordwave.jpg'
-
+import ibLogo from '@/images/craft/IB.png'
+import bLogo from '@/images/craft/B.png'
+import {
+  artifactContainerVariants,
+  artifactItemVariants,
+} from '@/components/animations/homeStagger'
 type CraftItem = {
   type: 'image' | 'video'
   src: string | StaticImageData
@@ -26,8 +30,8 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
         <SafeImage
           src={item.src}
           alt={item.alt}
-          className="h-full w-full rounded-xl border border-white/10 bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)]"
-          priority
+          className="h-full w-full overflow-hidden rounded-xl border border-white/10 bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)]"
+          preload
           blurDataURL={item.src.toString()}
         />
       </div>
@@ -62,9 +66,14 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
 export default function ArtifactsContent() {
   return (
     <main>
-      <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2">
+      <motion.div
+        className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2"
+        variants={artifactContainerVariants}
+        initial="hidden"
+        animate="visible"
+      >
         {/* 1st item: bmLogo */}
-        <div>
+        <motion.div variants={artifactItemVariants}>
           <Link
             href="https://www.besiktningsman.se"
             className="group flex flex-col rounded-xl bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)]"
@@ -78,9 +87,9 @@ export default function ArtifactsContent() {
               }}
             />
           </Link>
-        </div>
+        </motion.div>
         {/* 2nd item: scribLogo */}
-        <div>
+        <motion.div variants={artifactItemVariants}>
           <Link
             href="https://www.scribbly.se"
             className="group flex flex-col rounded-xl bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)]"
@@ -90,9 +99,12 @@ export default function ArtifactsContent() {
               item={{ type: 'image', src: scribLogo, alt: 'scribbly ai logo' }}
             />
           </Link>
-        </div>
+        </motion.div>
         {/* 10th item: ispectLogo with link */}
-        <div className="col-span-full">
+        <motion.div
+          className="col-span-full"
+          variants={artifactItemVariants}
+        >
           <Link
             href="/artifacts/archive/makings-of-ispect"
             className="group flex flex-col rounded-xl bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)]"
@@ -105,9 +117,27 @@ export default function ArtifactsContent() {
               }}
             />
           </Link>
-        </div>
+        </motion.div>
+        <motion.div variants={artifactItemVariants}>
+          <MediaComponent
+            item={{
+              type: 'image',
+              src: bLogo,
+              alt: 'inspectionbooker',
+            }}
+          />
+        </motion.div>
+        <motion.div variants={artifactItemVariants}>
+          <MediaComponent
+            item={{
+              type: 'image',
+              src: ibLogo,
+              alt: 'inspectionbooker',
+            }}
+          />
+        </motion.div>
         {/* 3rd item: solveExtension */}
-        <div>
+        <motion.div variants={artifactItemVariants}>
           <MediaComponent
             item={{
               type: 'image',
@@ -115,9 +145,9 @@ export default function ArtifactsContent() {
               alt: 'solve web extension icon',
             }}
           />
-        </div>
+        </motion.div>
         {/* 4th item: gohst grid */}
-        <div>
+        <motion.div variants={artifactItemVariants}>
           <MediaComponent
             item={{
               type: 'video',
@@ -125,10 +155,10 @@ export default function ArtifactsContent() {
               alt: 'file upload stagger',
             }}
           />
-        </div>
+        </motion.div>
 
         {/* 6th item: wordwaveLogo */}
-        <div>
+        <motion.div variants={artifactItemVariants}>
           <MediaComponent
             item={{
               type: 'image',
@@ -136,9 +166,9 @@ export default function ArtifactsContent() {
               alt: 'Woordwave logotype',
             }}
           />
-        </div>
+        </motion.div>
         {/* 7th item: file-upload-scribbly.mp4 */}
-        <div>
+        <motion.div variants={artifactItemVariants}>
           <MediaComponent
             item={{
               type: 'video',
@@ -146,9 +176,9 @@ export default function ArtifactsContent() {
               alt: 'file upload stagger',
             }}
           />
-        </div>
+        </motion.div>
         {/* 8th item: sharedspace-landing-anim.mp4 */}
-        <div>
+        <motion.div variants={artifactItemVariants}>
           <MediaComponent
             item={{
               type: 'video',
@@ -156,9 +186,9 @@ export default function ArtifactsContent() {
               alt: 'minibrf landing page',
             }}
           />
-        </div>
+        </motion.div>
         {/* 9th item: quick-scribbly-animation.mp4 */}
-        <div>
+        <motion.div variants={artifactItemVariants}>
           <MediaComponent
             item={{
               type: 'video',
@@ -166,19 +196,22 @@ export default function ArtifactsContent() {
               alt: 'scribbly landing page',
             }}
           />
-        </div>
+        </motion.div>
         {/* 5th item: icontrol */}
-        <div className="col-span-full">
+        <motion.div
+          className="col-span-full"
+          variants={artifactItemVariants}
+        >
           <Link
             href="/artifacts/archive/makings-of-icontrol"
-            className="group flex flex-col bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)]"
+            className="group flex flex-col overflow-hidden bg-[rgba(48,48,48,.3)]"
           >
             <MediaComponent
               item={{ type: 'image', src: icontrol, alt: 'icontrol logo' }}
             />
           </Link>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </main>
   )
 }
