@@ -41,7 +41,7 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
     <>
       <video
         src={item.src as string}
-        className="hidden h-full w-full rounded-xl border border-white/10 bg-[rgba(48,48,48,.3)] bg-cover object-cover [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)] sm:block"
+        className="hidden h-full w-full rounded-xl border border-white/10 bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)] sm:block"
         autoPlay
         muted
         playsInline
@@ -101,10 +101,7 @@ export default function ArtifactsContent() {
           </Link>
         </motion.div>
         {/* 10th item: ispectLogo with link */}
-        <motion.div
-          className="col-span-full"
-          variants={artifactItemVariants}
-        >
+        <motion.div className="col-span-full" variants={artifactItemVariants}>
           <Link
             href="/artifacts/archive/makings-of-ispect"
             className="group flex flex-col rounded-xl bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)]"
@@ -179,13 +176,18 @@ export default function ArtifactsContent() {
         </motion.div>
         {/* 8th item: sharedspace-landing-anim.mp4 */}
         <motion.div variants={artifactItemVariants}>
-          <MediaComponent
-            item={{
-              type: 'video',
-              src: '/videos/sharedspace-landing-anim.mp4',
-              alt: 'minibrf landing page',
-            }}
-          />
+          <Link
+            href="https://sharedspace-iteration-page.vercel.app/"
+            className="group flex h-full w-full flex-col overflow-hidden bg-[rgba(48,48,48,.3)]"
+          >
+            <MediaComponent
+              item={{
+                type: 'video',
+                src: '/videos/sharedspace-landing-anim.mp4',
+                alt: 'minibrf landing page',
+              }}
+            />
+          </Link>
         </motion.div>
         {/* 9th item: quick-scribbly-animation.mp4 */}
         <motion.div variants={artifactItemVariants}>
@@ -198,10 +200,7 @@ export default function ArtifactsContent() {
           />
         </motion.div>
         {/* 5th item: icontrol */}
-        <motion.div
-          className="col-span-full"
-          variants={artifactItemVariants}
-        >
+        <motion.div className="col-span-full" variants={artifactItemVariants}>
           <Link
             href="/artifacts/archive/makings-of-icontrol"
             className="group flex flex-col overflow-hidden bg-[rgba(48,48,48,.3)]"
