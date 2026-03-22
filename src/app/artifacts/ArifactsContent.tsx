@@ -9,7 +9,6 @@ import icontrol from '@/images/craft/icontrol-header.jpg'
 import solveExtension from '@/images/craft/solve-extension-icon.jpg'
 import bmLogo from '@/images/craft/bm-logo.jpg'
 import scribLogo from '@/images/craft/scribbly-icon.jpg'
-import wordwaveLogo from '@/images/craft/wordwave.jpg'
 import ibLogo from '@/images/craft/IB.png'
 import bLogo from '@/images/craft/B.png'
 import {
@@ -30,7 +29,7 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
         <SafeImage
           src={item.src}
           alt={item.alt}
-          className="h-full w-full overflow-hidden rounded-xl border border-white/10 bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)]"
+          className="h-full w-full overflow-hidden rounded-4xl border border-white/10 bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)]"
           preload
           blurDataURL={item.src.toString()}
         />
@@ -41,7 +40,7 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
     <>
       <video
         src={item.src as string}
-        className="hidden h-full w-full rounded-xl border border-white/10 bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)] sm:block"
+        className="hidden h-full w-full rounded-4xl border border-white/10 bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)] sm:block"
         autoPlay
         muted
         playsInline
@@ -51,7 +50,7 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
       </video>
       <video
         src={item.src as string}
-        className="block h-full w-full rounded-xl border border-white/5 bg-[rgba(48,48,48,.3)] bg-cover object-cover [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)] sm:hidden"
+        className="block h-full w-full rounded-4xl border border-white/5 bg-[rgba(48,48,48,.3)] bg-cover object-cover [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)] sm:hidden"
         autoPlay
         muted
         playsInline
@@ -76,7 +75,7 @@ export default function ArtifactsContent() {
         <motion.div variants={artifactItemVariants}>
           <Link
             href="https://www.besiktningsman.se"
-            className="group flex flex-col rounded-xl bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)]"
+            className="group flex flex-col rounded-4xl"
             target="_blank"
           >
             <MediaComponent
@@ -88,23 +87,21 @@ export default function ArtifactsContent() {
             />
           </Link>
         </motion.div>
-        {/* 2nd item: scribLogo */}
+        {/* 2nd item: isp liquid metal */}
         <motion.div variants={artifactItemVariants}>
-          <Link
-            href="https://www.scribbly.se"
-            className="group flex flex-col rounded-xl bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)]"
-            target="_blank"
-          >
-            <MediaComponent
-              item={{ type: 'image', src: scribLogo, alt: 'scribbly ai logo' }}
-            />
-          </Link>
+          <MediaComponent
+            item={{
+              type: 'video',
+              src: '/videos/isp-liquid-metal.mp4',
+              alt: 'ISP liquid metal',
+            }}
+          />
         </motion.div>
         {/* 10th item: ispectLogo with link */}
         <motion.div className="col-span-full" variants={artifactItemVariants}>
           <Link
             href="/artifacts/archive/makings-of-ispect"
-            className="group flex flex-col rounded-xl bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)]"
+            className="group flex flex-col rounded-4xl"
           >
             <MediaComponent
               item={{
@@ -154,15 +151,17 @@ export default function ArtifactsContent() {
           />
         </motion.div>
 
-        {/* 6th item: wordwaveLogo */}
+        {/* 6th item: scribLogo */}
         <motion.div variants={artifactItemVariants}>
-          <MediaComponent
-            item={{
-              type: 'image',
-              src: wordwaveLogo,
-              alt: 'Woordwave logotype',
-            }}
-          />
+          <Link
+            href="https://www.scribbly.se"
+            className="group flex flex-col rounded-xl bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)]"
+            target="_blank"
+          >
+            <MediaComponent
+              item={{ type: 'image', src: scribLogo, alt: 'scribbly ai logo' }}
+            />
+          </Link>
         </motion.div>
         {/* 7th item: file-upload-scribbly.mp4 */}
         <motion.div variants={artifactItemVariants}>

@@ -25,7 +25,7 @@ export function MorphingDialogText() {
         }}
         className="w-fit rounded-xl bg-white/5 outline-1 outline-white/50"
       >
-        <MorphingDialogTitle className="text-[10px] font-medium text-white sm:text-xs">
+        <MorphingDialogTitle className="font-title text-[10px] font-medium text-white sm:text-xs">
           What am I up to?
         </MorphingDialogTitle>
       </MorphingDialogTrigger>

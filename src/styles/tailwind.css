@@ -6,6 +6,8 @@
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
+  --font-title: var(--font-mona-sans), ui-sans-serif, system-ui, sans-serif;
+
   --text-*: initial;
   --text-xs: 0.8125rem;
   --text-xs--line-height: 1.5rem;
@@ -111,8 +113,85 @@
 }
 .bg {
   --grid-offset: calc(50% - 3.75rem / 2);
-  background-image: linear-gradient(to right, #0b0b0b 1px, transparent 1px),
+  background-image:
+    linear-gradient(to right, #0b0b0b 1px, transparent 1px),
     linear-gradient(to bottom, #0b0b0b 1px, transparent 1px);
   background-position: var(--grid-offset) var(--grid-offset);
   background-size: 3.75rem 3.75rem;
+}
+
+/* rauno.me/projects-style dual-line reveal (CSS keyframes, GPU-friendly) */
+@keyframes line-fill {
+  0% {
+    width: 0;
+    background: transparent;
+  }
+  50% {
+    background: rgba(255, 255, 255, 0.14);
+  }
+  100% {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@keyframes line-shine {
+  0% {
+    width: 0;
+    background: transparent;
+  }
+  50% {
+    background: rgba(255, 255, 255, 0.35);
+  }
+  100% {
+    width: 100%;
+    background: transparent;
+  }
+}
+
+@layer components {
+  .project-line-track {
+    flex: 1;
+    position: relative;
+    min-height: 1px;
+  }
+
+  .project-line-track--anim::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    height: 1px;
+    width: 0;
+    animation: line-fill 1s ease forwards;
+    animation-delay: var(--line-delay-after, 0s);
+  }
+
+  .project-line-track--anim::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    height: 1px;
+    width: 0;
+    z-index: 3;
+    animation: line-shine 1s ease forwards;
+    animation-delay: var(--line-delay-before, 0s);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-line-track--anim::before,
+    .project-line-track--anim::after {
+      animation: none;
+      width: 100%;
+    }
+
+    .project-line-track--anim::after {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .project-line-track--anim::before {
+      display: none;
+    }
+  }
 }

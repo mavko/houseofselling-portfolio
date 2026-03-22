@@ -120,8 +120,10 @@ export function Shadows({
         height: '100%',
         ...style,
       }}
+      className="px-8 py-24"
     >
       <div
+        className="z-0"
         style={{
           position: 'absolute',
           inset: -displacementScale,
@@ -180,15 +182,15 @@ export function Shadows({
         />
       </div>
 
-      <div className="absolute inset-y-0 left-5 z-10 h-full w-full md:left-20">
-        <div className="space-y-6 py-16 lg:py-24">
-          <h1 className="max-w-xs text-2xl font-semibold tracking-tight text-wrap text-white sm:text-3xl/12 md:max-w-lg md:text-balance">
-            Design engineer - with over a decade+ of taking ideas from zero to
-            one.
-          </h1>
-          <div className="flex items-center gap-4">
-            <DialogComponent />
-          </div>
+      <div className="relative z-10 flex flex-col space-y-6 text-center">
+        <h1 className="font-sans text-3xl leading-tight font-bold text-white font-stretch-200% md:text-balance">
+          Design and agentic engineering. <br />
+        </h1>
+        <p className="font-title text-xl leading-tight font-medium text-white font-stretch-200%">
+          Decade+ of taking ideas from zero to one.
+        </p>
+        <div className="flex items-center justify-center gap-4">
+          <DialogComponent />
         </div>
       </div>
     </div>

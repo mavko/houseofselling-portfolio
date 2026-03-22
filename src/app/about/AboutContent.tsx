@@ -16,7 +16,7 @@ export default function AboutContent() {
           width={160}
           height={160}
         />
-        <h2 className="text-[#e8e6e3]">
+        <h2 className="font-title text-[#e8e6e3]">
           Hi, I'm Sebastian — a self taught designer who codes from Sweden.
         </h2>
         <p>

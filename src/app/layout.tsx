@@ -1,4 +1,5 @@
 import { type Metadata } from 'next'
+import { Mona_Sans } from 'next/font/google'
 import { GeistSans } from 'geist/font/sans'
 
 import { Providers } from '@/app/providers'
@@ -8,6 +9,12 @@ import { VercelAnalytics } from '@/components/VercelAnalytics'
 import '@/styles/tailwind.css'
 
 import Link from 'next/link'
+
+const monaSans = Mona_Sans({
+  subsets: ['latin'],
+  variable: '--font-mona-sans',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -68,7 +75,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={GeistSans.className} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${GeistSans.className} ${monaSans.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <meta name="view-transition" content="same-origin" />
       </head>
@@ -76,7 +87,7 @@ export default function RootLayout({
         <Providers>
           <div className="relative">
             <main className="mx-auto max-w-5xl px-4 sm:px-6">
-              <header className="relative z-20 my-2 rounded-md bg-[rgba(48,48,48,.3)] p-2.5 px-[16px] text-sm font-medium [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)]">
+              <header className="relative z-20 my-2 p-2 font-sans text-xs font-semibold font-stretch-125%">
                 <div className="flex w-full flex-col justify-between gap-4 sm:flex-row sm:items-center sm:gap-0">
                   <div className="flex items-center gap-4 sm:gap-5">
                     <Link href="/" className="flex items-center gap-3">
@@ -118,7 +129,7 @@ export default function RootLayout({
               </header>
               {children}
             </main>
-            <footer className="py-42 text-center font-sans text-base/12 font-medium text-white">
+            <footer className="font-title py-42 text-center text-base/12 font-medium text-white">
               © 2025 // house of selling
             </footer>
             <div

@@ -64,7 +64,7 @@ export default function Essentials() {
 
           <div className="space-y-6 p-4 sm:p-8">
             <section className="space-y-3">
-              <h2 className="text-base font-semibold text-neutral-200">
+              <h2 className="font-title text-base font-semibold text-neutral-200">
                 16" MacBook Pro, Intel Core i7, 16GB RAM (2017)
               </h2>
               <p className="text-sm font-medium text-pretty text-neutral-300">
@@ -73,7 +73,7 @@ export default function Essentials() {
                 <br />
                 Can't say I'm not eyeing that M-series Macbooks, though...
               </p>
-              <h2 className="text-base font-semibold text-neutral-200">
+              <h2 className="font-title text-base font-semibold text-neutral-200">
                 Sony WH-1000XM5
               </h2>
               <p className="text-sm font-medium text-pretty text-neutral-300">
@@ -83,7 +83,7 @@ export default function Essentials() {
               </p>
             </section>
             <section>
-              <h2 className="text-base font-semibold text-neutral-200">
+              <h2 className="font-title text-base font-semibold text-neutral-200">
                 Samsung UltraWide 49"
               </h2>
               <p className="text-sm font-medium text-neutral-300">
@@ -92,7 +92,7 @@ export default function Essentials() {
               </p>
             </section>
             <section>
-              <h2 className="text-base font-semibold text-neutral-200">
+              <h2 className="font-title text-base font-semibold text-neutral-200">
                 Apple Magic Keyboard
               </h2>
               <p className="text-sm font-medium text-neutral-300">
@@ -101,7 +101,7 @@ export default function Essentials() {
               </p>
             </section>
             <section>
-              <h2 className="text-base font-semibold text-neutral-200">
+              <h2 className="font-title text-base font-semibold text-neutral-200">
                 Apple Magic Mouse
               </h2>
               <p className="text-sm font-medium text-neutral-300">
@@ -128,7 +128,7 @@ export default function Essentials() {
 
           <div className="space-y-6 p-4 sm:p-8">
             <section className="mb-3 border-b border-white/20 pb-3">
-              <h2 className="text-base font-semibold text-neutral-200">
+              <h2 className="font-title text-base font-semibold text-neutral-200">
                 Cursor.ai but eyeing Zed
               </h2>
               <p className="text-sm font-medium text-pretty text-neutral-300">
@@ -139,7 +139,7 @@ export default function Essentials() {
               </p>
             </section>
             <section>
-              <h2 className="text-base font-semibold text-neutral-200">
+              <h2 className="font-title text-base font-semibold text-neutral-200">
                 Warp Terminal
               </h2>
               <p className="text-sm font-medium text-neutral-300">
@@ -148,7 +148,7 @@ export default function Essentials() {
               </p>
             </section>
             <section>
-              <h2 className="text-base font-semibold text-neutral-200">
+              <h2 className="font-title text-base font-semibold text-neutral-200">
                 Tailwindcss
               </h2>
               <p className="text-sm font-medium text-neutral-300">
@@ -177,7 +177,7 @@ export default function Essentials() {
 
           <div className="space-y-6 p-4 sm:p-8">
             <section className="">
-              <h2 className="text-base font-semibold text-neutral-200">
+              <h2 className="font-title text-base font-semibold text-neutral-200">
                 Figma
               </h2>
               <p className="text-sm font-medium text-pretty text-neutral-300">
@@ -206,7 +206,7 @@ export default function Essentials() {
           </div>
           <div className="space-y-6 p-4 sm:p-8">
             <section className="">
-              <h2 className="text-base font-semibold text-neutral-200">
+              <h2 className="font-title text-base font-semibold text-neutral-200">
                 Raycast
               </h2>
               <p className="text-sm font-medium text-pretty text-neutral-300">
@@ -217,7 +217,7 @@ export default function Essentials() {
               </p>
             </section>
             <section>
-              <h2 className="text-base font-semibold text-neutral-200">
+              <h2 className="font-title text-base font-semibold text-neutral-200">
                 Linear
               </h2>
               <p className="text-sm font-medium text-neutral-300">
@@ -228,7 +228,7 @@ export default function Essentials() {
               </p>
             </section>
             <section>
-              <h2 className="text-base font-semibold text-neutral-200">
+              <h2 className="font-title text-base font-semibold text-neutral-200">
                 Discord
               </h2>
               <p className="text-sm font-medium text-neutral-300">
@@ -238,7 +238,7 @@ export default function Essentials() {
               </p>
             </section>
             <section>
-              <h2 className="text-base font-semibold text-neutral-200">
+              <h2 className="font-title text-base font-semibold text-neutral-200">
                 Cleanshot X
               </h2>
               <p className="text-sm font-medium text-neutral-300">
@@ -247,7 +247,7 @@ export default function Essentials() {
               </p>
             </section>
             <section>
-              <h2 className="text-base font-semibold text-neutral-200">
+              <h2 className="font-title text-base font-semibold text-neutral-200">
                 Apple Notes
               </h2>
               <p className="text-sm font-medium text-neutral-300">

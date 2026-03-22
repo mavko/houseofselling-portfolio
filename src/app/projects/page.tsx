@@ -66,7 +66,7 @@ export default function Projects() {
       >
         {projects.map((project) => (
           <Card as="li" key={project.name}>
-            <h2 className="mt-6 text-base font-semibold text-zinc-100">
+            <h2 className="font-title mt-6 text-base font-semibold text-zinc-100">
               <Card.Link href={project.link.href}>{project.name}</Card.Link>
             </h2>
             <Card.Description>{project.description}</Card.Description>
