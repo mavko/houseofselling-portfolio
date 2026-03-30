@@ -2,7 +2,9 @@ import { Card } from '@/components/Card'
 import { Section } from '@/components/Section'
 import { TextEffectPerLine } from '@/components/TextPerLine'
 import { SafeImage } from '@/components/SafeImage'
-import avatarImage from '@/images/dither.avif'
+import { mediaUrl } from '@/lib/media-url'
+
+const avatarImage = mediaUrl('bundled/dither.avif')
 import { type Metadata } from 'next'
 import { ArticleLayout } from '@/components/ArticleLayout'
 

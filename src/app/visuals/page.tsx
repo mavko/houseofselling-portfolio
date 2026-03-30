@@ -1,91 +1,196 @@
 'use client'
 
-import { type Metadata } from 'next'
-import { StaticImageData } from 'next/image'
 import { SafeImage } from '@/components/SafeImage'
 import { useState } from 'react'
 import VisualsDialog, { VisualItem } from '@/components/VisualsDialog'
-
-// content
-import bussStation from '@/images/photos/bussStation.jpg'
-import codingEvening from '@/images/photos/codingEvening.jpeg'
-import cyberTullen from '@/images/photos/cyberTullen.jpg'
-import danderydDystopia from '@/images/photos/danderydDystopia.jpg'
-import drowsyLangholmen from '@/images/photos/drowsyLangholmen.jpg'
-import duskofSummer from '@/images/photos/duskofSummer.jpg'
-import dystopianStairway from '@/images/photos/dystopianStairway.jpg'
-import fragmentsOfSelf from '@/images/photos/fragmentsOfSelf.jpg'
-import gardetsunset from '@/images/photos/gardetsunset.jpeg'
-import hornstulldimman from '@/images/photos/hornstulldimman.jpeg'
-import laptop from '@/images/photos/laptop.jpg'
-import lift from '@/images/photos/lift.jpg'
-import lonelyDawn from '@/images/photos/lonelyDawn.jpg'
-import midnightFog from '@/images/photos/midnightFog.jpg'
-import midsommarNatten from '@/images/photos/midsommarnatten.jpeg'
-import midsommarWinter from '@/images/photos/midsommarwinter.jpg'
-import midsummarMorning from '@/images/photos/midsummarMorning.jpg'
-import midsummerDusk from '@/images/photos/midsummerDusk.jpg'
-import midwinterRailroad from '@/images/photos/midwinter-raildroad.jpg'
-import nightHUD from '@/images/photos/nightHUD.jpg'
-import pathwaytoNowhere from '@/images/photos/pathwaytoNowhere.jpg'
-import saturdayLights from '@/images/photos/saturdayLights.jpg'
-import september from '@/images/photos/september.jpg'
-import sleepylangholmen from '@/images/photos/sleepylangholmen.jpg'
-import subwayDystopia from '@/images/photos/subwayDystopia.jpg'
-import summerDream from '@/images/photos/summerDream.jpg'
-import sunsetPov from '@/images/photos/sunsetPov.jpg'
-import swedishMidsummer from '@/images/photos/swedishMidsummer.jpg'
-import telefonplanApt from '@/images/photos/telefonplanapt.jpg'
-import templeWarrior from '@/images/photos/templeWarrior.jpg'
-import vasterhaningeApril from '@/images/photos/vasterhaningeApril.jpg'
-import vasterhaningeShops from '@/images/photos/vasterhaningeShops.jpg'
-import wanderingHorse from '@/images/photos/wanderingHorse.jpg'
-import windowIntoSummer from '@/images/photos/windowIntoSummer.jpg'
-import winteryCity from '@/images/photos/winteryCity.jpg'
-import sharedspaceHeaderPlaceholder from '@/images/photos/sharedspace-header-placeholder.jpg'
+import { mediaUrl } from '@/lib/media-url'
 
 const photoItems: VisualItem[] = [
   {
     type: 'image',
-    src: sharedspaceHeaderPlaceholder,
+    src: mediaUrl('bundled/photos/sharedspace-header-placeholder.jpg'),
     alt: 'Sharedspace Landing Page',
   },
-  { type: 'image', src: bussStation, alt: 'Cyber dusk bus station' },
-  { type: 'video', src: '/videos/subwayMorning.mp4', alt: 'The dusk train' },
-  { type: 'image', src: laptop, alt: 'Laptop' },
-  { type: 'image', src: codingEvening, alt: 'Evening of coding' },
-  { type: 'image', src: cyberTullen, alt: 'Hornstull walkway cyberwave style' },
-  { type: 'image', src: danderydDystopia, alt: 'Danderyd dystopia' },
-  { type: 'image', src: drowsyLangholmen, alt: 'Drowsy Langholmen' },
-  { type: 'image', src: duskofSummer, alt: 'Dusk of summer' },
-  { type: 'image', src: dystopianStairway, alt: 'Dystopian stairway' },
-  { type: 'image', src: fragmentsOfSelf, alt: 'Fragments of self' },
-  { type: 'image', src: gardetsunset, alt: 'Gardet sunset' },
-  { type: 'image', src: hornstulldimman, alt: 'Hornstull dimman' },
-  { type: 'image', src: lift, alt: 'Lift' },
-  { type: 'image', src: lonelyDawn, alt: 'Lonely dawn' },
-  { type: 'image', src: midnightFog, alt: 'Midnight fog' },
-  { type: 'image', src: midsommarNatten, alt: 'Midsommar natten' },
-  { type: 'image', src: midsommarWinter, alt: 'Midsommar winter' },
-  { type: 'image', src: midsummarMorning, alt: 'Midsummer morning' },
-  { type: 'image', src: midsummerDusk, alt: 'Midsummer dusk' },
-  { type: 'image', src: midwinterRailroad, alt: 'Midwinter railroad' },
-  { type: 'image', src: nightHUD, alt: 'Night HUD' },
-  { type: 'image', src: pathwaytoNowhere, alt: 'Pathway to nowhere' },
-  { type: 'image', src: saturdayLights, alt: 'Saturday lights' },
-  { type: 'image', src: september, alt: 'September' },
-  { type: 'image', src: sleepylangholmen, alt: 'Sleepy Langholmen' },
-  { type: 'image', src: subwayDystopia, alt: 'Subway dystopia' },
-  { type: 'image', src: summerDream, alt: 'Summer dream' },
-  { type: 'image', src: sunsetPov, alt: 'Sunset POV' },
-  { type: 'image', src: swedishMidsummer, alt: 'Swedish midsummer' },
-  { type: 'image', src: telefonplanApt, alt: 'Telefonplan apartment' },
-  { type: 'image', src: templeWarrior, alt: 'Temple warrior' },
-  { type: 'image', src: vasterhaningeApril, alt: 'Vasterhaninge April' },
-  { type: 'image', src: vasterhaningeShops, alt: 'Vasterhaninge shops' },
-  { type: 'image', src: wanderingHorse, alt: 'Wandering horse' },
-  { type: 'image', src: windowIntoSummer, alt: 'Window into summer' },
-  { type: 'image', src: winteryCity, alt: 'Wintery city' },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/bussStation.jpg'),
+    alt: 'Cyber dusk bus station',
+  },
+  {
+    type: 'video',
+    src: mediaUrl('videos/subwayMorning.mp4'),
+    alt: 'The dusk train',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/laptop.jpg'),
+    alt: 'Laptop',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/codingEvening.jpeg'),
+    alt: 'Evening of coding',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/cyberTullen.jpg'),
+    alt: 'Hornstull walkway cyberwave style',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/danderydDystopia.jpg'),
+    alt: 'Danderyd dystopia',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/drowsyLangholmen.jpg'),
+    alt: 'Drowsy Langholmen',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/duskofSummer.jpg'),
+    alt: 'Dusk of summer',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/dystopianStairway.jpg'),
+    alt: 'Dystopian stairway',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/fragmentsOfSelf.jpg'),
+    alt: 'Fragments of self',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/gardetsunset.jpeg'),
+    alt: 'Gardet sunset',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/hornstulldimman.jpeg'),
+    alt: 'Hornstull dimman',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/lift.jpg'),
+    alt: 'Lift',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/lonelyDawn.jpg'),
+    alt: 'Lonely dawn',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/midnightFog.jpg'),
+    alt: 'Midnight fog',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/midsommarnatten.jpeg'),
+    alt: 'Midsommar natten',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/midsommarwinter.jpg'),
+    alt: 'Midsommar winter',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/midsummarMorning.jpg'),
+    alt: 'Midsummer morning',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/midsummerDusk.jpg'),
+    alt: 'Midsummer dusk',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/midwinter-raildroad.jpg'),
+    alt: 'Midwinter railroad',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/nightHUD.jpg'),
+    alt: 'Night HUD',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/pathwaytoNowhere.jpg'),
+    alt: 'Pathway to nowhere',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/saturdayLights.jpg'),
+    alt: 'Saturday lights',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/september.jpg'),
+    alt: 'September',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/sleepylangholmen.jpg'),
+    alt: 'Sleepy Langholmen',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/subwayDystopia.jpg'),
+    alt: 'Subway dystopia',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/summerDream.jpg'),
+    alt: 'Summer dream',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/sunsetPov.jpg'),
+    alt: 'Sunset POV',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/swedishMidsummer.jpg'),
+    alt: 'Swedish midsummer',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/telefonplanapt.jpg'),
+    alt: 'Telefonplan apartment',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/templeWarrior.jpg'),
+    alt: 'Temple warrior',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/vasterhaningeApril.jpg'),
+    alt: 'Vasterhaninge April',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/vasterhaningeShops.jpg'),
+    alt: 'Vasterhaninge shops',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/wanderingHorse.jpg'),
+    alt: 'Wandering horse',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/windowIntoSummer.jpg'),
+    alt: 'Window into summer',
+  },
+  {
+    type: 'image',
+    src: mediaUrl('bundled/photos/winteryCity.jpg'),
+    alt: 'Wintery city',
+  },
 ]
 
 const MediaComponent = ({ item }: { item: VisualItem }) => {
@@ -102,7 +207,7 @@ const MediaComponent = ({ item }: { item: VisualItem }) => {
   } else {
     return (
       <video
-        src={item.src as string}
+        src={item.src}
         className="h-auto w-full rounded-2xl object-cover"
         autoPlay
         muted

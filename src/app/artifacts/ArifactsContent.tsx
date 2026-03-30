@@ -1,23 +1,17 @@
 'use client'
 
-import { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import { SafeImage } from '@/components/SafeImage'
 import { motion } from 'framer-motion'
-import ispectLogo from '@/images/craft/ispect-header.jpg'
-import icontrol from '@/images/craft/icontrol-header.jpg'
-import solveExtension from '@/images/craft/solve-extension-icon.jpg'
-import bmLogo from '@/images/craft/bm-logo.jpg'
-import scribLogo from '@/images/craft/scribbly-icon.jpg'
-import ibLogo from '@/images/craft/IB.png'
-import bLogo from '@/images/craft/B.png'
+import { mediaUrl } from '@/lib/media-url'
 import {
   artifactContainerVariants,
   artifactItemVariants,
 } from '@/components/animations/homeStagger'
+
 type CraftItem = {
   type: 'image' | 'video'
-  src: string | StaticImageData
+  src: string
   alt: string
   post?: string
 }
@@ -31,7 +25,8 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
           alt={item.alt}
           className="h-full w-full overflow-hidden rounded-4xl border border-white/10 bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)]"
           preload
-          blurDataURL={item.src.toString()}
+          width={1200}
+          height={800}
         />
       </div>
     )
@@ -39,7 +34,7 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
   return (
     <>
       <video
-        src={item.src as string}
+        src={item.src}
         className="hidden h-full w-full rounded-4xl border border-white/10 bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)] sm:block"
         autoPlay
         muted
@@ -49,7 +44,7 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
         <track kind="captions" />
       </video>
       <video
-        src={item.src as string}
+        src={item.src}
         className="block h-full w-full rounded-4xl border border-white/5 bg-[rgba(48,48,48,.3)] bg-cover object-cover [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)] sm:hidden"
         autoPlay
         muted
@@ -81,7 +76,7 @@ export default function ArtifactsContent() {
             <MediaComponent
               item={{
                 type: 'image',
-                src: bmLogo,
+                src: mediaUrl('bundled/craft/bm-logo.jpg'),
                 alt: 'besiktningsman.se logo',
               }}
             />
@@ -92,7 +87,7 @@ export default function ArtifactsContent() {
           <MediaComponent
             item={{
               type: 'video',
-              src: '/videos/isp-liquid-metal.mp4',
+              src: mediaUrl('videos/isp-liquid-metal.mp4'),
               alt: 'ISP liquid metal',
             }}
           />
@@ -106,7 +101,7 @@ export default function ArtifactsContent() {
             <MediaComponent
               item={{
                 type: 'image',
-                src: ispectLogo,
+                src: mediaUrl('bundled/craft/ispect-header.jpg'),
                 alt: 'read: makings of ispect↗',
               }}
             />
@@ -116,7 +111,7 @@ export default function ArtifactsContent() {
           <MediaComponent
             item={{
               type: 'image',
-              src: bLogo,
+              src: mediaUrl('bundled/craft/B.png'),
               alt: 'inspectionbooker',
             }}
           />
@@ -125,7 +120,7 @@ export default function ArtifactsContent() {
           <MediaComponent
             item={{
               type: 'image',
-              src: ibLogo,
+              src: mediaUrl('bundled/craft/IB.png'),
               alt: 'inspectionbooker',
             }}
           />
@@ -135,7 +130,7 @@ export default function ArtifactsContent() {
           <MediaComponent
             item={{
               type: 'image',
-              src: solveExtension,
+              src: mediaUrl('bundled/craft/solve-extension-icon.jpg'),
               alt: 'solve web extension icon',
             }}
           />
@@ -145,7 +140,7 @@ export default function ArtifactsContent() {
           <MediaComponent
             item={{
               type: 'video',
-              src: '/videos/gohst_grid.mp4',
+              src: mediaUrl('videos/gohst_grid.mp4'),
               alt: 'file upload stagger',
             }}
           />
@@ -159,7 +154,11 @@ export default function ArtifactsContent() {
             target="_blank"
           >
             <MediaComponent
-              item={{ type: 'image', src: scribLogo, alt: 'scribbly ai logo' }}
+              item={{
+                type: 'image',
+                src: mediaUrl('bundled/craft/scribbly-icon.jpg'),
+                alt: 'scribbly ai logo',
+              }}
             />
           </Link>
         </motion.div>
@@ -168,7 +167,7 @@ export default function ArtifactsContent() {
           <MediaComponent
             item={{
               type: 'video',
-              src: '/videos/file-upload-scribbly.mp4',
+              src: mediaUrl('videos/file-upload-scribbly.mp4'),
               alt: 'file upload stagger',
             }}
           />
@@ -182,7 +181,7 @@ export default function ArtifactsContent() {
             <MediaComponent
               item={{
                 type: 'video',
-                src: '/videos/sharedspace-landing-anim.mp4',
+                src: mediaUrl('videos/sharedspace-landing-anim.mp4'),
                 alt: 'minibrf landing page',
               }}
             />
@@ -193,7 +192,7 @@ export default function ArtifactsContent() {
           <MediaComponent
             item={{
               type: 'video',
-              src: '/videos/quick-scribbly-animation.mp4',
+              src: mediaUrl('videos/quick-scribbly-animation.mp4'),
               alt: 'scribbly landing page',
             }}
           />
@@ -205,7 +204,11 @@ export default function ArtifactsContent() {
             className="group flex flex-col overflow-hidden bg-[rgba(48,48,48,.3)]"
           >
             <MediaComponent
-              item={{ type: 'image', src: icontrol, alt: 'icontrol logo' }}
+              item={{
+                type: 'image',
+                src: mediaUrl('bundled/craft/icontrol-header.jpg'),
+                alt: 'icontrol logo',
+              }}
             />
           </Link>
         </motion.div>

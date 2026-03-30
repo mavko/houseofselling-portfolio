@@ -3,12 +3,11 @@
 import { Button, Dialog, DialogPanel } from '@headlessui/react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { XMarkIcon } from '@heroicons/react/24/solid'
-import { StaticImageData } from 'next/image'
 import { SafeImage } from './SafeImage'
 
 export type VisualItem = {
   type: 'image' | 'video'
-  src: string | StaticImageData
+  src: string
   alt: string
 }
 

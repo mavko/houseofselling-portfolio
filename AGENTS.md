@@ -9,7 +9,7 @@
 
 ## Learned Workspace Facts
 
-- Next.js 16 with Turbopack does not bundle `.mp4` as importable modules; put clips under `public/` (for example `public/videos/`) and use string paths such as `/videos/name.mp4`.
+- Portfolio images and videos live on **Vercel Blob**. URLs are committed in `src/generated/blob-media.ts` (run `pnpm upload-media` after adding files under `public/videos`, `public/images`, or `src/images` locally, then wire with `mediaUrl()` from `@/lib/media-url`). Keep small assets like `public/og.png` in `public/` when appropriate.
 - Mona Sans comes from `next/font/google` with `subsets: ['latin', 'latin-ext']` and `variable: '--font-mona-sans'` on `<html>`; the Tailwind `font-display` token in `@theme inline` uses the literal `"Mona Sans"` stack so it matches the `@font-face` family name `next/font` emits. Body Geist Sans uses `GeistSans` from `geist/font/sans` (`className` on `<html>`). Do not also wire `Geist` from `next/font/google` to `--font-sans` in parallel—that second stack competes with Tailwind preflight and can break display font application.
 - When using WebGL/shader backgrounds (e.g., `@paper-design/shaders-react`) for hover reveals, keep them always mounted behind `opacity: 0` and toggle animation `speed={0}` instead of unmounting. Mounting WebGL during a hover spring causes severe compile lag. Lock canvas dimensions to the final expanded height to prevent expensive per-frame WebGL resizes during layout animations.
 - Projects are listed at `/projects` (dedicated route); keep the page shell at full viewport height (`min-h-screen` / `h-screen`) so the list entrance does not cause layout shift.

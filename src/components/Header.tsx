@@ -15,7 +15,9 @@ import {
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import avatarImage from '@/images/hoodiemang2.png'
+import { mediaUrl } from '@/lib/media-url'
+
+const avatarImage = mediaUrl('bundled/avatar.png')
 import ThemeToggle from './ThemeToggle'
 import { SafeImage } from './SafeImage'
 

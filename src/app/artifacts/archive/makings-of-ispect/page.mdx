@@ -2,27 +2,46 @@ import { ArticleLayout } from '@/components/ArticleLayout'
 import { EnlargeableImage } from '@/components/EnlargeableImage'
 
 import Link from 'next/link'
+import { mediaUrl } from '@/lib/media-url'
 
-import ispectWeb from '@/images/craft/ispect/ispect_web.jpg'
-import ispectCloseout2020 from '@/images/craft/ispect/ispect-closeout-demo-2020-january.jpg'
-import totalProjectIssues from '@/images/craft/ispect/dashboard_total_issues.png'
-import totalByLocation from '@/images/craft/ispect/dashboard_total_location.png'
-import avgRemedyTime from '@/images/craft/ispect/dashboard_avg_time.png'
-import logotype from '@/images/craft/ispect/logotype_800x600.png'
-import hardhat from '@/images/craft/ispect/ispect_hard_hat.jpg'
-import platformLogo from '@/images/craft/ispect/ispect_plattform_logo.jpg'
+const ispectWeb = mediaUrl('bundled/craft/ispect/ispect_web.jpg')
+const ispectCloseout2020 = mediaUrl(
+  'bundled/craft/ispect/ispect-closeout-demo-2020-january.jpg',
+)
+const totalProjectIssues = mediaUrl(
+  'bundled/craft/ispect/dashboard_total_issues.png',
+)
+const totalByLocation = mediaUrl(
+  'bundled/craft/ispect/dashboard_total_location.png',
+)
+const avgRemedyTime = mediaUrl('bundled/craft/ispect/dashboard_avg_time.png')
+const logotype = mediaUrl('bundled/craft/ispect/logotype_800x600.png')
+const hardhat = mediaUrl('bundled/craft/ispect/ispect_hard_hat.jpg')
+const platformLogo = mediaUrl('bundled/craft/ispect/ispect_plattform_logo.jpg')
 
-import login from '@/images/craft/ispect/2023-refactor/login.png'
-import projects from '@/images/craft/ispect/2023-refactor/projects.png'
-import projectsDarkmode from '@/images/craft/ispect/2023-refactor/projects-darkmode.png'
-import util from '@/images/craft/ispect/2023-refactor/utilization.png'
-import orders from '@/images/craft/ispect/2023-refactor/orders.png'
-import projectInfo from '@/images/craft/ispect/2023-refactor/project-info.png'
-import issues from '@/images/craft/ispect/2023-refactor/issues.png'
-import issuesDarkmode from '@/images/craft/ispect/2023-refactor/issues-darkmode.png'
-import shareReport from '@/images/craft/ispect/2023-refactor/share-report.png'
-import projectActivity from '@/images/craft/ispect/2023-refactor/project-activities.png'
-import verdictEditor from '@/images/craft/ispect/2023-refactor/verdict-editor.png'
+const login = mediaUrl('bundled/craft/ispect/2023-refactor/login.png')
+const projects = mediaUrl('bundled/craft/ispect/2023-refactor/projects.png')
+const projectsDarkmode = mediaUrl(
+  'bundled/craft/ispect/2023-refactor/projects-darkmode.png',
+)
+const util = mediaUrl('bundled/craft/ispect/2023-refactor/utilization.png')
+const orders = mediaUrl('bundled/craft/ispect/2023-refactor/orders.png')
+const projectInfo = mediaUrl(
+  'bundled/craft/ispect/2023-refactor/project-info.png',
+)
+const issues = mediaUrl('bundled/craft/ispect/2023-refactor/issues.png')
+const issuesDarkmode = mediaUrl(
+  'bundled/craft/ispect/2023-refactor/issues-darkmode.png',
+)
+const shareReport = mediaUrl(
+  'bundled/craft/ispect/2023-refactor/share-report.png',
+)
+const projectActivity = mediaUrl(
+  'bundled/craft/ispect/2023-refactor/project-activities.png',
+)
+const verdictEditor = mediaUrl(
+  'bundled/craft/ispect/2023-refactor/verdict-editor.png',
+)
 
 export const article = {
   author: 'Seb',

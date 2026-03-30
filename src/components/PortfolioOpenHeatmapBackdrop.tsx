@@ -5,9 +5,9 @@ import { Heatmap } from '@paper-design/shaders-react'
 import useMeasure from 'react-use-measure'
 
 import { cn } from '@/lib/utils'
+import { mediaUrl } from '@/lib/media-url'
 
-/** Same asset as Paper’s demo, hosted locally for same-origin load + no CORS path. */
-const HEATMAP_IMAGE = '/images/shaders/diamond.svg'
+const HEATMAP_IMAGE = mediaUrl('images/shaders/diamond.svg')
 
 /** Stable reference — avoids new array identity on parent re-renders. */
 const HEATMAP_COLORS: string[] = [

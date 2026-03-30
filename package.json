@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "oxlint",
     "format": "oxfmt",
-    "format:check": "oxfmt --check"
+    "format:check": "oxfmt --check",
+    "upload-media": "tsx scripts/upload-media-to-blob.ts"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
@@ -29,6 +30,7 @@
     "@types/react-dom": "^19.0.4",
     "@types/webpack-env": "^1.18.8",
     "@vercel/analytics": "^1.5.0",
+    "@vercel/blob": "^2.3.2",
     "@vercel/speed-insights": "^1.2.0",
     "cheerio": "^1.0.0",
     "class-variance-authority": "^0.7.1",
@@ -58,9 +60,11 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
-    "file-loader": "^6.2.0",
+    "dotenv": "^17.3.1",
+    "dotenv-cli": "^11.0.0",
     "oxfmt": "^0.42.0",
     "oxlint": "^1.57.0",
-    "sharp": "0.33.5"
+    "sharp": "0.33.5",
+    "tsx": "^4.21.0"
   }
 }

@@ -3,14 +3,14 @@
 import { Container } from '@/components/Container'
 import { SafeImage } from '@/components/SafeImage'
 import Link from 'next/link'
-import portraitImage from '@/images/avatar.png'
+import { mediaUrl } from '@/lib/media-url'
 
 export default function AboutContent() {
   return (
     <main className="pb-36 sm:pt-24">
       <section className="prose prose-p:text-[#ededed] prose-a:text-neutral-200 prose-p:text-base/9 max-w-3xl text-pretty">
         <SafeImage
-          src={portraitImage}
+          src={mediaUrl('bundled/avatar.png')}
           alt="picture of sebastian"
           className="size-64 rounded-2xl ring-1 ring-white/20"
           width={160}
