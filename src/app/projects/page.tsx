@@ -28,36 +28,6 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
 	return (
 		<div className='min-h-screen py-8'>
-			<header className='mb-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between'>
-				<h1 className='font-display text-lg font-bold tracking-[-0.03em] text-white '>
-					What I&apos;m up to
-				</h1>
-				<nav
-					aria-label='Social links'
-					className='flex h-full w-fit shrink-0 items-center gap-1 rounded-full border border-white/15 px-3 sm:gap-2'>
-					<Link
-						className={linkClass}
-						href='mailto:houseofselling@proton.me'
-						aria-label='Email'>
-						<EnvelopeIcon className='size-5 fill-current' />
-					</Link>
-
-					<Link
-						className={`${linkClass} border-x border-white/15 px-2 sm:px-3`}
-						href='https://x.com/houseofselling'
-						aria-label='X (Twitter)'>
-						<XIcon className='size-5 fill-current' />
-					</Link>
-
-					<Link
-						className={linkClass}
-						href='https://www.linkedin.com/in/sebastianselling/'
-						aria-label='LinkedIn'>
-						<LinkedInIcon className='size-5 fill-current' />
-					</Link>
-				</nav>
-			</header>
-
 			<ProjectsList entranceDelayMs={100} />
 		</div>
 	)

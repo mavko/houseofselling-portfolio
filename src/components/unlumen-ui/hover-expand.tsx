@@ -191,9 +191,11 @@ export function HoverExpand({
             <div className="absolute inset-0 flex items-end px-5 pb-4">
               <div className="flex w-full items-center gap-3">
                 <motion.span
-                  className="shrink-0 text-xs tabular-nums"
+                  className={cn(
+                    'shrink-0 text-xs tabular-nums transition-colors duration-200',
+                    showMedia ? 'text-white' : 'text-foreground',
+                  )}
                   animate={{
-                    color: showMedia ? '#ffffff' : 'currentColor',
                     opacity: showMedia ? 0.5 : 0.4,
                   }}
                   transition={{ duration: 0.2 }}
@@ -202,12 +204,11 @@ export function HoverExpand({
                 </motion.span>
 
                 <motion.span
-                  className="shrink-0 font-semibold tracking-tight"
+                  className={cn(
+                    'shrink-0 font-semibold tracking-tight transition-colors duration-200',
+                    showMedia ? 'text-white' : 'text-foreground',
+                  )}
                   style={{ fontSize: 'clamp(1.1rem, 2.2vw, 1rem)' }}
-                  animate={{
-                    color: showMedia ? '#ffffff' : 'currentColor',
-                  }}
-                  transition={{ duration: 0.2 }}
                 >
                   <ScrambleSpan
                     text={item.label}
@@ -237,11 +238,11 @@ export function HoverExpand({
 
                 {item.sublabel ? (
                   <motion.span
-                    className="shrink-0 font-mono text-xs font-bold tracking-widest uppercase"
+                    className={cn(
+                      'shrink-0 font-mono text-xs font-bold tracking-widest uppercase transition-colors duration-200',
+                      showMedia ? 'text-white/55' : 'text-foreground',
+                    )}
                     animate={{
-                      color: showMedia
-                        ? 'rgba(255,255,255,0.55)'
-                        : 'currentColor',
                       opacity: showMedia ? 1 : 0.45,
                     }}
                     transition={{ duration: 0.2 }}
