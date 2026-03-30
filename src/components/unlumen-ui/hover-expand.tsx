@@ -1,5 +1,6 @@
 'use client'
 
+import type { StaticImageData } from 'next/image'
 import * as React from 'react'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
@@ -12,6 +13,10 @@ const MotionLink = motion(Link)
 
 function isExternalHref(href: string): boolean {
   return /^https?:\/\//i.test(href) || href.startsWith('//')
+}
+
+function imageSrc(image: string | StaticImageData): string {
+  return typeof image === 'string' ? image : image.src
 }
 
 const PortfolioOpenHeatmapBackdrop = dynamic(
@@ -38,7 +43,7 @@ export interface HoverExpandItem {
   id?: string
   label: string
   sublabel?: string
-  image: string
+  image: string | StaticImageData
   imageAlt?: string
   /** Merged onto the preview <img> (e.g. object-top for tall screenshots). */
   imageClassName?: string
@@ -169,7 +174,7 @@ export function HoverExpand({
                 <>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src={item.image}
+                    src={imageSrc(item.image)}
                     alt={item.imageAlt ?? ''}
                     className={cn(
                       'h-full w-full object-cover',
@@ -232,7 +237,7 @@ export function HoverExpand({
 
                 {item.sublabel ? (
                   <motion.span
-                    className="shrink-0 text-xs tracking-widest uppercase"
+                    className="shrink-0 font-mono text-xs font-bold tracking-widest uppercase"
                     animate={{
                       color: showMedia
                         ? 'rgba(255,255,255,0.55)'

@@ -1,6 +1,9 @@
 'use client'
 import React, { useEffect, useRef, useState, useSyncExternalStore } from 'react'
+import type { StaticImageData } from 'next/image'
 import { motion } from 'framer-motion'
+import icontrolHeader from '@/images/craft/icontrol-header.jpg'
+import ispectHeader from '@/images/craft/ispect-header.jpg'
 import { cn } from '@/lib/utils'
 import { shuffleLetters } from '@/lib/shuffleLetters'
 import {
@@ -74,7 +77,7 @@ type ProjectEntry = {
   description: string
   href: string
   year: (string | number)[]
-  image: string
+  image: string | StaticImageData
   imageAlt: string
   hoverMedia?: 'image' | 'heatmap'
   imageClassName?: string
@@ -99,7 +102,7 @@ const projectsData: ProjectEntry[] = [
     name: 'minibrf.se',
     description: 'Proptech for multi-tenant associations.',
     href: 'https://minibrf.se/',
-    year: [2024, 'ongoing'],
+    year: [2024, 'RETIRED 2026'],
     image: '/images/projects/minibrf-se.svg',
     imageAlt: 'minibrf.se project preview',
   },
@@ -109,7 +112,7 @@ const projectsData: ProjectEntry[] = [
     description:
       'AI Agent for analyzing real estate markets across cities (in dev)',
     href: 'https://heredium.co/',
-    year: [2025, 'ongoing'],
+    year: [2025, 'RETIRED 2026'],
     image: '/images/projects/heredium-co.svg',
     imageAlt: 'heredium.co project preview',
   },
@@ -162,8 +165,9 @@ const startups: ProjectEntry[] = [
     description: 'Replace paper with an app on the field',
     href: '/artifacts/archive/makings-of-icontrol',
     year: [2014, 2017],
-    image: '/images/projects/icontrol.svg',
-    imageAlt: 'icontrol project preview',
+    image: icontrolHeader,
+    imageAlt: 'icontrol banner',
+    imageClassName: 'object-center',
   },
   {
     id: 'project-ispect',
@@ -171,8 +175,9 @@ const startups: ProjectEntry[] = [
     description: 'The standardized inspection app',
     href: '/artifacts/archive/makings-of-ispect',
     year: [2012, 2024],
-    image: '/images/projects/ispect.svg',
-    imageAlt: 'ispect project preview',
+    image: ispectHeader,
+    imageAlt: 'read: makings of ispect — header',
+    imageClassName: 'object-center',
   },
 ]
 
