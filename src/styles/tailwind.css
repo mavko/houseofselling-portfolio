@@ -12,10 +12,6 @@
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /* Literal names match next/font Mona @font-face; avoids nested var() resolution issues */
-  --font-title:
-    "Mona Sans", "Mona Sans Fallback", ui-sans-serif, system-ui, sans-serif;
-
   --text-*: initial;
   --text-xs: 0.8125rem;
   --text-xs--line-height: 1.5rem;
@@ -215,6 +211,8 @@
 */
 
 @theme inline {
+  --font-display:
+    "Mona Sans", "Mona Sans Fallback", ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-sans);
   /* geist package sets --font-geist-sans on <html> via GeistSans.variable */
   --font-sans:

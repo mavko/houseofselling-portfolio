@@ -14,6 +14,9 @@ const monaSans = Mona_Sans({
   subsets: ['latin', 'latin-ext'],
   variable: '--font-mona-sans',
   display: 'swap',
+  // next/font types omit wght for Mona_Sans; both axes are valid per Google Fonts.
+  // @ts-expect-error -- wght is a real variable axis for Mona Sans
+  axes: ['wdth', 'wght'],
 })
 
 export const metadata: Metadata = {
@@ -87,7 +90,7 @@ export default function RootLayout({
         <Providers>
           <div className="relative">
             <main className="mx-auto max-w-5xl px-4 sm:px-6">
-              <header className="relative z-20 my-2 p-2 font-sans text-xs font-semibold font-stretch-125%">
+              <header className="relative z-20 my-2 p-2 font-display text-xs font-bold tracking-[-0.03em] font-stretch-125%">
                 <div className="flex w-full flex-col justify-between gap-4 sm:flex-row sm:items-center sm:gap-0">
                   <div className="flex items-center gap-4 sm:gap-5">
                     <Link href="/" className="flex items-center gap-3">
@@ -116,6 +119,9 @@ export default function RootLayout({
                     <Link href="/visuals" className="flex items-center gap-2">
                       Visuals
                     </Link>
+                    <Link href="/projects" className="flex items-center gap-2">
+                      Projects
+                    </Link>
                     <Link
                       aria-label="Say hello on GitHub"
                       className="flex items-center gap-2"
@@ -129,8 +135,8 @@ export default function RootLayout({
               </header>
               {children}
             </main>
-            <footer className="font-title py-42 text-center text-base/12 font-medium text-white">
-              © 2025 // house of selling
+            <footer className="font-display py-42 text-center text-base/12 font-medium text-white">
+              © 2026 // house of selling
             </footer>
             <div
               aria-hidden="true"

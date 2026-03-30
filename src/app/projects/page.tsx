@@ -1,82 +1,68 @@
 import { type Metadata } from 'next'
-import { SafeImage } from '@/components/SafeImage'
+import Link from 'next/link'
+import { EnvelopeIcon } from '@heroicons/react/24/solid'
+import { LinkedInIcon, XIcon } from '@/components/SocialIcons'
+import ProjectsList from '@/components/ProjectsList'
 
-import { Card } from '@/components/Card'
-import { SimpleLayout } from '@/components/SimpleLayout'
-import { LinkPreview } from '@/components/LinkPreview'
-
-const projects = [
-  {
-    name: 'Planetaria',
-    description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-  },
-  {
-    name: 'Animaginary',
-    description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
-  },
-  {
-    name: 'HelioStream',
-    description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-  },
-  {
-    name: 'cosmOS',
-    description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
-  },
-  {
-    name: 'OpenShuttle',
-    description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-  },
-]
-
-function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path
-        d="M15.712 11.823a.75.75 0 1 0 1.06 1.06l-1.06-1.06Zm-4.95 1.768a.75.75 0 0 0 1.06-1.06l-1.06 1.06Zm-2.475-1.414a.75.75 0 1 0-1.06-1.06l1.06 1.06Zm4.95-1.768a.75.75 0 1 0-1.06 1.06l1.06-1.06Zm3.359.53-.884.884 1.06 1.06.885-.883-1.061-1.06Zm-4.95-2.12 1.414-1.415L12 6.344l-1.415 1.413 1.061 1.061Zm0 3.535a2.5 2.5 0 0 1 0-3.536l-1.06-1.06a4 4 0 0 0 0 5.656l1.06-1.06Zm4.95-4.95a2.5 2.5 0 0 1 0 3.535L17.656 12a4 4 0 0 0 0-5.657l-1.06 1.06Zm1.06-1.06a4 4 0 0 0-5.656 0l1.06 1.06a2.5 2.5 0 0 1 3.536 0l1.06-1.06Zm-7.07 7.07.176.177 1.06-1.06-.176-.177-1.06 1.06Zm-3.183-.353.884-.884-1.06-1.06-.884.883 1.06 1.06Zm4.95 2.121-1.414 1.414 1.06 1.06 1.415-1.413-1.06-1.061Zm0-3.536a2.5 2.5 0 0 1 0 3.536l1.06 1.06a4 4 0 0 0 0-5.656l-1.06 1.06Zm-4.95 4.95a2.5 2.5 0 0 1 0-3.535L6.344 12a4 4 0 0 0 0 5.656l1.06-1.06Zm-1.06 1.06a4 4 0 0 0 5.657 0l-1.061-1.06a2.5 2.5 0 0 1-3.535 0l-1.061 1.06Zm7.07-7.07-.176-.177-1.06 1.06.176.178 1.06-1.061Z"
-        fill="currentColor"
-      />
-    </svg>
-  )
-}
+const linkClass =
+  ' p-2 text-white/80 transition-colors duration-200 [@media(hover:hover)_and_(pointer:fine)]:hover:text-white active:scale-[0.96] focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:outline-none'
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: "Things I've made trying to put my dent in the universe.",
+  description:
+    'Selected builds, experiments, and client work — design and agentic engineering.',
+  openGraph: {
+    title: 'Projects',
+    description:
+      'Selected builds, experiments, and client work — design and agentic engineering.',
+    url: '/projects',
+    type: 'website',
+  },
+  twitter: {
+    title: 'Projects',
+    description:
+      'Selected builds, experiments, and client work — design and agentic engineering.',
+  },
 }
 
-export default function Projects() {
+export default function ProjectsPage() {
   return (
-    <SimpleLayout
-      title="Some of my projects."
-      intro="I've worked on quite a few smaller and larger projects over the years but these are the ones that I'm most proud of. Coming from a family that's been in the construction industry for generations, it became quite natural to try and solve their issues with technology, so most if not all projects are in construction or properties."
-    >
-      <ul
-        role="list"
-        className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
-      >
-        {projects.map((project) => (
-          <Card as="li" key={project.name}>
-            <h2 className="font-title mt-6 text-base font-semibold text-zinc-100">
-              <Card.Link href={project.link.href}>{project.name}</Card.Link>
-            </h2>
-            <Card.Description>{project.description}</Card.Description>
-            <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-              <LinkIcon className="h-6 w-6 flex-none" />
-              <span className="ml-2">{project.link.label}</span>
-            </p>
-          </Card>
-        ))}
-      </ul>
-    </SimpleLayout>
+    <div className="min-h-screen py-8">
+      <header className="mb-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <h1 className="font-display text-2xl font-bold tracking-[-0.03em] text-white sm:text-3xl">
+          What I&apos;m up to
+        </h1>
+        <nav
+          aria-label="Social links"
+          className="flex h-full w-fit shrink-0 items-center gap-1 rounded-full border border-white/15 px-3 sm:gap-2"
+        >
+          <Link
+            className={linkClass}
+            href="mailto:houseofselling@proton.me"
+            aria-label="Email"
+          >
+            <EnvelopeIcon className="size-5 fill-current" />
+          </Link>
+
+          <Link
+            className={`${linkClass} border-x border-white/15 px-2 sm:px-3`}
+            href="https://x.com/houseofselling"
+            aria-label="X (Twitter)"
+          >
+            <XIcon className="size-5 fill-current" />
+          </Link>
+
+          <Link
+            className={linkClass}
+            href="https://www.linkedin.com/in/sebastianselling/"
+            aria-label="LinkedIn"
+          >
+            <LinkedInIcon className="size-5 fill-current" />
+          </Link>
+        </nav>
+      </header>
+
+      <ProjectsList entranceDelayMs={100} />
+    </div>
   )
 }

@@ -2,10 +2,7 @@
 
 import React from 'react'
 import ArtifactsContent from './artifacts/ArifactsContent'
-import DialogComponent from '@/components/Dialog'
-import Link from 'next/link'
 import { Shadows } from '@/components/Shadows'
-import { LinkedInIcon, XIcon } from '@/components/SocialIcons'
 import { motion } from 'framer-motion'
 import {
   connectVariants,
@@ -24,7 +21,7 @@ export default function Home() {
         <Shadows
           color="rgba(128, 128, 128, 1)"
           animation={{ scale: 100, speed: 70 }}
-          noise={{ opacity: 1, scale: 1.2 }}
+          noise={{ opacity: 1, scale: 5 }}
           sizing="fill"
         />
       </motion.div>

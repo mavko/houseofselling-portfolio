@@ -48,7 +48,7 @@ export function ArticleLayoutContent({
           </Link>
           <article>
             <header className="flex flex-col">
-              <h1 className="font-title mt-6 text-xl font-bold tracking-tight">
+              <h1 className="font-display mt-6 text-xl font-bold tracking-tight">
                 {article.title}
               </h1>
               <time

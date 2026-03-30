@@ -2,9 +2,17 @@
 
 import * as React from 'react'
 import dynamic from 'next/dynamic'
-import { motion } from 'motion/react'
+import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 import { cn } from '@/lib/utils'
+
+const MotionLink = motion(Link)
+
+function isExternalHref(href: string): boolean {
+  return /^https?:\/\//i.test(href) || href.startsWith('//')
+}
+import { shuffleLetters } from '@/lib/shuffleLetters'
 
 const PortfolioOpenHeatmapBackdrop = dynamic(
   () =>
@@ -21,50 +29,60 @@ const rowEntranceTransition = (delaySec: number, reduceMotion: boolean) =>
     ? { duration: 0 }
     : { delay: delaySec, duration: 0.5, ease: easeOut }
 
+const rowEntranceFilterTransition = (delaySec: number, reduceMotion: boolean) =>
+  reduceMotion
+    ? { duration: 0 }
+    : { delay: delaySec, duration: 0.32, ease: easeOut }
+
 export interface HoverExpandItem {
-  /** Stable key for list reconciliation */
   id?: string
   label: string
-  /** e.g. country, year, category */
   sublabel?: string
   image: string
   imageAlt?: string
-  /** short descriptor shown when expanded */
   description?: string
-  /** Optional link for the whole row */
   href?: string
-  /**
-   * Delay (seconds) before this row’s opacity/blur entrance — stack with list stagger.
-   */
   entranceDelaySec?: number
-  /** When `heatmap`, the expanded hover shows the Paper Design heatmap instead of `image`. */
   hoverMedia?: 'image' | 'heatmap'
+  /** When true the row stays expanded and shows its media permanently. */
+  alwaysExpanded?: boolean
 }
 
 export interface HoverExpandProps {
   items: HoverExpandItem[]
-  /**
-   * Row height when collapsed, in pixels.
-   * @default 68
-   */
   collapsedHeight?: number
-  /**
-   * Row height when expanded, in pixels.
-   * @default 320
-   */
   expandedHeight?: number
   className?: string
-  /**
-   * When false, rows stay collapsed, do not respond to hover, and use staggered entrance motion.
-   * When true, hover-expand + dimming use short transitions.
-   */
   interactionEnabled?: boolean
   reduceMotion?: boolean
-  /**
-   * Added to the visual index so multi-section lists can show 01…N across the dialog.
-   */
   indexOffset?: number
 }
+
+const ScrambleSpan = React.memo(function ScrambleSpan({
+  text,
+  delaySec,
+  reduceMotion,
+}: {
+  text: string
+  delaySec: number
+  reduceMotion: boolean
+}) {
+  const ref = React.useRef<HTMLSpanElement>(null)
+
+  React.useEffect(() => {
+    if (reduceMotion || !ref.current) return
+    const node = ref.current
+    const id = setTimeout(
+      () => shuffleLetters(node, { text, iterations: 6, fps: 30 }),
+      delaySec * 1000,
+    )
+    return () => clearTimeout(id)
+  }, [reduceMotion, text, delaySec])
+
+  return <span ref={ref}>{text}</span>
+})
+
+export { ScrambleSpan }
 
 export function HoverExpand({
   items,
@@ -89,15 +107,17 @@ export function HoverExpand({
   }, [interactionEnabled])
 
   return (
-    <div className={cn('font-title flex w-full flex-col', className)}>
-      <div className="w-full border-t border-current opacity-15" />
-
+    <div className={cn('font-display flex w-full flex-col', className)}>
       {items.map((item, i) => {
         const isHovered = effectiveHoveredIndex === i
         const isOtherHovered = effectiveHoveredIndex !== null && !isHovered
         const delaySec = item.entranceDelaySec ?? 0
-        const heightTarget =
-          interactionEnabled && isHovered ? expandedHeight : collapsedHeight
+        const showMedia = item.alwaysExpanded || isHovered
+        const heightTarget = item.alwaysExpanded
+          ? expandedHeight
+          : interactionEnabled && isHovered
+            ? expandedHeight
+            : collapsedHeight
 
         const isHeatmapRow = item.hoverMedia === 'heatmap'
 
@@ -108,10 +128,10 @@ export function HoverExpand({
               initial={false}
               animate={
                 isHeatmapRow
-                  ? { opacity: isHovered ? 1 : 0 }
+                  ? { opacity: showMedia ? 1 : 0 }
                   : {
-                      opacity: isHovered ? 1 : 0,
-                      scale: isHovered ? 1 : 1.06,
+                      opacity: showMedia ? 1 : 0,
+                      scale: showMedia ? 1 : 1.06,
                     }
               }
               transition={
@@ -125,11 +145,22 @@ export function HoverExpand({
             >
               {isHeatmapRow ? (
                 <>
-                  <PortfolioOpenHeatmapBackdrop
-                    reduceMotion={reduceMotion}
-                    active={isHovered}
-                    expandedHeight={expandedHeight}
-                  />
+                  <motion.div
+                    className="absolute inset-0"
+                    initial={reduceMotion ? false : { filter: 'blur(12px)' }}
+                    animate={{ filter: 'blur(0px)' }}
+                    transition={{
+                      duration: 0.85,
+                      delay: delaySec + 0.4,
+                      ease: easeOut,
+                    }}
+                  >
+                    <PortfolioOpenHeatmapBackdrop
+                      reduceMotion={reduceMotion}
+                      active={showMedia}
+                      expandedHeight={expandedHeight}
+                    />
+                  </motion.div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />
                 </>
               ) : (
@@ -148,61 +179,68 @@ export function HoverExpand({
             </motion.div>
 
             <div className="absolute inset-0 flex items-end px-5 pb-4">
-              <div className="flex w-full items-end justify-between gap-4">
-                <div className="flex min-w-0 items-baseline gap-3">
-                  <motion.span
-                    className="shrink-0 text-xs tabular-nums opacity-40"
-                    animate={{
-                      color: isHovered ? '#ffffff' : 'currentColor',
-                      opacity: isHovered ? 0.5 : 0.4,
-                    }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {String(indexOffset + i + 1).padStart(2, '0')}
-                  </motion.span>
+              <div className="flex w-full items-center gap-3">
+                <motion.span
+                  className="shrink-0 text-xs tabular-nums"
+                  animate={{
+                    color: showMedia ? '#ffffff' : 'currentColor',
+                    opacity: showMedia ? 0.5 : 0.4,
+                  }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {String(indexOffset + i + 1).padStart(2, '0')}
+                </motion.span>
 
-                  <motion.span
-                    className="truncate font-semibold tracking-tight"
-                    style={{ fontSize: 'clamp(1.1rem, 2.2vw, 1rem)' }}
-                    animate={{
-                      color: isHovered ? '#ffffff' : 'currentColor',
-                    }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {item.label}
-                  </motion.span>
+                <motion.span
+                  className="shrink-0 font-semibold tracking-tight"
+                  style={{ fontSize: 'clamp(1.1rem, 2.2vw, 1rem)' }}
+                  animate={{
+                    color: showMedia ? '#ffffff' : 'currentColor',
+                  }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <ScrambleSpan
+                    text={item.label}
+                    delaySec={delaySec}
+                    reduceMotion={reduceMotion}
+                  />
+                </motion.span>
 
-                  {item.description ? (
-                    <motion.span
-                      className="hidden truncate text-sm text-white/70 sm:block"
-                      initial={{ opacity: 0, x: -8 }}
-                      animate={{
-                        opacity: isHovered ? 1 : 0,
-                        x: isHovered ? 0 : -8,
-                      }}
-                      transition={{
-                        duration: 0.3,
-                        delay: isHovered ? 0.12 : 0,
-                        ease: easeOut,
-                      }}
-                    >
-                      — {item.description}
-                    </motion.span>
-                  ) : null}
-                </div>
+                {showMedia && item.description ? (
+                  <motion.span
+                    className="hidden shrink-0 text-sm text-white/70 sm:inline"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.3, delay: 0.12, ease: easeOut }}
+                  >
+                    — {item.description}
+                  </motion.span>
+                ) : null}
+
+                <motion.div
+                  className="h-px min-w-3 flex-1 origin-left bg-current opacity-15"
+                  initial={reduceMotion ? false : { scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={rowEntranceTransition(delaySec, reduceMotion)}
+                  aria-hidden
+                />
 
                 {item.sublabel ? (
                   <motion.span
                     className="shrink-0 text-xs tracking-widest uppercase"
                     animate={{
-                      color: isHovered
+                      color: showMedia
                         ? 'rgba(255,255,255,0.55)'
                         : 'currentColor',
-                      opacity: isHovered ? 1 : 0.45,
+                      opacity: showMedia ? 1 : 0.45,
                     }}
                     transition={{ duration: 0.2 }}
                   >
-                    {item.sublabel}
+                    <ScrambleSpan
+                      text={item.sublabel}
+                      delaySec={delaySec}
+                      reduceMotion={reduceMotion}
+                    />
                   </motion.span>
                 ) : null}
               </div>
@@ -216,9 +254,11 @@ export function HoverExpand({
             item.href &&
               interactionEnabled &&
               'cursor-pointer [@media(hover:hover)_and_(pointer:fine)]:hover:opacity-95',
-            item.href && !interactionEnabled && 'cursor-pointer',
+            item.href &&
+              !interactionEnabled &&
+              'pointer-events-none cursor-default',
           ),
-          initial: reduceMotion ? false : { opacity: 0, filter: 'blur(10px)' },
+          initial: reduceMotion ? false : { opacity: 0, filter: 'blur(6px)' },
           animate: {
             height: heightTarget,
             opacity: isOtherHovered ? 0.38 : 1,
@@ -236,35 +276,39 @@ export function HoverExpand({
               : rowEntranceTransition(delaySec, reduceMotion),
             filter: interactionEnabled
               ? { duration: 0.22, ease: 'easeOut' as const }
-              : rowEntranceTransition(delaySec, reduceMotion),
+              : rowEntranceFilterTransition(delaySec, reduceMotion),
           },
           onHoverStart: () => {
-            if (interactionEnabled) setHoveredIndex(i)
+            if (interactionEnabled && !item.alwaysExpanded)
+              setHoveredIndex(i)
           },
           onHoverEnd: () => {
-            if (interactionEnabled) setHoveredIndex(null)
+            if (interactionEnabled && !item.alwaysExpanded)
+              setHoveredIndex(null)
           },
         }
 
+        const href = item.href
+
         return (
           <React.Fragment key={item.id ?? i}>
-            {item.href ? (
-              <motion.a
-                href={item.href}
-                rel={
-                  item.href.startsWith('http')
-                    ? 'noopener noreferrer'
-                    : undefined
-                }
-                {...motionCommon}
-              >
-                {rowContent}
-              </motion.a>
+            {href ? (
+              isExternalHref(href) ? (
+                <motion.a
+                  href={href}
+                  rel="noopener noreferrer"
+                  {...motionCommon}
+                >
+                  {rowContent}
+                </motion.a>
+              ) : (
+                <MotionLink href={href} prefetch {...motionCommon}>
+                  {rowContent}
+                </MotionLink>
+              )
             ) : (
               <motion.div {...motionCommon}>{rowContent}</motion.div>
             )}
-
-            <div className="w-full border-t border-current opacity-15" />
           </React.Fragment>
         )
       })}

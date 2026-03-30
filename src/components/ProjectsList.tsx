@@ -1,8 +1,8 @@
 'use client'
-import React, { useEffect, useState, useSyncExternalStore } from 'react'
+import React, { useEffect, useRef, useState, useSyncExternalStore } from 'react'
 import { motion } from 'framer-motion'
-import { nanoid } from 'nanoid'
 import { cn } from '@/lib/utils'
+import { shuffleLetters } from '@/lib/shuffleLetters'
 import {
   HoverExpand,
   type HoverExpandItem,
@@ -32,6 +32,42 @@ const INTRO_END_BUFFER_MS = 80
 const headingTransition = (delay: number, reduceMotion: boolean) =>
   reduceMotion ? { duration: 0 } : { delay, duration: 0.25, ease: easeOut }
 
+function ScrambleHeading({
+  text,
+  delaySec,
+  reduceMotion,
+  className,
+}: {
+  text: string
+  delaySec: number
+  reduceMotion: boolean
+  className?: string
+}) {
+  const ref = useRef<HTMLHeadingElement>(null)
+
+  useEffect(() => {
+    if (reduceMotion || !ref.current) return
+    const node = ref.current
+    const id = setTimeout(
+      () => shuffleLetters(node, { text, iterations: 6, fps: 30 }),
+      delaySec * 1000,
+    )
+    return () => clearTimeout(id)
+  }, [reduceMotion, text, delaySec])
+
+  return (
+    <motion.h2
+      ref={ref}
+      initial={reduceMotion ? false : { opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={headingTransition(delaySec, reduceMotion)}
+      className={className}
+    >
+      {text}
+    </motion.h2>
+  )
+}
+
 type ProjectEntry = {
   id: string
   name: string
@@ -45,7 +81,7 @@ type ProjectEntry = {
 
 const current: ProjectEntry[] = [
   {
-    id: nanoid(),
+    id: 'project-open',
     name: 'Open',
     description: 'Available for opportunities in startups',
     href: 'https://www.linkedin.com/in/sebastianselling/',
@@ -58,7 +94,7 @@ const current: ProjectEntry[] = [
 
 const projectsData: ProjectEntry[] = [
   {
-    id: nanoid(),
+    id: 'project-minibrf-se',
     name: 'minibrf.se',
     description: 'Proptech for multi-tenant associations.',
     href: 'https://minibrf.se/',
@@ -67,7 +103,7 @@ const projectsData: ProjectEntry[] = [
     imageAlt: 'minibrf.se project preview',
   },
   {
-    id: nanoid(),
+    id: 'project-heredium-co',
     name: 'heredium.co',
     description:
       'AI Agent for analyzing real estate markets across cities (in dev)',
@@ -80,7 +116,7 @@ const projectsData: ProjectEntry[] = [
 
 const business: ProjectEntry[] = [
   {
-    id: nanoid(),
+    id: 'project-din-fastighetsforvaltare',
     name: 'din.fastighetsförvaltare',
     description: 'Technical Property Management',
     href: 'https://www.dinfastighetsforvaltare.se/',
@@ -89,7 +125,7 @@ const business: ProjectEntry[] = [
     imageAlt: 'din.fastighetsförvaltare project preview',
   },
   {
-    id: nanoid(),
+    id: 'project-besiktningsman-se',
     name: 'besiktningsman.se',
     description: 'Premier construction inspection agency',
     href: 'https://www.besiktningsman.se',
@@ -98,7 +134,7 @@ const business: ProjectEntry[] = [
     imageAlt: 'besiktningsman.se project preview',
   },
   {
-    id: nanoid(),
+    id: 'project-drykit-co',
     name: 'drykit.co',
     description: 'Sensors that keep You and Your Home safe from Mold.',
     href: 'https://www.drykit.co',
@@ -110,7 +146,7 @@ const business: ProjectEntry[] = [
 
 const startups: ProjectEntry[] = [
   {
-    id: nanoid(),
+    id: 'project-scribbly-ai',
     name: 'scribbly.ai',
     description: 'Bespoke AI transcriptions in seconds',
     href: 'https://scribbly.se/',
@@ -119,7 +155,7 @@ const startups: ProjectEntry[] = [
     imageAlt: 'scribbly.ai project preview',
   },
   {
-    id: nanoid(),
+    id: 'project-icontrol',
     name: 'icontrol',
     description: 'Replace paper with an app on the field',
     href: '/artifacts/archive/makings-of-icontrol',
@@ -128,7 +164,7 @@ const startups: ProjectEntry[] = [
     imageAlt: 'icontrol project preview',
   },
   {
-    id: nanoid(),
+    id: 'project-ispect',
     name: 'ispect',
     description: 'The standardized inspection app',
     href: '/artifacts/archive/makings-of-ispect',
@@ -204,32 +240,29 @@ const ProjectsList = ({ entranceDelayMs = 350 }: ProjectsListProps) => {
   return (
     <section className={cn('space-y-6 px-2')}>
       <div className="flex w-full flex-col space-y-3">
-        <motion.h2
-          initial={reduceMotion ? false : { opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={headingTransition(baseDelaySec, reduceMotion)}
-          className="font-title flex items-center text-xs font-bold font-stretch-125%"
-        >
-          Currently
-        </motion.h2>
+        <ScrambleHeading
+          text="Currently"
+          delaySec={baseDelaySec}
+          reduceMotion={reduceMotion}
+          className="font-display flex items-center text-xs font-bold font-stretch-125%"
+        />
         <HoverExpand
           {...hoverCommon}
           indexOffset={0}
-          items={current.map((project, index) =>
-            toHoverExpandItem(project, index, entranceDelayMs),
-          )}
+          items={current.map((project, index) => ({
+            ...toHoverExpandItem(project, index, entranceDelayMs),
+            alwaysExpanded: true,
+          }))}
         />
       </div>
 
       <div className="flex w-full flex-col space-y-3">
-        <motion.h2
-          initial={reduceMotion ? false : { opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={headingTransition(baseDelaySec, reduceMotion)}
-          className="font-title flex items-center text-xs font-bold font-stretch-125%"
-        >
-          Startups
-        </motion.h2>
+        <ScrambleHeading
+          text="Startups"
+          delaySec={baseDelaySec}
+          reduceMotion={reduceMotion}
+          className="font-display flex items-center text-xs font-bold font-stretch-125%"
+        />
         <HoverExpand
           {...hoverCommon}
           indexOffset={startupsStaggerStart}
@@ -243,14 +276,12 @@ const ProjectsList = ({ entranceDelayMs = 350 }: ProjectsListProps) => {
         />
       </div>
       <div className="flex w-full flex-col space-y-3">
-        <motion.h2
-          initial={reduceMotion ? false : { opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={headingTransition(baseDelaySec, reduceMotion)}
-          className="font-title flex items-center text-xs font-bold font-stretch-125%"
-        >
-          Business
-        </motion.h2>
+        <ScrambleHeading
+          text="Business"
+          delaySec={baseDelaySec}
+          reduceMotion={reduceMotion}
+          className="font-display flex items-center text-xs font-bold font-stretch-125%"
+        />
         <HoverExpand
           {...hoverCommon}
           indexOffset={businessStaggerStart}
@@ -264,14 +295,12 @@ const ProjectsList = ({ entranceDelayMs = 350 }: ProjectsListProps) => {
         />
       </div>
       <div className="flex w-full flex-col space-y-3">
-        <motion.h2
-          initial={reduceMotion ? false : { opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={headingTransition(baseDelaySec, reduceMotion)}
-          className="font-title flex items-center text-xs font-bold font-stretch-125%"
-        >
-          Projects
-        </motion.h2>
+        <ScrambleHeading
+          text="Projects"
+          delaySec={baseDelaySec}
+          reduceMotion={reduceMotion}
+          className="font-display flex items-center text-xs font-bold font-stretch-125%"
+        />
         <HoverExpand
           {...hoverCommon}
           indexOffset={projectsStaggerStart}
