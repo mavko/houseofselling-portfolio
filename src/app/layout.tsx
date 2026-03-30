@@ -11,7 +11,7 @@ import '@/styles/tailwind.css'
 import Link from 'next/link'
 
 const monaSans = Mona_Sans({
-  subsets: ['latin'],
+  subsets: ['latin', 'latin-ext'],
   variable: '--font-mona-sans',
   display: 'swap',
 })
@@ -77,7 +77,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${GeistSans.className} ${monaSans.variable}`}
+      className={`${GeistSans.className} ${GeistSans.variable} ${monaSans.variable}`}
       suppressHydrationWarning
     >
       <head>

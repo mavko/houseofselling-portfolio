@@ -183,10 +183,10 @@ export function Shadows({
       </div>
 
       <div className="relative z-10 flex flex-col space-y-6 text-center">
-        <h1 className="font-sans text-3xl leading-tight font-bold text-white font-stretch-200% md:text-balance">
+        <h1 className="font-title text-3xl leading-tight font-bold text-white font-stretch-125% md:text-balance">
           Design and agentic engineering. <br />
         </h1>
-        <p className="font-title text-xl leading-tight font-medium text-white font-stretch-200%">
+        <p className="font-sans text-xl leading-tight font-medium text-white font-stretch-125%">
           Decade+ of taking ideas from zero to one.
         </p>
         <div className="flex items-center justify-center gap-4">
