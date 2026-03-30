@@ -1,6 +1,6 @@
-"use client";
+'use client'
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion'
 
 export default function Pathing() {
   const code = `
@@ -39,7 +39,7 @@ export default function Pathing() {
   transition={{ delay: 1, duration: 0.75 }}
 />
 </svg>
-`;
+`
   return (
     <svg
       width="76"
@@ -47,9 +47,10 @@ export default function Pathing() {
       viewBox="0 0 76 65"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="size-10 mb-3"
+      className="mb-3 size-10"
     >
-      <motion.path d="M37.5274 0L75.0548 65H0L37.5274 0Z"
+      <motion.path
+        d="M37.5274 0L75.0548 65H0L37.5274 0Z"
         stroke="white"
         fill="transparant"
         initial={{
@@ -60,18 +61,21 @@ export default function Pathing() {
           pathLength: 1,
           pathOffset: 0,
         }}
-        transition={{ duration: 0.75 }} />
-      <motion.path d="M37.5274 0L75.0548 65H0L37.5274 0Z" fill="#ffffff" stroke="transparant"
+        transition={{ duration: 0.75 }}
+      />
+      <motion.path
+        d="M37.5274 0L75.0548 65H0L37.5274 0Z"
+        fill="#ffffff"
+        stroke="transparant"
         pathLength={0}
         initial={{
-          fill: "rgba(255,255,255,0)",
+          fill: 'rgba(255,255,255,0)',
         }}
         animate={{
-          fill: "rgba(255,255,255,1)",
+          fill: 'rgba(255,255,255,1)',
         }}
-        transition={{ delay: 1, duration: 0.75 }} />
+        transition={{ delay: 1, duration: 0.75 }}
+      />
     </svg>
-
-
-  );
+  )
 }

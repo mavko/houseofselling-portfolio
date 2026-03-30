@@ -1,10 +1,10 @@
-import { TextEffect } from './TextEffect';
+import { TextEffect } from './TextEffect'
 
 export function IntroText() {
   return (
-    <div className='flex flex-col space-y-0'>
+    <div className="flex flex-col space-y-0">
       <TextEffect
-        per='char'
+        per="char"
         delay={0.5}
         variants={{
           container: {
@@ -37,17 +37,17 @@ export function IntroText() {
       >
         Animate your ideas
       </TextEffect>
-      <TextEffect per='char' delay={1.5}>
+      <TextEffect per="char" delay={1.5}>
         with motion-primitives
       </TextEffect>
       <TextEffect
-        per='char'
+        per="char"
         delay={2.5}
-        className='pt-12 text-xs'
-        preset='blur-sm'
+        className="pt-12 text-xs"
+        preset="blur-sm"
       >
         (and delay!)
       </TextEffect>
     </div>
-  );
+  )
 }

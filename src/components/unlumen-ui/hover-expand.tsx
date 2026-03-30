@@ -284,8 +284,7 @@ export function HoverExpand({
               : rowEntranceFilterTransition(delaySec, reduceMotion),
           },
           onHoverStart: () => {
-            if (interactionEnabled && !item.alwaysExpanded)
-              setHoveredIndex(i)
+            if (interactionEnabled && !item.alwaysExpanded) setHoveredIndex(i)
           },
           onHoverEnd: () => {
             if (interactionEnabled && !item.alwaysExpanded)

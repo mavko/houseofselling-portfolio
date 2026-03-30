@@ -26,8 +26,8 @@ function ThemeToggle() {
       className=""
       onClick={handleToggle}
     >
-      <SunIcon className="h-6 w-6 fill-white transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-white [@media(prefers-color-scheme:dark)]:fill-white [@media(prefers-color-scheme:dark)]:group-hover:fill-white [@media(prefers-color-scheme:dark)]:group-hover:fill-white" />
-      <MoonIcon className="hidden h-6 w-6 fill-white transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:fill-white [@media_not_(prefers-color-scheme:dark)]:fill-white [@media_not_(prefers-color-scheme:dark)]:fill-white" />
+      <SunIcon className="h-6 w-6 fill-white transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-white [@media(prefers-color-scheme:dark)]:group-hover:fill-white" />
+      <MoonIcon className="hidden h-6 w-6 fill-white transition dark:block [@media_not_(prefers-color-scheme:dark)]:fill-white [@media(prefers-color-scheme:dark)]:group-hover:fill-white" />
     </Button>
   )
 }

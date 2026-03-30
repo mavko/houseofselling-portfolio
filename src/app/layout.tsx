@@ -90,7 +90,7 @@ export default function RootLayout({
         <Providers>
           <div className="relative">
             <main className="mx-auto max-w-5xl px-4 sm:px-6">
-              <header className="relative z-20 my-2 p-2 font-display text-xs font-bold tracking-[-0.03em] font-stretch-125%">
+              <header className="font-display relative z-20 my-2 p-2 text-xs font-bold tracking-[-0.03em] font-stretch-125%">
                 <div className="flex w-full flex-col justify-between gap-4 sm:flex-row sm:items-center sm:gap-0">
                   <div className="flex items-center gap-4 sm:gap-5">
                     <Link href="/" className="flex items-center gap-3">

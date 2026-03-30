@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import React, { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { shuffleLetters } from '@/lib/shuffleLetters'
@@ -26,7 +26,7 @@ const Description: React.FC<DescriptionProps> = ({ title, text, index }) => {
 
   return (
     <motion.div
-      className=" w-[calc(100%+2rem)] relativ prose  transition-colors "
+      className="relativ prose w-[calc(100%+2rem)] transition-colors"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay }}

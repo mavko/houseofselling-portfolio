@@ -43,8 +43,7 @@ export function shuffleLetters(
       characterMap[index] = 'digit'
       characterIndices.push(index)
     } else if (char !== char.toUpperCase() || char !== char.toLowerCase()) {
-      const isUpper =
-        char === char.toUpperCase() && char !== char.toLowerCase()
+      const isUpper = char === char.toUpperCase() && char !== char.toLowerCase()
       characterMap[index] = isUpper ? 'upperCase' : 'lowerCase'
       characterIndices.push(index)
     } else {

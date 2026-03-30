@@ -1,11 +1,11 @@
-import { TextEffect } from './TextEffect';
+import { TextEffect } from './TextEffect'
 
 export function TextEffectPerLine() {
   return (
     <TextEffect
-      per='line'
-      as='p'
-      segmentWrapperClassName='overflow-hidden block'
+      per="line"
+      as="p"
+      segmentWrapperClassName="overflow-hidden block"
       variants={{
         container: {
           hidden: { opacity: 0 },
@@ -33,5 +33,5 @@ export function TextEffectPerLine() {
 now live on motion-primitives!
 now live on motion-primitives!`}
     </TextEffect>
-  );
+  )
 }

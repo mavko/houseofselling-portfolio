@@ -178,7 +178,7 @@ export function Shadows({
       </div>
 
       <div className="relative z-10 flex flex-col space-y-6 text-center">
-        <h1 className="font-display text-3xl tracking-[-0.03em] leading-tight font-bold text-white font-stretch-125% md:text-balance">
+        <h1 className="font-display text-3xl leading-tight font-bold tracking-[-0.03em] text-white font-stretch-125% md:text-balance">
           Design and agentic engineering. <br />
         </h1>
         <p className="font-sans text-xl leading-tight font-medium tracking-[-0.03em] text-white">

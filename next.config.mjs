@@ -30,9 +30,9 @@ const nextConfig = {
           name: '[name].[hash].[ext]',
         },
       },
-    });
+    })
 
-    return config;
+    return config
   },
   images: {
     remotePatterns: [
@@ -54,7 +54,8 @@ const nextConfig = {
             value: 'www.sebastianselling.com/craft/makings-of-icontrol',
           },
         ],
-        destination: 'https://sebastianselling.com/artifacts/makings-of-icontrol',
+        destination:
+          'https://sebastianselling.com/artifacts/makings-of-icontrol',
         permanent: true,
       },
       {
@@ -68,7 +69,7 @@ const nextConfig = {
         destination: 'https://sebastianselling.com/artifacts/makings-of-ispect',
         permanent: true,
       },
-    ];
+    ]
   },
 }
 

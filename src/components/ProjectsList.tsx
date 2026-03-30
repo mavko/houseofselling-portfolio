@@ -153,7 +153,7 @@ const startups: ProjectEntry[] = [
     href: 'https://scribbly.se/',
     year: [2024, 2025],
     image: '/images/projects/scribbly-hover.png',
-    imageAlt: 'Scribbly AI — transcribe and caption hero',
+    imageAlt: 'scribbly.ai — automated transcriptions in seconds',
     imageClassName: 'object-top',
   },
   {

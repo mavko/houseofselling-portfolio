@@ -33,9 +33,7 @@ You can start editing this template by modifying the files in the `/src` folder.
 
 ## Todo
 
--[x] Update landing page to look like my current website (doing)
--[x] Update nav
--[x] Polish design to be ultra slick
+-[x] Update landing page to look like my current website (doing) -[x] Update nav -[x] Polish design to be ultra slick
 -[] Photography gallery: https://vercel.com/templates/next.js/image-gallery-starter
 -[] Projects / case study update
 -[] setup cms like payload, or just go local lol

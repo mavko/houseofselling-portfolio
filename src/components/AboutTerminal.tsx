@@ -49,7 +49,7 @@ const AboutTerminal = () => {
       >
         <tr
           id="terminal-text"
-          className="w-full cursor-pointer gap-y-8 space-y-8 p-2 hover:bg-black/10 dark:hover:bg-white/20"
+          className="w-full cursor-pointer space-y-8 gap-y-8 p-2 hover:bg-black/10 dark:hover:bg-white/20"
         >
           <td className="p-1.5">
             <span id="code"></span>
