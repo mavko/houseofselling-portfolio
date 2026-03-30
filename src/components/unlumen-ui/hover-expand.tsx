@@ -6,13 +6,13 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 import { cn } from '@/lib/utils'
+import { shuffleLetters } from '@/lib/shuffleLetters'
 
 const MotionLink = motion(Link)
 
 function isExternalHref(href: string): boolean {
   return /^https?:\/\//i.test(href) || href.startsWith('//')
 }
-import { shuffleLetters } from '@/lib/shuffleLetters'
 
 const PortfolioOpenHeatmapBackdrop = dynamic(
   () =>
@@ -40,6 +40,8 @@ export interface HoverExpandItem {
   sublabel?: string
   image: string
   imageAlt?: string
+  /** Merged onto the preview <img> (e.g. object-top for tall screenshots). */
+  imageClassName?: string
   description?: string
   href?: string
   entranceDelaySec?: number
@@ -169,7 +171,10 @@ export function HoverExpand({
                   <img
                     src={item.image}
                     alt={item.imageAlt ?? ''}
-                    className="h-full w-full object-cover"
+                    className={cn(
+                      'h-full w-full object-cover',
+                      item.imageClassName,
+                    )}
                     loading="lazy"
                     decoding="async"
                   />

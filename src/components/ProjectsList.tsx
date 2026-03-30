@@ -77,6 +77,7 @@ type ProjectEntry = {
   image: string
   imageAlt: string
   hoverMedia?: 'image' | 'heatmap'
+  imageClassName?: string
 }
 
 const current: ProjectEntry[] = [
@@ -151,8 +152,9 @@ const startups: ProjectEntry[] = [
     description: 'Bespoke AI transcriptions in seconds',
     href: 'https://scribbly.se/',
     year: [2024, 2025],
-    image: '/images/projects/scribbly-ai.svg',
-    imageAlt: 'scribbly.ai project preview',
+    image: '/images/projects/scribbly-hover.png',
+    imageAlt: 'Scribbly AI — transcribe and caption hero',
+    imageClassName: 'object-top',
   },
   {
     id: 'project-icontrol',
@@ -198,6 +200,7 @@ function toHoverExpandItem(
     href: project.href,
     entranceDelaySec: baseDelaySec + rowStaggerSec,
     hoverMedia: project.hoverMedia,
+    imageClassName: project.imageClassName,
   }
 }
 
