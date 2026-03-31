@@ -50,7 +50,7 @@ _July 2024 – 2025_
 
 - Leading front-end development and digital marketing
 - **Stack:** Next.js, React, Tailwind CSS, Figma, Branding & Identity
-- **Project:** [scribbly.se](https://scribbly.se) _(sunsetting)_
+- **Project:** [scribbly.ai](https://scribbly-landingpage.vercel.app/) _(sunsetting)_
 
 ---
 

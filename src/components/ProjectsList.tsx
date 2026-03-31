@@ -150,7 +150,7 @@ const startups: ProjectEntry[] = [
 		id: 'project-scribbly-ai',
 		name: 'scribbly.ai',
 		description: 'Bespoke AI transcriptions in seconds',
-		href: 'https://scribbly.se/',
+		href: 'https://scribbly-landingpage.vercel.app/',
 		year: [2024, 2025],
 		image: mediaUrl('images/projects/scribbly-hover.png'),
 		imageAlt: 'scribbly.ai — automated transcriptions in seconds',

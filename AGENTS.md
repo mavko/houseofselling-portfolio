@@ -6,6 +6,8 @@
 - In the projects UI (dialog or `/projects` page), gate `HoverExpand` hover (image reveal) until the list entrance animation has finished so hover does not fight the intro; when reduced motion is preferred, enable interaction immediately. A short blur on the shader/WebGL layer during the first open can mask initial jank without dropping the choreography.
 - Use `font-display` for project list section headings, hover-expand row typography, hero display titles, and primary navigation so the wide Mona Sans production look applies; `font-sans` on those surfaces inherits Geist and reads as body—do not swap them to `font-sans` for a compact system-font appearance when the goal is prod parity.
 - When applying Mona Sans for `font-display`, style it with `font-weight: 600`, `font-stretch: 125%`, and `letter-spacing: -0.2px` to match the exact intended typography.
+- Whenever Scribbly is linked from the portfolio or docs, use `https://scribbly-landingpage.vercel.app/` as the canonical URL.
+- Prefer Tailwind `transition-colors` with explicit text classes over animating `color` via Framer Motion `animate` (especially between computed colors and `currentColor`) to avoid non-animatable value warnings.
 
 ## Learned Workspace Facts
 

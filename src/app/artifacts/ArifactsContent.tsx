@@ -149,7 +149,7 @@ export default function ArtifactsContent() {
         {/* 6th item: scribLogo */}
         <motion.div variants={artifactItemVariants}>
           <Link
-            href="https://www.scribbly.se"
+            href="https://scribbly-landingpage.vercel.app/"
             className="group flex flex-col rounded-xl bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)]"
             target="_blank"
           >
