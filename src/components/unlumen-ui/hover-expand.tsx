@@ -9,7 +9,7 @@ import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { shuffleLetters } from '@/lib/shuffleLetters'
 
-const MotionLink = motion(Link)
+const MotionLink = motion.create(Link)
 
 function isExternalHref(href: string): boolean {
 	return /^https?:\/\//i.test(href) || href.startsWith('//')
