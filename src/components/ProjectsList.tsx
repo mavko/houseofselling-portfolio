@@ -244,7 +244,7 @@ const ProjectsList = ({ entranceDelayMs = 350 }: ProjectsListProps) => {
 
 	return (
 		<section className={cn('space-y-6 px-2')}>
-			<div className='flex w-full flex-col space-y-3  '>
+			<div className='flex w-full flex-col space-y-3  text-white'>
 				<ScrambleHeading
 					text='Currently'
 					delaySec={baseDelaySec}
@@ -263,7 +263,7 @@ const ProjectsList = ({ entranceDelayMs = 350 }: ProjectsListProps) => {
 				</div>
 			</div>
 
-			<div className='flex w-full flex-col space-y-3'>
+			<div className='flex w-full flex-col space-y-3 text-white'>
 				<ScrambleHeading
 					text='Startups'
 					delaySec={baseDelaySec}
@@ -282,7 +282,7 @@ const ProjectsList = ({ entranceDelayMs = 350 }: ProjectsListProps) => {
 					)}
 				/>
 			</div>
-			<div className='flex w-full flex-col space-y-3'>
+			<div className='flex w-full flex-col space-y-3 text-white'>
 				<ScrambleHeading
 					text='Business'
 					delaySec={baseDelaySec}
@@ -301,7 +301,7 @@ const ProjectsList = ({ entranceDelayMs = 350 }: ProjectsListProps) => {
 					)}
 				/>
 			</div>
-			<div className='flex w-full flex-col space-y-3'>
+			<div className='flex w-full flex-col space-y-3 text-white'>
 				<ScrambleHeading
 					text='Projects'
 					delaySec={baseDelaySec}
