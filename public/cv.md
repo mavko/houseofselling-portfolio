@@ -65,8 +65,8 @@ _July 2024 – 2025_
 
 ## 🚀 Startup Journeys
 
-- [ispect journey](https://sebastianselling.com/artifacts/archive/makings-of-ispect)
-- [icontrol journey](https://sebastianselling.com/artifacts/archive/makings-of-icontrol)
+- [ispect journey](https://sebastianselling.com/artifacts/makings-of-ispect)
+- [icontrol journey](https://sebastianselling.com/artifacts/makings-of-icontrol)
 
 ---
 

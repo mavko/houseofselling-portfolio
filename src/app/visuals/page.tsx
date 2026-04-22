@@ -228,16 +228,17 @@ export default function Visuals() {
     <>
       <section className="relative z-0 columns-1 gap-2 space-y-3 pb-36 sm:columns-2 md:columns-3">
         {photoItems.map((item, index) => (
-          <div
+          <button
+            type="button"
             key={`photo-${index}`}
             onClick={() => {
               setSelectedItem(item)
               setIsOpen(true)
             }}
-            className="relative h-fit w-full cursor-pointer overflow-hidden rounded-xl border border-white/10"
+            className="relative h-fit w-full cursor-pointer overflow-hidden rounded-xl border border-white/10 text-left"
           >
             <MediaComponent item={item} />
-          </div>
+          </button>
         ))}
       </section>
 

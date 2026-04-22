@@ -2,72 +2,96 @@
   "version": 1,
   "transcripts": {
     "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/000bf31c-5bd3-4d4c-970d-2185474cac41/000bf31c-5bd3-4d4c-970d-2185474cac41.jsonl": {
-      "mtimeMs": 1774876125000,
-      "lastProcessedAt": "2026-03-30T15:06:19.000Z"
+      "mtimeMs": 1774876125079,
+      "lastProcessedAt": "2026-04-21T11:51:41Z"
     },
     "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/000bf31c-5bd3-4d4c-970d-2185474cac41/subagents/47736455-b7e6-41e8-a50e-13d6b137aaba.jsonl": {
-      "mtimeMs": 1774875642000,
-      "lastProcessedAt": "2026-03-30T15:06:19.000Z"
+      "mtimeMs": 1774875642153,
+      "lastProcessedAt": "2026-04-21T11:51:41Z"
     },
-    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/05d8379e-da4e-47f0-8ae4-eebd3524be37/05d8379e-da4e-47f0-8ae4-eebd3524be37.jsonl": {
-      "mtimeMs": 1774194991000,
-      "lastProcessedAt": "2026-03-30T12:00:00.000Z"
-    },
-    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/0c79f0ab-8163-46c9-a5c6-fed5c0361253/0c79f0ab-8163-46c9-a5c6-fed5c0361253.jsonl": {
-      "mtimeMs": 1774881163000,
-      "lastProcessedAt": "2026-03-30T15:06:19.000Z"
-    },
-    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/3518990b-aec7-4062-af07-6291210e238a/3518990b-aec7-4062-af07-6291210e238a.jsonl": {
-      "mtimeMs": 1774187165000,
-      "lastProcessedAt": "2026-03-22T12:00:00.000Z"
-    },
-    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/73d4dffc-ecc2-469a-80bd-a8721cb2a5c4/73d4dffc-ecc2-469a-80bd-a8721cb2a5c4.jsonl": {
-      "mtimeMs": 1774871006000,
-      "lastProcessedAt": "2026-03-30T13:00:12.396Z"
-    },
-    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/755ade66-6e39-4dd0-8b00-a60e0aabff34/755ade66-6e39-4dd0-8b00-a60e0aabff34.jsonl": {
-      "mtimeMs": 1774882985000,
-      "lastProcessedAt": "2026-03-30T15:06:19.000Z"
-    },
-    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/755ade66-6e39-4dd0-8b00-a60e0aabff34/subagents/9405936d-d52f-4d04-a308-2f6ab769c33e.jsonl": {
-      "mtimeMs": 1774878813000,
-      "lastProcessedAt": "2026-03-30T15:06:19.000Z"
-    },
-    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/755ade66-6e39-4dd0-8b00-a60e0aabff34/subagents/f2a26102-134c-44d1-b000-0d437a2779df.jsonl": {
-      "mtimeMs": 1774883029000,
-      "lastProcessedAt": "2026-03-30T15:06:19.000Z"
-    },
-    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/8083ca13-7b2b-4b8c-afa4-f06e289ad665/8083ca13-7b2b-4b8c-afa4-f06e289ad665.jsonl": {
-      "mtimeMs": 1774192132000,
-      "lastProcessedAt": "2026-03-22T12:00:00.000Z"
-    },
-    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/9032ba25-bb08-4cfb-8591-f38ce3284dd6/9032ba25-bb08-4cfb-8591-f38ce3284dd6.jsonl": {
-      "mtimeMs": 1774868226000,
-      "lastProcessedAt": "2026-03-30T13:00:12.396Z"
-    },
-    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/9032ba25-bb08-4cfb-8591-f38ce3284dd6/subagents/69dffe93-8535-42b6-a3e8-57505f30ba83.jsonl": {
-      "mtimeMs": 1774867832000,
-      "lastProcessedAt": "2026-03-30T13:00:12.383Z"
-    },
-    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/b00b1dfa-639a-4353-8953-272190cf5620/b00b1dfa-639a-4353-8953-272190cf5620.jsonl": {
-      "mtimeMs": 1774189438000,
-      "lastProcessedAt": "2026-03-22T12:00:00.000Z"
-    },
-    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/ed677742-6814-4918-9a53-6ff6ca622574/ed677742-6814-4918-9a53-6ff6ca622574.jsonl": {
-      "mtimeMs": 1774880782000,
-      "lastProcessedAt": "2026-03-30T15:06:19.000Z"
-    },
-    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/8813e6d0-a67d-4953-bbba-017e58d536e3/8813e6d0-a67d-4953-bbba-017e58d536e3.jsonl": {
+    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/05a72ef9-dc94-4646-a8bc-13fe49b70d52/05a72ef9-dc94-4646-a8bc-13fe49b70d52.jsonl": {
       "mtimeMs": 1774930000000,
       "lastProcessedAt": "2026-03-31T00:00:00.000Z"
+    },
+    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/05d8379e-da4e-47f0-8ae4-eebd3524be37/05d8379e-da4e-47f0-8ae4-eebd3524be37.jsonl": {
+      "mtimeMs": 1774194991046,
+      "lastProcessedAt": "2026-04-21T11:51:41Z"
+    },
+    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/0c79f0ab-8163-46c9-a5c6-fed5c0361253/0c79f0ab-8163-46c9-a5c6-fed5c0361253.jsonl": {
+      "mtimeMs": 1774883771178,
+      "lastProcessedAt": "2026-04-21T11:51:41Z"
+    },
+    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/3518990b-aec7-4062-af07-6291210e238a/3518990b-aec7-4062-af07-6291210e238a.jsonl": {
+      "mtimeMs": 1774187165766,
+      "lastProcessedAt": "2026-04-21T11:51:41Z"
+    },
+    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/3719bd14-43a3-42b1-a1da-7e1bf10e2483/3719bd14-43a3-42b1-a1da-7e1bf10e2483.jsonl": {
+      "mtimeMs": 1776772220153,
+      "lastProcessedAt": "2026-04-21T11:51:41Z"
+    },
+    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/3719bd14-43a3-42b1-a1da-7e1bf10e2483/subagents/f1b491e3-d8b0-47b8-9a4f-4ef03dac315e.jsonl": {
+      "mtimeMs": 1776757196929,
+      "lastProcessedAt": "2026-04-21T11:51:41Z"
+    },
+    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/5026a274-082b-4eb4-a812-61d30de93770/5026a274-082b-4eb4-a812-61d30de93770.jsonl": {
+      "mtimeMs": 1775793939547,
+      "lastProcessedAt": "2026-04-21T11:51:41Z"
+    },
+    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/73d4dffc-ecc2-469a-80bd-a8721cb2a5c4/73d4dffc-ecc2-469a-80bd-a8721cb2a5c4.jsonl": {
+      "mtimeMs": 1774871006008,
+      "lastProcessedAt": "2026-04-21T11:51:41Z"
+    },
+    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/755ade66-6e39-4dd0-8b00-a60e0aabff34/755ade66-6e39-4dd0-8b00-a60e0aabff34.jsonl": {
+      "mtimeMs": 1774884364341,
+      "lastProcessedAt": "2026-04-21T11:51:41Z"
+    },
+    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/755ade66-6e39-4dd0-8b00-a60e0aabff34/subagents/9405936d-d52f-4d04-a308-2f6ab769c33e.jsonl": {
+      "mtimeMs": 1774878813729,
+      "lastProcessedAt": "2026-04-21T11:51:41Z"
+    },
+    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/755ade66-6e39-4dd0-8b00-a60e0aabff34/subagents/f2a26102-134c-44d1-b000-0d437a2779df.jsonl": {
+      "mtimeMs": 1774883346246,
+      "lastProcessedAt": "2026-04-21T11:51:41Z"
+    },
+    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/8083ca13-7b2b-4b8c-afa4-f06e289ad665/8083ca13-7b2b-4b8c-afa4-f06e289ad665.jsonl": {
+      "mtimeMs": 1774192132097,
+      "lastProcessedAt": "2026-04-21T11:51:41Z"
+    },
+    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/8813e6d0-a67d-4953-bbba-017e58d536e3/8813e6d0-a67d-4953-bbba-017e58d536e3.jsonl": {
+      "mtimeMs": 1774944150978,
+      "lastProcessedAt": "2026-04-21T11:51:41Z"
+    },
+    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/8813e6d0-a67d-4953-bbba-017e58d536e3/subagents/64cb6124-587d-4cf9-aae3-fed5bea8540c.jsonl": {
+      "mtimeMs": 1774942942943,
+      "lastProcessedAt": "2026-04-21T11:51:41Z"
+    },
+    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/9032ba25-bb08-4cfb-8591-f38ce3284dd6/9032ba25-bb08-4cfb-8591-f38ce3284dd6.jsonl": {
+      "mtimeMs": 1774868226741,
+      "lastProcessedAt": "2026-04-21T11:51:41Z"
+    },
+    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/9032ba25-bb08-4cfb-8591-f38ce3284dd6/subagents/69dffe93-8535-42b6-a3e8-57505f30ba83.jsonl": {
+      "mtimeMs": 1774867832026,
+      "lastProcessedAt": "2026-04-21T11:51:41Z"
+    },
+    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/a969fb43-cef8-4706-ae08-72f70ec9dca1/a969fb43-cef8-4706-ae08-72f70ec9dca1.jsonl": {
+      "mtimeMs": 1775794127107,
+      "lastProcessedAt": "2026-04-21T11:51:41Z"
+    },
+    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/b00b1dfa-639a-4353-8953-272190cf5620/b00b1dfa-639a-4353-8953-272190cf5620.jsonl": {
+      "mtimeMs": 1774189438240,
+      "lastProcessedAt": "2026-04-21T11:51:41Z"
     },
     "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/ddb2c228-b78f-4eed-ac05-f82d49641123/ddb2c228-b78f-4eed-ac05-f82d49641123.jsonl": {
       "mtimeMs": 1774930000000,
       "lastProcessedAt": "2026-03-31T00:00:00.000Z"
     },
-    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/05a72ef9-dc94-4646-a8bc-13fe49b70d52/05a72ef9-dc94-4646-a8bc-13fe49b70d52.jsonl": {
-      "mtimeMs": 1774930000000,
-      "lastProcessedAt": "2026-03-31T00:00:00.000Z"
+    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/ed677742-6814-4918-9a53-6ff6ca622574/ed677742-6814-4918-9a53-6ff6ca622574.jsonl": {
+      "mtimeMs": 1774880782132,
+      "lastProcessedAt": "2026-04-21T11:51:41Z"
+    },
+    "/Users/sebastianselling/.cursor/projects/Users-sebastianselling-Developer-cold-harbor-studio-houseofselling-portfolio/agent-transcripts/3719bd14-43a3-42b1-a1da-7e1bf10e2483/subagents/422b1d83-aa53-45a2-9db5-dfd71075e36a.jsonl": {
+      "mtimeMs": 1776772234774,
+      "lastProcessedAt": "2026-04-21T11:51:41Z"
     }
   }
 }

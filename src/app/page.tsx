@@ -8,8 +8,7 @@ import Link from 'next/link'
 import { heroVariants } from '@/components/animations/homeStagger'
 
 const RayHeader = dynamic(
-	() =>
-		import('@/components/animations/ray-header').then((m) => m.RayHeader),
+	() => import('@/components/animations/ray-header').then((m) => m.RayHeader),
 	{
 		ssr: false,
 		loading: () => (
@@ -22,7 +21,7 @@ export default function Home() {
 	return (
 		<>
 			<motion.div
-				className='flex h-96 w-full overflow-hidden rounded-4xl border border-white/25 [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] brightness-125 [transition-property:transform,filter] select-none [transition:.12s_var(--ease-out-quad)]'
+				className='flex h-96 w-full mx-auto max-w-5xl  overflow-hidden rounded-4xl border border-white/25 [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] brightness-125 [transition-property:transform,filter] select-none [transition:.12s_var(--ease-out-quad)]'
 				variants={heroVariants}
 				initial='hidden'
 				animate='visible'>

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
 	return (
-		<div className='min-h-screen py-8'>
+		<div className='min-h-screen py-8 mx-auto max-w-5xl '>
 			<ProjectsList entranceDelayMs={100} />
 		</div>
 	)

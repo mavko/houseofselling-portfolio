@@ -37,6 +37,16 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/artifacts/archive/makings-of-ispect',
+        destination: '/artifacts/makings-of-ispect',
+        permanent: true,
+      },
+      {
+        source: '/artifacts/archive/makings-of-icontrol',
+        destination: '/artifacts/makings-of-icontrol',
+        permanent: true,
+      },
+      {
         source: '/:path*',
         has: [
           {

@@ -6,12 +6,19 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 import { SafeImage } from './SafeImage'
 
+const thumbMotion =
+  'cursor-pointer rounded-xl ring-1 ring-white/10 outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-reduce:transition-none [@media(hover:hover)_and_(pointer:fine)]:transition-[transform,box-shadow,border-color] [@media(hover:hover)_and_(pointer:fine)]:duration-200 [@media(hover:hover)_and_(pointer:fine)]:ease-out motion-reduce:hover:translate-y-0 [@media(hover:hover)_and_(pointer:fine)]:hover:-translate-y-0.5 [@media(hover:hover)_and_(pointer:fine)]:hover:border [@media(hover:hover)_and_(pointer:fine)]:hover:border-white/30 [@media(hover:hover)_and_(pointer:fine)]:hover:shadow-xl [@media(hover:hover)_and_(pointer:fine)]:hover:shadow-black/80'
+
 interface EnlargeableImageProps {
   src: string
   alt: string
   width?: number
   height?: number
   className?: string
+  /** Passed to next/image for responsive thumbnail density (gallery layouts). */
+  sizes?: string
+  /** Above-the-fold / LCP thumbnail: eager fetch + preload (do not set on many images). */
+  priority?: boolean
 }
 
 export function EnlargeableImage({
@@ -20,8 +27,12 @@ export function EnlargeableImage({
   width = 800,
   height = 600,
   className,
+  sizes,
+  priority,
 }: EnlargeableImageProps) {
   const [isOpen, setIsOpen] = useState(false)
+
+  const thumbClass = [thumbMotion, className].filter(Boolean).join(' ')
 
   return (
     <>
@@ -30,8 +41,19 @@ export function EnlargeableImage({
         alt={alt}
         width={width}
         height={height}
+        sizes={sizes}
+        priority={priority}
+        role="button"
+        aria-label={`Open full size: ${alt}`}
+        tabIndex={0}
         onClick={() => setIsOpen(true)}
-        className={`cursor-pointer rounded-xl transition-all hover:-translate-y-1 hover:border hover:border-white/30 hover:shadow-xl hover:shadow-black ${className}`}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault()
+            setIsOpen(true)
+          }
+        }}
+        className={thumbClass}
       />
 
       <AnimatePresence>

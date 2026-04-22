@@ -85,11 +85,11 @@ export default function RootLayout({
 			<head>
 				<meta name='view-transition' content='same-origin' />
 			</head>
-			<body className='h-screen w-full bg-black font-sans text-[#f2f2f2] antialiased'>
+			<body className='h-screen w-full bg-[#0A0A0A] font-sans text-[#f2f2f2] antialiased'>
 				<Providers>
 					<div className='relative'>
-						<main className='mx-auto max-w-5xl px-4 sm:px-6'>
-							<header className='font-display relative z-20 my-2 p-2 text-xs font-bold tracking-[-0.03em] font-stretch-125%'>
+						<main className='px-4 sm:px-6'>
+							<header className='mx-auto max-w-5xl  font-display relative z-20 my-2 p-2 text-xs font-bold tracking-[-0.03em] font-stretch-125%'>
 								<div className='flex w-full flex-col justify-between gap-4 sm:flex-row sm:items-center sm:gap-0'>
 									<div className='flex items-center gap-4 sm:gap-5'>
 										<Link href='/' className='flex items-center gap-3'>
@@ -137,7 +137,7 @@ export default function RootLayout({
 							</header>
 							{children}
 						</main>
-						<footer className='font-display py-42 text-center text-base/12 font-medium text-white'>
+						<footer className='font-display py-42 text-center text-base/12 font-medium text-white max-w-5xl mx-auto'>
 							© 2026 // house of selling
 						</footer>
 						<div
