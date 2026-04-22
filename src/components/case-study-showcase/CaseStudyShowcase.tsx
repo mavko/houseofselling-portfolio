@@ -58,8 +58,8 @@ export function CaseStudyShowcase({
 
 	return (
 		<div className='mx-auto w-full'>
-			<div className='w-full border rounded-4xl border-white/20 lg:grid lg:grid-cols-[minmax(0,24rem)_minmax(0,1fr)] lg:items-start'>
-				<aside className='p-6 lg:sticky lg:top-24 lg:self-start'>
+			<div className='w-full border rounded-4xl border-white/20 lg:grid lg:grid-cols-[minmax(0,24rem)_minmax(0,1fr)] lg:items-start bg-[#111]'>
+				<aside className='p-6 lg:sticky lg:top-24 lg:self-start '>
 					<header className='max-w-3xl'>
 						<h1 className='font-display mt-3 text-3xl font-medium font-stretch-200% tracking-tight text-white sm:text-4xl'>
 							{page.title}
@@ -73,11 +73,11 @@ export function CaseStudyShowcase({
 					</div>
 				</aside>
 
-				<div className=''>
+				<div className='divide-white/20 divide-y'>
 					{eras.map((era, index) => {
 						const { leading, wideItems, tail } = partitionCaseStudyEraBlocks(
 							era.blocks,
-							era.wideMediaGallery,
+							era.wideMediaGallery
 						)
 						const useWideGallery = wideItems !== null
 
@@ -90,8 +90,8 @@ export function CaseStudyShowcase({
 								whileInView={reduceMotion ? undefined : 'visible'}
 								viewport={{ once: true, margin: '-80px' }}
 								variants={reduceMotion ? undefined : eraMotion}
-								className={era.featured ? 'scroll-mt-28 ' : 'scroll-mt-28'}>
-								<div className='border-l border-t  border-white/20 p-8 '>
+								className={`${era.featured ? 'scroll-mt-28 ' : 'scroll-mt-28'} `}>
+								<div className='border-l border-white/20 p-8'>
 									<div>
 										<h2 className='font-display text-xl font-semibold tracking-tight text-white sm:text-2xl'>
 											{era.title}

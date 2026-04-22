@@ -38,11 +38,11 @@ export function CaseStudyMediaItem({ item }: { item: MediaItem }) {
 	if (item.kind === 'video') {
 		return (
 			<figure className='space-y-3'>
-				<div className='overflow-hidden rounded-xl ring-1 ring-white/10'>
+				<div className='overflow-hidden rounded-xl ring-1 ring-white/10 w-fit'>
 					<video
 						src={item.src}
 						title={item.title}
-						className='aspect-video w-full'
+						className='aspect-video w-full '
 						autoPlay
 						loop
 						muted
