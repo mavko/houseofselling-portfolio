@@ -95,8 +95,8 @@ export default function ArtifactsContent() {
 						className='group flex flex-col rounded-4xl'>
 						<MediaComponent
 							item={{
-								type: 'image',
-								src: mediaUrl('bundled/craft/ispect-header.jpg'),
+								type: 'video',
+								src: '/ispect-landing-new.mp4',
 								alt: 'read: makings of ispect↗',
 							}}
 						/>

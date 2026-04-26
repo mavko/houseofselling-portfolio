@@ -76,7 +76,8 @@ type ProjectEntry = {
 	year: (string | number)[]
 	image: string
 	imageAlt: string
-	hoverMedia?: 'image' | 'heatmap'
+	hoverMedia?: 'image' | 'heatmap' | 'video'
+	videoSrc?: string
 	imageClassName?: string
 }
 
@@ -174,6 +175,8 @@ const startups: ProjectEntry[] = [
 		year: [2012, 2024],
 		image: mediaUrl('bundled/craft/ispect-header.jpg'),
 		imageAlt: 'read: makings of ispect — header',
+		hoverMedia: 'video',
+		videoSrc: '/ispect-landing-new.mp4',
 		imageClassName: 'object-center',
 	},
 ]
@@ -199,6 +202,7 @@ function toHoverExpandItem(
 		sublabel: yearLabel(project.year),
 		image: project.image,
 		imageAlt: project.imageAlt,
+		videoSrc: project.videoSrc,
 		href: project.href,
 		entranceDelaySec: baseDelaySec + rowStaggerSec,
 		hoverMedia: project.hoverMedia,

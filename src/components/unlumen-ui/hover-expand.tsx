@@ -53,7 +53,8 @@ export interface HoverExpandItem {
 	description?: string
 	href?: string
 	entranceDelaySec?: number
-	hoverMedia?: 'image' | 'heatmap'
+	hoverMedia?: 'image' | 'heatmap' | 'video'
+	videoSrc?: string
 	/** When true the row stays expanded and shows its media permanently. */
 	alwaysExpanded?: boolean
 }
@@ -130,6 +131,7 @@ export function HoverExpand({
 						: collapsedHeight
 
 				const isHeatmapRow = item.hoverMedia === 'heatmap'
+				const isVideoRow = item.hoverMedia === 'video'
 
 				const rowContent = (
 					<>
@@ -169,6 +171,19 @@ export function HoverExpand({
 											expandedHeight={expandedHeight}
 										/>
 									</motion.div>
+									<div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10' />
+								</>
+							) : isVideoRow ? (
+								<>
+									<video
+										src={item.videoSrc ?? imageSrc(item.image)}
+										className='h-full w-full object-cover'
+										autoPlay
+										loop
+										muted
+										playsInline
+										preload='metadata'
+									/>
 									<div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10' />
 								</>
 							) : (
