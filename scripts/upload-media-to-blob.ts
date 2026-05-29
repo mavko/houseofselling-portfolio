@@ -18,7 +18,9 @@ config({ path: join(root, '.env.local') })
 config({ path: join(root, '.env') })
 
 if (!process.env.BLOB_READ_WRITE_TOKEN) {
-  console.error('Missing BLOB_READ_WRITE_TOKEN. Add it to .env.local or .env and retry.')
+  console.error(
+    'Missing BLOB_READ_WRITE_TOKEN. Add it to .env.local or .env and retry.',
+  )
   process.exit(1)
 }
 
@@ -74,7 +76,9 @@ async function main() {
   for (const { absPath, key, pathname } of jobs) {
     const size = statSync(absPath).size
     const useMultipart = size > 4_000_000
-    const body = useMultipart ? createReadStream(absPath) : readFileSync(absPath)
+    const body = useMultipart
+      ? createReadStream(absPath)
+      : readFileSync(absPath)
 
     const result = await put(pathname, body, {
       access: 'public',
@@ -89,7 +93,7 @@ async function main() {
 
   const keys = Object.keys(manifest).sort()
   const lines = keys.map(
-    (k) => `  ${JSON.stringify(k)}: ${JSON.stringify(manifest[k])},`
+    (k) => `  ${JSON.stringify(k)}: ${JSON.stringify(manifest[k])},`,
   )
 
   const out = `/* oxlint-disable */
