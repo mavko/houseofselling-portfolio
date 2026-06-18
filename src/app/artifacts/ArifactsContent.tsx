@@ -8,6 +8,7 @@ import {
   artifactContainerVariants,
   artifactItemVariants,
 } from '@/components/animations/homeStagger'
+import { CursorReportArtifactTile } from '@/components/cursor-report/CursorReportArtifactTile'
 
 type CraftItem = {
   type: 'image' | 'video'
@@ -66,6 +67,10 @@ export default function ArtifactsContent() {
         initial="hidden"
         animate="visible"
       >
+        {/* Cursor report — top of stack */}
+        <motion.div className="col-span-full" variants={artifactItemVariants}>
+          <CursorReportArtifactTile />
+        </motion.div>
         {/* 1st item: bmLogo */}
         <motion.div variants={artifactItemVariants}>
           <Link

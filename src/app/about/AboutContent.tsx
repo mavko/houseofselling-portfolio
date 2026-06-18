@@ -43,9 +43,12 @@ export default function AboutContent() {
           implementing UI in Vue and CSS.
         </p>
         <p>
-          Lately, I've been building with Cursor and Claude Code, letting me
-          ship fullstack apps completely solo which has been absolutely
-          mindblowing. Currently completely refactoring and migrating our legacy
+          Lately, I've been building with{' '}
+          <Link href="/cursor" className="text-white">
+            Cursor
+          </Link>{' '}
+          and Claude Code, letting me ship fullstack apps completely solo which has been
+          absolutely mindblowing. Currently completely refactoring and migrating our legacy
           codebase of 200k lines of code iSpect from vue 2.7, vuetify and
           graphql to Nuxt 4 and I've reached feature parity in weeks. Something
           that would've taken months just a few years ago.

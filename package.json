@@ -9,7 +9,8 @@
     "lint": "oxlint",
     "format": "oxfmt",
     "format:check": "oxfmt --check",
-    "upload-media": "tsx scripts/upload-media-to-blob.ts"
+    "upload-media": "tsx scripts/upload-media-to-blob.ts",
+    "sync-cursor-report": "tsx scripts/sync-cursor-report.ts"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {

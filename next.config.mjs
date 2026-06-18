@@ -31,6 +31,11 @@ const nextConfig = {
         hostname: '*.public.blob.vercel-storage.com',
         pathname: '/media/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'workoscdn.com',
+        pathname: '/**',
+      },
     ],
     unoptimized: false,
   },

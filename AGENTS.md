@@ -10,6 +10,7 @@
 - Prefer Tailwind `transition-colors` with explicit text classes over animating `color` via Framer Motion `animate` (especially between computed colors and `currentColor`) to avoid non-animatable value warnings.
 - For clickable UI triggers, use a semantic `<button type="button">` (with explicit styling like `text-left`) over a non-interactive `div` with click handlers to satisfy a11y lints and compiler rules.
 - Prefer horizontal snap-carousel layouts with snap track and manual controls for showcased galleries over static grids or masonry.
+- For portfolio case-study and artifact narrative copy, position as designer-who-codes: plainspoken, problem-first, skimmable with explicit takeaways—avoid stack-dumping or reading like an engineering résumé.
 
 ## Learned Workspace Facts
 
@@ -23,3 +24,4 @@
 - Under MDX page setups in the portfolio, the compiled `_createMdxContent` component does not close over file-level `const` bindings; only `import` statements are in scope. Re-export media URLs or constants from a TypeScript module to reference them within the MDX body without causing ReferenceErrors at runtime.
 - `HoverExpand` supports video overlays (using `hoverMedia: "video"`) to play autoplay, looping, muted videos on hover triggers, e.g., on the home page startups list or artifacts gallery.
 - Prefer adding the `priority` prop (Next.js `next/image`) over `loading="eager"` for above-the-fold or LCP candidate images to optimize Largest Contentful Paint.
+- The `/cursor` route is a Cursor-style report page: build-time sync via `pnpm sync-cursor-report` writes `src/generated/cursor-report.json` from the public cursor.com/@sebastian profile; UI lives in `src/components/cursor-report/`, narrative in `src/content/cursor-report-narrative.ts`, full-width on the dark site shell with coral accent `#E85D4C`.
