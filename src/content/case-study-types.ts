@@ -35,6 +35,13 @@ export type MediaItem =
       description: string
     }
 
+export type StackCompareRow = {
+  before: string
+  after: string
+}
+
+export type DiagramVariant = 'data-pipeline' | 'agent-loop'
+
 export type EraBlock =
   | { type: 'rich'; paragraphs: RichParagraph[] }
   | { type: 'plain'; paragraphs: string[] }
@@ -45,11 +52,28 @@ export type EraBlock =
     }
   | { type: 'bullets'; items: string[] }
   | { type: 'media'; items: MediaItem[] }
+  | { type: 'stack-compare'; rows: StackCompareRow[] }
+  | {
+      type: 'diagram'
+      variant: DiagramVariant
+      caption: string
+    }
+
+export type CaseStudyMetaItem = {
+  label: string
+  value: string
+}
 
 export type CaseStudyPageMeta = {
   title: string
   description: string
   date: string
+  /** Project name / series label above the headline. */
+  eyebrow?: string
+  /** One-line positioning under the title. */
+  subtitle?: string
+  /** Scan strip: Role, Scope, Domain, Status, etc. */
+  meta?: readonly CaseStudyMetaItem[]
 }
 
 export type CaseStudyEra = {

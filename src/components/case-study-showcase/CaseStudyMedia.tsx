@@ -5,8 +5,8 @@ import { mediaUrl } from '@/lib/media-url'
 export function CaseStudyMediaItem({ item }: { item: MediaItem }) {
   if (item.kind === 'placeholder') {
     return (
-      <div className="flex min-h-[220px] flex-col justify-center rounded-4xl border border-dashed border-white/15 bg-white/[0.03] p-8 [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.08)]">
-        <p className="font-display text-lg font-semibold tracking-tight text-white">
+      <div className="flex min-h-[180px] flex-col justify-center rounded-xl border border-dashed border-white/12 bg-black/20 p-6">
+        <p className="font-display text-base font-semibold tracking-tight text-white">
           {item.title}
         </p>
         <p className="mt-2 text-sm leading-relaxed text-zinc-500">
@@ -19,7 +19,7 @@ export function CaseStudyMediaItem({ item }: { item: MediaItem }) {
   if (item.kind === 'embed') {
     return (
       <figure className="space-y-3">
-        <div className="overflow-hidden rounded-xl ring-1 ring-white/10">
+        <div className="overflow-hidden rounded-lg outline outline-1 -outline-offset-1 outline-white/10">
           <iframe
             src={item.src}
             title={item.title}
@@ -28,7 +28,7 @@ export function CaseStudyMediaItem({ item }: { item: MediaItem }) {
             allowFullScreen
           />
         </div>
-        <figcaption className="text-center text-xs font-medium text-zinc-500">
+        <figcaption className="text-left text-[12px] text-zinc-500">
           {item.title}
         </figcaption>
       </figure>
@@ -38,7 +38,7 @@ export function CaseStudyMediaItem({ item }: { item: MediaItem }) {
   if (item.kind === 'video') {
     return (
       <figure className="space-y-3">
-        <div className="w-fit overflow-hidden rounded-xl ring-1 ring-white/10">
+        <div className="w-full overflow-hidden rounded-lg outline outline-1 -outline-offset-1 outline-white/10">
           <video
             src={item.src}
             title={item.title}
@@ -52,7 +52,7 @@ export function CaseStudyMediaItem({ item }: { item: MediaItem }) {
           />
         </div>
         {item.caption ? (
-          <figcaption className="text-center text-xs font-medium text-zinc-500">
+          <figcaption className="text-left text-[12px] text-zinc-500">
             {item.caption}
           </figcaption>
         ) : null}
@@ -73,7 +73,7 @@ export function CaseStudyMediaItem({ item }: { item: MediaItem }) {
         priority={item.priority}
       />
       {item.caption ? (
-        <figcaption className="text-center text-xs font-medium text-zinc-500">
+        <figcaption className="text-left text-[12px] text-zinc-500">
           {item.caption}
         </figcaption>
       ) : null}

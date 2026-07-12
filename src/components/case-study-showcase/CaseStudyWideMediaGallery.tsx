@@ -1,4 +1,7 @@
+'use client'
+
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid'
+import { useReducedMotion } from 'framer-motion'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { EnlargeableImage } from '@/components/EnlargeableImage'
@@ -8,6 +11,9 @@ import { mediaUrl } from '@/lib/media-url'
 import { CaseStudyMediaItem } from './CaseStudyMedia'
 
 const GALLERY_SIZES = '(min-width: 1280px) 62vw, (min-width: 768px) 72vw, 94vw'
+
+const galleryNavClass =
+  'inline-flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-zinc-200 transition-[transform,background-color,color,opacity] duration-150 ease-out enabled:active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-40 [@media(hover:hover)_and_(pointer:fine)]:enabled:hover:bg-white/[0.08] [@media(hover:hover)_and_(pointer:fine)]:enabled:hover:text-white'
 
 function WideGalleryFigure({
   src,
@@ -25,18 +31,18 @@ function WideGalleryFigure({
   priority?: boolean
 }) {
   return (
-    <figure className="space-y-3 rounded-2xl border border-white/10 bg-white/[0.02] p-2.5 sm:p-3">
+    <figure className="space-y-2.5">
       <EnlargeableImage
         src={src}
         alt={alt}
         width={width}
         height={height}
         sizes={GALLERY_SIZES}
-        className="aspect-[16/10] w-full object-cover"
+        className="aspect-[16/10] w-full rounded-lg object-cover outline outline-1 -outline-offset-1 outline-white/10"
         priority={priority}
       />
       {caption ? (
-        <figcaption className="px-1 text-center text-xs font-medium text-zinc-500">
+        <figcaption className="text-left text-[12px] leading-snug text-zinc-500">
           {caption}
         </figcaption>
       ) : null}
@@ -57,6 +63,7 @@ export function CaseStudyWideMediaGallery({
   sectionAriaLabel = 'Media gallery',
   trackLabelPrefix = 'Images',
 }: CaseStudyWideMediaGalleryProps) {
+  const reduceMotion = useReducedMotion() ?? false
   const imageItems = items.filter(
     (item): item is Extract<MediaItem, { kind: 'image' }> =>
       item.kind === 'image',
@@ -85,15 +92,20 @@ export function CaseStudyWideMediaGallery({
     )
   }, [])
 
-  const scrollByPage = useCallback((direction: 'prev' | 'next') => {
-    const track = trackRef.current
-    if (!track) return
-    const amount = Math.round(track.clientWidth * 0.9)
-    track.scrollBy({
-      left: direction === 'next' ? amount : -amount,
-      behavior: 'smooth',
-    })
-  }, [])
+  const scrollByPage = useCallback(
+    (direction: 'prev' | 'next') => {
+      const track = trackRef.current
+      if (!track) return
+      // Page ~90% of viewport so snap targets remain visible; native drag stays primary.
+      const amount = Math.round(track.clientWidth * 0.9)
+      track.scrollBy({
+        left: direction === 'next' ? amount : -amount,
+        // Fixed smooth-scroll fights velocity; skip under reduced motion.
+        behavior: reduceMotion ? 'auto' : 'smooth',
+      })
+    },
+    [reduceMotion],
+  )
 
   useEffect(() => {
     updateButtons()
@@ -108,8 +120,8 @@ export function CaseStudyWideMediaGallery({
           <div
             className={`mb-4 flex items-center gap-3 ${showCarouselNav ? 'justify-between' : ''}`}
           >
-            <p className="text-xs font-medium tracking-[0.18em] text-zinc-500 uppercase">
-              Gallery
+            <p className="font-mono text-[11px] tracking-[0.12em] text-zinc-600 uppercase">
+              Screens
             </p>
             {showCarouselNav ? (
               <div className="flex items-center gap-2">
@@ -118,18 +130,18 @@ export function CaseStudyWideMediaGallery({
                   aria-label="Previous slide"
                   onClick={() => scrollByPage('prev')}
                   disabled={!canPrev}
-                  className="inline-flex size-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-zinc-200 transition-colors enabled:hover:bg-white/[0.08] enabled:hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
+                  className={galleryNavClass}
                 >
-                  <ChevronLeftIcon className="size-4" />
+                  <ChevronLeftIcon className="size-4" aria-hidden />
                 </button>
                 <button
                   type="button"
                   aria-label="Next slide"
                   onClick={() => scrollByPage('next')}
                   disabled={!canNext}
-                  className="inline-flex size-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-zinc-200 transition-colors enabled:hover:bg-white/[0.08] enabled:hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
+                  className={galleryNavClass}
                 >
-                  <ChevronRightIcon className="size-4" />
+                  <ChevronRightIcon className="size-4" aria-hidden />
                 </button>
               </div>
             ) : null}
@@ -139,7 +151,7 @@ export function CaseStudyWideMediaGallery({
             ref={trackRef}
             aria-label={slideLabel}
             onScroll={updateButtons}
-            className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain pb-2 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {imageItems.map((item, index) => {
               const src = mediaUrl(item.srcKey)

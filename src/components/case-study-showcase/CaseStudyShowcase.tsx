@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import { motion, useReducedMotion } from 'framer-motion'
 
 import type {
   CaseStudyEra,
@@ -27,122 +26,153 @@ function ArrowLeftIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-const backLinkClass =
-  'group relative inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-full bg-slate-800 p-px text-xs leading-6 font-semibold text-white/80 no-underline shadow-2xl shadow-zinc-900'
-
-const eraMotion = {
-  hidden: { opacity: 0, y: 16 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: 'easeOut' as const,
-      delay: 0.06 * i,
-    },
-  }),
+function yearDateTime(yearRange: string): string | undefined {
+  const match = yearRange.match(/\d{4}/)
+  return match?.[0]
 }
 
-export type CaseStudyShowcaseProps = {
-  page: CaseStudyPageMeta
-  foreword: RichParagraph[]
-  eras: CaseStudyEra[]
-}
-
+/**
+ * Open long-form — scan pack first (title, meta, hook), then eras as depth.
+ */
 export function CaseStudyShowcase({
   page,
   foreword,
   eras,
-}: CaseStudyShowcaseProps) {
-  const reduceMotion = useReducedMotion()
+}: {
+  page: CaseStudyPageMeta
+  foreword: RichParagraph[]
+  eras: CaseStudyEra[]
+}) {
+  const hasMeta = page.meta && page.meta.length > 0
 
   return (
-    <div className="mx-auto w-full">
-      <div className="w-full rounded-4xl border border-white/20 bg-[#111] lg:grid lg:grid-cols-[minmax(0,24rem)_minmax(0,1fr)] lg:items-start">
-        <aside className="p-6 lg:sticky lg:top-24 lg:self-start">
-          <header className="max-w-3xl">
-            <h1 className="font-display mt-3 text-3xl font-medium tracking-tight text-white font-stretch-200% sm:text-4xl">
-              {page.title}
-            </h1>
-          </header>
+    <div className="mx-auto w-full max-w-[1000px]">
+      <article>
+        <header>
+          {page.eyebrow ? (
+            <p className="text-[13px] font-medium text-zinc-500">
+              {page.eyebrow}
+            </p>
+          ) : null}
+          <h1
+            className={`font-display text-2xl font-semibold tracking-tight text-balance text-white sm:text-[1.75rem] ${
+              page.eyebrow ? 'mt-3' : ''
+            }`}
+          >
+            {page.title}
+          </h1>
+          {page.subtitle ? (
+            <p className="mt-4 text-[15px] leading-relaxed text-zinc-400 text-pretty">
+              {page.subtitle}
+            </p>
+          ) : null}
 
-          <div className="mt-10 space-y-5 border-b border-white/10 pb-12 lg:border-b-0 lg:pb-0">
-            {foreword.map((para, i) => (
-              <CaseStudyRichParagraph key={i} paragraph={para} />
-            ))}
-          </div>
-        </aside>
+          {hasMeta ? (
+            <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-4">
+              {page.meta!.map((item) => (
+                <div key={item.label} className="min-w-0">
+                  <dt className="text-[11px] font-medium tracking-[0.04em] text-zinc-600">
+                    {item.label}
+                  </dt>
+                  <dd className="mt-1.5 text-[13px] leading-snug text-zinc-300 text-pretty">
+                    {item.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          ) : null}
 
-        <div className="">
-          {eras.map((era, index) => {
+          {foreword.length > 0 ? (
+            <div
+              className={`space-y-5 text-pretty ${
+                hasMeta || page.subtitle ? 'mt-10' : 'mt-10'
+              }`}
+            >
+              {foreword.map((para, i) => (
+                <CaseStudyRichParagraph key={i} paragraph={para} />
+              ))}
+            </div>
+          ) : null}
+        </header>
+
+        <div className="mt-20 space-y-24 sm:mt-28 sm:space-y-32">
+          {eras.map((era) => {
             const { leading, wideItems, tail } = partitionCaseStudyEraBlocks(
               era.blocks,
               era.wideMediaGallery,
             )
             const useWideGallery = wideItems !== null
+            const yearLabel = era.yearRange.trim()
+            const dateTime = yearDateTime(yearLabel)
 
             return (
-              <motion.section
-                key={era.id}
-                id={era.id}
-                custom={index}
-                initial={reduceMotion ? false : 'hidden'}
-                whileInView={reduceMotion ? undefined : 'visible'}
-                viewport={{ once: true, margin: '-80px' }}
-                variants={reduceMotion ? undefined : eraMotion}
-                className={`${era.featured ? 'scroll-mt-28' : 'scroll-mt-28'} `}
-              >
-                <div
-                  className={`border-l border-white/20 p-8 ${index > 0 ? 'border-t' : ''}`}
-                >
-                  <div>
-                    <h2 className="font-display text-xl font-semibold tracking-tight text-white sm:text-2xl">
-                      {era.title}
-                    </h2>
-                    {era.summary ? (
-                      <p className="mt-3 max-w-3xl text-sm leading-relaxed text-zinc-400">
-                        {era.summary}
-                      </p>
-                    ) : null}
-                    <div className="mt-10">
-                      <CaseStudyEraBlocks
-                        blocks={useWideGallery ? leading : era.blocks}
-                      />
-                    </div>
-                  </div>
-                  {useWideGallery && wideItems ? (
-                    <div className="mt-12 w-full min-w-0 lg:col-span-2">
-                      <CaseStudyWideMediaGallery
-                        items={wideItems}
-                        sectionAriaLabel={era.wideGalleryAriaLabel}
-                        trackLabelPrefix={era.wideGalleryTrackLabel}
-                      />
-                    </div>
-                  ) : null}
-                  {useWideGallery && tail.length > 0 ? (
-                    <div className="mt-10 w-full min-w-0 lg:col-span-2">
-                      <CaseStudyEraBlocks blocks={tail} />
-                    </div>
-                  ) : null}
+              <section key={era.id} id={era.id} className="scroll-mt-28">
+                <header>
+                  <p className="text-[13px] text-zinc-500">
+                    <span className="font-medium text-zinc-400">
+                      {era.label}
+                    </span>
+                    <span className="mx-1.5 text-zinc-700" aria-hidden>
+                      ·
+                    </span>
+                    {dateTime ? (
+                      <time
+                        dateTime={dateTime}
+                        className="font-mono tabular-nums"
+                      >
+                        {yearLabel}
+                      </time>
+                    ) : (
+                      <span className="font-mono tabular-nums">
+                        {yearLabel}
+                      </span>
+                    )}
+                  </p>
+                  <h2 className="mt-3 text-xl font-medium tracking-tight text-white text-balance sm:text-[1.35rem] sm:leading-snug">
+                    {era.title}
+                  </h2>
+                </header>
+
+                {era.summary ? (
+                  <p className="mt-6 text-[20px] font-medium leading-[38px] text-[#ededed] text-pretty">
+                    {era.summary}
+                  </p>
+                ) : null}
+
+                <div className="mt-10">
+                  <CaseStudyEraBlocks
+                    blocks={useWideGallery ? leading : era.blocks}
+                  />
                 </div>
-              </motion.section>
+
+                {useWideGallery && wideItems ? (
+                  <div className="mt-12 w-full min-w-0">
+                    <CaseStudyWideMediaGallery
+                      items={wideItems}
+                      sectionAriaLabel={era.wideGalleryAriaLabel}
+                      trackLabelPrefix={era.wideGalleryTrackLabel}
+                    />
+                  </div>
+                ) : null}
+
+                {useWideGallery && tail.length > 0 ? (
+                  <div className="mt-12 w-full min-w-0">
+                    <CaseStudyEraBlocks blocks={tail} />
+                  </div>
+                ) : null}
+              </section>
             )
           })}
         </div>
-      </div>
+      </article>
 
       <Link
         href="/artifacts"
-        className={`${backLinkClass} mt-20`}
+        className="mt-20 inline-flex min-h-11 items-center gap-1.5 text-sm text-zinc-500 no-underline transition-colors duration-150 ease-out active:opacity-80 [@media(hover:hover)_and_(pointer:fine)]:hover:text-zinc-300"
         aria-label="Back to artifacts"
       >
-        <span className="absolute inset-0 overflow-hidden rounded-full">
-          <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-        </span>
-        <span className="relative z-10 flex items-center gap-1 rounded-full bg-zinc-950 px-4 py-2 ring-1 ring-white/10">
-          <ArrowLeftIcon className="h-4 w-4 stroke-white/80" />
-          <span>Artifacts</span>
-        </span>
+        <ArrowLeftIcon className="h-4 w-4 stroke-current" />
+        Artifacts
       </Link>
     </div>
   )

@@ -10,68 +10,47 @@ export type {
 } from '@/content/case-study-types'
 
 export const ISPECT_PAGE = {
-  title: 'Makings of iSpect',
+  eyebrow: 'Makings of iSpect',
+  title: 'Rebuilding a 12-year inspection product without losing the data',
   description:
-    'An overview of how we laid the foundation of ispect from the perspective of the sole designer, little old me.',
+    'Design engineer case study: migrating construction inspection software off a brittle stack without losing 12 years of field knowledge.',
+  subtitle:
+    'Design engineer · construction software · brand → product → platform',
   date: '2024-10-03',
+  meta: [
+    {
+      label: 'Role',
+      value: 'Sole designer → design engineer',
+    },
+    {
+      label: 'Scope',
+      value: 'UI, product, front-end, migration',
+    },
+    {
+      label: 'Domain',
+      value: 'Construction inspection & PM',
+    },
+    {
+      label: 'Status',
+      value: 'Rebuild in progress · 2026',
+    },
+  ],
 } as const
 
-/** Foreword — archive framing (same intent as the old “Note from 2024”). */
+/** Scan-pack hook — two sentences max. Archive detail lives in eras below. */
 export const ISPECT_FOREWORD: RichParagraph[] = [
   [
     {
       kind: 'text',
       value:
-        'Quite a lot has happened over the years in the journey of iSpect, and this page is an archive in motion — not a frozen case study.',
+        'Looks like a redesign. The hard problem is twelve years of inspection knowledge locked in .NET, Couchbase, Sync Gateway, and native iOS — while crews still need the same field workflows tomorrow morning.',
     },
   ],
   [
     {
       kind: 'text',
       value:
-        'My role started in 2012 with brand and UI in Photoshop (with custom scripts to export assets to Xcode). Thank goodness Sketch showed up. I quickly grew dissatisfied with implementation and moved into Xcode front-end work — ',
-    },
-    {
-      kind: 'link',
-      href: 'https://x.com/MengTo',
-      label: 'Meng To',
-      external: true,
-    },
-    {
-      kind: 'text',
-      value: ' and ',
-    },
-    {
-      kind: 'link',
-      href: 'https://designcode.io/',
-      label: 'designcode.io',
-      external: true,
-    },
-    {
-      kind: 'text',
-      value: ' were a huge help.',
-    },
-  ],
-  [
-    {
-      kind: 'text',
-      value: 'We later put the iOS app on maintenance to build ',
-    },
-    {
-      kind: 'link',
-      href: '/artifacts/makings-of-icontrol',
-      label: 'iControl',
-    },
-    {
-      kind: 'text',
-      value: ', and my focus shifted toward the web: CSS, React, Vue, Vuetify.',
-    },
-  ],
-  [
-    {
-      kind: 'text',
-      value:
-        'In 2020 we scaled iSpect into a full project-management and order-flow web app. COVID paused momentum in 2021. Since then it has been a grind to keep the lights on — so below you will see older work, newer work, and space reserved for what ships next.',
+        'I am rebuilding the product brain (Next.js, Expo, Supabase) so the business keeps its memory without staying trapped in the old stack.',
     },
   ],
 ]
@@ -80,30 +59,59 @@ export const ISPECT_ERAS: CaseStudyEra[] = [
   {
     id: 'now',
     label: 'Now',
-    yearRange: '2026-*',
-    title: 'The product behind the interface',
-    summary:
-      'Most people meet iSpect through the interface. The 2026 work goes deeper: keep the field workflows inspectors depend on, replace the brittle parts underneath, and make the whole product clear enough to keep designing.',
+    yearRange: '2026–',
+    title: 'Field workflows stay. The brain does not.',
     featured: true,
-    wideMediaGallery: true,
     blocks: [
       {
-        type: 'plain',
-        paragraphs: [
-          'There is a good chance this looks like a redesign. It is, but not only that. iSpect has years of real inspection work baked into a .NET API, Couchbase, Sync Gateway, and a native iOS app. The job is to preserve that knowledge without staying trapped in the old system.',
-          'The new shape is simple: old stack as data donor, Supabase as product brain, Next.js for the portal, React Native for mobile. I move in small agentic loops: study a legacy flow, migrate it, prove parity, cut the dead path.',
+        type: 'bullets',
+        items: [
+          'Problem — Domain knowledge lived in a brittle stack; a reskin would still fail in the field.',
+          'Decision — Keep workflows; change the brain. Legacy becomes a data donor; live writes move to Supabase.',
+          'Operating loop — Study → Migrate → Prove parity → Cut. Agents amplify judgment; they do not replace it.',
         ],
       },
       {
         type: 'heading',
-        text: 'Main takeaways',
+        text: 'Stack: from donor to live path',
+      },
+      {
+        type: 'stack-compare',
+        rows: [
+          {
+            before: 'Vue 2.7 / Nuxt portal',
+            after: 'Next.js portal',
+          },
+          {
+            before: 'ispect-api (.NET + GraphQL)',
+            after: 'Supabase + thin REST',
+          },
+          {
+            before: 'Native iOS (Swift / Obj-C)',
+            after: 'Expo / React Native',
+          },
+          {
+            before: 'Couchbase as the brain',
+            after: 'Supabase as the brain',
+          },
+        ],
+      },
+      {
+        type: 'plain',
+        paragraphs: [
+          'Same business. Different brain — legacy becomes the data donor; live writes move to Supabase.',
+        ],
+      },
+      {
+        type: 'heading',
+        text: 'Proof',
       },
       {
         type: 'bullets',
         items: [
-          'The real design work is reducing hidden product complexity, not decorating screens.',
-          'The rebuild keeps field workflows intact while making the system easier to understand and change.',
-          'AI agents help because the work is sliced and verified. They amplify judgment; they do not replace it.',
+          '12+ years of product and domain knowledge at stake — cutover cannot freeze inspections.',
+          'Swedish Construction Innovation grant 2012–15 (~$180k); Innovation of the year 2014; IT Project of the year 2013.',
+          'Early 2026 rebuild — proof today is architecture, parity discipline, and shipped UI direction, not post-cutover conversion numbers.',
         ],
       },
       {
@@ -113,9 +121,28 @@ export const ISPECT_ERAS: CaseStudyEra[] = [
             kind: 'video',
             src: '/ispect-landing-new.mp4',
             title: 'iSpect landing header animation (2026)',
-            caption: 'New landing header animation direction',
+            caption: 'Landing header direction — craft under the rebuild',
           },
         ],
+      },
+      {
+        type: 'heading',
+        text: 'Migration path',
+      },
+      {
+        type: 'diagram',
+        variant: 'data-pipeline',
+        caption:
+          'Raw donor JSON is kept. Product tables are projected and gated for parity.',
+      },
+      {
+        type: 'heading',
+        text: 'Operating loop',
+      },
+      {
+        type: 'diagram',
+        variant: 'agent-loop',
+        caption: 'Agents amplify judgment. They do not replace it.',
       },
     ],
   },
@@ -123,7 +150,7 @@ export const ISPECT_ERAS: CaseStudyEra[] = [
     id: 'refactor-2023',
     label: 'Refactor',
     yearRange: '2023',
-    title: 'Vue 2 / Vuetify → streamlined UI (2023)',
+    title: 'Cut jank, less noise, more automatic UI',
     wideMediaGallery: true,
     wideGalleryAriaLabel: '2023 refactor screenshots',
     wideGalleryTrackLabel: 'Refactor screenshots',
@@ -131,8 +158,7 @@ export const ISPECT_ERAS: CaseStudyEra[] = [
       {
         type: 'plain',
         paragraphs: [
-          'Highlights from refactoring the app from Vue 2 / Vuetify 2 toward Vue 2.7 (Vue 3 was the plan; time said otherwise) with Tailwind CSS. Vuetify stayed for complex tables, but its styles were stripped — effectively headless.',
-          'Goal: modernize the design, reduce jank, improve performance, and show less information so the experience feels more automatic. Many pages look similar; this is a distilled set.',
+          'Vue 2 / Vuetify 2 → Vue 2.7 + Tailwind. Vuetify stayed for complex tables but styles were stripped — effectively headless. Goal: modernize the design, reduce jank, show less information so the product feels more automatic.',
         ],
       },
       {
@@ -232,12 +258,14 @@ export const ISPECT_ERAS: CaseStudyEra[] = [
   {
     id: 'scale-2020',
     label: 'Scale',
-    yearRange: '2020 - 2021 ',
-    title: 'The original pitch and beta launch (2020)',
+    yearRange: '2020–2021',
+    title: 'Why iSpect exists: transparency in construction',
     blocks: [
       {
-        type: 'heading',
-        text: 'Make informed decisions during procurement with real-time data',
+        type: 'plain',
+        paragraphs: [
+          'With a decade of industry statistics, the web platform lets contractors and sub-contractors see project health in real time — issue counts, average completion time, who is performing before contracts are renegotiated.',
+        ],
       },
       {
         type: 'links',
@@ -252,14 +280,6 @@ export const ISPECT_ERAS: CaseStudyEra[] = [
             href: 'https://www.sbuf.se/Om-SBUF/Aretsinnovation/Nyhetsbrev11/',
             external: true,
           },
-        ],
-      },
-      {
-        type: 'bullets',
-        items: [
-          'Winner of Swedish Construction Innovation grant for three consecutive years 2012–2015 ($180k total)',
-          'Swedish Construction Innovation of the year 2014',
-          'Swedish IT Project of the year 2013',
         ],
       },
       {
@@ -279,7 +299,7 @@ export const ISPECT_ERAS: CaseStudyEra[] = [
               'bundled/craft/ispect/ispect-closeout-demo-2020-january.jpg',
             alt: 'iSpect closeout 2020',
             caption:
-              'Closeout (2020 beta - later merged into the dashboard) — aimed at subcontractors to see assigned issues and remedy them',
+              'Closeout (2020 beta — later merged into the dashboard) for subcontractors to remedy assigned issues',
             width: 1200,
             height: 600,
           },
@@ -287,27 +307,7 @@ export const ISPECT_ERAS: CaseStudyEra[] = [
       },
       {
         type: 'heading',
-        text: 'Why?',
-      },
-      {
-        type: 'plain',
-        paragraphs: [
-          'iSpect exists to create transparency in construction — through data and statistics, and through clear communication between contractors, sub-contractors, stakeholders and clients (you and I buying a home).',
-        ],
-      },
-      {
-        type: 'heading',
-        text: 'How?',
-      },
-      {
-        type: 'plain',
-        paragraphs: [
-          'With over a decade of industry statistics, the web platform lets contractors and sub-contractors see project health: issue counts over time and average completion time, in real time. See who is performing well before negotiating contracts.',
-        ],
-      },
-      {
-        type: 'heading',
-        text: 'Features',
+        text: 'Product surfaces',
       },
       {
         type: 'media',
@@ -351,14 +351,14 @@ export const ISPECT_ERAS: CaseStudyEra[] = [
   {
     id: 'brand-origins',
     label: 'Brand',
-    yearRange: '2012 —',
+    yearRange: '2012–',
     title: 'Identity that had to travel',
     wideMediaGallery: true,
     blocks: [
       {
         type: 'plain',
         paragraphs: [
-          'The brand first took shape in 2012 and evolved many times into a minimal logotype built around the search icon. As iSpect grew beyond the app, the identity had to work across people, product, and surfaces.',
+          'Started 2012 in brand and UI; moved into implementation when craft alone was not enough. The logotype grew around the search mark and had to work on hard hats, people, and product screens — not just a marketing site.',
         ],
       },
       {
