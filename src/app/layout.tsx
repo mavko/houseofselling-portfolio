@@ -84,7 +84,7 @@ export default function RootLayout({
       <head>
         <meta name="view-transition" content="same-origin" />
       </head>
-      <body className="h-screen w-full bg-[#0A0A0A] font-sans text-[#f2f2f2] antialiased">
+      <body className="h-screen w-full bg-black font-sans text-[#f2f2f2] antialiased">
         <Providers>
           <div className="relative">
             <SiteHeader />
