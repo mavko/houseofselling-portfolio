@@ -1,9 +1,15 @@
 'use client'
 
-import type { EraBlock, MediaItem } from '@/content/case-study-types'
+import type {
+  DiagramVariant,
+  EraBlock,
+  MediaItem,
+} from '@/content/case-study-types'
 
 import { CaseStudyMediaItem } from './CaseStudyMedia'
 import { CaseStudyRichParagraph } from './CaseStudyRichParagraph'
+import { AgentLoopDiagram } from './diagrams/AgentLoopDiagram'
+import { DataPipelineDiagram } from './diagrams/DataPipelineDiagram'
 import { CaseStudyDiagram } from './diagrams/CaseStudyDiagram'
 import { StackCompare } from './diagrams/StackCompare'
 
@@ -46,10 +52,16 @@ function beatClass(
   }
   // Figure → next section: heading already supplies air above
   if (
-    (type === 'stack-compare' || type === 'diagram' || type === 'media') &&
+    (type === 'stack-compare' ||
+      type === 'diagram' ||
+      type === 'diagram-pair' ||
+      type === 'media') &&
     next === 'heading'
   ) {
     return 'mt-1'
+  }
+  if (type === 'diagram-pair') {
+    return prev ? 'mt-12' : ''
   }
   // Takeaway line after a figure — still part of that beat
   // (prev is already narrowed away from 'heading' above)
@@ -145,11 +157,56 @@ function Block({
       return (
         <CaseStudyDiagram variant={block.variant} caption={block.caption} />
       )
+    case 'diagram-pair':
+      return (
+        <div className="flex flex-col gap-14">
+          <DiagramRow
+            heading={block.left.heading}
+            variant={block.left.variant}
+            caption={block.left.caption}
+          />
+          <DiagramRow
+            heading={block.right.heading}
+            variant={block.right.variant}
+            caption={block.right.caption}
+          />
+        </div>
+      )
     default: {
       const _exhaustive: never = block
       return _exhaustive
     }
   }
+}
+
+function DiagramRow({
+  heading,
+  variant,
+  caption,
+}: {
+  heading: string
+  variant: DiagramVariant
+  caption: string
+}) {
+  return (
+    <div className="min-w-0">
+      <h3 className="text-[13px] font-medium tracking-[0.04em] text-zinc-400 text-balance">
+        {heading}
+      </h3>
+      <div className="mt-3">
+        {variant === 'data-pipeline' ? (
+          <DataPipelineDiagram caption={caption} orientation="horizontal" />
+        ) : variant === 'agent-loop' ? (
+          <AgentLoopDiagram caption={caption} />
+        ) : (
+          (() => {
+            const _exhaustive: never = variant
+            return _exhaustive
+          })()
+        )}
+      </div>
+    </div>
+  )
 }
 
 function CaseStudyMediaGrid({ items }: { items: MediaItem[] }) {

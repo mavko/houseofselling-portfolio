@@ -1,14 +1,19 @@
 'use client'
 
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import Link from 'next/link'
 import { useState } from 'react'
 
 import { ResumeDropdown } from '@/components/ResumeDropdown'
 
+const iconButtonClass =
+  '-m-2.5 inline-flex min-h-11 min-w-11 items-center justify-center rounded-md p-2.5 transition-transform duration-150 ease-out active:scale-[0.97] motion-reduce:transition-none motion-reduce:active:scale-100'
+
 const NAV_ITEMS: { label: string; href: string; external?: boolean }[] = [
   { label: 'About', href: '/about' },
   { label: 'Visuals', href: '/visuals' },
   { label: 'Projects', href: '/projects' },
+  { label: 'Cursor', href: '/cursor' },
 ]
 
 const RIGHT_LINKS: { label: string; href: string; external?: boolean }[] = [
@@ -51,7 +56,7 @@ function BrandLink({ onClick }: { onClick?: () => void }) {
       onClick={onClick}
       className="-m-1.5 flex items-center gap-3 p-1.5"
     >
-      <span className="text-xl font-semibold tracking-[-0.2px] text-white font-stretch-125%">
+      <span className="font-stretch-125% tracking-[-0.2px] text-white">
         Sebastian Selling
       </span>
       <BrandMark className="inline-flex shrink-0" />
@@ -61,6 +66,14 @@ function BrandLink({ onClick }: { onClick?: () => void }) {
 
 export function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const reduceMotion = useReducedMotion() ?? false
+
+  const panelEnter = reduceMotion
+    ? { opacity: 0 }
+    : { opacity: 0, y: -8, scale: 0.98 }
+  const panelRest = reduceMotion
+    ? { opacity: 1 }
+    : { opacity: 1, y: 0, scale: 1 }
 
   return (
     <header
@@ -76,7 +89,7 @@ export function SiteHeader() {
         }}
       />
       <nav
-        className="pointer-events-auto flex w-full items-center justify-between px-3 py-6 font-display text-sm font-medium tracking-[-0.2px] text-white font-stretch-125% lg:px-6"
+        className="pointer-events-auto flex w-full items-center justify-between px-3 py-[1.35rem] font-display text-[13px] font-medium tracking-[-0.2px] text-white font-stretch-125% lg:px-6"
         aria-label="Main"
       >
         <div className="flex lg:flex-1">
@@ -86,7 +99,7 @@ export function SiteHeader() {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex min-h-11 min-w-11 items-center justify-center rounded-md p-2.5 text-white ring-1 ring-white/20"
+            className={`${iconButtonClass} text-white ring-1 ring-white/20`}
             onClick={() => setMobileMenuOpen(true)}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-menu"
@@ -138,79 +151,111 @@ export function SiteHeader() {
         </div>
       </nav>
 
-      <div
-        id="mobile-menu"
-        className={mobileMenuOpen ? 'lg:hidden' : 'hidden lg:hidden'}
-        role="dialog"
-        aria-modal="true"
-        aria-label="Mobile menu"
-      >
-        <div
-          className="fixed inset-0 z-0 bg-black/50 backdrop-blur-sm"
-          aria-hidden
-          onClick={() => setMobileMenuOpen(false)}
-        />
-        <div className="fixed inset-x-0 top-0 z-50 w-full overflow-y-auto rounded-b-2xl border-b border-white/10 bg-black p-6 sm:ring-1 sm:ring-white/10">
-          <div className="flex items-center justify-between">
-            <BrandLink onClick={() => setMobileMenuOpen(false)} />
-            <button
-              type="button"
-              className="-m-2.5 inline-flex min-h-11 min-w-11 items-center justify-center rounded-md p-2.5 text-zinc-400"
+      <AnimatePresence>
+        {mobileMenuOpen ? (
+          <div
+            id="mobile-menu"
+            className="pointer-events-auto lg:hidden"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile menu"
+          >
+            <motion.div
+              className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
+              aria-hidden
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{
+                opacity: 0,
+                transition: {
+                  duration: reduceMotion ? 0.15 : 0.16,
+                  ease: 'easeIn',
+                },
+              }}
+              transition={{
+                duration: reduceMotion ? 0.15 : 0.2,
+                ease: 'easeOut',
+              }}
               onClick={() => setMobileMenuOpen(false)}
-              aria-label="Close menu"
+            />
+            <motion.div
+              className="fixed inset-x-0 top-0 z-50 w-full origin-top overflow-y-auto rounded-b-2xl border-b border-white/10 bg-black p-6 font-display text-[13px] font-medium tracking-[-0.2px] text-white font-stretch-125% sm:ring-1 sm:ring-white/10"
+              initial={panelEnter}
+              animate={panelRest}
+              exit={{
+                ...panelEnter,
+                transition: {
+                  duration: reduceMotion ? 0.15 : 0.16,
+                  ease: 'easeIn',
+                },
+              }}
+              transition={{
+                duration: reduceMotion ? 0.15 : 0.22,
+                ease: 'easeOut',
+              }}
             >
-              <svg
-                className="size-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                aria-hidden
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-white/10">
-              <div className="space-y-2 py-6">
-                {NAV_ITEMS.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white transition-colors hover:bg-white/5"
-                    onClick={() => setMobileMenuOpen(false)}
+              <div className="flex items-center justify-between">
+                <BrandLink onClick={() => setMobileMenuOpen(false)} />
+                <button
+                  type="button"
+                  className={`${iconButtonClass} text-zinc-400`}
+                  onClick={() => setMobileMenuOpen(false)}
+                  aria-label="Close menu"
+                >
+                  <svg
+                    className="size-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    aria-hidden
                   >
-                    {item.label}
-                  </Link>
-                ))}
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
               </div>
-              <div className="flex flex-col gap-2 py-6">
-                {RIGHT_LINKS.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    {...(item.external
-                      ? { target: '_blank', rel: 'noopener noreferrer' }
-                      : {})}
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white transition-colors hover:bg-white/5"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-                <div className="-mx-3 px-3 py-2.5 text-base font-semibold leading-7 text-white">
-                  <ResumeDropdown />
+              <div className="mt-6 flow-root">
+                <div className="-my-6 divide-y divide-white/10">
+                  <div className="space-y-2 py-6">
+                    {NAV_ITEMS.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="-mx-3 block rounded-lg px-3 py-2 text-[13px] font-medium leading-7 text-white transition-colors hover:bg-white/5"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                  <div className="flex flex-col gap-2 py-6">
+                    {RIGHT_LINKS.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        {...(item.external
+                          ? { target: '_blank', rel: 'noopener noreferrer' }
+                          : {})}
+                        className="-mx-3 block rounded-lg px-3 py-2.5 text-[13px] font-medium leading-7 text-white transition-colors hover:bg-white/5"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                    <div className="-mx-3 px-3 py-2.5 text-[13px] font-medium leading-7 text-white">
+                      <ResumeDropdown />
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
-        </div>
-      </div>
+        ) : null}
+      </AnimatePresence>
     </header>
   )
 }

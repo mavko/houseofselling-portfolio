@@ -6,18 +6,29 @@ export const HOME_TIMING = {
   artifacts: 0.6,
 }
 
-export const heroVariants: Variants = {
+/** Split hero: stagger name → role → body (critically damped). */
+export const heroContainerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: HOME_TIMING.hero,
+    },
+  },
+}
+
+export const heroItemVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: 24,
+    y: 16,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.44,
-      ease: 'easeOut',
-      delay: HOME_TIMING.hero,
+      type: 'spring',
+      duration: 0.4,
+      bounce: 0,
     },
   },
 }

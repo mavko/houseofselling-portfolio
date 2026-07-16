@@ -11,6 +11,9 @@ const withMDX = createMDX({
 
 const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+  // Next.js 16.3 Instant Navigations — SPA-feel shells + one prefetch per route
+  cacheComponents: true,
+  partialPrefetching: true,
   experimental: {
     optimizePackageImports: [
       '@headlessui/react',

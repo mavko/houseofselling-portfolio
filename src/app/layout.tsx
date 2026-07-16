@@ -3,7 +3,7 @@ import { Mona_Sans } from 'next/font/google'
 import { GeistSans } from 'geist/font/sans'
 
 import { Providers } from '@/app/providers'
-import { SiteHeader } from '@/components/SiteHeader'
+import { SubpageBioNavGate } from '@/components/HeroNavPills'
 import { VercelAnalytics } from '@/components/VercelAnalytics'
 
 import '@/styles/tailwind.css'
@@ -87,9 +87,27 @@ export default function RootLayout({
       <body className="h-screen w-full bg-black font-sans text-[#f2f2f2] antialiased">
         <Providers>
           <div className="relative">
-            <SiteHeader />
+            {/* Nav scrim only — dark gradient + blur, no chrome/text */}
+            <div
+              aria-hidden
+              className="pointer-events-none fixed inset-x-0 top-0 z-20 h-42 [--header-scrim:#000000]"
+            >
+              <div
+                className="absolute inset-0 bg-black/20 backdrop-blur-[5px] backdrop-filter motion-reduce:backdrop-blur-none [mask-image:linear-gradient(to_bottom,_rgb(0,_0,_0)_30%,_transparent)]"
+              />
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    'linear-gradient(180deg, var(--header-scrim) 0%, var(--header-scrim) 15%, color-mix(in srgb, var(--header-scrim) 92%, transparent) 26%, color-mix(in srgb, var(--header-scrim) 78%, transparent) 36%, color-mix(in srgb, var(--header-scrim) 60%, transparent) 46%, color-mix(in srgb, var(--header-scrim) 42%, transparent) 55%, color-mix(in srgb, var(--header-scrim) 26%, transparent) 64%, color-mix(in srgb, var(--header-scrim) 13%, transparent) 73%, color-mix(in srgb, var(--header-scrim) 5%, transparent) 82%, transparent 100%)',
+                }}
+              />
+            </div>
             <main className="px-4 sm:px-6">
-              <div className="mt-24">{children}</div>
+              <div className="pt-36">
+                <SubpageBioNavGate />
+                {children}
+              </div>
             </main>
             <footer className="font-display mx-auto max-w-5xl py-42 text-center text-base/12 font-medium text-white">
               © 2026 // house of selling

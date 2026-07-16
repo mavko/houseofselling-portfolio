@@ -1,4 +1,8 @@
-export function formatChartRange(points: { date: string }[]) {
+export function formatChartRange(
+  points: { date: string }[],
+  /** ISO date (YYYY-MM-DD) to treat as “Today” — e.g. snapshot sync day. Avoids wall-clock `new Date()`. */
+  asOfDate?: string,
+) {
   if (points.length === 0) return { start: '', end: '' }
 
   const start = points[0]?.date ?? ''
@@ -6,11 +10,14 @@ export function formatChartRange(points: { date: string }[]) {
   const format = (iso: string) => {
     const d = new Date(`${iso}T00:00:00Z`)
     if (Number.isNaN(d.getTime())) return iso
-    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' })
+    return d.toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric',
+      timeZone: 'UTC',
+    })
   }
 
-  const today = new Date().toISOString().slice(0, 10)
-  const endLabel = end === today ? 'Today' : format(end)
+  const endLabel = asOfDate && end === asOfDate.slice(0, 10) ? 'Today' : format(end)
 
   return { start: format(start), end: endLabel }
 }

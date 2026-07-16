@@ -1,4 +1,5 @@
 'use client'
+
 import React, { useState } from 'react'
 
 /**
@@ -29,11 +30,15 @@ const Tooltip: React.FC<{
       onMouseLeave={handleMouseLeave}
     >
       {children}
-      {isVisible && (
-        <div className="absolute bottom-10 left-1/2 z-10 mb-4 -translate-x-1/2 transform rounded-lg border border-white/20 bg-zinc-600/80 px-2.5 py-0.5 text-xs font-medium text-white/90">
-          {text}
-        </div>
-      )}
+      <div
+        role="tooltip"
+        aria-hidden={!isVisible}
+        className={`pointer-events-none absolute bottom-10 left-1/2 z-10 mb-4 -translate-x-1/2 rounded-lg border border-white/20 bg-zinc-600/80 px-2.5 py-0.5 text-xs font-medium text-white/90 transition-opacity duration-150 ease-out motion-reduce:transition-none [@media(hover:hover)_and_(pointer:fine)]:block ${
+          isVisible ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
+        {text}
+      </div>
     </div>
   )
 }

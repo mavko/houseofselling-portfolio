@@ -10,29 +10,26 @@ export type {
 } from '@/content/case-study-types'
 
 export const ISPECT_PAGE = {
-  eyebrow: 'Makings of iSpect',
   title: 'Rebuilding a 12-year inspection product without losing the data',
   description:
     'Design engineer case study: migrating construction inspection software off a brittle stack without losing 12 years of field knowledge.',
-  subtitle:
-    'Design engineer · construction software · brand → product → platform',
   date: '2024-10-03',
   meta: [
     {
       label: 'Role',
-      value: 'Sole designer → design engineer',
+      value: 'designer who builds',
     },
     {
       label: 'Scope',
-      value: 'UI, product, front-end, migration',
+      value: 'product · marketing · migration',
     },
     {
       label: 'Domain',
-      value: 'Construction inspection & PM',
+      value: 'construction inspection',
     },
     {
       label: 'Status',
-      value: 'Rebuild in progress · 2026',
+      value: 'rebuild in progress · 2026',
     },
   ],
 } as const
@@ -58,61 +55,17 @@ export const ISPECT_FOREWORD: RichParagraph[] = [
 export const ISPECT_ERAS: CaseStudyEra[] = [
   {
     id: 'now',
-    label: 'Now',
-    yearRange: '2026–',
-    title: 'Field workflows stay. The brain does not.',
+    title: '2026 design work',
+    titleAction: {
+      label: 'ispect.app',
+      href: 'https://ispect.app',
+      external: true,
+    },
     featured: true,
     blocks: [
       {
-        type: 'bullets',
-        items: [
-          'Problem — Domain knowledge lived in a brittle stack; a reskin would still fail in the field.',
-          'Decision — Keep workflows; change the brain. Legacy becomes a data donor; live writes move to Supabase.',
-          'Operating loop — Study → Migrate → Prove parity → Cut. Agents amplify judgment; they do not replace it.',
-        ],
-      },
-      {
         type: 'heading',
-        text: 'Stack: from donor to live path',
-      },
-      {
-        type: 'stack-compare',
-        rows: [
-          {
-            before: 'Vue 2.7 / Nuxt portal',
-            after: 'Next.js portal',
-          },
-          {
-            before: 'ispect-api (.NET + GraphQL)',
-            after: 'Supabase + thin REST',
-          },
-          {
-            before: 'Native iOS (Swift / Obj-C)',
-            after: 'Expo / React Native',
-          },
-          {
-            before: 'Couchbase as the brain',
-            after: 'Supabase as the brain',
-          },
-        ],
-      },
-      {
-        type: 'plain',
-        paragraphs: [
-          'Same business. Different brain — legacy becomes the data donor; live writes move to Supabase.',
-        ],
-      },
-      {
-        type: 'heading',
-        text: 'Proof',
-      },
-      {
-        type: 'bullets',
-        items: [
-          '12+ years of product and domain knowledge at stake — cutover cannot freeze inspections.',
-          'Swedish Construction Innovation grant 2012–15 (~$180k); Innovation of the year 2014; IT Project of the year 2013.',
-          'Early 2026 rebuild — proof today is architecture, parity discipline, and shipped UI direction, not post-cutover conversion numbers.',
-        ],
+        text: 'Landing page designs',
       },
       {
         type: 'media',
@@ -126,23 +79,26 @@ export const ISPECT_ERAS: CaseStudyEra[] = [
         ],
       },
       {
-        type: 'heading',
-        text: 'Migration path',
+        type: 'media',
+        items: [
+          {
+            kind: 'video',
+            src: '/ispect-landing-ui.mp4',
+            title: 'iSpect landing page UI (2026)',
+            caption: 'Landing page UI — craft under the rebuild',
+          },
+        ],
       },
       {
-        type: 'diagram',
-        variant: 'data-pipeline',
-        caption:
-          'Raw donor JSON is kept. Product tables are projected and gated for parity.',
-      },
-      {
-        type: 'heading',
-        text: 'Operating loop',
-      },
-      {
-        type: 'diagram',
-        variant: 'agent-loop',
-        caption: 'Agents amplify judgment. They do not replace it.',
+        type: 'media',
+        items: [
+          {
+            kind: 'video',
+            src: '/ispect-landing-ui-2.mp4',
+            title: 'iSpect landing page interaction (2026)',
+            caption: 'Landing page interaction — craft under the rebuild',
+          },
+        ],
       },
     ],
   },

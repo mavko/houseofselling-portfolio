@@ -23,29 +23,30 @@ export function DropdownMenu({
   ...props
 }: { className?: string } & Omit<Headless.MenuItemsProps, 'className'>) {
   return (
-    <Headless.Transition leave="duration-100 ease-in" leaveTo="opacity-0">
-      <Headless.MenuItems
-        {...props}
-        anchor={anchor}
-        className={clsx(
-          className,
-          // Anchor positioning
-          '[--anchor-gap:calc(var(--spacing)*2)] [--anchor-padding:calc(var(--spacing)*1)] data-[anchor~=end]:[--anchor-offset:6px] data-[anchor~=start]:[--anchor-offset:-6px] sm:data-[anchor~=end]:[--anchor-offset:4px] sm:data-[anchor~=start]:[--anchor-offset:-4px]',
-          // Base styles
-          'isolate w-max rounded-xl p-1',
-          // Invisible border that is only visible in `forced-colors` mode for accessibility purposes
-          'outline-1 outline-transparent focus:outline-hidden',
-          // Handle scrolling when menu won't fit in viewport
-          'overflow-y-auto',
-          // Popover background
-          'bg-black/25 text-white backdrop-blur-sm',
-          // Shadows
-          'border border-white/30 shadow-lg ring-1 ring-white ring-inset',
-          // Define grid at the menu level if subgrid is supported
-          'supports-[grid-template-columns:subgrid]:grid supports-[grid-template-columns:subgrid]:grid-cols-[auto_1fr_1.5rem_0.5rem_auto]',
-        )}
-      />
-    </Headless.Transition>
+    <Headless.MenuItems
+      {...props}
+      anchor={anchor}
+      transition
+      className={clsx(
+        className,
+        // Origin-aware scale + fade (enter/exit). Opacity-only under reduced motion.
+        'origin-top-right transition duration-150 ease-out data-closed:opacity-0 data-closed:scale-95 motion-reduce:duration-100 motion-reduce:data-closed:scale-100',
+        // Anchor positioning
+        '[--anchor-gap:calc(var(--spacing)*2)] [--anchor-padding:calc(var(--spacing)*1)] data-[anchor~=end]:[--anchor-offset:6px] data-[anchor~=start]:[--anchor-offset:-6px] sm:data-[anchor~=end]:[--anchor-offset:4px] sm:data-[anchor~=start]:[--anchor-offset:-4px]',
+        // Base styles
+        'isolate w-max rounded-xl p-1',
+        // Invisible border that is only visible in `forced-colors` mode for accessibility purposes
+        'outline-1 outline-transparent focus:outline-hidden',
+        // Handle scrolling when menu won't fit in viewport
+        'overflow-y-auto',
+        // Popover background
+        'bg-black/25 text-white backdrop-blur-sm',
+        // Shadows
+        'border border-white/30 shadow-lg ring-1 ring-white ring-inset',
+        // Define grid at the menu level if subgrid is supported
+        'supports-[grid-template-columns:subgrid]:grid supports-[grid-template-columns:subgrid]:grid-cols-[auto_1fr_1.5rem_0.5rem_auto]',
+      )}
+    />
   )
 }
 

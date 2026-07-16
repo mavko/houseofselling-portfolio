@@ -17,7 +17,10 @@ type CursorReportPageProps = {
 }
 
 export function CursorReportPage({ snapshot }: CursorReportPageProps) {
-  const chartRange = formatChartRange(snapshot.tokensSeries)
+  const chartRange = formatChartRange(
+    snapshot.tokensSeries,
+    snapshot.syncedAt,
+  )
 
   return (
     <CursorReportShell>

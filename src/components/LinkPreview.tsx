@@ -1,162 +1,99 @@
 'use client'
-import * as HoverCardPrimitive from '@radix-ui/react-hover-card'
-import { encode } from 'qss'
-import React from 'react'
-import {
-  AnimatePresence,
-  motion,
-  useMotionValue,
-  useSpring,
-} from 'framer-motion'
+
+import type { ReactNode } from 'react'
 import Link from 'next/link'
+
+import {
+  CHROME_BORDER_GRADIENT,
+  GlassAvatar,
+  type GlassAvatarVariant,
+} from '@/components/GlassAvatar'
 import { cn } from '@/lib/utils'
-import { SafeImage } from './SafeImage'
 
 type LinkPreviewProps = {
-  children: React.ReactNode
+  children: ReactNode
   url: string
+  avatar: GlassAvatarVariant
   className?: string
-  width?: number
-  height?: number
-  quality?: number
-  layout?: string
-  appName?: string
-} & (
-  | { isStatic: true; imageSrc: string }
-  | { isStatic?: false; imageSrc?: never }
-)
+  /** Open in a new tab (external destinations). */
+  external?: boolean
+}
 
-export const LinkPreview = ({
+function isExternalUrl(url: string): boolean {
+  return /^https?:\/\//i.test(url) || url.startsWith('//')
+}
+
+const shellClass =
+  'group relative z-0 mx-1 inline-flex max-w-full align-middle rounded-full p-px no-underline transition-transform duration-150 ease-out active:scale-[0.96] motion-reduce:transition-none motion-reduce:active:scale-100 motion-reduce:hover:scale-100 [@media(hover:hover)_and_(pointer:fine)]:hover:z-10 [@media(hover:hover)_and_(pointer:fine)]:hover:scale-[1.03]'
+
+const innerClass =
+  'relative z-10 inline-flex max-w-full items-center gap-1.5 rounded-full bg-[#141417] py-1 pr-2.5 pl-1 text-[length:inherit] font-medium leading-none text-white'
+
+/**
+ * Inline pill link with a brand-colored glass avatar (no hover screenshot card).
+ * Hover: chrome conic border spins in the avatar tint.
+ */
+export function LinkPreview({
   children,
   url,
+  avatar,
   className,
-  width = 300,
-  height = 125,
-  quality = 50,
-  layout = 'fixed',
-  isStatic = false,
-  imageSrc = '',
-  appName = 'app name here',
-}: LinkPreviewProps) => {
-  let src
-  if (!isStatic) {
-    const params = encode({
-      url,
-      screenshot: true,
-      meta: false,
-      embed: 'screenshot.url',
-      colorScheme: 'dark',
-      'viewport.isMobile': true,
-      'viewport.deviceScaleFactor': 1,
-      'viewport.width': width * 3,
-      'viewport.height': height * 3,
-    })
-    src = `https://api.microlink.io/?${params}`
-  } else {
-    src = imageSrc
-  }
+  external,
+}: LinkPreviewProps) {
+  const openExternal = external ?? isExternalUrl(url)
 
-  const [isOpen, setOpen] = React.useState(false)
+  const content = (
+    <>
+      {/* Idle border */}
+      <span
+        className="pointer-events-none absolute inset-0 rounded-full bg-white/30 transition-opacity duration-150 ease-out [@media(hover:hover)_and_(pointer:fine)]:group-hover:opacity-0"
+        aria-hidden
+      />
+      {/* Chrome gradient border — spins on hover */}
+      <span
+        className="pointer-events-none absolute inset-0 overflow-hidden rounded-full opacity-0 transition-opacity duration-150 ease-out motion-reduce:hidden [@media(hover:hover)_and_(pointer:fine)]:group-hover:opacity-100"
+        aria-hidden
+      >
+        <span
+          className="absolute top-1/2 left-1/2 aspect-square w-[220%] -translate-x-1/2 -translate-y-1/2 [@media(hover:hover)_and_(pointer:fine)]:group-hover:animate-[spin_1.8s_linear_infinite]"
+          style={{ background: CHROME_BORDER_GRADIENT[avatar] }}
+        />
+      </span>
+      {/* Reduced motion: static chrome wash, no spin */}
+      <span
+        className="pointer-events-none absolute inset-0 hidden rounded-full opacity-0 transition-opacity duration-150 ease-out motion-reduce:block [@media(hover:hover)_and_(pointer:fine)]:motion-reduce:group-hover:opacity-100"
+        style={{ background: CHROME_BORDER_GRADIENT[avatar] }}
+        aria-hidden
+      />
 
-  const [isMounted, setIsMounted] = React.useState(false)
+      <span className={innerClass}>
+        <GlassAvatar variant={avatar} className="relative" />
+        <span className="relative min-w-0 truncate">{children}</span>
+      </span>
+    </>
+  )
 
-  React.useEffect(() => {
-    setIsMounted(true)
-  }, [])
-
-  const springConfig = { stiffness: 100, damping: 15 }
-  const x = useMotionValue(0)
-
-  const translateX = useSpring(x, springConfig)
-
-  const handleMouseMove = (event: any) => {
-    const targetRect = event.target.getBoundingClientRect()
-    const eventOffsetX = event.clientX - targetRect.left
-    const offsetFromCenter = (eventOffsetX - targetRect.width / 2) / 2 // Reduce the effect to make it subtle
-    x.set(offsetFromCenter)
+  if (openExternal) {
+    return (
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-cuelume-hover="tick"
+        className={cn(shellClass, className)}
+      >
+        {content}
+      </a>
+    )
   }
 
   return (
-    <>
-      {isMounted ? (
-        <div className="hidden">
-          <SafeImage
-            src={src}
-            width={width}
-            height={height}
-            quality={quality}
-            layout={layout}
-            priority={true}
-            alt="hidden image"
-          />
-        </div>
-      ) : null}
-
-      <HoverCardPrimitive.Root
-        openDelay={50}
-        closeDelay={100}
-        onOpenChange={(open) => {
-          setOpen(open)
-        }}
-      >
-        <HoverCardPrimitive.Trigger
-          onMouseMove={handleMouseMove}
-          className={cn('', className)}
-          href={url}
-        >
-          {children}
-        </HoverCardPrimitive.Trigger>
-
-        <HoverCardPrimitive.Content
-          className="[transform-origin:var(--radix-hover-card-content-transform-origin)]"
-          side="top"
-          align="center"
-          sideOffset={10}
-        >
-          <AnimatePresence>
-            {isOpen && (
-              <motion.div
-                initial={{ opacity: 0, y: 20, scale: 0.6 }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  scale: 1,
-                  transition: {
-                    type: 'spring',
-                    stiffness: 260,
-                    damping: 20,
-                  },
-                }}
-                exit={{ opacity: 0, y: 20, scale: 0.6 }}
-                className="rounded-xl shadow-xl"
-                style={{
-                  x: translateX,
-                }}
-              >
-                <Link
-                  href={url}
-                  className="z-50 block rounded-xl border border-white/20 bg-black p-1 shadow hover:border-neutral-800"
-                  style={{ fontSize: 0 }}
-                >
-                  <SafeImage
-                    src={isStatic ? imageSrc : src}
-                    width={width}
-                    height={height}
-                    quality={quality}
-                    layout={layout}
-                    priority={true}
-                    className="w-full rounded-lg bg-black"
-                    alt="preview image"
-                  />
-                </Link>
-                <p className="font-departure mx-auto w-fit rounded-full bg-black px-2 py-0.5 text-center text-sm font-bold ring-1 ring-white/20">
-                  {appName}
-                </p>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </HoverCardPrimitive.Content>
-      </HoverCardPrimitive.Root>
-    </>
+    <Link
+      href={url}
+      data-cuelume-hover="tick"
+      className={cn(shellClass, className)}
+    >
+      {content}
+    </Link>
   )
 }

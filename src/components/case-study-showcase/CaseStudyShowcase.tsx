@@ -46,7 +46,7 @@ export function CaseStudyShowcase({
   const hasMeta = page.meta && page.meta.length > 0
 
   return (
-    <div className="mx-auto w-full max-w-[1000px]">
+    <div className="mx-auto w-full max-w-[1000px] pt-12 sm:pt-20">
       <article>
         <header>
           {page.eyebrow ? (
@@ -68,13 +68,16 @@ export function CaseStudyShowcase({
           ) : null}
 
           {hasMeta ? (
-            <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-4">
+            <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-5 border-t border-white/[0.06] pt-6">
               {page.meta!.map((item) => (
-                <div key={item.label} className="min-w-0">
-                  <dt className="text-[11px] font-medium tracking-[0.04em] text-zinc-600">
+                <div
+                  key={item.label}
+                  className="min-w-[10.5rem] flex-1 basis-[calc(50%-1.25rem)] sm:min-w-0 sm:basis-[calc(25%-1.875rem)]"
+                >
+                  <dt className="text-[11px] font-medium tracking-[0.06em] text-zinc-500">
                     {item.label}
                   </dt>
-                  <dd className="mt-1.5 text-[13px] leading-snug text-zinc-300 text-pretty">
+                  <dd className="mt-2 text-[13px] leading-[1.35] text-zinc-200 text-pretty tabular-nums">
                     {item.value}
                   </dd>
                 </div>
@@ -83,11 +86,7 @@ export function CaseStudyShowcase({
           ) : null}
 
           {foreword.length > 0 ? (
-            <div
-              className={`space-y-5 text-pretty ${
-                hasMeta || page.subtitle ? 'mt-10' : 'mt-10'
-              }`}
-            >
+            <div className="mt-10 space-y-5 text-pretty">
               {foreword.map((para, i) => (
                 <CaseStudyRichParagraph key={i} paragraph={para} />
               ))}
@@ -102,36 +101,78 @@ export function CaseStudyShowcase({
               era.wideMediaGallery,
             )
             const useWideGallery = wideItems !== null
-            const yearLabel = era.yearRange.trim()
-            const dateTime = yearDateTime(yearLabel)
+            const eraLabel = era.label?.trim() ?? ''
+            const yearLabel = era.yearRange?.trim() ?? ''
+            const showEraMeta = Boolean(eraLabel || yearLabel)
+            const dateTime = yearLabel
+              ? yearDateTime(yearLabel)
+              : undefined
+
+            const eraTitle = era.title?.trim() ?? ''
+            const showEraHeader = showEraMeta || Boolean(eraTitle)
 
             return (
               <section key={era.id} id={era.id} className="scroll-mt-28">
-                <header>
-                  <p className="text-[13px] text-zinc-500">
-                    <span className="font-medium text-zinc-400">
-                      {era.label}
-                    </span>
-                    <span className="mx-1.5 text-zinc-700" aria-hidden>
-                      ·
-                    </span>
-                    {dateTime ? (
-                      <time
-                        dateTime={dateTime}
-                        className="font-mono tabular-nums"
+                {showEraHeader ? (
+                  <header>
+                    {showEraMeta ? (
+                      <p className="text-[13px] text-zinc-500">
+                        {eraLabel ? (
+                          <span className="font-medium text-zinc-400">
+                            {eraLabel}
+                          </span>
+                        ) : null}
+                        {eraLabel && yearLabel ? (
+                          <span className="mx-1.5 text-zinc-700" aria-hidden>
+                            ·
+                          </span>
+                        ) : null}
+                        {yearLabel ? (
+                          dateTime ? (
+                            <time
+                              dateTime={dateTime}
+                              className="font-mono tabular-nums"
+                            >
+                              {yearLabel}
+                            </time>
+                          ) : (
+                            <span className="font-mono tabular-nums">
+                              {yearLabel}
+                            </span>
+                          )
+                        ) : null}
+                      </p>
+                    ) : null}
+                    {eraTitle ? (
+                      <div
+                        className={`${showEraMeta ? 'mt-3' : ''} flex items-center justify-between gap-4`}
                       >
-                        {yearLabel}
-                      </time>
-                    ) : (
-                      <span className="font-mono tabular-nums">
-                        {yearLabel}
-                      </span>
-                    )}
-                  </p>
-                  <h2 className="mt-3 text-xl font-medium tracking-tight text-white text-balance sm:text-[1.35rem] sm:leading-snug">
-                    {era.title}
-                  </h2>
-                </header>
+                        <h2 className="min-w-0 text-xl font-medium tracking-tight text-white text-balance sm:text-[1.35rem] sm:leading-snug">
+                          {eraTitle}
+                        </h2>
+                        {era.titleAction ? (
+                          <a
+                            href={era.titleAction.href}
+                            {...(era.titleAction.external
+                              ? {
+                                  target: '_blank',
+                                  rel: 'noopener noreferrer',
+                                }
+                              : {})}
+                            className="inline-flex min-h-10 shrink-0 items-center gap-1.5 rounded-lg border border-white/15 bg-white/[0.04] px-3 text-[13px] font-medium text-zinc-200 transition-[transform,background-color,color,border-color] duration-150 ease-out active:scale-[0.96] motion-reduce:transition-none motion-reduce:active:scale-100 [@media(hover:hover)_and_(pointer:fine)]:hover:border-white/25 [@media(hover:hover)_and_(pointer:fine)]:hover:bg-white/[0.08] [@media(hover:hover)_and_(pointer:fine)]:hover:text-white"
+                          >
+                            {era.titleAction.label}
+                            {era.titleAction.external ? (
+                              <span className="opacity-60" aria-hidden>
+                                ↗
+                              </span>
+                            ) : null}
+                          </a>
+                        ) : null}
+                      </div>
+                    ) : null}
+                  </header>
+                ) : null}
 
                 {era.summary ? (
                   <p className="mt-6 text-[20px] font-medium leading-[38px] text-[#ededed] text-pretty">
@@ -139,7 +180,7 @@ export function CaseStudyShowcase({
                   </p>
                 ) : null}
 
-                <div className="mt-10">
+                <div className={showEraHeader || era.summary ? 'mt-10' : ''}>
                   <CaseStudyEraBlocks
                     blocks={useWideGallery ? leading : era.blocks}
                   />

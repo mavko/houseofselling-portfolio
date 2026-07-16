@@ -14,10 +14,10 @@ export function ResumeDropdown() {
       <DropdownButton
         as="button"
         aria-label="Download resume or CV"
-        className="font-inherit flex cursor-pointer items-center gap-2 border-0 bg-transparent p-0 text-inherit"
+        className="font-inherit group flex cursor-pointer items-center gap-2 border-0 bg-transparent p-0 text-inherit"
       >
         Resume
-        <ChevronDownIcon className="size-3" />
+        <ChevronDownIcon className="size-3 transition-transform duration-150 ease-out group-aria-expanded:rotate-180 motion-reduce:transition-none motion-reduce:group-aria-expanded:rotate-0" />
       </DropdownButton>
       <DropdownMenu
         anchor="bottom end"

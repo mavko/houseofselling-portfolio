@@ -58,6 +58,19 @@ export type EraBlock =
       variant: DiagramVariant
       caption: string
     }
+  | {
+      type: 'diagram-pair'
+      left: {
+        heading: string
+        variant: DiagramVariant
+        caption: string
+      }
+      right: {
+        heading: string
+        variant: DiagramVariant
+        caption: string
+      }
+    }
 
 export type CaseStudyMetaItem = {
   label: string
@@ -78,9 +91,17 @@ export type CaseStudyPageMeta = {
 
 export type CaseStudyEra = {
   id: string
-  label: string
-  yearRange: string
-  title: string
+  /** Era name in the label · year line. Omit with yearRange to hide that line. */
+  label?: string
+  yearRange?: string
+  /** Era headline. Omit when the era is figure-only (e.g. diagram pair). */
+  title?: string
+  /** Button opposite the title (space-between). */
+  titleAction?: {
+    label: string
+    href: string
+    external?: boolean
+  }
   summary?: string
   featured?: boolean
   /** First `media` block spans full era width (both timeline columns). */

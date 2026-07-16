@@ -19,6 +19,10 @@ export function Providers({ children }: { children: React.ReactNode }) {
   let pathname = usePathname()
   let previousPathname = usePrevious(pathname)
 
+  useEffect(() => {
+    void import('cuelume').then(({ bind }) => bind())
+  }, [])
+
   return (
     <AppContext.Provider value={{ previousPathname }}>
       {children}

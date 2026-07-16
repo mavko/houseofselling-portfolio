@@ -11,6 +11,9 @@ const styles = {
     // Base
     'relative isolate inline-flex items-center justify-center gap-x-2 rounded-lg border text-base/6 font-semibold',
 
+    // Press feedback — transform only, subtle for frequent use
+    'transition-transform duration-150 ease-out active:scale-[0.97] data-active:scale-[0.97] motion-reduce:transition-none motion-reduce:active:scale-100 motion-reduce:data-active:scale-100',
+
     // Sizing
     'px-[calc(calc(var(--spacing)*3.5)-1px)] py-[calc(calc(var(--spacing)*2.5)-1px)] sm:px-[calc(calc(var(--spacing)*3)-1px)] sm:py-[calc(calc(var(--spacing)*1.5)-1px)] sm:text-sm/6',
 
