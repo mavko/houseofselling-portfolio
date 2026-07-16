@@ -20,7 +20,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
   let previousPathname = usePrevious(pathname)
 
   useEffect(() => {
-    void import('cuelume').then(({ bind }) => bind())
+    // Arms on first pointer/key/touch — no need to press "1" (cuelume demo habit).
+    // Cold-load hover still needs one browser gesture (Web Audio autoplay policy).
+    void import('@/lib/ui-sounds').then(({ bindUiSounds }) => bindUiSounds())
   }, [])
 
   return (
