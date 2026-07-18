@@ -101,6 +101,9 @@ export function HomeSiteNav({ className }: { className?: string }) {
 export function HomeHeroCopy() {
   return (
     <div className="flex w-full max-w-[42rem] flex-col gap-8 sm:gap-10">
+      <p className={cn(sectionClass, 'text-white/80')}>
+        Sebastian Selling - Designer who builds
+      </p>
       <HomeBioNav />
       <HomeSiteNav />
     </div>
