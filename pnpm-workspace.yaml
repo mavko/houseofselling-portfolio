@@ -1,0 +1,8 @@
+packages:
+  - '.'
+
+allowBuilds:
+  '@vercel/speed-insights': true
+  esbuild: true
+  msw: true
+  sharp: true

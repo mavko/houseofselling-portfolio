@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 
+import { ChromePillLink } from '@/components/HeroNavPills'
 import type {
   CaseStudyEra,
   CaseStudyPageMeta,
@@ -50,34 +51,31 @@ export function CaseStudyShowcase({
       <article>
         <header>
           {page.eyebrow ? (
-            <p className="text-[13px] font-medium text-zinc-500">
+            <p className="font-display text-[13px] font-semibold tracking-[-0.2px] text-zinc-400 font-stretch-125%">
               {page.eyebrow}
             </p>
           ) : null}
           <h1
-            className={`font-display text-2xl font-semibold tracking-tight text-balance text-white sm:text-[1.75rem] ${
-              page.eyebrow ? 'mt-3' : ''
+            className={`font-display text-3xl font-semibold tracking-tight text-balance text-white font-stretch-125% sm:text-4xl ${
+              page.eyebrow ? 'mt-4' : ''
             }`}
           >
             {page.title}
           </h1>
           {page.subtitle ? (
-            <p className="mt-4 text-[15px] leading-relaxed text-zinc-400 text-pretty">
+            <p className="mt-5 max-w-[40rem] text-base leading-relaxed text-zinc-500 text-pretty">
               {page.subtitle}
             </p>
           ) : null}
 
           {hasMeta ? (
-            <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-5 border-t border-white/[0.06] pt-6">
+            <dl className="mt-10 grid grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-4">
               {page.meta!.map((item) => (
-                <div
-                  key={item.label}
-                  className="min-w-[10.5rem] flex-1 basis-[calc(50%-1.25rem)] sm:min-w-0 sm:basis-[calc(25%-1.875rem)]"
-                >
-                  <dt className="text-[11px] font-medium tracking-[0.06em] text-zinc-500">
+                <div key={item.label} className="min-w-0">
+                  <dt className="text-[11px] font-medium tracking-[0.08em] text-zinc-600">
                     {item.label}
                   </dt>
-                  <dd className="mt-2 text-[13px] leading-[1.35] text-zinc-200 text-pretty tabular-nums">
+                  <dd className="mt-1.5 text-sm leading-snug text-zinc-200 text-pretty">
                     {item.value}
                   </dd>
                 </div>
@@ -86,7 +84,7 @@ export function CaseStudyShowcase({
           ) : null}
 
           {foreword.length > 0 ? (
-            <div className="mt-10 space-y-5 text-pretty">
+            <div className="mt-12 max-w-[40rem] space-y-6 text-pretty">
               {foreword.map((para, i) => (
                 <CaseStudyRichParagraph key={i} paragraph={para} />
               ))}
@@ -151,23 +149,16 @@ export function CaseStudyShowcase({
                           {eraTitle}
                         </h2>
                         {era.titleAction ? (
-                          <a
+                          <ChromePillLink
                             href={era.titleAction.href}
-                            {...(era.titleAction.external
-                              ? {
-                                  target: '_blank',
-                                  rel: 'noopener noreferrer',
-                                }
-                              : {})}
-                            className="inline-flex min-h-10 shrink-0 items-center gap-1.5 rounded-lg border border-white/15 bg-white/[0.04] px-3 text-[13px] font-medium text-zinc-200 transition-[transform,background-color,color,border-color] duration-150 ease-out active:scale-[0.96] motion-reduce:transition-none motion-reduce:active:scale-100 [@media(hover:hover)_and_(pointer:fine)]:hover:border-white/25 [@media(hover:hover)_and_(pointer:fine)]:hover:bg-white/[0.08] [@media(hover:hover)_and_(pointer:fine)]:hover:text-white"
+                            external={era.titleAction.external}
+                            data-cuelume-hover="tick"
                           >
-                            {era.titleAction.label}
+                            <span>{era.titleAction.label}</span>
                             {era.titleAction.external ? (
-                              <span className="opacity-60" aria-hidden>
-                                ↗
-                              </span>
+                              <span aria-hidden>↗</span>
                             ) : null}
-                          </a>
+                          </ChromePillLink>
                         ) : null}
                       </div>
                     ) : null}

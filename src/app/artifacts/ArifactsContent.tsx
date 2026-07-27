@@ -1,5 +1,6 @@
 'use client'
 
+import { useCallback, useRef, useState } from 'react'
 import Link from 'next/link'
 import { SafeImage } from '@/components/SafeImage'
 import { motion } from 'framer-motion'
@@ -13,6 +14,60 @@ type CraftItem = {
   src: string
   alt: string
   post?: string
+}
+
+function DeferredVideo({ src }: { src: string }) {
+  const [shouldLoad, setShouldLoad] = useState(false)
+  const observerRef = useRef<IntersectionObserver | null>(null)
+
+  const setContainerRef = useCallback(
+    (el: HTMLDivElement | null) => {
+      observerRef.current?.disconnect()
+      observerRef.current = null
+      if (!el || shouldLoad) return
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry?.isIntersecting) {
+            setShouldLoad(true)
+            observer.disconnect()
+            observerRef.current = null
+          }
+        },
+        { rootMargin: '200px' },
+      )
+      observer.observe(el)
+      observerRef.current = observer
+    },
+    [shouldLoad],
+  )
+
+  const videoSrc = shouldLoad ? src : undefined
+
+  return (
+    <div ref={setContainerRef}>
+      <video
+        src={videoSrc}
+        className="hidden h-full w-full rounded-4xl border border-white/10 bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)] sm:block"
+        autoPlay
+        muted
+        playsInline
+        loop
+      >
+        <track kind="captions" />
+      </video>
+      <video
+        src={videoSrc}
+        className="block h-full w-full rounded-4xl border border-white/5 bg-[rgba(48,48,48,.3)] bg-cover object-cover [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)] sm:hidden"
+        autoPlay
+        muted
+        playsInline
+        controls
+      >
+        <track kind="captions" />
+      </video>
+    </div>
+  )
 }
 
 const MediaComponent = ({ item }: { item: CraftItem }) => {
@@ -30,30 +85,7 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
       </div>
     )
   }
-  return (
-    <>
-      <video
-        src={item.src}
-        className="hidden h-full w-full rounded-4xl border border-white/10 bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)] sm:block"
-        autoPlay
-        muted
-        playsInline
-        loop
-      >
-        <track kind="captions" />
-      </video>
-      <video
-        src={item.src}
-        className="block h-full w-full rounded-4xl border border-white/5 bg-[rgba(48,48,48,.3)] bg-cover object-cover [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)] sm:hidden"
-        autoPlay
-        muted
-        playsInline
-        controls
-      >
-        <track kind="captions" />
-      </video>
-    </>
-  )
+  return <DeferredVideo src={item.src} />
 }
 
 export default function ArtifactsContent() {
@@ -97,7 +129,7 @@ export default function ArtifactsContent() {
             />
           </Link>
         </motion.div>
-        {/* 10th item: ispectLogo with link */}
+        {/* ispect landing video */}
         <motion.div className="col-span-full" variants={artifactItemVariants}>
           <Link
             href="/artifacts/makings-of-ispect"
@@ -112,7 +144,22 @@ export default function ArtifactsContent() {
             />
           </Link>
         </motion.div>
-        {/* 5th item: icontrol */}
+        {/* sitesnap landing video */}
+        <motion.div className="col-span-full" variants={artifactItemVariants}>
+          <Link
+            href="/artifacts/makings-of-sitesnap"
+            className="group flex flex-col rounded-4xl"
+          >
+            <MediaComponent
+              item={{
+                type: 'video',
+                src: '/sitesnap-landing.mp4',
+                alt: 'read: makings of sitesnap↗',
+              }}
+            />
+          </Link>
+        </motion.div>
+        {/* icontrol */}
         <motion.div className="col-span-full" variants={artifactItemVariants}>
           <Link
             href="/artifacts/makings-of-icontrol"

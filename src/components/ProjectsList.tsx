@@ -149,6 +149,18 @@ const business: ProjectEntry[] = [
 
 const startups: ProjectEntry[] = [
   {
+    id: 'project-sitesnap',
+    name: 'sitesnap',
+    description: 'The 60-second daily log for contractors',
+    href: '/artifacts/makings-of-sitesnap',
+    year: [2026, 'ongoing'],
+    image: '/images/sitesnap-icon.png',
+    imageAlt: 'read: makings of sitesnap — icon',
+    hoverMedia: 'video',
+    videoSrc: '/sitesnap-landing.mp4',
+    imageClassName: 'object-center',
+  },
+  {
     id: 'project-scribbly-ai',
     name: 'scribbly.ai',
     description: 'Bespoke AI transcriptions in seconds',

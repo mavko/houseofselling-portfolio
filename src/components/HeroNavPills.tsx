@@ -15,10 +15,10 @@ const sectionClass =
 /** Black / white chrome — same ramp as github / ispect pills. */
 const BACK_CHROME = CHROME_BORDER_GRADIENT.github
 
-const backShellClass =
-  'group relative z-0 inline-flex h-10 max-w-full align-middle rounded-full p-px no-underline transition-transform duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-[0.97] motion-reduce:transition-none motion-reduce:active:scale-100 motion-reduce:hover:scale-100 [@media(hover:hover)_and_(pointer:fine)]:hover:scale-[1.02]'
+const chromeShellClass =
+  'group relative z-0 inline-flex h-10 max-w-full shrink-0 align-middle rounded-full p-px no-underline transition-transform duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-[0.97] motion-reduce:transition-none motion-reduce:active:scale-100 motion-reduce:hover:scale-100 [@media(hover:hover)_and_(pointer:fine)]:hover:scale-[1.02]'
 
-const backInnerClass =
+const chromeInnerClass =
   'relative z-10 inline-flex h-full max-w-full items-center gap-2 rounded-full bg-[#141417] px-3.5 text-base font-medium leading-none text-white'
 
 function HeroNavShell({
@@ -29,6 +29,66 @@ function HeroNavShell({
   className?: string
 }) {
   return <div className={cn(sectionClass, className)}>{children}</div>
+}
+
+/** Pill chrome used by Home back nav and case-study title actions. */
+export function ChromePillLink({
+  href,
+  children,
+  className,
+  external = false,
+  'data-cuelume-hover': cuelumeHover,
+}: {
+  href: string
+  children: ReactNode
+  className?: string
+  external?: boolean
+  'data-cuelume-hover'?: string
+}) {
+  const classNames = cn(chromeShellClass, className)
+  const inner = (
+    <>
+      <span
+        className="pointer-events-none absolute inset-0 rounded-full bg-white/30 transition-opacity duration-150 ease-out [@media(hover:hover)_and_(pointer:fine)]:group-hover:opacity-0"
+        aria-hidden
+      />
+      <span
+        className="pointer-events-none absolute inset-0 overflow-hidden rounded-full opacity-0 transition-opacity duration-150 ease-out motion-reduce:hidden [@media(hover:hover)_and_(pointer:fine)]:group-hover:opacity-100"
+        aria-hidden
+      >
+        <span
+          className="absolute top-1/2 left-1/2 aspect-square w-[220%] -translate-x-1/2 -translate-y-1/2 [@media(hover:hover)_and_(pointer:fine)]:group-hover:animate-[spin_1.8s_linear_infinite]"
+          style={{ background: BACK_CHROME }}
+        />
+      </span>
+      <span
+        className="pointer-events-none absolute inset-0 hidden rounded-full opacity-0 transition-opacity duration-150 ease-out motion-reduce:block [@media(hover:hover)_and_(pointer:fine)]:motion-reduce:group-hover:opacity-100"
+        style={{ background: BACK_CHROME }}
+        aria-hidden
+      />
+      <span className={chromeInnerClass}>{children}</span>
+    </>
+  )
+
+  if (external) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-cuelume-hover={cuelumeHover}
+        className={classNames}
+      >
+        {inner}
+      </a>
+    )
+  }
+
+  return (
+    <Link href={href} data-cuelume-hover={cuelumeHover} className={classNames}>
+      {inner}
+    </Link>
+  )
 }
 
 /** Home: work bio + destination pills. */
@@ -114,34 +174,10 @@ export function HomeHeroCopy() {
 export function SubpageBackNav({ className }: { className?: string }) {
   return (
     <HeroNavShell className={className}>
-      <Link
-        href="/"
-        data-cuelume-hover="tick"
-        className={cn(backShellClass, className)}
-      >
-        <span
-          className="pointer-events-none absolute inset-0 rounded-full bg-white/30 transition-opacity duration-150 ease-out [@media(hover:hover)_and_(pointer:fine)]:group-hover:opacity-0"
-          aria-hidden
-        />
-        <span
-          className="pointer-events-none absolute inset-0 overflow-hidden rounded-full opacity-0 transition-opacity duration-150 ease-out motion-reduce:hidden [@media(hover:hover)_and_(pointer:fine)]:group-hover:opacity-100"
-          aria-hidden
-        >
-          <span
-            className="absolute top-1/2 left-1/2 aspect-square w-[220%] -translate-x-1/2 -translate-y-1/2 [@media(hover:hover)_and_(pointer:fine)]:group-hover:animate-[spin_1.8s_linear_infinite]"
-            style={{ background: BACK_CHROME }}
-          />
-        </span>
-        <span
-          className="pointer-events-none absolute inset-0 hidden rounded-full opacity-0 transition-opacity duration-150 ease-out motion-reduce:block [@media(hover:hover)_and_(pointer:fine)]:motion-reduce:group-hover:opacity-100"
-          style={{ background: BACK_CHROME }}
-          aria-hidden
-        />
-        <span className={backInnerClass}>
-          <ArrowLeft className="size-4 shrink-0" strokeWidth={2} aria-hidden />
-          <span>Home</span>
-        </span>
-      </Link>
+      <ChromePillLink href="/" data-cuelume-hover="tick" className={className}>
+        <ArrowLeft className="size-4 shrink-0" strokeWidth={2} aria-hidden />
+        <span>Home</span>
+      </ChromePillLink>
     </HeroNavShell>
   )
 }
