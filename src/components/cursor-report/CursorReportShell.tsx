@@ -40,7 +40,7 @@ export function CursorReportCard({
       )}
     >
       {title ? (
-        <h3 className="font-display text-sm font-semibold tracking-tight text-[#e8e6e3] font-stretch-125%">
+        <h3 className="font-display text-sm font-semibold tracking-tight text-[#e8e6e3]">
           {title}
         </h3>
       ) : null}

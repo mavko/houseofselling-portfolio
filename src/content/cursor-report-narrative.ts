@@ -14,7 +14,7 @@ export const CURSOR_REPORT_NARRATIVE: CursorReportNarrativeSection[] = [
   {
     id: 'building',
     title: 'What I build',
-    body: 'Primary focus is iSPECT — a massive migration and refactor from legacy iOS/iPad inspection software into a modern Expo monorepo. Ongoing work: field workflows, defect taxonomy and editor, orders, multi-tenant workspaces, and production parity with the iPad app in the field.',
+    body: 'Primary focus is iSPECT — a solo rebuild from legacy .NET / Couchbase / native iOS into Next.js, Expo, and Supabase. Ongoing work: field workflows, defect taxonomy and editor, orders, multi-tenant workspaces, and cutting over without losing twelve years of inspection data.',
     items: [
       'Heredium — Swedish BRF screening and underwriting (PLG). Side project; much lower activity. Pulls building-risk signal from iSPECT when available.',
       'minibrf.se — Lightweight BRF tooling. Side project; much lower activity.',

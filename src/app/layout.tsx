@@ -1,6 +1,5 @@
 import { type Metadata } from 'next'
-import { Mona_Sans } from 'next/font/google'
-import { GeistSans } from 'geist/font/sans'
+import { Inter } from 'next/font/google'
 
 import { Providers } from '@/app/providers'
 import { SubpageBioNavGate } from '@/components/HeroNavPills'
@@ -8,13 +7,10 @@ import { VercelAnalytics } from '@/components/VercelAnalytics'
 
 import '@/styles/tailwind.css'
 
-const monaSans = Mona_Sans({
+const inter = Inter({
   subsets: ['latin', 'latin-ext'],
-  variable: '--font-mona-sans',
+  variable: '--font-inter',
   display: 'swap',
-  // next/font types omit wght for Mona_Sans; both axes are valid per Google Fonts.
-  // @ts-expect-error -- wght is a real variable axis for Mona Sans
-  axes: ['wdth', 'wght'],
 })
 
 export const metadata: Metadata = {
@@ -78,7 +74,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${GeistSans.className} ${GeistSans.variable} ${monaSans.variable}`}
+      className={`${inter.className} ${inter.variable}`}
       suppressHydrationWarning
     >
       <head>

@@ -39,7 +39,7 @@ export function SiteFloatingMenu({
       position={placement === 'corner' ? 'corner' : 'anchor'}
       menuPlacement={placement === 'hero' ? 'down' : 'up'}
       className={cn(
-        'font-display text-[13px] font-medium tracking-[-0.2px] font-stretch-125%',
+        'font-display text-[13px] font-medium tracking-[-0.2px]',
         className,
       )}
       options={[

@@ -127,7 +127,7 @@ export const ICONTROL_ERAS: CaseStudyEra[] = [
         type: 'plain',
         paragraphs: [
           'With a rather rapid build, deploy and iterate cycle once customers have gotten their hands on the app we went through quite a large number of versions of the app over the years. During my time there we built the app on iOS for iPhone and iPad, later adding in a web dashboard to accomodate the ever increasing project sizes.',
-          "I'll try and highlight some of the finished screens from the app(s).",
+          "I'll highlight screens from the shipped apps — a mix of production UI and a few design-direction mockups noted below.",
         ],
       },
       {
@@ -137,8 +137,8 @@ export const ICONTROL_ERAS: CaseStudyEra[] = [
             kind: 'image',
             srcKey:
               'bundled/craft/icontrol/screens/icontrol_dashboard_blueprint.png',
-            alt: 'Dashboard and blueprint feature mockup',
-            caption: 'Dashboard and blueprint feature mockup',
+            alt: 'Dashboard and blueprint feature — design mockup',
+            caption: 'Dashboard and blueprint — design mockup (direction, not a production capture)',
             width: 1200,
             height: 800,
           },

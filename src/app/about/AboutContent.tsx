@@ -22,25 +22,25 @@ export default function AboutContent() {
         <p>
           I've spent the last decade designing and launching software tools in
           real estate, construction, and legacy industries that badly need
-          better UX. Along the way, I helped bring two construction SaaS
-          products—
-          <Link
-            href="/artifacts/makings-of-ispect"
-            className="text-white"
-            target="_blank"
-          >
-            ispect
-          </Link>{' '}
-          and{' '}
+          better UX. Along the way I was sole designer on{' '}
           <Link
             href="/artifacts/makings-of-icontrol"
             className="text-white"
             target="_blank"
           >
             icontrol
+          </Link>{' '}
+          and designer-who-builds on{' '}
+          <Link
+            href="/artifacts/makings-of-ispect"
+            className="text-white"
+            target="_blank"
+          >
+            ispect
           </Link>
-          — to life. I handled everything from branding and product design to
-          implementing UI in Vue and CSS.
+          — branding, product design, and shipping UI in Vue and CSS. I also run
+          product &amp; design for the family inspection firms Besiktningsman.se
+          and Dinfastighetsforvaltare.se.
         </p>
         <p>
           Lately, I've been building with{' '}
@@ -48,10 +48,10 @@ export default function AboutContent() {
             Cursor
           </Link>{' '}
           and Claude Code, letting me ship fullstack apps completely solo which has been
-          absolutely mindblowing. Currently completely refactoring and migrating our legacy
-          codebase of 200k lines of code iSpect from vue 2.7, vuetify and
-          graphql to Nuxt 4 and I've reached feature parity in weeks. Something
-          that would've taken months just a few years ago.
+          absolutely mindblowing. Right now I own the iSpect rebuild end-to-end —
+          migrating a legacy Vue 2.7 / Vuetify / GraphQL / Couchbase stack to Next.js,
+          Expo, and Supabase. Rebuild is in progress: field crews stay on the live
+          product while the new stack and data path come up.
         </p>
 
         <p className="font-semibold text-[#e8e6e3]">Highlights:</p>
@@ -74,7 +74,7 @@ export default function AboutContent() {
           </li>
           <li>
             <strong className="pr-1 text-white">UI Engineering:</strong>
-            Cursor, Claude, Antigravity, using Nextjs / Nuxt + Shadcn UI
+            Cursor, Claude, Antigravity — Next.js, Expo, Supabase, shadcn/ui
           </li>
         </ul>
         <p className="font-semibold text-[#e8e6e3]">What I'm Looking For</p>

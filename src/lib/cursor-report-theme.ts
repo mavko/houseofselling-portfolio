@@ -6,4 +6,4 @@ export const CURSOR_ACCENT_LOCAL =
 export const CURSOR_MUTED_LABEL_CLASS = 'text-sm font-semibold text-zinc-400'
 
 export const CURSOR_VALUE_CLASS =
-  'font-display text-xl font-medium text-[#e8e6e3] tabular-nums font-stretch-125%'
+  'font-display text-xl font-medium text-[#e8e6e3] tabular-nums'

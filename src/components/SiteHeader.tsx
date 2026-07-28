@@ -56,9 +56,7 @@ function BrandLink({ onClick }: { onClick?: () => void }) {
       onClick={onClick}
       className="-m-1.5 flex items-center gap-3 p-1.5"
     >
-      <span className="font-stretch-125% tracking-[-0.2px] text-white">
-        Sebastian Selling
-      </span>
+      <span className="text-white">Sebastian Selling</span>
       <BrandMark className="inline-flex shrink-0" />
     </Link>
   )
@@ -89,7 +87,7 @@ export function SiteHeader() {
         }}
       />
       <nav
-        className="pointer-events-auto flex w-full items-center justify-between px-3 py-[1.35rem] font-display text-[13px] font-medium tracking-[-0.2px] text-white font-stretch-125% lg:px-6"
+        className="pointer-events-auto flex w-full items-center justify-between px-3 py-[1.35rem] font-display text-[13px] font-medium tracking-[-0.2px] text-white lg:px-6"
         aria-label="Main"
       >
         <div className="flex lg:flex-1">
@@ -179,7 +177,7 @@ export function SiteHeader() {
               onClick={() => setMobileMenuOpen(false)}
             />
             <motion.div
-              className="fixed inset-x-0 top-0 z-50 w-full origin-top overflow-y-auto rounded-b-2xl border-b border-white/10 bg-black p-6 font-display text-[13px] font-medium tracking-[-0.2px] text-white font-stretch-125% sm:ring-1 sm:ring-white/10"
+              className="fixed inset-x-0 top-0 z-50 w-full origin-top overflow-y-auto rounded-b-2xl border-b border-white/10 bg-black p-6 font-display text-[13px] font-medium tracking-[-0.2px] text-white sm:ring-1 sm:ring-white/10"
               initial={panelEnter}
               animate={panelRest}
               exit={{

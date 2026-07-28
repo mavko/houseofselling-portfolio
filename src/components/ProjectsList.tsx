@@ -266,7 +266,7 @@ const ProjectsList = ({ entranceDelayMs = 350 }: ProjectsListProps) => {
           text="Currently"
           delaySec={baseDelaySec}
           reduceMotion={reduceMotion}
-          className="font-display flex items-center text-xs font-bold font-stretch-125%"
+          className="font-display flex items-center text-xs font-bold"
         />
         <div className="overflow-hidden rounded-4xl border border-white/25 [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] brightness-125 [transition-property:transform,filter] select-none [transition:.12s_var(--ease-out-quad)]">
           <HoverExpand
@@ -285,7 +285,7 @@ const ProjectsList = ({ entranceDelayMs = 350 }: ProjectsListProps) => {
           text="Startups"
           delaySec={baseDelaySec}
           reduceMotion={reduceMotion}
-          className="font-display flex items-center text-xs font-bold font-stretch-125%"
+          className="font-display flex items-center text-xs font-bold"
         />
         <HoverExpand
           {...hoverCommon}
@@ -304,7 +304,7 @@ const ProjectsList = ({ entranceDelayMs = 350 }: ProjectsListProps) => {
           text="Business"
           delaySec={baseDelaySec}
           reduceMotion={reduceMotion}
-          className="font-display flex items-center text-xs font-bold font-stretch-125%"
+          className="font-display flex items-center text-xs font-bold"
         />
         <HoverExpand
           {...hoverCommon}
@@ -323,7 +323,7 @@ const ProjectsList = ({ entranceDelayMs = 350 }: ProjectsListProps) => {
           text="Projects"
           delaySec={baseDelaySec}
           reduceMotion={reduceMotion}
-          className="font-display flex items-center text-xs font-bold font-stretch-125%"
+          className="font-display flex items-center text-xs font-bold"
         />
         <HoverExpand
           {...hoverCommon}

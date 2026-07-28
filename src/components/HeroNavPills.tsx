@@ -95,11 +95,11 @@ export function ChromePillLink({
 export function HomeBioNav({ className }: { className?: string }) {
   return (
     <HeroNavShell className={className}>
-      Currently rebuilding ispect into a modern inspection platform{' '}
+      Currently rebuilding ispect solo — product, design, and engineering —{' '}
       <LinkPreview url="/artifacts/makings-of-ispect" avatar="ispect">
         Makings of ispect
       </LinkPreview>{' '}
-      and help run the family business{' '}
+      and run product &amp; design for the family inspection firms{' '}
       <LinkPreview
         url="https://www.besiktningsman.se"
         avatar="bm"

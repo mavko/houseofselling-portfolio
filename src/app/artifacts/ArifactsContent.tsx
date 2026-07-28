@@ -16,6 +16,15 @@ type CraftItem = {
   post?: string
 }
 
+type ArtifactTile = {
+  href: string
+  external?: boolean
+  title: string
+  caption: string
+  item: CraftItem
+  fullWidth?: boolean
+}
+
 function DeferredVideo({ src }: { src: string }) {
   const [shouldLoad, setShouldLoad] = useState(false)
   const observerRef = useRef<IntersectionObserver | null>(null)
@@ -88,6 +97,64 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
   return <DeferredVideo src={item.src} />
 }
 
+const ARTIFACT_TILES: ArtifactTile[] = [
+  {
+    href: 'https://www.besiktningsman.se',
+    external: true,
+    title: 'Besiktningsman.se',
+    caption: 'Family inspection firm — live site',
+    item: {
+      type: 'image',
+      src: mediaUrl('bundled/craft/bm-logo.jpg'),
+      alt: 'besiktningsman.se logo',
+    },
+  },
+  {
+    href: 'https://ispect.app',
+    external: true,
+    title: 'iSpect',
+    caption: 'Construction inspection — live product',
+    item: {
+      type: 'image',
+      src: '/images/ispect-icon-iteration4.jpg',
+      alt: 'ispect app icon',
+    },
+  },
+  {
+    href: '/artifacts/makings-of-ispect',
+    title: 'Makings of iSpect',
+    caption: '12-year product rebuild — case study',
+    fullWidth: true,
+    item: {
+      type: 'video',
+      src: '/ispect-landing-new.mp4',
+      alt: 'Makings of iSpect landing craft',
+    },
+  },
+  {
+    href: '/artifacts/makings-of-sitesnap',
+    title: 'Makings of SiteSnap',
+    caption: '60-second construction daily log',
+    fullWidth: true,
+    item: {
+      type: 'video',
+      src: '/sitesnap-landing.mp4',
+      alt: 'Makings of SiteSnap product overview',
+    },
+  },
+  {
+    href: '/artifacts/makings-of-icontrol',
+    title: 'Makings of iControl',
+    caption: 'Sole designer — from pitch to field',
+    fullWidth: true,
+    item: {
+      type: 'image',
+      src: mediaUrl('bundled/craft/icontrol-header.jpg'),
+      alt: 'icontrol logo',
+    },
+  },
+]
+
 export default function ArtifactsContent() {
   return (
     <main className="mx-auto max-w-5xl">
@@ -97,83 +164,31 @@ export default function ArtifactsContent() {
         initial="hidden"
         animate="visible"
       >
-        {/* 1st item: bmLogo */}
-        <motion.div variants={artifactItemVariants}>
-          <Link
-            href="https://www.besiktningsman.se"
-            className="group flex flex-col rounded-4xl"
-            target="_blank"
+        {ARTIFACT_TILES.map((tile) => (
+          <motion.div
+            key={tile.href}
+            className={tile.fullWidth ? 'col-span-full' : undefined}
+            variants={artifactItemVariants}
           >
-            <MediaComponent
-              item={{
-                type: 'image',
-                src: mediaUrl('bundled/craft/bm-logo.jpg'),
-                alt: 'besiktningsman.se logo',
-              }}
-            />
-          </Link>
-        </motion.div>
-        {/* 2nd item: ispect app icon */}
-        <motion.div variants={artifactItemVariants}>
-          <Link
-            href="https://ispect.app"
-            className="group flex flex-col rounded-4xl"
-            target="_blank"
-          >
-            <MediaComponent
-              item={{
-                type: 'image',
-                src: '/images/ispect-icon-iteration4.jpg',
-                alt: 'ispect app icon',
-              }}
-            />
-          </Link>
-        </motion.div>
-        {/* ispect landing video */}
-        <motion.div className="col-span-full" variants={artifactItemVariants}>
-          <Link
-            href="/artifacts/makings-of-ispect"
-            className="group flex flex-col rounded-4xl"
-          >
-            <MediaComponent
-              item={{
-                type: 'video',
-                src: '/ispect-landing-new.mp4',
-                alt: 'read: makings of ispect↗',
-              }}
-            />
-          </Link>
-        </motion.div>
-        {/* sitesnap landing video */}
-        <motion.div className="col-span-full" variants={artifactItemVariants}>
-          <Link
-            href="/artifacts/makings-of-sitesnap"
-            className="group flex flex-col rounded-4xl"
-          >
-            <MediaComponent
-              item={{
-                type: 'video',
-                src: '/sitesnap-landing.mp4',
-                alt: 'read: makings of sitesnap↗',
-              }}
-            />
-          </Link>
-        </motion.div>
-        {/* icontrol */}
-        <motion.div className="col-span-full" variants={artifactItemVariants}>
-          <Link
-            href="/artifacts/makings-of-icontrol"
-            className="group flex flex-col overflow-hidden bg-[rgba(48,48,48,.3)]"
-          >
-            <MediaComponent
-              item={{
-                type: 'image',
-                src: mediaUrl('bundled/craft/icontrol-header.jpg'),
-                alt: 'icontrol logo',
-              }}
-            />
-          </Link>
-        </motion.div>
+            <Link
+              href={tile.href}
+              className="group flex flex-col rounded-4xl"
+              {...(tile.external
+                ? { target: '_blank', rel: 'noopener noreferrer' }
+                : {})}
+            >
+              <MediaComponent item={tile.item} />
+              <div className="mt-3 px-1.5 pb-1">
+                <p className="font-display text-[15px] font-semibold tracking-tight text-[#e8e6e3]">
+                  {tile.title}
+                </p>
+                <p className="mt-0.5 text-[13px] leading-snug text-zinc-500">
+                  {tile.caption}
+                </p>
+              </div>
+            </Link>
+          </motion.div>
+        ))}
       </motion.div>
     </main>
   )

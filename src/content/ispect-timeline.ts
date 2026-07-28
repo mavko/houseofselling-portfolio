@@ -40,14 +40,14 @@ export const ISPECT_FOREWORD: RichParagraph[] = [
     {
       kind: 'text',
       value:
-        'Looks like a redesign. The hard problem is twelve years of inspection knowledge locked in .NET, Couchbase, Sync Gateway, and native iOS — while crews still need the same field workflows tomorrow morning.',
+        'Twelve years of inspection knowledge sits in .NET, Couchbase, Sync Gateway, and native iOS, and crews still need the same field workflows tomorrow morning.',
     },
   ],
   [
     {
       kind: 'text',
       value:
-        'I am rebuilding the product brain (Next.js, Expo, Supabase) so the business keeps its memory without staying trapped in the old stack.',
+        'I own the rebuild end to end: product, design, and engineering. Moving to Next.js, Expo, and Supabase so the business keeps its data without the old stack.',
     },
   ],
 ]
@@ -55,7 +55,9 @@ export const ISPECT_FOREWORD: RichParagraph[] = [
 export const ISPECT_ERAS: CaseStudyEra[] = [
   {
     id: 'now',
-    title: '2026 design work',
+    label: 'Now',
+    yearRange: '2026',
+    title: 'Keep the data, replace the stack',
     titleAction: {
       label: 'ispect.app',
       href: 'https://ispect.app',
@@ -64,8 +66,37 @@ export const ISPECT_ERAS: CaseStudyEra[] = [
     featured: true,
     blocks: [
       {
+        type: 'plain',
+        paragraphs: [
+          'Field crews stay on the live product while I cut over stack, data path, and marketing in parallel.',
+        ],
+      },
+      {
         type: 'heading',
-        text: 'Landing page designs',
+        text: 'Stack move',
+      },
+      {
+        type: 'stack-compare',
+        rows: [
+          { before: 'Vue 2.7 + Vuetify', after: 'Next.js App Router' },
+          { before: 'Native iOS / Sync Gateway', after: 'Expo field apps' },
+          { before: 'Couchbase + GraphQL', after: 'Supabase (Postgres, RLS)' },
+          { before: '.NET service layer', after: 'Supabase RPCs + workers' },
+        ],
+      },
+      {
+        type: 'heading',
+        text: 'Data path',
+      },
+      {
+        type: 'diagram',
+        variant: 'data-pipeline',
+        caption:
+          'Donor Couchbase stays readable until export, project gate, then live apps share one truth.',
+      },
+      {
+        type: 'heading',
+        text: 'Marketing craft while the rebuild ships',
       },
       {
         type: 'media',
@@ -74,7 +105,7 @@ export const ISPECT_ERAS: CaseStudyEra[] = [
             kind: 'video',
             src: '/ispect-landing-new.mp4',
             title: 'iSpect landing header animation (2026)',
-            caption: 'Landing header direction — craft under the rebuild',
+            caption: 'Landing header for the live site',
           },
         ],
       },
@@ -85,7 +116,7 @@ export const ISPECT_ERAS: CaseStudyEra[] = [
             kind: 'video',
             src: '/ispect-landing-ui.mp4',
             title: 'iSpect landing page UI (2026)',
-            caption: 'Landing page UI — craft under the rebuild',
+            caption: 'Landing UI for the live site',
           },
         ],
       },
@@ -96,7 +127,7 @@ export const ISPECT_ERAS: CaseStudyEra[] = [
             kind: 'video',
             src: '/ispect-landing-ui-2.mp4',
             title: 'iSpect landing page interaction (2026)',
-            caption: 'Landing page interaction — craft under the rebuild',
+            caption: 'Landing interaction detail',
           },
         ],
       },
@@ -114,7 +145,7 @@ export const ISPECT_ERAS: CaseStudyEra[] = [
       {
         type: 'plain',
         paragraphs: [
-          'Vue 2 / Vuetify 2 → Vue 2.7 + Tailwind. Vuetify stayed for complex tables but styles were stripped — effectively headless. Goal: modernize the design, reduce jank, show less information so the product feels more automatic.',
+          'Vue 2 / Vuetify 2 to Vue 2.7 + Tailwind. Vuetify stayed for complex tables but styles were stripped, effectively headless. Goal: modernize the design, cut jank, show less information so the product feels more automatic.',
         ],
       },
       {
@@ -215,12 +246,12 @@ export const ISPECT_ERAS: CaseStudyEra[] = [
     id: 'scale-2020',
     label: 'Scale',
     yearRange: '2020–2021',
-    title: 'Why iSpect exists: transparency in construction',
+    title: 'Transparency in construction',
     blocks: [
       {
         type: 'plain',
         paragraphs: [
-          'With a decade of industry statistics, the web platform lets contractors and sub-contractors see project health in real time — issue counts, average completion time, who is performing before contracts are renegotiated.',
+          'With a decade of industry statistics, the web platform lets contractors and sub-contractors see project health in real time: issue counts, average completion time, who is performing before contracts are renegotiated.',
         ],
       },
       {
@@ -255,7 +286,7 @@ export const ISPECT_ERAS: CaseStudyEra[] = [
               'bundled/craft/ispect/ispect-closeout-demo-2020-january.jpg',
             alt: 'iSpect closeout 2020',
             caption:
-              'Closeout (2020 beta — later merged into the dashboard) for subcontractors to remedy assigned issues',
+              'Closeout (2020 beta, later merged into the dashboard) for subcontractors to remedy assigned issues',
             width: 1200,
             height: 600,
           },
@@ -272,8 +303,7 @@ export const ISPECT_ERAS: CaseStudyEra[] = [
             kind: 'image',
             srcKey: 'bundled/craft/ispect/dashboard_total_issues.png',
             alt: 'Total project issues',
-            caption:
-              'A completed Stockholm project — total issues across the build',
+            caption: 'A completed Stockholm project: total issues across the build',
             width: 600,
             height: 400,
           },
@@ -288,7 +318,7 @@ export const ISPECT_ERAS: CaseStudyEra[] = [
           {
             kind: 'embed',
             src: 'https://www.loom.com/embed/799cba8301b048d2b524b7c55505b486?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true',
-            title: 'Loom — categories deep dive (titles in Swedish)',
+            title: 'Loom: categories deep dive (titles in Swedish)',
             height: 400,
           },
           {
@@ -314,7 +344,7 @@ export const ISPECT_ERAS: CaseStudyEra[] = [
       {
         type: 'plain',
         paragraphs: [
-          'Started 2012 in brand and UI; moved into implementation when craft alone was not enough. The logotype grew around the search mark and had to work on hard hats, people, and product screens — not just a marketing site.',
+          'Started 2012 in brand and UI; moved into implementation when craft alone was not enough. The logotype grew around the search mark and had to work on hard hats, people, and product screens, not just a marketing site.',
         ],
       },
       {
@@ -333,7 +363,7 @@ export const ISPECT_ERAS: CaseStudyEra[] = [
             srcKey: 'bundled/craft/ispect/ispect_hard_hat.jpg',
             alt: 'iSpect on hard hat',
             caption:
-              'Hard hats usually cannot change color — branding works within the rules',
+              'Hard hats usually cannot change color. Branding works within the rules.',
             width: 600,
             height: 400,
           },

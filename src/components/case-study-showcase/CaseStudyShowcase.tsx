@@ -10,7 +10,10 @@ import type {
 } from '@/content/case-study-types'
 
 import { CaseStudyEraBlocks } from './CaseStudyEraBlocks'
-import { CaseStudyRichParagraph } from './CaseStudyRichParagraph'
+import {
+  CaseStudyRichParagraph,
+  caseStudyBodyClass,
+} from './CaseStudyRichParagraph'
 import { CaseStudyWideMediaGallery } from './CaseStudyWideMediaGallery'
 import { partitionCaseStudyEraBlocks } from './partition-case-study-era-blocks'
 
@@ -33,7 +36,7 @@ function yearDateTime(yearRange: string): string | undefined {
 }
 
 /**
- * Open long-form — scan pack first (title, meta, hook), then eras as depth.
+ * Open long-form: hook first, then eras as depth.
  */
 export function CaseStudyShowcase({
   page,
@@ -44,47 +47,32 @@ export function CaseStudyShowcase({
   foreword: RichParagraph[]
   eras: CaseStudyEra[]
 }) {
-  const hasMeta = page.meta && page.meta.length > 0
-
   return (
     <div className="mx-auto w-full max-w-[1000px] pt-12 sm:pt-20">
       <article>
         <header>
+          <h1 className="sr-only">{page.title}</h1>
           {page.eyebrow ? (
-            <p className="font-display text-[13px] font-semibold tracking-[-0.2px] text-zinc-400 font-stretch-125%">
+            <p className="text-sm font-semibold tracking-wide text-zinc-400">
               {page.eyebrow}
             </p>
           ) : null}
-          <h1
-            className={`font-display text-3xl font-semibold tracking-tight text-balance text-white font-stretch-125% sm:text-4xl ${
-              page.eyebrow ? 'mt-4' : ''
-            }`}
-          >
-            {page.title}
-          </h1>
           {page.subtitle ? (
-            <p className="mt-5 max-w-[40rem] text-base leading-relaxed text-zinc-500 text-pretty">
+            <p
+              className={`max-w-[40rem] text-base leading-relaxed text-zinc-500 text-pretty ${
+                page.eyebrow ? 'mt-5' : ''
+              }`}
+            >
               {page.subtitle}
             </p>
           ) : null}
 
-          {hasMeta ? (
-            <dl className="mt-10 grid grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-4">
-              {page.meta!.map((item) => (
-                <div key={item.label} className="min-w-0">
-                  <dt className="text-[11px] font-medium tracking-[0.08em] text-zinc-600">
-                    {item.label}
-                  </dt>
-                  <dd className="mt-1.5 text-sm leading-snug text-zinc-200 text-pretty">
-                    {item.value}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          ) : null}
-
           {foreword.length > 0 ? (
-            <div className="mt-12 max-w-[40rem] space-y-6 text-pretty">
+            <div
+              className={`space-y-6 ${
+                page.eyebrow || page.subtitle ? 'mt-12' : ''
+              }`}
+            >
               {foreword.map((para, i) => (
                 <CaseStudyRichParagraph key={i} paragraph={para} />
               ))}
@@ -114,7 +102,7 @@ export function CaseStudyShowcase({
                 {showEraHeader ? (
                   <header>
                     {showEraMeta ? (
-                      <p className="text-[13px] text-zinc-500">
+                      <p className="text-sm text-zinc-500">
                         {eraLabel ? (
                           <span className="font-medium text-zinc-400">
                             {eraLabel}
@@ -145,7 +133,7 @@ export function CaseStudyShowcase({
                       <div
                         className={`${showEraMeta ? 'mt-3' : ''} flex items-center justify-between gap-4`}
                       >
-                        <h2 className="min-w-0 text-xl font-medium tracking-tight text-white text-balance sm:text-[1.35rem] sm:leading-snug">
+                        <h2 className="min-w-0 text-2xl font-semibold tracking-tight text-balance text-white leading-tight">
                           {eraTitle}
                         </h2>
                         {era.titleAction ? (
@@ -166,9 +154,7 @@ export function CaseStudyShowcase({
                 ) : null}
 
                 {era.summary ? (
-                  <p className="mt-6 text-[20px] font-medium leading-[38px] text-[#ededed] text-pretty">
-                    {era.summary}
-                  </p>
+                  <p className={`mt-6 ${caseStudyBodyClass}`}>{era.summary}</p>
                 ) : null}
 
                 <div className={showEraHeader || era.summary ? 'mt-10' : ''}>

@@ -7,13 +7,17 @@ import type {
 } from '@/content/case-study-types'
 
 import { CaseStudyMediaItem } from './CaseStudyMedia'
-import { CaseStudyRichParagraph } from './CaseStudyRichParagraph'
+import {
+  CaseStudyRichParagraph,
+  caseStudyBodyClass,
+} from './CaseStudyRichParagraph'
 import { AgentLoopDiagram } from './diagrams/AgentLoopDiagram'
 import { DataPipelineDiagram } from './diagrams/DataPipelineDiagram'
 import { CaseStudyDiagram } from './diagrams/CaseStudyDiagram'
 import { StackCompare } from './diagrams/StackCompare'
 
-const prose = 'w-full'
+const prose = 'w-full max-w-[40rem]'
+const proseWide = 'w-full'
 
 /**
  * Essay rhythm: heading sits close to its figure; larger air between beats.
@@ -29,7 +33,7 @@ export function CaseStudyEraBlocks({ blocks }: { blocks: EraBlock[] }) {
             key={i}
             className={beatClass(block.type, prev, next)}
           >
-            <Block block={block} prevType={prev} />
+            <Block block={block} />
           </div>
         )
       })}
@@ -74,24 +78,16 @@ function beatClass(
 
 function Block({
   block,
-  prevType,
 }: {
   block: EraBlock
   prevType?: EraBlock['type']
 }) {
-  const tightAfterHeading = prevType === 'heading'
-
   switch (block.type) {
     case 'plain':
       return (
-        <div
-          className={`${prose} space-y-5 ${tightAfterHeading ? '' : ''}`}
-        >
+        <div className={`${prose} space-y-5`}>
           {block.paragraphs.map((p, j) => (
-            <p
-              key={j}
-              className="text-[20px] font-medium leading-[38px] text-[#ededed] text-pretty"
-            >
+            <p key={j} className={caseStudyBodyClass}>
               {p}
             </p>
           ))}
@@ -108,7 +104,7 @@ function Block({
     case 'heading':
       return (
         <h3
-          className={`${prose} text-[13px] font-medium tracking-[0.04em] text-zinc-500 text-balance`}
+          className={`${prose} text-sm font-medium tracking-wide text-zinc-500 text-balance`}
         >
           {block.text}
         </h3>
@@ -123,7 +119,7 @@ function Block({
                 {...(link.external
                   ? { target: '_blank', rel: 'noopener noreferrer' }
                   : {})}
-                className="inline-flex min-h-10 items-center text-[15px] text-emerald-300/90 underline decoration-white/15 underline-offset-4 transition-colors duration-150 ease-out active:opacity-80 [@media(hover:hover)_and_(pointer:fine)]:hover:text-emerald-200"
+                className="inline-flex min-h-10 items-center text-sm text-emerald-300/90 underline decoration-white/15 underline-offset-4 transition-colors duration-150 ease-out active:opacity-80 [@media(hover:hover)_and_(pointer:fine)]:hover:text-emerald-200"
               >
                 {link.label}
                 {link.external ? (
@@ -142,7 +138,7 @@ function Block({
           {block.items.map((item, j) => (
             <li
               key={j}
-              className="relative pl-4 text-[17px] font-medium leading-[1.55] text-[#ededed] text-pretty before:absolute before:top-[0.7em] before:left-0 before:h-1.5 before:w-1.5 before:rounded-full before:bg-zinc-600 sm:text-[18px] sm:leading-[1.6]"
+              className="relative max-w-[40rem] pl-4 text-base font-normal leading-relaxed text-[#ededed] before:absolute before:top-[0.7em] before:left-0 before:h-1.5 before:w-1.5 before:rounded-full before:bg-zinc-600"
             >
               {item}
             </li>
@@ -152,10 +148,16 @@ function Block({
     case 'media':
       return <CaseStudyMediaGrid items={block.items} />
     case 'stack-compare':
-      return <StackCompare rows={block.rows} />
+      return (
+        <div className={proseWide}>
+          <StackCompare rows={block.rows} />
+        </div>
+      )
     case 'diagram':
       return (
-        <CaseStudyDiagram variant={block.variant} caption={block.caption} />
+        <div className={proseWide}>
+          <CaseStudyDiagram variant={block.variant} caption={block.caption} />
+        </div>
       )
     case 'diagram-pair':
       return (
@@ -190,7 +192,7 @@ function DiagramRow({
 }) {
   return (
     <div className="min-w-0">
-      <h3 className="text-[13px] font-medium tracking-[0.04em] text-zinc-400 text-balance">
+      <h3 className="text-sm font-medium tracking-wide text-zinc-400 text-balance">
         {heading}
       </h3>
       <div className="mt-3">

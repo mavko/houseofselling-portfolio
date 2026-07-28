@@ -28,13 +28,17 @@ function Segment({ segment }: { segment: TextSegment }) {
   )
 }
 
+/** Long-form body: capped measure, reading weight, unitless leading. */
+export const caseStudyBodyClass =
+  'max-w-[40rem] text-lg font-normal leading-relaxed text-[#ededed]'
+
 export function CaseStudyRichParagraph({
   paragraph,
 }: {
   paragraph: RichParagraph
 }) {
   return (
-    <p className="text-[20px] font-medium leading-[38px] text-[#ededed] text-pretty">
+    <p className={caseStudyBodyClass}>
       {paragraph.map((segment, i) => (
         <Segment key={i} segment={segment} />
       ))}
