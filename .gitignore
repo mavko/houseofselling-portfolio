@@ -10,3 +10,8 @@ pnpm-lock.yaml
 package-lock.json
 .next/
 .env
+
+# Tooling scratch (firecrawl / impeccable / pnpm local store)
+.firecrawl/
+.impeccable/
+.pnpm-store/
