@@ -24,7 +24,9 @@ function ScannableRow({ text }: { text: string }) {
   )
 }
 
-export function CursorReportScannableList({ items }: CursorReportScannableListProps) {
+export function CursorReportScannableList({
+  items,
+}: CursorReportScannableListProps) {
   return (
     <ul className="flex flex-col">
       {items.map((item) => (

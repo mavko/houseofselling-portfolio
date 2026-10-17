@@ -88,9 +88,7 @@ export default function RootLayout({
               aria-hidden
               className="pointer-events-none fixed inset-x-0 top-0 z-20 h-42 [--header-scrim:#000000]"
             >
-              <div
-                className="absolute inset-0 bg-black/20 backdrop-blur-[5px] backdrop-filter motion-reduce:backdrop-blur-none [mask-image:linear-gradient(to_bottom,_rgb(0,_0,_0)_30%,_transparent)]"
-              />
+              <div className="absolute inset-0 bg-black/20 backdrop-blur-[5px] backdrop-filter [mask-image:linear-gradient(to_bottom,_rgb(0,_0,_0)_30%,_transparent)] motion-reduce:backdrop-blur-none" />
               <div
                 className="absolute inset-0"
                 style={{

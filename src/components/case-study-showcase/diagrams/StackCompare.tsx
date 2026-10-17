@@ -27,10 +27,10 @@ export function StackCompare({ rows }: StackCompareProps) {
                 : 'grid grid-cols-2 gap-x-10 py-4 sm:gap-x-20'
             }
           >
-            <p className="text-[16px] leading-snug text-zinc-500 text-pretty sm:text-[17px]">
+            <p className="text-[16px] leading-snug text-pretty text-zinc-500 sm:text-[17px]">
               {r.before}
             </p>
-            <p className="text-[16px] leading-snug font-medium text-[#ededed] text-pretty sm:text-[17px]">
+            <p className="text-[16px] leading-snug font-medium text-pretty text-[#ededed] sm:text-[17px]">
               {r.after}
             </p>
           </li>

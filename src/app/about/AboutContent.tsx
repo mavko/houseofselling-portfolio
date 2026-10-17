@@ -47,11 +47,12 @@ export default function AboutContent() {
           <Link href="/cursor" className="text-white">
             Cursor
           </Link>{' '}
-          and Claude Code, letting me ship fullstack apps completely solo which has been
-          absolutely mindblowing. Right now I own the iSpect rebuild end-to-end —
-          migrating a legacy Vue 2.7 / Vuetify / GraphQL / Couchbase stack to Next.js,
-          Expo, and Supabase. Rebuild is in progress: field crews stay on the live
-          product while the new stack and data path come up.
+          and Claude Code, letting me ship fullstack apps completely solo which
+          has been absolutely mindblowing. Right now I own the iSpect rebuild
+          end-to-end — migrating a legacy Vue 2.7 / Vuetify / GraphQL /
+          Couchbase stack to Next.js, Expo, and Supabase. Rebuild is in
+          progress: field crews stay on the live product while the new stack and
+          data path come up.
         </p>
 
         <p className="font-semibold text-[#e8e6e3]">Highlights:</p>

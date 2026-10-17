@@ -19,7 +19,7 @@ export const ICONTROL_FOREWORD: RichParagraph[] = [
     {
       kind: 'text',
       value:
-        'This page mirrors the iSpect archive format: same layout, same intent — a living slice of how the product and brand came together, not a polished case study deck.',
+        'I was the sole designer. Pitch, sketches, shipped screens, field photos, mascot, and the original team — the bits that still show how it came together.',
     },
   ],
 ]
@@ -138,7 +138,8 @@ export const ICONTROL_ERAS: CaseStudyEra[] = [
             srcKey:
               'bundled/craft/icontrol/screens/icontrol_dashboard_blueprint.png',
             alt: 'Dashboard and blueprint feature — design mockup',
-            caption: 'Dashboard and blueprint — design mockup (direction, not a production capture)',
+            caption:
+              'Dashboard and blueprint — design mockup (direction, not a production capture)',
             width: 1200,
             height: 800,
           },

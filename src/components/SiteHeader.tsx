@@ -87,7 +87,7 @@ export function SiteHeader() {
         }}
       />
       <nav
-        className="pointer-events-auto flex w-full items-center justify-between px-3 py-[1.35rem] font-display text-[13px] font-medium tracking-[-0.2px] text-white lg:px-6"
+        className="font-display pointer-events-auto flex w-full items-center justify-between px-3 py-[1.35rem] text-[13px] font-medium tracking-[-0.2px] text-white lg:px-6"
         aria-label="Main"
       >
         <div className="flex lg:flex-1">
@@ -177,7 +177,7 @@ export function SiteHeader() {
               onClick={() => setMobileMenuOpen(false)}
             />
             <motion.div
-              className="fixed inset-x-0 top-0 z-50 w-full origin-top overflow-y-auto rounded-b-2xl border-b border-white/10 bg-black p-6 font-display text-[13px] font-medium tracking-[-0.2px] text-white sm:ring-1 sm:ring-white/10"
+              className="font-display fixed inset-x-0 top-0 z-50 w-full origin-top overflow-y-auto rounded-b-2xl border-b border-white/10 bg-black p-6 text-[13px] font-medium tracking-[-0.2px] text-white sm:ring-1 sm:ring-white/10"
               initial={panelEnter}
               animate={panelRest}
               exit={{
@@ -223,7 +223,7 @@ export function SiteHeader() {
                       <Link
                         key={item.href}
                         href={item.href}
-                        className="-mx-3 block rounded-lg px-3 py-2 text-[13px] font-medium leading-7 text-white transition-colors hover:bg-white/5"
+                        className="-mx-3 block rounded-lg px-3 py-2 text-[13px] leading-7 font-medium text-white transition-colors hover:bg-white/5"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {item.label}
@@ -238,13 +238,13 @@ export function SiteHeader() {
                         {...(item.external
                           ? { target: '_blank', rel: 'noopener noreferrer' }
                           : {})}
-                        className="-mx-3 block rounded-lg px-3 py-2.5 text-[13px] font-medium leading-7 text-white transition-colors hover:bg-white/5"
+                        className="-mx-3 block rounded-lg px-3 py-2.5 text-[13px] leading-7 font-medium text-white transition-colors hover:bg-white/5"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {item.label}
                       </Link>
                     ))}
-                    <div className="-mx-3 px-3 py-2.5 text-[13px] font-medium leading-7 text-white">
+                    <div className="-mx-3 px-3 py-2.5 text-[13px] leading-7 font-medium text-white">
                       <ResumeDropdown />
                     </div>
                   </div>

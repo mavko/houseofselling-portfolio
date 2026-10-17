@@ -15,7 +15,7 @@ export function HomeHero() {
       initial="hidden"
       animate="visible"
     >
-      <motion.div variants={heroItemVariants}>
+      <motion.div variants={heroItemVariants} className="pointer-events-auto">
         <HomeHeroCopy />
       </motion.div>
     </motion.div>

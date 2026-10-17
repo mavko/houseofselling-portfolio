@@ -29,10 +29,7 @@ export function CaseStudyEraBlocks({ blocks }: { blocks: EraBlock[] }) {
         const prev = blocks[i - 1]?.type
         const next = blocks[i + 1]?.type
         return (
-          <div
-            key={i}
-            className={beatClass(block.type, prev, next)}
-          >
+          <div key={i} className={beatClass(block.type, prev, next)}>
             <Block block={block} />
           </div>
         )
@@ -76,12 +73,7 @@ function beatClass(
   return 'mt-12'
 }
 
-function Block({
-  block,
-}: {
-  block: EraBlock
-  prevType?: EraBlock['type']
-}) {
+function Block({ block }: { block: EraBlock; prevType?: EraBlock['type'] }) {
   switch (block.type) {
     case 'plain':
       return (
@@ -104,7 +96,7 @@ function Block({
     case 'heading':
       return (
         <h3
-          className={`${prose} text-sm font-medium tracking-wide text-zinc-500 text-balance`}
+          className={`${prose} text-sm font-medium tracking-wide text-balance text-zinc-500`}
         >
           {block.text}
         </h3>
@@ -138,7 +130,7 @@ function Block({
           {block.items.map((item, j) => (
             <li
               key={j}
-              className="relative max-w-[40rem] pl-4 text-base font-normal leading-relaxed text-[#ededed] before:absolute before:top-[0.7em] before:left-0 before:h-1.5 before:w-1.5 before:rounded-full before:bg-zinc-600"
+              className="relative max-w-[40rem] pl-4 text-base leading-relaxed font-normal text-[#ededed] before:absolute before:top-[0.7em] before:left-0 before:h-1.5 before:w-1.5 before:rounded-full before:bg-zinc-600"
             >
               {item}
             </li>
@@ -192,7 +184,7 @@ function DiagramRow({
 }) {
   return (
     <div className="min-w-0">
-      <h3 className="text-sm font-medium tracking-wide text-zinc-400 text-balance">
+      <h3 className="text-sm font-medium tracking-wide text-balance text-zinc-400">
         {heading}
       </h3>
       <div className="mt-3">

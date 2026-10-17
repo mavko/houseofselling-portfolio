@@ -8,7 +8,10 @@ type ChartSectionHeaderProps = {
   value: string
 }
 
-export function CursorChartSectionHeader({ label, value }: ChartSectionHeaderProps) {
+export function CursorChartSectionHeader({
+  label,
+  value,
+}: ChartSectionHeaderProps) {
   return (
     <div className="flex flex-col gap-1">
       <p className={CURSOR_MUTED_LABEL_CLASS}>{label}</p>

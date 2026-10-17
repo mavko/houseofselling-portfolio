@@ -26,3 +26,13 @@
 - `HoverExpand` supports video overlays (using `hoverMedia: "video"`) to play autoplay, looping, muted videos on hover triggers, e.g., on the home page startups list or artifacts gallery.
 - Prefer adding the `priority` prop (Next.js `next/image`) over `loading="eager"` for above-the-fold or LCP candidate images to optimize Largest Contentful Paint.
 - The `/cursor` route is a Cursor-style report page: build-time sync via `pnpm sync-cursor-report` writes `src/generated/cursor-report.json` from the public cursor.com/@sebastian profile; UI lives in `src/components/cursor-report/`, narrative in `src/content/cursor-report-narrative.ts`, full-width on the dark site shell (no light card wrapper) with coral accent `#E85D4C`. The home artifacts grid’s Cursor Report tile should match other media cards (minimal black + `border-white/10`); keep the tile title “Cursor report” and use white (not coral/orange) for its activity-node animation.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

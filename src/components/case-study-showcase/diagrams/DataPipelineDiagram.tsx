@@ -53,7 +53,7 @@ export function DataPipelineDiagram({
       )}
 
       {caption ? (
-        <figcaption className="text-[13px] leading-relaxed text-zinc-400 italic text-pretty">
+        <figcaption className="text-[13px] leading-relaxed text-pretty text-zinc-400 italic">
           {caption}
         </figcaption>
       ) : null}

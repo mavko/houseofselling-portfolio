@@ -90,9 +90,12 @@ function playTick() {
     return
   }
 
-  void context.resume().then(() => {
-    if (context.state === 'running') render()
-  }, () => {})
+  void context.resume().then(
+    () => {
+      if (context.state === 'running') render()
+    },
+    () => {},
+  )
 }
 
 function isFineMouse(event: PointerEvent) {

@@ -10,7 +10,7 @@ import { LinkPreview } from '@/components/LinkPreview'
 import { cn } from '@/lib/utils'
 
 const sectionClass =
-  'max-w-[42rem] text-xl font-medium leading-[2.45] text-[#ededed] text-pretty'
+  'max-w-[42rem] text-[15px] font-medium leading-[1.6] text-[#ededed] text-pretty'
 
 /** Black / white chrome — same ramp as github / ispect pills. */
 const BACK_CHROME = CHROME_BORDER_GRADIENT.github
@@ -95,25 +95,31 @@ export function ChromePillLink({
 export function HomeBioNav({ className }: { className?: string }) {
   return (
     <HeroNavShell className={className}>
-      Currently rebuilding ispect solo — product, design, and engineering —{' '}
-      <LinkPreview url="/artifacts/makings-of-ispect" avatar="ispect">
-        Makings of ispect
+      Currently capturing the full flow of field service industries developing:
+      <br />
+      inspections enterprise app:{' '}
+      <LinkPreview url="https://ispect.se" avatar="sky" external>
+        ispect.se
+      </LinkPreview>
+      <br />
+      quality control enterprise app:{' '}
+      <LinkPreview url="https://icontrolapp.se" avatar="about" external>
+        icontrolapp.se
       </LinkPreview>{' '}
-      and run product &amp; design for the family inspection firms{' '}
-      <LinkPreview
-        url="https://www.besiktningsman.se"
-        avatar="bm"
-        external
-      >
-        Besiktningsman.se
-      </LinkPreview>{' '}
-      &amp;{' '}
+      (overhaul coming)
+      <br />
+      real estate inspections services:{' '}
+      <LinkPreview url="https://www.besiktningsman.se" avatar="bm" external>
+        besiktningsman.se
+      </LinkPreview>
+      <br />
+      property management services:{' '}
       <LinkPreview
         url="https://www.dinfastighetsforvaltare.se/"
         avatar="dff"
         external
       >
-        Dinfastighetsforvaltare.se
+        dinfastighetsforvaltare.se
       </LinkPreview>
     </HeroNavShell>
   )
@@ -160,12 +166,26 @@ export function HomeSiteNav({ className }: { className?: string }) {
 
 export function HomeHeroCopy() {
   return (
-    <div className="flex w-full max-w-[42rem] flex-col gap-8 sm:gap-10">
-      <p className={cn(sectionClass, 'text-white/80')}>
-        Sebastian Selling - Designer who builds
-      </p>
-      <HomeBioNav />
-      <HomeSiteNav />
+    <div className="flex w-full max-w-[42rem] flex-col gap-6 sm:gap-8">
+      <h1 className="font-display text-base font-semibold leading-[1.05] tracking-[-0.2px] text-white [font-stretch:125%]">
+        Sebastian Selling
+        <span className="mt-1 block text-sm font-medium leading-[1.2] text-white/70">
+          Designer who builds
+        </span>
+      </h1>
+      <div className={cn(sectionClass, 'space-y-4')}>
+        <p>I’m a designer and builder from Stockholm, Sweden.</p>
+        <p>
+          Been in one way or another a designer since childhood and always wanted
+          outlets to express myself — from esports gaming videos, to forum
+          signatures, to graphic design.
+        </p>
+        <p>
+          Today, I’m busy building and capturing the full flow of the traditional
+          field service industries, going on about 14 years now. Using my sense of
+          craft and taste in industries who get very little of it.
+        </p>
+      </div>
     </div>
   )
 }

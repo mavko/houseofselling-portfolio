@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils'
 export type GlassAvatarVariant =
   | 'ispect'
   | 'bm'
+  | 'sky'
   | 'dff'
   | 'about'
   | 'visuals'
@@ -51,12 +52,19 @@ const THEMES: Record<GlassAvatarVariant, Theme> = {
     shiftBlue: 0.45,
     border: chromeBorder('#93C5FD', '#1D4ED8', '#3B82F6', '#0B1F4A'),
   },
+  sky: {
+    colorBack: '#0c4a6e',
+    colorTint: '#38bdf8',
+    shiftRed: -0.15,
+    shiftBlue: 0.5,
+    border: chromeBorder('#bae6fd', '#0284c7', '#38bdf8', '#0c4a6e'),
+  },
   dff: {
-    colorBack: '#3F0A0A',
-    colorTint: '#EF4444',
-    shiftRed: 0.45,
-    shiftBlue: -0.1,
-    border: chromeBorder('#FCA5A5', '#B91C1C', '#EF4444', '#3F0A0A'),
+    colorBack: '#052E16',
+    colorTint: '#22C55E',
+    shiftRed: -0.1,
+    shiftBlue: 0.2,
+    border: chromeBorder('#86EFAC', '#15803D', '#22C55E', '#052E16'),
   },
   about: {
     colorBack: '#2E1065',

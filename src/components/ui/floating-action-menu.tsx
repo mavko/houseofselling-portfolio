@@ -163,9 +163,7 @@ export default function FloatingActionMenu({
                       ? { opacity: 0 }
                       : { opacity: 0, x: opensDown ? -16 : 20 }
                   }
-                  animate={
-                    reduceMotion ? { opacity: 1 } : { opacity: 1, x: 0 }
-                  }
+                  animate={reduceMotion ? { opacity: 1 } : { opacity: 1, x: 0 }}
                   exit={
                     reduceMotion
                       ? { opacity: 0 }
@@ -215,7 +213,7 @@ export default function FloatingActionMenu({
                 ease: 'easeOut',
               }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-x-0 top-0 h-screen [--fab-scrim:#000000] backdrop-blur-[6px] motion-reduce:backdrop-blur-none"
+              className="fixed inset-x-0 top-0 h-screen backdrop-blur-[6px] [--fab-scrim:#000000] motion-reduce:backdrop-blur-none"
               style={{
                 background: headerScrimGradient,
                 zIndex: SCRIM_LAYER,

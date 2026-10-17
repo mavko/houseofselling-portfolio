@@ -15,7 +15,8 @@ export const SITESNAP_PAGE = {
     'Photo-first daily logs for small crews: capture on site, send a client-ready report before you leave the curb.',
   date: '2026-07-27',
   eyebrow: 'SiteSnap',
-  subtitle: 'iPhone daily logs built for the end of the workday, not the office.',
+  subtitle:
+    'iPhone daily logs built for the end of the workday, not the office.',
   meta: [
     {
       label: 'Role',
@@ -79,7 +80,8 @@ export const SITESNAP_ERAS: CaseStudyEra[] = [
             kind: 'video',
             src: '/sitesnap-landing.mp4',
             title: 'SiteSnap product overview',
-            caption: 'Marketing site + product walkthrough — photos become a client-ready report',
+            caption:
+              'Marketing site + product walkthrough — photos become a client-ready report',
           },
         ],
       },

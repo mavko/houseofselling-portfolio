@@ -59,7 +59,7 @@ export function CaseStudyShowcase({
           ) : null}
           {page.subtitle ? (
             <p
-              className={`max-w-[40rem] text-base leading-relaxed text-zinc-500 text-pretty ${
+              className={`max-w-[40rem] text-base leading-relaxed text-pretty text-zinc-500 ${
                 page.eyebrow ? 'mt-5' : ''
               }`}
             >
@@ -90,9 +90,7 @@ export function CaseStudyShowcase({
             const eraLabel = era.label?.trim() ?? ''
             const yearLabel = era.yearRange?.trim() ?? ''
             const showEraMeta = Boolean(eraLabel || yearLabel)
-            const dateTime = yearLabel
-              ? yearDateTime(yearLabel)
-              : undefined
+            const dateTime = yearLabel ? yearDateTime(yearLabel) : undefined
 
             const eraTitle = era.title?.trim() ?? ''
             const showEraHeader = showEraMeta || Boolean(eraTitle)
@@ -133,7 +131,7 @@ export function CaseStudyShowcase({
                       <div
                         className={`${showEraMeta ? 'mt-3' : ''} flex items-center justify-between gap-4`}
                       >
-                        <h2 className="min-w-0 text-2xl font-semibold tracking-tight text-balance text-white leading-tight">
+                        <h2 className="min-w-0 text-2xl leading-tight font-semibold tracking-tight text-balance text-white">
                           {eraTitle}
                         </h2>
                         {era.titleAction ? (

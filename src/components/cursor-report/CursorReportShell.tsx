@@ -8,7 +8,10 @@ type CursorReportShellProps = {
   className?: string
 }
 
-export function CursorReportShell({ children, className }: CursorReportShellProps) {
+export function CursorReportShell({
+  children,
+  className,
+}: CursorReportShellProps) {
   return (
     <div
       className={cn(

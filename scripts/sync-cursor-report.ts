@@ -71,7 +71,10 @@ function bgStyleToLevel(style: string): HeatmapLevel {
   ) {
     return 0
   }
-  if (style.includes('var(--color-theme-accent)') && !style.includes('color-mix')) {
+  if (
+    style.includes('var(--color-theme-accent)') &&
+    !style.includes('color-mix')
+  ) {
     return 4
   }
   const pctMatch = style.match(/var\(--color-theme-accent\)\s+(\d+)%/)
@@ -112,8 +115,7 @@ function buildDateRange(count: number): string[] {
 }
 
 function parseProfile($: cheerio.CheerioAPI): CursorReportSnapshot['profile'] {
-  const displayName =
-    $('h1').first().text().trim() || 'Sebastian Selling'
+  const displayName = $('h1').first().text().trim() || 'Sebastian Selling'
   const handle = 'sebastian'
   const joinedText = $('body').text()
   const avatarUrl =
@@ -155,7 +157,9 @@ function parseStats($: cheerio.CheerioAPI): CursorReportSnapshot['stats'] {
   }
 }
 
-function parseHeatmap($: cheerio.CheerioAPI): CursorReportSnapshot['activityHeatmap'] {
+function parseHeatmap(
+  $: cheerio.CheerioAPI,
+): CursorReportSnapshot['activityHeatmap'] {
   const months: string[] = []
   $('span.select-none.text-xs.leading-none.text-tertiary').each((_, el) => {
     const t = $(el).text().trim()
@@ -188,15 +192,15 @@ function parseHeatmap($: cheerio.CheerioAPI): CursorReportSnapshot['activityHeat
   })
 
   return {
-    months: months.length ? months : ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
+    months: months.length
+      ? months
+      : ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
     weekdays,
     cells,
   }
 }
 
-function parseTokensSeries(
-  html: string,
-): CursorReportSnapshot['tokensSeries'] {
+function parseTokensSeries(html: string): CursorReportSnapshot['tokensSeries'] {
   const marker = 'aria-label="Line chart showing tokens used per day"'
   const sectionStart = html.indexOf(marker)
   if (sectionStart === -1) return []
@@ -211,14 +215,15 @@ function parseTokensSeries(
   const dates = buildDateRange(points.length)
 
   return points.map((p, i) => ({
-    date: dates[i] ?? dates[dates.length - 1] ?? new Date().toISOString().slice(0, 10),
+    date:
+      dates[i] ??
+      dates[dates.length - 1] ??
+      new Date().toISOString().slice(0, 10),
     value: Math.max(0, Math.round(100 - p.y)),
   }))
 }
 
-function parseAgentsSeries(
-  html: string,
-): CursorReportSnapshot['agentsSeries'] {
+function parseAgentsSeries(html: string): CursorReportSnapshot['agentsSeries'] {
   const marker =
     'aria-label="Stacked bar chart showing local and cloud agents per day"'
   const sectionStart = html.indexOf(marker)
@@ -228,36 +233,39 @@ function parseAgentsSeries(
   const $section = cheerio.load(section)
 
   const columns: { local: number; cloud: number }[] = []
-  $section('.group.relative.flex.h-full.min-w-0.flex-1.flex-col.justify-end').each(
-    (_, col) => {
-      let local = 0
-      let cloud = 0
-      $section(col)
-        .find('div[style*="height:"]')
-        .each((__, bar) => {
-          const style = $section(bar).attr('style') || ''
-          const heightMatch = style.match(/height:([\d.]+)%/)
-          if (!heightMatch) return
-          const h = Number.parseFloat(heightMatch[1])
-          if (style.includes('oklab') || style.includes('34%')) {
-            local += h
-          } else if (
-            style.includes('var(--color-theme-accent)') &&
-            !style.includes('color-mix')
-          ) {
-            cloud += h
-          } else if (style.includes('var(--bg-tertiary)')) {
-            // empty day
-          }
-        })
-      columns.push({ local: Math.round(local), cloud: Math.round(cloud) })
-    },
-  )
+  $section(
+    '.group.relative.flex.h-full.min-w-0.flex-1.flex-col.justify-end',
+  ).each((_, col) => {
+    let local = 0
+    let cloud = 0
+    $section(col)
+      .find('div[style*="height:"]')
+      .each((__, bar) => {
+        const style = $section(bar).attr('style') || ''
+        const heightMatch = style.match(/height:([\d.]+)%/)
+        if (!heightMatch) return
+        const h = Number.parseFloat(heightMatch[1])
+        if (style.includes('oklab') || style.includes('34%')) {
+          local += h
+        } else if (
+          style.includes('var(--color-theme-accent)') &&
+          !style.includes('color-mix')
+        ) {
+          cloud += h
+        } else if (style.includes('var(--bg-tertiary)')) {
+          // empty day
+        }
+      })
+    columns.push({ local: Math.round(local), cloud: Math.round(cloud) })
+  })
 
   const dates = buildDateRange(columns.length)
 
   return columns.map((col, i) => ({
-    date: dates[i] ?? dates[dates.length - 1] ?? new Date().toISOString().slice(0, 10),
+    date:
+      dates[i] ??
+      dates[dates.length - 1] ??
+      new Date().toISOString().slice(0, 10),
     local: col.local,
     cloud: col.cloud,
   }))
@@ -265,9 +273,11 @@ function parseAgentsSeries(
 
 function parseModels($: cheerio.CheerioAPI): CursorReportSnapshot['models'] {
   const models: CursorReportSnapshot['models'] = []
-  const section = $('section').filter((_, el) => {
-    return $(el).text().includes('Models')
-  }).first()
+  const section = $('section')
+    .filter((_, el) => {
+      return $(el).text().includes('Models')
+    })
+    .first()
 
   section.find('p.truncate.text-lg.font-medium').each((i, el) => {
     const name = $(el).attr('title') || $(el).text().trim()
@@ -304,11 +314,15 @@ function validate(snapshot: CursorReportSnapshot) {
   if (!snapshot.stats.agents) errors.push('Missing agents stat')
   if (!snapshot.tokensSeries.length) errors.push('Missing tokens time series')
   if (!snapshot.agentsSeries.length) errors.push('Missing agents time series')
-  if (!snapshot.activityHeatmap.cells.length) errors.push('Missing heatmap cells')
+  if (!snapshot.activityHeatmap.cells.length)
+    errors.push('Missing heatmap cells')
   if (!snapshot.models.length) errors.push('Missing models list')
 
   if (errors.length) {
-    console.error('Validation failed:\n', errors.map((e) => `  - ${e}`).join('\n'))
+    console.error(
+      'Validation failed:\n',
+      errors.map((e) => `  - ${e}`).join('\n'),
+    )
     process.exit(1)
   }
 }

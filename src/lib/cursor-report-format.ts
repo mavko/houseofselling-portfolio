@@ -17,7 +17,8 @@ export function formatChartRange(
     })
   }
 
-  const endLabel = asOfDate && end === asOfDate.slice(0, 10) ? 'Today' : format(end)
+  const endLabel =
+    asOfDate && end === asOfDate.slice(0, 10) ? 'Today' : format(end)
 
   return { start: format(start), end: endLabel }
 }

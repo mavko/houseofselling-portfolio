@@ -1,7 +1,4 @@
-import {
-  CURSOR_ACCENT,
-  CURSOR_ACCENT_LOCAL,
-} from '@/lib/cursor-report-theme'
+import { CURSOR_ACCENT, CURSOR_ACCENT_LOCAL } from '@/lib/cursor-report-theme'
 
 import {
   CursorChartAxisLabels,
@@ -91,7 +88,8 @@ export function CursorAgentsChart({
                   className="min-h-[2px] w-full rounded-sm opacity-25"
                   style={{
                     height: '2%',
-                    backgroundColor: 'color-mix(in srgb, white 8%, transparent)',
+                    backgroundColor:
+                      'color-mix(in srgb, white 8%, transparent)',
                   }}
                 />
               )}

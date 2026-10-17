@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 export default function CursorReportRoute() {
   const snapshot = getCursorReportSnapshot()
   return (
-    <main className="mx-auto max-w-5xl pb-24 pt-8 sm:pt-16">
+    <main className="mx-auto max-w-5xl pt-8 pb-24 sm:pt-16">
       <CursorReportPage snapshot={snapshot} />
     </main>
   )

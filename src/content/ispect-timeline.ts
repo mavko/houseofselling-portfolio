@@ -303,7 +303,8 @@ export const ISPECT_ERAS: CaseStudyEra[] = [
             kind: 'image',
             srcKey: 'bundled/craft/ispect/dashboard_total_issues.png',
             alt: 'Total project issues',
-            caption: 'A completed Stockholm project: total issues across the build',
+            caption:
+              'A completed Stockholm project: total issues across the build',
             width: 600,
             height: 400,
           },
