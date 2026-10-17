@@ -50,11 +50,10 @@ export const connectVariants: Variants = {
 }
 
 export const artifactContainerVariants: Variants = {
-  hidden: {
-    opacity: 0,
-  },
+  // No group opacity: the lead tile is the LCP candidate and must paint
+  // immediately. Tiles below it still cascade in.
+  hidden: {},
   visible: {
-    opacity: 1,
     transition: {
       staggerChildren: 0.08,
       delayChildren: HOME_TIMING.artifacts,

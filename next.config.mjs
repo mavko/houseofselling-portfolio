@@ -20,9 +20,12 @@ const nextConfig = {
       '@heroicons/react/24/solid',
       '@heroicons/react/16/solid',
       '@radix-ui/react-hover-card',
+      'framer-motion',
     ],
   },
   images: {
+    // Next 16 gates non-default quality values behind an allowlist.
+    qualities: [70, 75],
     remotePatterns: [
       {
         protocol: 'https',

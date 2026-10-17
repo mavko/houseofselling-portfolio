@@ -1,9 +1,37 @@
 'use client'
 
-import { LiquidMetal } from '@paper-design/shaders-react'
+import dynamic from 'next/dynamic'
+import { useEffect, useState } from 'react'
 import { useReducedMotion } from 'framer-motion'
 
 import { cn } from '@/lib/utils'
+
+/**
+ * The shader lives in its own chunk and mounts only once we know the browser
+ * has a WebGL context — otherwise `LiquidMetal` throws and floods the console.
+ */
+const LiquidMetal = dynamic(
+  () => import('@paper-design/shaders-react').then((mod) => mod.LiquidMetal),
+  { ssr: false },
+)
+
+function detectWebGL(): boolean {
+  try {
+    const canvas = document.createElement('canvas')
+    return Boolean(canvas.getContext('webgl2') ?? canvas.getContext('webgl'))
+  } catch {
+    return false
+  }
+}
+
+/** Resolved after mount, so SSR and first paint use the CSS chrome fallback. */
+function useSupportsWebGL(): boolean {
+  const [supported, setSupported] = useState(false)
+  useEffect(() => {
+    setSupported(detectWebGL())
+  }, [])
+  return supported
+}
 
 export type GlassAvatarVariant =
   | 'ispect'
@@ -183,12 +211,13 @@ const LOGO_MASKS: Partial<Record<GlassAvatarVariant, string>> = {
  */
 export function GlassAvatar({ variant, className }: GlassAvatarProps) {
   const reduceMotion = useReducedMotion() ?? false
+  const webglReady = useSupportsWebGL()
   const theme = THEMES[variant]
   const logoMask = LOGO_MASKS[variant]
   const isLogo = Boolean(logoMask)
   const speed = reduceMotion ? 0 : isLogo ? SPEED * 0.55 : SPEED
 
-  const metal = (
+  const metal = webglReady ? (
     <span
       className="pointer-events-none absolute top-1/2 left-1/2 block -translate-x-1/2 -translate-y-1/2 [&_canvas]:block"
       style={{ width: SHADER_PX, height: SHADER_PX }}
@@ -213,6 +242,11 @@ export function GlassAvatar({ variant, className }: GlassAvatarProps) {
         className="h-full w-full"
       />
     </span>
+  ) : (
+    <span
+      className="pointer-events-none absolute inset-0 block"
+      style={{ backgroundImage: theme.border }}
+    />
   )
 
   if (logoMask) {

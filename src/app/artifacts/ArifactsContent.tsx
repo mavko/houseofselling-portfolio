@@ -24,6 +24,8 @@ type CraftItem = {
   src: string
   alt: string
   post?: string
+  /** Above-the-fold LCP candidate — hint the browser to fetch it first. */
+  lcp?: boolean
 }
 
 type ArtifactPill = {
@@ -116,9 +118,12 @@ const MediaComponent = ({ item }: { item: CraftItem }) => {
             'h-full w-full overflow-hidden border border-white/10 bg-[rgba(48,48,48,.3)] [box-shadow:inset_0_.733px_.733px_0_hsla(0,0%,100%,.2),inset_0_.733px_16.07px_0_hsla(0,0%,100%,.14)] [transition-property:transform,filter] delay-150 select-none [transition:.12s_var(--ease-out-quad)]',
             TILE_RADIUS,
           )}
-          preload
+          loading={item.lcp ? 'eager' : 'lazy'}
+          fetchPriority={item.lcp ? 'high' : 'auto'}
           width={1200}
           height={800}
+          sizes="(min-width: 1024px) 508px, (min-width: 640px) 50vw, 100vw"
+          quality={70}
         />
       </div>
     )
@@ -142,6 +147,7 @@ const ARTIFACT_TILES: ArtifactTile[] = [
       type: 'image',
       src: '/images/ispect-icon-iteration4.jpg',
       alt: 'ispect app icon',
+      lcp: true,
     },
   },
   {
@@ -228,20 +234,26 @@ export default function ArtifactsContent() {
         initial="hidden"
         animate="visible"
       >
-        {ARTIFACT_TILES.map((tile) => (
+        {ARTIFACT_TILES.map((tile, index) => (
           <motion.div
             key={tile.href}
             className={cn(
               'relative',
               tile.fullWidth ? 'col-span-full' : undefined,
             )}
-            variants={artifactItemVariants}
+            // The first tile holds the LCP image — leave it painted so it is
+            // never gated behind the intro animation. The rest still stagger.
+            variants={index === 0 ? undefined : artifactItemVariants}
           >
             <Link
               href={tile.href}
               className="group flex flex-col rounded-4xl"
               {...(tile.external
                 ? { target: '_blank', rel: 'noopener noreferrer' }
+                : {})}
+              // Video tiles have no text/alt child, so give the link a name.
+              {...(tile.item.type === 'video'
+                ? { 'aria-label': tile.title }
                 : {})}
             >
               <MediaComponent item={tile.item} />
