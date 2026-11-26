@@ -20,15 +20,12 @@ export const heroContainerVariants: Variants = {
 export const heroItemVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: 16,
   },
   visible: {
     opacity: 1,
-    y: 0,
     transition: {
-      type: 'spring',
-      duration: 0.4,
-      bounce: 0,
+      duration: 0.25,
+      ease: 'easeOut',
     },
   },
 }
@@ -64,11 +61,9 @@ export const artifactContainerVariants: Variants = {
 export const artifactItemVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: 10,
   },
   visible: {
     opacity: 1,
-    y: 0,
     transition: {
       duration: 0.35,
       ease: 'easeOut',

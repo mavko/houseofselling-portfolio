@@ -36,7 +36,7 @@ function DividerLine({ side }: { side: 'left' | 'right' }) {
 
 function SectionTitle() {
   return (
-    <div className="mb-24 flex w-full items-center gap-6 sm:mb-32">
+    <div className="mb-[4.8rem] flex w-full items-center gap-6 sm:mb-[6.4rem]">
       <DividerLine side="left" />
       <h2 className="shrink-0 text-center text-sm leading-[1.6] font-medium text-pretty text-[#ededed]">
         What I&apos;m working on
@@ -213,7 +213,7 @@ const ARTIFACT_TILES: ArtifactTile[] = [
 
 export default function ArtifactsContent() {
   return (
-    <main className="mx-auto max-w-5xl pt-24 sm:pt-32">
+    <main className="mx-auto max-w-5xl pt-[4.8rem] sm:pt-[6.4rem]">
       <SectionTitle />
       <motion.div
         className="grid grid-cols-1 gap-2 sm:grid-cols-2"
