@@ -460,7 +460,11 @@ export function GithubActivityChart({ intro }: { intro?: ReactNode }) {
               strokeWidth={series.strokeWidth}
             />
           ))}
-          <ChartTooltip rows={tooltipRows} />
+          <ChartTooltip
+            rows={tooltipRows}
+            showDatePill={false}
+            titleClassName="inline-block rounded-full bg-zinc-100 px-4 py-1 text-zinc-900 shadow-lg"
+          />
         </LineChart>
       ) : (
         <LineChartLoading

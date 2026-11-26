@@ -174,6 +174,8 @@ export interface DateTickerProps {
   currentIndex: number;
   labels: string[];
   visible: boolean;
+  /** Static text before the rolling label (e.g. a weekday prefix). */
+  prefix?: string;
   /**
    * How the label changes between rows. Default: `"roll"` (switches to
    * `"static"` automatically above 60 labels).
@@ -189,7 +191,7 @@ export interface DateTickerProps {
 
 type DateTickerVariantProps = Pick<
   DateTickerProps,
-  "currentIndex" | "labels" | "className" | "style" | "variant"
+  "currentIndex" | "labels" | "prefix" | "className" | "style" | "variant"
 >;
 
 function SolidSurface({
@@ -344,6 +346,7 @@ function useLabelWidth(
 const DateTickerCompact = memo(function DateTickerCompact({
   currentIndex,
   labels,
+  prefix,
   className,
   style,
   variant,
@@ -367,6 +370,7 @@ const DateTickerCompact = memo(function DateTickerCompact({
             data-ticker-item
             ref={labelRef}
           >
+            {prefix ? `${prefix}\u00a0` : ""}
             {label}
           </span>
         </m.div>
@@ -378,6 +382,7 @@ const DateTickerCompact = memo(function DateTickerCompact({
 const DateTickerInner = memo(function DateTickerInner({
   currentIndex,
   labels,
+  prefix,
   className,
   style,
   variant,
@@ -452,6 +457,11 @@ const DateTickerInner = memo(function DateTickerInner({
     <DateTickerSurface className={className} style={style} variant={variant}>
       <div className="relative h-6 overflow-hidden">
         <div className="flex items-center justify-center gap-1">
+          {prefix ? (
+            <span className="whitespace-nowrap font-medium text-sm">
+              {prefix}
+            </span>
+          ) : null}
           {/* Month stack */}
           <m.div
             className="relative h-6 overflow-hidden"
@@ -509,6 +519,7 @@ export function DateTicker({
   currentIndex,
   labels,
   visible,
+  prefix,
   animation = "roll",
   variant,
   className,
@@ -530,6 +541,7 @@ export function DateTicker({
         className={className}
         currentIndex={currentIndex}
         labels={labels}
+        prefix={prefix}
         style={style}
         variant={variant}
       />

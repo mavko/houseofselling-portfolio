@@ -152,6 +152,8 @@ export interface ChartTooltipProps {
   children?: React.ReactNode;
   /** Custom class name */
   className?: string;
+  /** Classes for the hover-card title label (e.g. to style it as a date pill). */
+  titleClassName?: string;
   /** Optional labels aligned with chart data for the x-axis ticker. */
   dateLabels?: string[];
   /** Per-chart override for the crosshair / dot / date-pill spring. */
@@ -312,6 +314,7 @@ const ChartTooltipInner = memo(function ChartTooltipInner({
   dotColor: dotColorProp,
   children,
   className = "",
+  titleClassName,
   container,
   springConfig,
   matchCrosshair = false,
@@ -528,6 +531,16 @@ const ChartTooltipInner = memo(function ChartTooltipInner({
     return weekdayDateFmt.format(xAccessor(tooltipData.point));
   }, [tooltipData, barXAccessor, xAccessor]);
 
+  // The hover-card title reuses the date pill's rolling ticker; keep the
+  // weekday as a static prefix so only the month and day animate.
+  const titlePrefix = useMemo(() => {
+    if (!title || barXAccessor) {
+      return undefined;
+    }
+    const comma = title.indexOf(",");
+    return comma > 0 ? title.slice(0, comma + 1) : undefined;
+  }, [title, barXAccessor]);
+
   const tooltipContent = (
     <>
       {/* Crosshair indicator - rendered as SVG overlay. The indicator has no
@@ -670,7 +683,14 @@ const ChartTooltipInner = memo(function ChartTooltipInner({
               index: tooltipData.index,
             })
           : !content && (
-              <TooltipContent rows={tooltipRows} title={title}>
+              <TooltipContent
+                rows={tooltipRows}
+                title={title}
+                titleClassName={titleClassName}
+                titleIndex={tooltipData?.index}
+                titleLabels={barXAccessor ? undefined : dateLabels}
+                titlePrefix={titlePrefix}
+              >
                 {children}
               </TooltipContent>
             )}

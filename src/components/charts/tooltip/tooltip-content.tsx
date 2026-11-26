@@ -1,8 +1,16 @@
 "use client";
 
+import {
+  AnimatePresence,
+  domAnimation,
+  LazyMotion,
+  m,
+  useReducedMotion,
+} from "motion/react";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { intFmt } from "../chart-formatters";
+import { DateTicker } from "./date-ticker";
 
 export interface TooltipRow {
   color: string;
@@ -15,6 +23,14 @@ export interface TooltipContentProps {
   rows: TooltipRow[];
   /** Optional additional content (e.g., markers) */
   children?: ReactNode;
+  /** Classes for the title label, e.g. to restyle it as a date pill. */
+  titleClassName?: string;
+  /** Short date labels for the rolling title ticker. */
+  titleLabels?: string[];
+  /** Index of the hovered date within `titleLabels`. */
+  titleIndex?: number;
+  /** Static prefix (e.g. weekday) shown before the rolling date. */
+  titlePrefix?: string;
 }
 
 export interface TooltipHeaderProps {
@@ -26,6 +42,34 @@ export interface TooltipHeaderProps {
  * Popover-style header row: medium-weight label separated from the body by a
  * full-width border. Use it at the top of custom `ChartTooltip` `content`.
  */
+/** Rolls a stat's value like the date ticker as the hovered point changes. */
+function RollingValue({ value }: { value: string | number }) {
+  const reduceMotion = useReducedMotion() === true;
+  const text = typeof value === "number" ? intFmt(value) : value;
+  return (
+    <LazyMotion features={domAnimation}>
+      <span className="relative inline-block min-w-[2ch] overflow-hidden text-right align-bottom tabular-nums">
+        <AnimatePresence initial={false} mode="popLayout">
+          <m.span
+            className="block"
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: reduceMotion ? 0 : -12 }}
+            initial={{ opacity: 0, y: reduceMotion ? 0 : 12 }}
+            key={text}
+            transition={
+              reduceMotion
+                ? { duration: 0.12 }
+                : { type: "spring", stiffness: 500, damping: 35 }
+            }
+          >
+            {text}
+          </m.span>
+        </AnimatePresence>
+      </span>
+    </LazyMotion>
+  );
+}
+
 export function TooltipHeader({ children, className }: TooltipHeaderProps) {
   return (
     <div
@@ -41,11 +85,35 @@ export function TooltipHeader({ children, className }: TooltipHeaderProps) {
 
 TooltipHeader.displayName = "TooltipHeader";
 
-export function TooltipContent({ title, rows, children }: TooltipContentProps) {
+export function TooltipContent({
+  title,
+  rows,
+  children,
+  titleClassName,
+  titleLabels,
+  titleIndex,
+  titlePrefix,
+}: TooltipContentProps) {
   const hasBody = rows.length > 0 || Boolean(children);
+  const showTitleTicker =
+    titleLabels && titleLabels.length > 0 && titleIndex != null;
   return (
     <div>
-      {title && <TooltipHeader>{title}</TooltipHeader>}
+      {title && (
+        <TooltipHeader className="border-b-0">
+          {showTitleTicker ? (
+            <DateTicker
+              className={titleClassName}
+              currentIndex={titleIndex}
+              labels={titleLabels}
+              prefix={titlePrefix}
+              visible
+            />
+          ) : (
+            <span className={titleClassName}>{title}</span>
+          )}
+        </TooltipHeader>
+      )}
       {hasBody && (
         <div className="px-3.5 py-3">
           {rows.length > 0 && (
@@ -64,10 +132,8 @@ export function TooltipContent({ title, rows, children }: TooltipContentProps) {
                       {row.label}
                     </span>
                   </div>
-                  <span className="text-right font-medium text-chart-tooltip-foreground text-sm tabular-nums">
-                    {typeof row.value === "number"
-                      ? intFmt(row.value)
-                      : row.value}
+                  <span className="text-right font-medium text-chart-tooltip-foreground text-sm">
+                    <RollingValue value={row.value} />
                   </span>
                 </div>
               ))}
