@@ -166,23 +166,20 @@ export function HomeSiteNav({ className }: { className?: string }) {
 
 export function HomeHeroCopy() {
   return (
-    <div className="flex w-full max-w-[36rem] flex-col gap-6 sm:gap-8">
-      <h1 className="font-display text-xl leading-[1.2] font-semibold tracking-[-0.2px] text-white [font-stretch:125%]">
-        Sebastian Selling
-      </h1>
-      <div
-        className={cn(
-          sectionClass,
-          'max-w-[36rem] space-y-4 text-base leading-[1.6]',
-        )}
-      >
-        <p>I’m a designer and builder from Stockholm, Sweden.</p>
-        <p>
-          Been in the startup tech scene my whole career, going about 14 years
-          now. Today I&apos;m fully AI-pilled and busy capturing the full field
-          service flow in construction.
-        </p>
-      </div>
+    <div
+      className={cn(
+        sectionClass,
+        'max-w-[36rem] space-y-4 text-sm leading-[1.6]',
+      )}
+    >
+      <p>
+        I’m Sebastian Selling, a designer and builder from Sweden with a decade+
+        in startups.
+      </p>
+      <p>
+        Today I’m fully AI-pilled and busy working on traditional service
+        companies and shipping the full field service flow.
+      </p>
     </div>
   )
 }

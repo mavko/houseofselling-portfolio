@@ -3,7 +3,9 @@
 import { useCallback, useRef, useState } from 'react'
 import Link from 'next/link'
 import { SafeImage } from '@/components/SafeImage'
+import { LinkPreview } from '@/components/LinkPreview'
 import { motion } from 'framer-motion'
+import { PROJECT_PILLS, type ProjectPill } from '@/content/project-pills'
 import { mediaUrl } from '@/lib/media-url'
 import {
   artifactContainerVariants,
@@ -16,6 +18,33 @@ import { cn } from '@/lib/utils'
  * closer to the curvature of the app icons inside it.
  */
 const TILE_RADIUS = 'rounded-[3rem]'
+
+function DividerLine({ side }: { side: 'left' | 'right' }) {
+  return (
+    <span
+      aria-hidden
+      className="h-px flex-1"
+      style={{
+        background:
+          side === 'left'
+            ? 'linear-gradient(to right, transparent, rgba(255,255,255,0.85) 55%, transparent)'
+            : 'linear-gradient(to left, transparent, rgba(255,255,255,0.85) 55%, transparent)',
+      }}
+    />
+  )
+}
+
+function SectionTitle() {
+  return (
+    <div className="mb-24 flex w-full items-center gap-6 sm:mb-32">
+      <DividerLine side="left" />
+      <h2 className="shrink-0 text-center text-sm leading-[1.6] font-medium text-pretty text-[#ededed]">
+        What I&apos;m working on
+      </h2>
+      <DividerLine side="right" />
+    </div>
+  )
+}
 
 type CraftItem = {
   type: 'image' | 'video'
@@ -33,8 +62,8 @@ type ArtifactTile = {
   caption: string
   item: CraftItem
   fullWidth?: boolean
-  /** Field-service category label overlaid in the top-left corner. */
-  field?: string
+  /** Domain pill overlaid in the bottom-left corner of the tile. */
+  pill?: ProjectPill
 }
 
 function DeferredVideo({ src }: { src: string }) {
@@ -114,7 +143,7 @@ const ARTIFACT_TILES: ArtifactTile[] = [
     external: true,
     title: 'iSpect',
     caption: 'Construction inspection — live product',
-    field: 'enterprise inspection app',
+    pill: PROJECT_PILLS[0],
     item: {
       type: 'image',
       src: '/images/ispect-icon-iteration4.jpg',
@@ -127,7 +156,7 @@ const ARTIFACT_TILES: ArtifactTile[] = [
     external: true,
     title: 'Besiktningsman.se',
     caption: 'Family inspection firm — live site',
-    field: 'certified house inspections',
+    pill: PROJECT_PILLS[1],
     item: {
       type: 'image',
       src: mediaUrl('bundled/craft/bm-logo.jpg'),
@@ -139,7 +168,7 @@ const ARTIFACT_TILES: ArtifactTile[] = [
     external: true,
     title: 'iControl',
     caption: 'Quality control — live product',
-    field: 'enterprise quality assurance app',
+    pill: PROJECT_PILLS[2],
     item: {
       type: 'image',
       src: '/images/icontrol.png',
@@ -151,7 +180,7 @@ const ARTIFACT_TILES: ArtifactTile[] = [
     external: true,
     title: 'Din Fastighetsförvaltare',
     caption: 'Property management — live site',
-    field: 'technical property management',
+    pill: PROJECT_PILLS[3],
     item: {
       type: 'image',
       src: '/images/dff-icon.png',
@@ -184,9 +213,10 @@ const ARTIFACT_TILES: ArtifactTile[] = [
 
 export default function ArtifactsContent() {
   return (
-    <main className="mx-auto max-w-5xl">
+    <main className="mx-auto max-w-5xl pt-24 sm:pt-32">
+      <SectionTitle />
       <motion.div
-        className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2"
+        className="grid grid-cols-1 gap-2 sm:grid-cols-2"
         variants={artifactContainerVariants}
         initial="hidden"
         animate="visible"
@@ -204,7 +234,7 @@ export default function ArtifactsContent() {
           >
             <Link
               href={tile.href}
-              className="group flex flex-col rounded-4xl"
+              className={cn('group flex flex-col', TILE_RADIUS)}
               {...(tile.external
                 ? { target: '_blank', rel: 'noopener noreferrer' }
                 : {})}
@@ -215,9 +245,16 @@ export default function ArtifactsContent() {
             >
               <MediaComponent item={tile.item} />
             </Link>
-            {tile.field ? (
-              <div className="pointer-events-none absolute top-5 left-1/2 z-10 w-max max-w-[calc(100%-2.5rem)] -translate-x-1/2 text-center font-mono text-[11px] font-medium tracking-[0.12em] text-white/55 uppercase">
-                {tile.field}
+            {tile.pill ? (
+              <div className="pointer-events-none absolute bottom-5 left-1/2 z-10 -translate-x-1/2">
+                <LinkPreview
+                  url={tile.pill.url}
+                  avatar={tile.pill.avatar}
+                  external
+                  className="pointer-events-auto"
+                >
+                  {tile.pill.label}
+                </LinkPreview>
               </div>
             ) : null}
           </motion.div>

@@ -482,9 +482,6 @@ const ChartTooltipInner = memo(function ChartTooltipInner({
 
   const resolveDotColor = useMemo(() => {
     return (line: LineConfig, index: number): string => {
-      if (rowsRenderer && tooltipRows[index]?.color) {
-        return tooltipRows[index].color;
-      }
       if (dotColorProp != null) {
         if (typeof dotColorProp === "function" && tooltipData) {
           return dotColorProp(tooltipData.point, line);
@@ -492,6 +489,9 @@ const ChartTooltipInner = memo(function ChartTooltipInner({
         if (typeof dotColorProp === "string") {
           return dotColorProp;
         }
+      }
+      if (rowsRenderer && tooltipRows[index]?.color) {
+        return tooltipRows[index].color;
       }
       return line.stroke;
     };
