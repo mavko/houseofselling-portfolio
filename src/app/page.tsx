@@ -15,14 +15,11 @@ export default function Home() {
   return (
     <>
       <HomeHero />
-      <section className="mx-auto w-full max-w-5xl px-6 py-8 sm:px-8">
-        <h2
-          className="font-display text-foreground text-lg font-semibold tracking-tight"
-          style={{ fontStretch: '125%', letterSpacing: '-0.2px' }}
-        >
+      <section className="dark mx-auto w-full max-w-5xl py-8">
+        <h2 className="font-display text-base leading-[1.05] font-semibold tracking-[-0.2px] text-white [font-stretch:125%]">
           Shipping, live
         </h2>
-        <p className="text-muted-foreground mt-1 text-sm">
+        <p className="mt-1 text-sm text-white/70">
           Commits, pull requests and merges across my GitHub, last 30 days.
           Updates every minute.
         </p>

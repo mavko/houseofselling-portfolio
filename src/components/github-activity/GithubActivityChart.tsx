@@ -9,7 +9,9 @@ import type {
   GithubActivityResponse,
 } from '@/lib/github-activity'
 import { useChart } from '@/components/charts/chart-context'
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { linePathD } from '@/components/charts/line-path'
+import { curveMonotoneX } from 'd3-shape'
+import { useCallback, useEffect, useMemo, useRef, useState, useId } from 'react'
 
 const WINDOW_SECONDS = 30 * 24 * 60 * 60
 
@@ -88,8 +90,8 @@ function PrMarkerLayer({ days }: { days: GithubActivityDay[] }) {
     return max
   }, [days])
 
-  const openedColor = PARTICLE_LINE_GOLD[1] ?? '#ffd45e'
-  const mergedColor = '#a7f3d0'
+  const openedColor = '#6ee7b7'
+  const mergedColor = '#99f6e4'
 
   return (
     <g>
@@ -128,6 +130,89 @@ function PrMarkerLayer({ days }: { days: GithubActivityDay[] }) {
         )
       })}
     </g>
+  )
+}
+
+function ParticleGlowLine() {
+  const chart = useChart()
+  const { data, xScale, yScale, xAccessor, innerWidth } = chart
+  const uid = useId().replace(/:/g, '')
+  const gradientId = `gh-grad-${uid}`
+  const filterId = `gh-glow-${uid}`
+
+  const getX = useCallback(
+    (d: Record<string, unknown>) => xScale(xAccessor(d)) ?? 0,
+    [xScale, xAccessor],
+  )
+  const getY = useCallback(
+    (d: Record<string, unknown>) => {
+      const value = d.value
+      return typeof value === 'number' ? (yScale(value) ?? 0) : 0
+    },
+    [yScale],
+  )
+  const pathD = useMemo(
+    () =>
+      data.length > 1
+        ? linePathD(data, { curve: curveMonotoneX, x: getX, y: getY })
+        : '',
+    [data, getX, getY],
+  )
+
+  if (!pathD) {
+    return null
+  }
+
+  const commitsColor = PARTICLE_LINE_GOLD[1] ?? '#ffd45e'
+
+  return (
+    <>
+      <defs>
+        <linearGradient
+          gradientUnits="userSpaceOnUse"
+          id={gradientId}
+          x1={0}
+          x2={Math.max(innerWidth, 1)}
+          y1={0}
+          y2={0}
+        >
+          {PARTICLE_LINE_GOLD.map((color, index) => (
+            <stop
+              key={`${index}-${color}`}
+              offset={index / 3}
+              stopColor={color}
+            />
+          ))}
+        </linearGradient>
+        <filter
+          colorInterpolationFilters="sRGB"
+          filterUnits="userSpaceOnUse"
+          height={Math.max(1, innerWidth) + 40}
+          id={filterId}
+          width={Math.max(1, innerWidth) + 40}
+          x={-20}
+          y={-20}
+        >
+          <feGaussianBlur stdDeviation={3.5} />
+        </filter>
+      </defs>
+      <path
+        d={pathD}
+        fill="none"
+        filter={`url(#${filterId})`}
+        stroke={`url(#${gradientId})`}
+        strokeLinecap="round"
+        strokeOpacity={0.6}
+        strokeWidth={6}
+      />
+      <path
+        d={pathD}
+        fill="none"
+        stroke={`url(#${gradientId})`}
+        strokeLinecap="round"
+        strokeWidth={2}
+      />
+    </>
   )
 }
 
@@ -218,35 +303,49 @@ export function GithubActivityChart() {
 
   return (
     <div>
-      <div
-        style={{
-          filter: 'drop-shadow(0 0 6px rgba(255, 212, 94, 0.35))',
-          height: 200,
-        }}
-      >
+      <div style={{ height: 200 }}>
         <LiveLineChart
           data={chartData}
-          value={todayCommits}
-          window={WINDOW_SECONDS}
+          margin={{ top: 12, right: 8, bottom: 20, left: 8 }}
           nowOffsetUnits={0}
           paused={false}
           style={{ height: 200 }}
+          value={todayCommits}
+          window={WINDOW_SECONDS}
         >
+          <ParticleGlowLine />
           <LiveLine
-            dataKey="value"
-            stroke={commitsColor}
-            strokeWidth={2}
-            fill={false}
-            pulse={!reducedMotion}
             badge={false}
+            dataKey="value"
+            fill={false}
+            momentumColors={{
+              up: commitsColor,
+              down: commitsColor,
+              flat: commitsColor,
+            }}
+            pulse={!reducedMotion}
+            stroke="transparent"
+            strokeWidth={2}
           />
           <PrMarkerLayer days={days} />
         </LiveLineChart>
       </div>
-      <div className="text-muted-foreground font-display mt-3 flex flex-wrap gap-x-6 gap-y-1 text-xs">
-        <span>Commits {totals.commits}</span>
-        <span>PRs opened {totals.prsOpened}</span>
-        <span>PRs merged {totals.prsMerged}</span>
+      <div className="font-display mt-3 flex flex-wrap gap-x-6 gap-y-1 text-xs text-white/60">
+        <span className="inline-flex items-center gap-1.5">
+          <span
+            className="inline-block h-1.5 w-1.5 rounded-full"
+            style={{ backgroundColor: commitsColor }}
+          />
+          Commits {totals.commits}
+        </span>
+        <span className="inline-flex items-center gap-1.5">
+          <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-300" />
+          PRs opened {totals.prsOpened}
+        </span>
+        <span className="inline-flex items-center gap-1.5">
+          <span className="inline-block h-1.5 w-1.5 rounded-full bg-teal-200" />
+          PRs merged {totals.prsMerged}
+        </span>
       </div>
     </div>
   )
