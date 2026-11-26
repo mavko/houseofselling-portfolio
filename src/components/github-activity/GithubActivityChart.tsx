@@ -226,7 +226,16 @@ function DayHoverLayer({
     [dayXs, onHover],
   )
 
-  const clear = useCallback(() => onHover(null), [onHover])
+  // Touch pointers fire pointerleave right after the tap, so a tapped day
+  // stays selected until the next tap; mouse hover clears on leave.
+  const clear = useCallback(
+    (event: PointerEvent<SVGRectElement>) => {
+      if (event.pointerType !== 'touch') {
+        onHover(null)
+      }
+    },
+    [onHover],
+  )
 
   const day = hoveredIndex === null ? undefined : days[hoveredIndex]
   const x = hoveredIndex === null ? undefined : dayXs[hoveredIndex]
