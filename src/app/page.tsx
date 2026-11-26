@@ -20,8 +20,8 @@ export default function Home() {
           Shipping, live
         </h2>
         <p className="mt-1 text-sm text-white/70">
-          Commits, pull requests and merges across my GitHub, last 30 days.
-          Updates every minute.
+          Contributions, pull requests and merges across my GitHub, last 30
+          days. Updates every minute.
         </p>
         <div className="mt-4 min-h-[220px]">
           <GithubActivityChart />

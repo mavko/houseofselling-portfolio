@@ -1,12 +1,12 @@
 export interface GithubActivityDay {
   date: string
-  commits: number
+  contributions: number
   prsOpened: number
   prsMerged: number
 }
 
 export interface GithubActivityTotals {
-  commits: number
+  contributions: number
   prsOpened: number
   prsMerged: number
 }
@@ -60,19 +60,19 @@ function emptyCounts(keys: string[]): Map<string, number> {
 }
 
 function totalsFromMaps(
-  commits: Map<string, number>,
+  contributions: Map<string, number>,
   prsOpened: Map<string, number>,
   prsMerged: Map<string, number>,
   keys: string[],
 ): { days: GithubActivityDay[]; totals: GithubActivityTotals } {
   const days: GithubActivityDay[] = keys.map((date) => ({
     date,
-    commits: commits.get(date) ?? 0,
+    contributions: contributions.get(date) ?? 0,
     prsOpened: prsOpened.get(date) ?? 0,
     prsMerged: prsMerged.get(date) ?? 0,
   }))
   const totals: GithubActivityTotals = {
-    commits: days.reduce((sum, day) => sum + day.commits, 0),
+    contributions: days.reduce((sum, day) => sum + day.contributions, 0),
     prsOpened: days.reduce((sum, day) => sum + day.prsOpened, 0),
     prsMerged: days.reduce((sum, day) => sum + day.prsMerged, 0),
   }
@@ -81,11 +81,50 @@ function totalsFromMaps(
 
 let lastGood: GithubActivityResponse | null = null
 
-async function graphqlRequest(
-  token: string,
-  query: string,
-  variables: Record<string, unknown>,
-): Promise<Record<string, unknown> | null> {
+const GITHUB_LOGIN = 'mavko'
+
+function aliasKey(date: string): string {
+  return date.replace(/-/g, '')
+}
+
+function readIssueCount(data: Record<string, unknown>, alias: string): number {
+  const node = data[alias]
+  return isRecord(node) && typeof node.issueCount === 'number'
+    ? node.issueCount
+    : 0
+}
+
+const CALENDAR_QUERY = `query($login: String!, $from: DateTime!, $to: DateTime!) {
+  user(login: $login) {
+    contributionsCollection(from: $from, to: $to) {
+      contributionCalendar { weeks { contributionDays { date contributionCount } } }
+    }
+  }
+}`
+
+/** GitHub times out (502) on ~60 aliased searches in one query; 10 days (20 searches) per request is fast. */
+const DAYS_PER_SEARCH_REQUEST = 10
+
+function buildPrSearchQuery(keys: string[]): string {
+  const searches = keys.flatMap((key) => {
+    const alias = aliasKey(key)
+    return [
+      `o_${alias}: search(type: ISSUE, query: "author:${GITHUB_LOGIN} is:pr created:${key}", first: 0) { issueCount }`,
+      `m_${alias}: search(type: ISSUE, query: "author:${GITHUB_LOGIN} is:pr is:merged merged:${key}", first: 0) { issueCount }`,
+    ]
+  })
+  return `query {\n  ${searches.join('\n  ')}\n}`
+}
+
+async function postGraphQL({
+  token,
+  query,
+  variables,
+}: {
+  token: string
+  query: string
+  variables?: Record<string, string>
+}): Promise<Record<string, unknown>> {
   const response = await fetch('https://api.github.com/graphql', {
     method: 'POST',
     headers: {
@@ -96,270 +135,91 @@ async function graphqlRequest(
     },
     body: JSON.stringify({ query, variables }),
   })
-
   if (!response.ok) {
     throw new Error(`GitHub GraphQL HTTP ${response.status}`)
   }
-
   const json: unknown = await response.json()
-  if (!isRecord(json)) {
-    throw new Error('GitHub GraphQL invalid JSON')
+  if (!isRecord(json) || !isRecord(json.data)) {
+    throw new Error('GitHub GraphQL missing data')
   }
-  if (isUnknownArray(json.errors) && json.errors.length > 0) {
-    throw new Error('GitHub GraphQL error')
-  }
-  const data = isRecord(json.data) ? json.data : null
-  return data
+  return json.data
 }
 
-async function fetchCommits(
-  token: string,
-  from: string,
-  to: string,
-  commitMap: Map<string, number>,
-): Promise<void> {
-  const query = `
-    query($login: String!, $from: DateTime!, $to: DateTime!) {
-      user(login: $login) {
-        contributionsCollection(from: $from, to: $to) {
-          commitContributionsByRepository(maxRepositories: 100) {
-            contributions(first: 100) {
-              nodes {
-                occurredAt
-                commitCount
-              }
-              pageInfo {
-                hasNextPage
-                endCursor
-              }
-            }
-          }
-        }
-      }
-    }
-  `
-  const data = await graphqlRequest(token, query, {
-    login: 'mavko',
-    from,
-    to,
-  })
-  if (!data) {
-    return
-  }
+function readCalendar(
+  data: Record<string, unknown>,
+  contributionMap: Map<string, number>,
+): void {
   const user = isRecord(data.user) ? data.user : null
   const collection =
     user && isRecord(user.contributionsCollection)
       ? user.contributionsCollection
       : null
-  if (!collection) {
-    return
-  }
-  const repos = isUnknownArray(collection.commitContributionsByRepository)
-    ? collection.commitContributionsByRepository
-    : []
-  for (const repo of repos) {
-    if (!isRecord(repo)) {
-      continue
-    }
-    const contributions = isRecord(repo.contributions)
-      ? repo.contributions
+  const calendar =
+    collection && isRecord(collection.contributionCalendar)
+      ? collection.contributionCalendar
       : null
-    if (!contributions) {
-      continue
-    }
-    const nodes = isUnknownArray(contributions.nodes) ? contributions.nodes : []
-    for (const node of nodes) {
-      if (!isRecord(node)) {
-        continue
-      }
-      const occurredAt =
-        typeof node.occurredAt === 'string' ? node.occurredAt : null
-      const commitCount =
-        typeof node.commitCount === 'number' ? node.commitCount : 0
-      if (!occurredAt) {
-        continue
-      }
-      const date = occurredAt.slice(0, 10)
-      if (commitMap.has(date)) {
-        commitMap.set(date, (commitMap.get(date) ?? 0) + commitCount)
+  const weeks = calendar && isUnknownArray(calendar.weeks) ? calendar.weeks : []
+  for (const week of weeks) {
+    const days =
+      isRecord(week) && isUnknownArray(week.contributionDays)
+        ? week.contributionDays
+        : []
+    for (const day of days) {
+      if (
+        isRecord(day) &&
+        typeof day.date === 'string' &&
+        typeof day.contributionCount === 'number' &&
+        contributionMap.has(day.date)
+      ) {
+        contributionMap.set(day.date, day.contributionCount)
       }
     }
-  }
-}
-
-async function fetchOpenedPRs(
-  token: string,
-  from: string,
-  to: string,
-  openedMap: Map<string, number>,
-): Promise<void> {
-  const query = `
-    query($login: String!, $from: DateTime!, $to: DateTime!, $after: String) {
-      user(login: $login) {
-        contributionsCollection(from: $from, to: $to) {
-          pullRequestContributions(first: 100, after: $after) {
-            nodes {
-              occurredAt
-              pullRequest {
-                createdAt
-              }
-            }
-            pageInfo {
-              hasNextPage
-              endCursor
-            }
-          }
-        }
-      }
-    }
-  `
-  let cursor: string | null = null
-  for (;;) {
-    const data = await graphqlRequest(token, query, {
-      login: 'mavko',
-      from,
-      to,
-      after: cursor,
-    })
-    if (!data) {
-      break
-    }
-    const user = isRecord(data.user) ? data.user : null
-    const collection =
-      user && isRecord(user.contributionsCollection)
-        ? user.contributionsCollection
-        : null
-    const prContributions =
-      collection && isRecord(collection.pullRequestContributions)
-        ? collection.pullRequestContributions
-        : null
-    if (!prContributions) {
-      break
-    }
-    const nodes = isUnknownArray(prContributions.nodes)
-      ? prContributions.nodes
-      : []
-    for (const node of nodes) {
-      if (!isRecord(node)) {
-        continue
-      }
-      const pullRequest = isRecord(node.pullRequest) ? node.pullRequest : null
-      const createdAt =
-        typeof pullRequest?.createdAt === 'string'
-          ? pullRequest.createdAt
-          : typeof node.occurredAt === 'string'
-            ? node.occurredAt
-            : null
-      if (!createdAt) {
-        continue
-      }
-      const date = createdAt.slice(0, 10)
-      if (openedMap.has(date)) {
-        openedMap.set(date, (openedMap.get(date) ?? 0) + 1)
-      }
-    }
-    const pageInfo = isRecord(prContributions.pageInfo)
-      ? prContributions.pageInfo
-      : null
-    const hasNextPage =
-      pageInfo && typeof pageInfo.hasNextPage === 'boolean'
-        ? pageInfo.hasNextPage
-        : false
-    const endCursor =
-      pageInfo && typeof pageInfo.endCursor === 'string'
-        ? pageInfo.endCursor
-        : null
-    if (!hasNextPage || !endCursor) {
-      break
-    }
-    cursor = endCursor
-  }
-}
-
-async function fetchMergedPRs(
-  token: string,
-  mergedSince: string,
-  mergedMap: Map<string, number>,
-): Promise<void> {
-  const query = `
-    query($q: String!, $after: String) {
-      search(type: ISSUE, query: $q, first: 100, after: $after) {
-        nodes {
-          ... on PullRequest {
-            mergedAt
-          }
-        }
-        pageInfo {
-          hasNextPage
-          endCursor
-        }
-      }
-    }
-  `
-  let cursor: string | null = null
-  for (;;) {
-    const data = await graphqlRequest(token, query, {
-      q: `author:mavko is:pr merged:>=${mergedSince}`,
-      after: cursor,
-    })
-    if (!data) {
-      break
-    }
-    const search = isRecord(data.search) ? data.search : null
-    if (!search) {
-      break
-    }
-    const nodes = isUnknownArray(search.nodes) ? search.nodes : []
-    for (const node of nodes) {
-      if (!isRecord(node)) {
-        continue
-      }
-      const mergedAt = typeof node.mergedAt === 'string' ? node.mergedAt : null
-      if (!mergedAt) {
-        continue
-      }
-      const date = mergedAt.slice(0, 10)
-      if (mergedMap.has(date)) {
-        mergedMap.set(date, (mergedMap.get(date) ?? 0) + 1)
-      }
-    }
-    const pageInfo = isRecord(search.pageInfo) ? search.pageInfo : null
-    const hasNextPage =
-      pageInfo && typeof pageInfo.hasNextPage === 'boolean'
-        ? pageInfo.hasNextPage
-        : false
-    const endCursor =
-      pageInfo && typeof pageInfo.endCursor === 'string'
-        ? pageInfo.endCursor
-        : null
-    if (!hasNextPage || !endCursor) {
-      break
-    }
-    cursor = endCursor
   }
 }
 
 async function fetchGraphQL(token: string): Promise<GithubActivityResponse> {
   const range = buildDayRange()
-  const commitMap = emptyCounts(range.keys)
+  const contributionMap = emptyCounts(range.keys)
   const openedMap = emptyCounts(range.keys)
   const mergedMap = emptyCounts(range.keys)
 
-  const from = range.start.toISOString()
-  const to = range.today.toISOString()
-  const mergedSince = range.keys[0] ?? ''
+  const chunks: string[][] = []
+  for (let i = 0; i < range.keys.length; i += DAYS_PER_SEARCH_REQUEST) {
+    chunks.push(range.keys.slice(i, i + DAYS_PER_SEARCH_REQUEST))
+  }
 
-  await fetchCommits(token, from, to, commitMap)
-  await fetchOpenedPRs(token, from, to, openedMap)
-  await fetchMergedPRs(token, mergedSince, mergedMap)
+  const [calendarData, ...searchData] = await Promise.all([
+    postGraphQL({
+      token,
+      query: CALENDAR_QUERY,
+      variables: {
+        login: GITHUB_LOGIN,
+        from: range.start.toISOString(),
+        to: range.today.toISOString(),
+      },
+    }),
+    ...chunks.map((chunk) =>
+      postGraphQL({ token, query: buildPrSearchQuery(chunk) }),
+    ),
+  ])
+
+  readCalendar(calendarData, contributionMap)
+  for (const data of searchData) {
+    for (const key of range.keys) {
+      const alias = aliasKey(key)
+      if (`o_${alias}` in data) {
+        openedMap.set(key, readIssueCount(data, `o_${alias}`))
+        mergedMap.set(key, readIssueCount(data, `m_${alias}`))
+      }
+    }
+  }
 
   const { days, totals } = totalsFromMaps(
-    commitMap,
+    contributionMap,
     openedMap,
     mergedMap,
     range.keys,
   )
-
   return {
     generatedAt: new Date().toISOString(),
     source: 'graphql',
@@ -407,8 +267,8 @@ async function fetchPublicEvents(): Promise<GithubActivityResponse> {
     if (type === 'PushEvent') {
       const payload = isRecord(event.payload) ? event.payload : null
       const size = typeof payload?.size === 'number' ? payload.size : null
-      const commitsArr = isUnknownArray(payload?.commits)
-        ? payload.commits
+      const commitsArr = isUnknownArray(payload?.contributions)
+        ? payload.contributions
         : null
       const count = size !== null ? size : commitsArr ? commitsArr.length : 0
       if (commitMap.has(date)) {

@@ -16,7 +16,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, useId } from 'react'
 const WINDOW_SECONDS = 30 * 24 * 60 * 60
 
 const EMPTY_DAYS: GithubActivityDay[] = []
-const EMPTY_TOTALS = { commits: 0, prsOpened: 0, prsMerged: 0 }
+const EMPTY_TOTALS = { contributions: 0, prsOpened: 0, prsMerged: 0 }
 
 function isGithubActivityResponse(
   value: unknown,
@@ -42,7 +42,7 @@ function isGithubActivityResponse(
     if (typeof d.date !== 'string') {
       return false
     }
-    if (typeof d.commits !== 'number') {
+    if (typeof d.contributions !== 'number') {
       return false
     }
     if (typeof d.prsOpened !== 'number') {
@@ -57,7 +57,7 @@ function isGithubActivityResponse(
     return false
   }
   const t = totals as Record<string, unknown>
-  if (typeof t.commits !== 'number') {
+  if (typeof t.contributions !== 'number') {
     return false
   }
   if (typeof t.prsOpened !== 'number') {
@@ -291,13 +291,13 @@ export function GithubActivityChart() {
   const days = data?.days ?? EMPTY_DAYS
   const totals = data?.totals ?? EMPTY_TOTALS
   const todayCommits =
-    days.length > 0 ? (days[days.length - 1]?.commits ?? 0) : 0
+    days.length > 0 ? (days[days.length - 1]?.contributions ?? 0) : 0
 
   const chartData = useMemo(
     () =>
       days.map((day) => ({
         time: noonUtcSeconds(day.date),
-        value: day.commits,
+        value: day.contributions,
       })),
     [days],
   )
@@ -347,7 +347,7 @@ export function GithubActivityChart() {
             className="inline-block h-1.5 w-1.5 rounded-full"
             style={{ backgroundColor: commitsColor }}
           />
-          Commits {totals.commits}
+          Contributions {totals.contributions}
         </span>
         <span className="inline-flex items-center gap-1.5">
           <span
