@@ -370,6 +370,10 @@
 */
 
 .dark {
+  /* Re-resolve chart tooltip tokens against the dark popover colours. */
+  --chart-tooltip-background: var(--popover);
+  --chart-tooltip-foreground: var(--popover-foreground);
+  --chart-tooltip-muted: var(--muted-foreground);
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
