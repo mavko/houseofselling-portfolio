@@ -3,12 +3,14 @@
 import { LineBackdrop } from '@/components/charts/line-backdrop'
 import { Line, LineChart } from '@/components/charts/line-chart'
 import { LineChartLoading } from '@/components/charts/line-chart-loading'
+import { LinkPreview } from '@/components/LinkPreview'
 import { ChartTooltip, type TooltipRow } from '@/components/charts/tooltip'
+import { PROJECT_PILLS } from '@/content/project-pills'
 import type {
   GithubActivityDay,
   GithubActivityResponse,
 } from '@/lib/github-activity'
-import { useEffect, useMemo, useState } from 'react'
+import { type CSSProperties, useEffect, useMemo, useState } from 'react'
 
 const CHART_HEIGHT = 220
 const ZERO_MARGIN = { top: 0, right: 0, bottom: 0, left: 0 }
@@ -28,9 +30,9 @@ interface Series {
   strokeWidth: number
 }
 
-// Sunset sky recipe (bklit). Scene colours, intentionally identical in light
-// and dark mode. Contributions is the recipe's ember → gold line; the PR
-// lines use the sky's own rose and dusky-mauve tones with a softer glow.
+// Glimmering monochrome sky. Scene colours are intentionally identical in light
+// and dark mode: a near-black base with a silver horizon glow. Series lines keep
+// their distinct hues so the three data sets stay readable against the monochrome sky.
 const SERIES: readonly Series[] = [
   {
     key: 'contributions',
@@ -59,23 +61,60 @@ const SERIES: readonly Series[] = [
 ]
 
 const SKY_STOPS = [
-  { offset: 0, color: '#b4703c', opacity: 1 },
-  { offset: 0.22, color: '#b4703c', opacity: 0.85 },
-  { offset: 0.45, color: '#7a4650', opacity: 0.7 },
-  { offset: 0.7, color: '#3e2a48', opacity: 0.45 },
-  { offset: 1, color: '#3e2a48', opacity: 0 },
+  { offset: 0, color: '#ffffff', opacity: 0.42 },
+  { offset: 0.22, color: '#f0f0f0', opacity: 0.3 },
+  { offset: 0.45, color: '#b8b8b8', opacity: 0.2 },
+  { offset: 0.7, color: '#545454', opacity: 0.12 },
+  { offset: 1, color: '#000000', opacity: 0 },
 ]
 
 const POOL_STOPS = [
-  { offset: 0, color: '#8a6a2a', opacity: 0.6 },
-  { offset: 1, color: '#8a6a2a', opacity: 0 },
+  { offset: 0, color: '#ffffff', opacity: 0.24 },
+  { offset: 1, color: '#ffffff', opacity: 0 },
 ]
 
 const STARS = [
-  { left: '14%', top: '22%', opacity: 0.3 },
-  { left: '38%', top: '13%', opacity: 0.25 },
-  { left: '77%', top: '4%', opacity: 0.35 },
-  { left: '92%', top: '26%', opacity: 0.2 },
+  { left: '10%', top: '18%', size: 2, opacity: 0.5, duration: 3.2, delay: 0 },
+  {
+    left: '26%',
+    top: '9%',
+    size: 2,
+    opacity: 0.4,
+    duration: 4.6,
+    delay: -1.2,
+  },
+  {
+    left: '44%',
+    top: '24%',
+    size: 2,
+    opacity: 0.32,
+    duration: 5.4,
+    delay: -2.4,
+  },
+  {
+    left: '61%',
+    top: '11%',
+    size: 3,
+    opacity: 0.44,
+    duration: 4.1,
+    delay: -0.8,
+  },
+  {
+    left: '77%',
+    top: '5%',
+    size: 2,
+    opacity: 0.55,
+    duration: 3.7,
+    delay: -2.9,
+  },
+  {
+    left: '91%',
+    top: '27%',
+    size: 2,
+    opacity: 0.36,
+    duration: 4.9,
+    delay: -1.7,
+  },
 ]
 
 const HIGHLIGHT = {
@@ -207,12 +246,25 @@ export function GithubActivityChart() {
     >
       {/* The scene carries its own sky, so it looks the same in light and dark mode. */}
       <div
-        className="relative w-full overflow-hidden rounded-xl"
+        className="relative w-full overflow-hidden rounded-[1.5rem] border border-white/10"
         style={{
-          background: 'linear-gradient(to bottom, #211c2b, #18161d)',
+          background: '#000000',
           height: CHART_HEIGHT,
         }}
       >
+        <div className="pointer-events-none absolute top-3 left-3 z-10 flex max-w-[calc(100%-1.5rem)] origin-top-left scale-50 flex-wrap gap-2 text-xl">
+          {PROJECT_PILLS.map((pill) => (
+            <LinkPreview
+              className="pointer-events-auto"
+              key={pill.url}
+              url={pill.url}
+              avatar={pill.avatar}
+              external
+            >
+              {pill.label}
+            </LinkPreview>
+          ))}
+        </div>
         <LineChart
           aspectRatio=""
           data={chartData}
@@ -236,11 +288,19 @@ export function GithubActivityChart() {
           <LineBackdrop dataKey="contributions">
             {STARS.map((star) => (
               <rect
+                className="github-glimmer"
                 fill="#ffffff"
-                height={3}
+                height={star.size}
                 key={`${star.left}-${star.top}`}
                 opacity={star.opacity}
-                width={3}
+                style={
+                  {
+                    '--glimmer-opacity': star.opacity,
+                    animationDelay: `${star.delay}s`,
+                    animationDuration: `${star.duration}s`,
+                  } as CSSProperties
+                }
+                width={star.size}
                 x={star.left}
                 y={star.top}
               />
@@ -259,14 +319,14 @@ export function GithubActivityChart() {
             />
           ))}
           <ChartTooltip
-            dotColor="#fff1d0"
+            dotColor="#ffffff"
             dotHaloBlur={4}
-            dotHaloOpacity={0.7}
+            dotHaloOpacity={0.55}
             dotHaloScale={2.4}
             dotSize={4.5}
-            indicatorColor="#3e2a48"
+            indicatorColor="#9a9a9a"
             indicatorEnd="point"
-            indicatorEndColor="#fff1d0"
+            indicatorEndColor="#ffffff"
             indicatorFadeEdges="top"
             indicatorFadeLength={35}
             rows={tooltipRows}
@@ -274,17 +334,6 @@ export function GithubActivityChart() {
             topOffset={16}
           />
         </LineChart>
-      </div>
-      <div className="font-display mt-3 flex flex-wrap gap-x-6 gap-y-1 text-xs text-white/60">
-        {SERIES.map((series) => (
-          <span className="inline-flex items-center gap-1.5" key={series.key}>
-            <span
-              className="inline-block h-1.5 w-1.5 rounded-full"
-              style={{ backgroundColor: series.color }}
-            />
-            {series.label} {totals[series.key]}
-          </span>
-        ))}
       </div>
     </div>
   )

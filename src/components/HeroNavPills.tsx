@@ -166,24 +166,21 @@ export function HomeSiteNav({ className }: { className?: string }) {
 
 export function HomeHeroCopy() {
   return (
-    <div className="flex w-full max-w-[42rem] flex-col gap-6 sm:gap-8">
-      <h1 className="font-display text-base font-semibold leading-[1.05] tracking-[-0.2px] text-white [font-stretch:125%]">
+    <div className="flex w-full max-w-[36rem] flex-col gap-6 sm:gap-8">
+      <h1 className="font-display text-xl leading-[1.2] font-semibold tracking-[-0.2px] text-white [font-stretch:125%]">
         Sebastian Selling
-        <span className="mt-1 block text-sm font-medium leading-[1.2] text-white/70">
-          Designer who builds
-        </span>
       </h1>
-      <div className={cn(sectionClass, 'space-y-4')}>
+      <div
+        className={cn(
+          sectionClass,
+          'max-w-[36rem] space-y-4 text-base leading-[1.6]',
+        )}
+      >
         <p>I’m a designer and builder from Stockholm, Sweden.</p>
         <p>
-          Been in one way or another a designer since childhood and always wanted
-          outlets to express myself — from esports gaming videos, to forum
-          signatures, to graphic design.
-        </p>
-        <p>
-          Today, I’m busy building and capturing the full flow of the traditional
-          field service industries, going on about 14 years now. Using my sense of
-          craft and taste in industries who get very little of it.
+          Been in the startup tech scene my whole career, going about 14 years
+          now. Today I&apos;m fully AI-pilled and busy capturing the full field
+          service flow in construction.
         </p>
       </div>
     </div>

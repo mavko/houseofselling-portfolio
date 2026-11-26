@@ -159,6 +159,27 @@
   }
 }
 
+/* Monochrome chart sky: quiet twinkle on the star field. */
+@keyframes github-glimmer {
+  0%,
+  100% {
+    opacity: var(--glimmer-opacity, 0.3);
+  }
+  50% {
+    opacity: calc(var(--glimmer-opacity, 0.3) * 0.25);
+  }
+}
+
+.github-glimmer {
+  animation: github-glimmer 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .github-glimmer {
+    animation: none;
+  }
+}
+
 @layer components {
   .project-line-track {
     flex: 1;

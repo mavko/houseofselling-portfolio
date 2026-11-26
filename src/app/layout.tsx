@@ -2,6 +2,7 @@ import { type Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
 import { Providers } from '@/app/providers'
+import { AgentationDev } from '@/components/AgentationDev'
 import { SubpageBioNavGate } from '@/components/HeroNavPills'
 import { VercelAnalytics } from '@/components/VercelAnalytics'
 
@@ -112,6 +113,7 @@ export default function RootLayout({
             />
           </div>
         </Providers>
+        {process.env.NODE_ENV === 'development' && <AgentationDev />}
         <VercelAnalytics />
       </body>
     </html>
