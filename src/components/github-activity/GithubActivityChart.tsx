@@ -90,8 +90,8 @@ function PrMarkerLayer({ days }: { days: GithubActivityDay[] }) {
     return max
   }, [days])
 
-  const openedColor = '#6ee7b7'
-  const mergedColor = '#99f6e4'
+  const openedColor = '#7cc4ff'
+  const mergedColor = '#34d399'
 
   return (
     <g>
@@ -139,6 +139,7 @@ function ParticleGlowLine() {
   const uid = useId().replace(/:/g, '')
   const gradientId = `gh-grad-${uid}`
   const filterId = `gh-glow-${uid}`
+  const clipId = `gh-clip-${uid}`
 
   const getX = useCallback(
     (d: Record<string, unknown>) => xScale(xAccessor(d)) ?? 0,
@@ -195,8 +196,17 @@ function ParticleGlowLine() {
         >
           <feGaussianBlur stdDeviation={3.5} />
         </filter>
+        <clipPath id={clipId}>
+          <rect
+            height={Math.max(1, innerHeight)}
+            width={Math.max(1, innerWidth)}
+            x={0}
+            y={0}
+          />
+        </clipPath>
       </defs>
       <path
+        clipPath={`url(#${clipId})`}
         d={pathD}
         fill="none"
         filter={`url(#${filterId})`}
@@ -206,6 +216,7 @@ function ParticleGlowLine() {
         strokeWidth={6}
       />
       <path
+        clipPath={`url(#${clipId})`}
         d={pathD}
         fill="none"
         stroke={`url(#${gradientId})`}
@@ -339,11 +350,17 @@ export function GithubActivityChart() {
           Commits {totals.commits}
         </span>
         <span className="inline-flex items-center gap-1.5">
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-300" />
+          <span
+            className="inline-block h-1.5 w-1.5 rounded-full"
+            style={{ backgroundColor: '#7cc4ff' }}
+          />
           PRs opened {totals.prsOpened}
         </span>
         <span className="inline-flex items-center gap-1.5">
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-teal-200" />
+          <span
+            className="inline-block h-1.5 w-1.5 rounded-full"
+            style={{ backgroundColor: '#34d399' }}
+          />
           PRs merged {totals.prsMerged}
         </span>
       </div>
